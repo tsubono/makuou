@@ -1,0 +1,931 @@
+//colors
+$color_concrete_approx: #f1f2f2;
+$color_pumice_approx: #cacaca;
+$white: white;
+$black_40: rgba(0, 0, 0, 0.4);
+$white_40: rgba(255, 255, 255, 0.4);
+$black_20: rgba(0, 0, 0, 0.2);
+$color_cape_cod_approx: #424242;
+$color_bon_jour_approx: #dfdfdf;
+$black_haze: #f6f7f7;
+$color_limed_spruce_approx: #3e4954;
+$color_sunglow_approx: #ffc23f;
+$white_96: rgba(255, 255, 255, 0.96);
+$black: #000000;
+$black_15: rgba(0, 0, 0, 0.15);
+$black_17_6: rgba(0, 0, 0, 0.176);
+$blue: blue;
+$alabaster: rgb(250, 250, 250);
+$color_picton_blue_approx: #42a5f5;
+$color_apple_approx: #689f38;
+$color_scooter_approx: #26c6da;
+$black_54: rgba(0, 0, 0, 0.54);
+$red: #ff0000;
+$color_gallery_approx: #eeeeee;
+$seashell: #f1f1f1;
+$color_dove_gray_approx: #696969;
+$color_mercury_approx: #e7e7e7;
+$color_rangoon_green_approx: #1e1e1e;
+
+//fonts
+$font_0: verdana;
+
+//urls
+$url_0: url(/images/squareLoader.gif);
+
+//@extend-elements
+//original selectors
+//.icon-vertical ul li a, .icon-vertical ul li >span
+%extend_1 {
+	padding: 10px;
+	color: $color_limed_spruce_approx;
+	text-align: center;
+	display: block;
+}
+
+//original selectors
+//.action_tabs .btn.active, .action_tabs .btn:active
+%extend_2 {
+	background: $black none repeat scroll 0 0;
+	border: medium none;
+	color: $white;
+	background-image: none;
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: none;
+	outline: 0 none;
+}
+
+//original selectors
+//.open .dropdown-menu >li >a:focus, .dropdown-menu >li >a:hover
+%extend_3 {
+	background-color: $white;
+	color: $black;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+//original selectors
+//.action_tabs .md-button.active, .action_tabs .md-button:active
+%extend_4 {
+	background: $black none repeat scroll 0 0;
+	border: medium none;
+	color: $white;
+	background-image: none;
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: none;
+	outline: 0 none;
+}
+
+
+@charset "UTF-8";
+[ng-cloak] {
+	display: none !important;
+}
+[data-ng-cloak] {
+	display: none !important;
+}
+[x-ng-cloak] {
+	display: none !important;
+}
+.ng-cloak {
+	display: none !important;
+}
+.x-ng-cloak {
+	display: none !important;
+}
+.ng-hide {
+	display: none !important;
+}
+.ng-animate-block-transitions {
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: 0s all!important;
+}
+.ng-hide-add-active {
+	display: block!important;
+}
+.ng-hide-remove {
+	display: block!important;
+}
+body {
+	padding: 10px;
+}
+.image-builder-container {
+	position: relative;
+	.image-builder {
+		background: $color_pumice_approx;
+		//Instead of the line below you could use @include box-sizing($bs)
+		box-sizing: border-box;
+		border: 1px solid $color_pumice_approx;
+		min-height: 460px;
+		text-align: center;
+		position: relative;
+		overflow-x: scroll;
+		overflow-y: hidden;
+		width: auto;
+		.image-cover {
+			left: 0;
+			right: 0;
+			bottom: 0;
+			top: 0;
+			position: absolute;
+			z-index: 2;
+		}
+		.fabric-container {
+			background: $white;
+			//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+			border-radius: 1px;
+			//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+			box-shadow: 0 1px 4px -1px $black_40;
+			display: inline-block;
+			margin: 50px;
+			position: relative;
+			vertical-align: middle;
+			z-index: 0;
+		}
+	}
+	.image-loading {
+		background: $white_40;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 1;
+		.loading-indicator {
+			background: $white;
+			background-image: $url_0;
+			background-repeat: no-repeat;
+			background-position: center;
+			//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+			border-radius: 10px;
+			//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+			box-shadow: 0 1px 3px $black_20;
+			margin: 300px auto 0;
+			height: 160px;
+			width: 160px;
+		}
+	}
+	.object-controls-container {
+		position: relative;
+		.object-controls {
+			position: absolute;
+			z-index: 1;
+			background: $white;
+			left: -250px;
+			top: 0;
+			padding: 5px;
+			width: 240px;
+			textarea {
+				font-size: 12px;
+			}
+		}
+	}
+}
+.object-font-family-preview {
+	text-transform: capitalize;
+}
+.canvas_sub_image {
+	min-height: 150px;
+	> ul > li > img {
+		margin: 0 5px 20px;
+		max-width: 70px;
+	}
+}
+.canvas-container-outer {
+	display: block;
+	float: none;
+	margin: auto;
+	max-width: 550px;
+	border: 2px dashed $color_cape_cod_approx;
+}
+.fabric-container {
+	position: relative;
+}
+.btn-group-vertical {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.action_tabs {
+	padding-bottom: 0;
+	.btn {
+		background: $white none repeat scroll 0 0;
+		border: medium none;
+		color: $black;
+		&.active {
+			@extend %extend_2;
+		}
+		&:active {
+			@extend %extend_2;
+		}
+	}
+	.md-button {
+		&.active {
+			@extend %extend_4;
+		}
+		&:active {
+			@extend %extend_4;
+		}
+	}
+}
+.loading {
+	background: $white_96 none repeat scroll 0 0;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	width: 100%;
+	z-index: 999;
+	> img {
+		bottom: 0;
+		height: 16px;
+		left: 0;
+		margin: auto;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 16px;
+	}
+	h1 img {
+		bottom: 0;
+		left: 50%;
+		position: absolute;
+		top: 65px;
+	}
+}
+.alert {
+	border: 1px solid transparent;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 0;
+	left: 379px;
+	margin-top: 70px;
+	padding: 6px 20px;
+	position: absolute;
+	width: 66.9%;
+	z-index: 999;
+	font-size: 12px;
+}
+.ulChildMenu {
+	display: none;
+}
+.well {
+	background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important;
+	border: medium none;
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: none;
+	margin-bottom: 0;
+	padding: 20px 0;
+}
+.open {
+	.dropdown-menu {
+		//Instead of the line below you could use @include background-clip($clip)
+		background-clip: padding-box;
+		background-color: $white;
+		border: 1px solid $black_15;
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 4px;
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: 0 6px 12px $black_17_6;
+		float: left;
+		font-size: 14px;
+		left: 0;
+		list-style: outside none none;
+		margin: 2px 0 0;
+		max-height: 235px;
+		min-width: 319px;
+		overflow: auto;
+		padding: 5px 0;
+		position: absolute;
+		text-align: left;
+		top: 100%;
+		z-index: 1000;
+		li {
+			cursor: pointer;
+			display: inline-block;
+			width: 50%;
+		}
+		> li > a:focus {
+			@extend %extend_3;
+		}
+	}
+	> .dropdown-toggle.btn-default {
+		background-color: $black;
+		color: $white;
+	}
+}
+.dialogdemoBasicUsage {
+	#popupContainer {
+		position: relative;
+	}
+	.debt-be-gone {
+		font-weight: bold;
+		color: $blue;
+		text-decoration: underline;
+	}
+	.footer {
+		width: 100%;
+		text-align: center;
+		margin-left: 20px;
+		font-size: 0.8em;
+		margin-top: 50px;
+		> code {
+			font-size: 0.8em;
+			margin-top: 50px;
+		}
+	}
+}
+md-dialog-content {
+	border-bottom: 1px solid $color_pumice_approx;
+}
+md-input-container {
+	width: 100%;
+	input {
+		border: 1px solid $color_pumice_approx;
+	}
+	&.md-input-focused label:not(.md-no-float) {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translate3d(0px, 6px, 0) scale(0.97) !important;
+	}
+	&.md-input-has-placeholder label:not(.md-no-float) {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translate3d(0px, 6px, 0) scale(0.97) !important;
+	}
+	&.md-input-has-value label:not(.md-no-float) {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translate3d(0px, 6px, 0) scale(0.97) !important;
+	}
+}
+.md-button {
+	&.md-cornered {
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 0;
+	}
+	&.md-default-theme.md-raised:hover:not([disabled]) {
+		background-color: $alabaster;
+		color: $black;
+	}
+	&.md-raised:hover:not([disabled]) {
+		background-color: $alabaster;
+		color: $black;
+	}
+}
+.tabsdemoStaticTabs {
+	md-tab-content {
+		padding: 25px;
+		&:nth-child(1) {
+			background-color: $color_picton_blue_approx;
+		}
+		&:nth-child(2) {
+			background-color: $color_apple_approx;
+		}
+		&:nth-child(3) {
+			background-color: $color_scooter_approx;
+		}
+	}
+	.after-tabs-area {
+		> span {
+			margin-top: 25px;
+			padding-right: 15px;
+			vertical-align: middle;
+			line-height: 30px;
+			height: 35px;
+		}
+		> md-checkbox {
+			margin-top: 26px;
+			margin-left: 0;
+		}
+	}
+}
+md-tabs {
+	&.md-default-theme.md-accent > md-tabs-wrapper {
+		background-color: $black_haze;
+		border-top: 1px solid $color_pumice_approx;
+		> md-tabs-canvas > md-pagination-wrapper > md-tab-item {
+			&:not([disabled]) {
+				color: $color_limed_spruce_approx;
+			}
+			&.md-active:not([disabled]) {
+				color: $color_sunglow_approx;
+				md-icon {
+					color: $color_sunglow_approx;
+				}
+			}
+			&.md-focused:not([disabled]) {
+				color: $color_sunglow_approx;
+				md-icon {
+					color: $color_sunglow_approx;
+				}
+			}
+		}
+	}
+	&.md-accent > md-tabs-wrapper {
+		background-color: $black_haze;
+		border-top: 1px solid $color_pumice_approx;
+		> md-tabs-canvas > md-pagination-wrapper > md-tab-item {
+			&:not([disabled]) {
+				color: $color_limed_spruce_approx;
+			}
+			&.md-active:not([disabled]) {
+				color: $color_sunglow_approx;
+				md-icon {
+					color: $color_sunglow_approx;
+				}
+			}
+			&.md-focused:not([disabled]) {
+				color: $color_sunglow_approx;
+				md-icon {
+					color: $color_sunglow_approx;
+				}
+			}
+		}
+	}
+	&:not(.md-no-tab-content):not(.md-dynamic-height) {
+		background: $color_concrete_approx;
+	}
+}
+md-checkbox {
+	left: 18px;
+	min-width: 90px;
+}
+#Graphics {
+	md-checkbox {
+		left: 0;
+	}
+	.row {
+		margin: 10px 0;
+	}
+}
+.custom-label {
+	color: $black_54;
+}
+.has-error {
+	color: $red;
+}
+#qrcode {
+	> svg {
+		display: none !important;
+	}
+	> canvas {
+		display: none !important;
+	}
+}
+md-pagination-wrapper {
+	min-width: 380px !important;
+}
+md-tab-item {
+	max-width: 160px !important;
+}
+.lodingMessage {
+	bottom: 0;
+	font-size: 24px;
+	height: 90px;
+	margin: auto;
+	position: fixed;
+	text-align: center;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+.colorpicker {
+	left: 0;
+	top: 0;
+	z-index: 99999 !important;
+}
+.customizer {
+	left: -290px !important;
+	position: fixed;
+	&.customizer_toggle {
+		left: -0px !important;
+		position: fixed;
+	}
+}
+.input-group-addon {
+	padding: 5px;
+	> i {
+		display: flex;
+		height: 20px;
+		width: 20px;
+	}
+	&:last-child {
+		//Instead of the line below you could use @include border-bottom-left-radius($radius)
+		border-bottom-left-radius: 0;
+		//Instead of the line below you could use @include border-top-left-radius($radius)
+		border-top-left-radius: 4px;
+	}
+}
+.col-lg-12 {
+	&.color-mixer {
+		padding: 15px 0;
+	}
+	&.thumb_listing.ng-scope.activeControls {
+	}
+}
+.input-group-btn {
+	&:first-child > {
+		.btn-group:not(:first-child) > .btn {
+			//Instead of the line below you could use @include border-bottom-left-radius($radius)
+			border-bottom-left-radius: 0;
+			//Instead of the line below you could use @include border-top-left-radius($radius)
+			border-top-left-radius: 4px;
+		}
+		.btn:not(:first-child) {
+			//Instead of the line below you could use @include border-bottom-left-radius($radius)
+			border-bottom-left-radius: 0;
+			//Instead of the line below you could use @include border-top-left-radius($radius)
+			border-top-left-radius: 4px;
+		}
+	}
+	&:last-child > {
+		.btn {
+			//Instead of the line below you could use @include border-bottom-left-radius($radius)
+			border-bottom-left-radius: 0;
+			//Instead of the line below you could use @include border-top-left-radius($radius)
+			border-top-left-radius: 4px;
+		}
+		.dropdown-toggle {
+			//Instead of the line below you could use @include border-bottom-left-radius($radius)
+			border-bottom-left-radius: 0;
+			//Instead of the line below you could use @include border-top-left-radius($radius)
+			border-top-left-radius: 4px;
+		}
+		.btn-group > .btn {
+			//Instead of the line below you could use @include border-bottom-left-radius($radius)
+			border-bottom-left-radius: 0;
+			//Instead of the line below you could use @include border-top-left-radius($radius)
+			border-top-left-radius: 4px;
+		}
+	}
+}
+.filter_by_cat {
+	padding: 23px 20px 0;
+}
+.close-circle {
+	float: right;
+	i {
+		cursor: pointer;
+		font-size: 18px;
+	}
+}
+md-select-menu {
+	margin-left: 13px;
+	width: 92%;
+}
+md-select-value {
+	padding: 10px 0 !important;
+}
+.cloud-options {
+	label {
+		display: block;
+	}
+	md-checkbox {
+		left: 0;
+		max-width: 88px;
+		width: 100%;
+	}
+}
+.graphic_options {
+	text-align: center;
+	span {
+		display: block;
+		font-size: 13px;
+		line-height: 16px;
+		text-align: center;
+		margin-top: 5px;
+	}
+	i {
+		display: block;
+		font-size: 24px;
+		margin: 5px 0 6px;
+	}
+	ul li {
+		padding: 5px 3px 0;
+		> div {
+			background: $color_mercury_approx none repeat scroll 0 0;
+			padding: 5px 0;
+			a {
+				color: $color_rangoon_green_approx;
+				text-decoration: none !important;
+			}
+		}
+	}
+}
+.product_name {
+	display: inline-block;
+	line-height: 18px;
+	position: relative;
+	top: 10px;
+}
+.index_02 {
+	.tabing {
+		ul#tabs li {
+			width: 100%;
+			margin-bottom: 10px;
+		}
+		.nav-tabs > li > a {
+			padding: 25px 10px 15px;
+		}
+	}
+	.tab-content.action_tabs {
+		padding-left: 50px;
+	}
+	.nav.nav-tabs {
+		position: absolute;
+		left: 0;
+		height: 100%;
+		width: 50px;
+		span {
+			display: none;
+		}
+	}
+	.editor_section .activeControlsElem {
+		width: calc(100% - 50px);
+		left: auto;
+		padding: 20px 20px 20px 0;
+		right: 0;
+	}
+	.thumb_listing ul li {
+		max-width: 30%;
+		margin: auto 5px 5px;
+	}
+}
+.but_dist {
+	margin-top: 36px;
+}
+.fa {
+	&.fa-trash {
+		color: $red;
+	}
+	&.fa-long-arrow-left > span {
+		display: inline-block;
+		font-family: $font_0;
+		font-size: 14px;
+		margin-left: 6px;
+		position: relative;
+		top: -3px;
+	}
+}
+.pricing {
+	margin-top: 10px;
+}
+.btn-group-one {
+}
+.btn-group-two {
+	right: auto;
+	left: 25px;
+}
+.svgElements {
+	display: none;
+}
+.doc_logo {
+	display: block;
+	float: left;
+	margin-right: 12px;
+	margin-top: 4px;
+	img {
+		max-width: 45px;
+	}
+}
+@media(max-width: 990px) {
+	.product_name {
+		display: block;
+		margin-bottom: 15px;
+		top: 0;
+	}
+	.editor_section {
+		background: $color_concrete_approx none repeat scroll 0 0;
+		.activeControlsElem {
+			position: static;
+			padding: 0;
+			margin-bottom: 30px;
+		}
+	}
+	.tab-content.action_tabs > div {
+		height: auto !important;
+	}
+}
+@media(max-width: 600px) {
+	.canvas-container-outer {
+		max-width: 350px;
+	}
+	.btn-group-vertical {
+		left: 5px;
+		position: absolute;
+		top: 0;
+		right: auto;
+		&.btn-group-one {
+			left: auto;
+			right: 0;
+		}
+	}
+	.m-prod_detail_attr .m-prod_counter {
+		padding-left: 0;
+		input {
+			position: static;
+		}
+	}
+	.icon-vertical ul {
+		margin-right: 5px;
+	}
+	.social-share a {
+		right: -4px;
+	}
+	.index_02 .thumb_listing ul li {
+		max-width: 100%;
+	}
+}
+@media(max-width: 400px) {
+	.canvas-container-outer {
+		max-width: 220px;
+	}
+	.btn-group-vertical {
+		top: -30px;
+	}
+}
+[ng\:cloak] {
+	display: none !important;
+}
+ng\:form {
+	display: block;
+}
+.icon-vertical ul {
+	margin-right: 20px;
+	border: 1px solid $color_bon_jour_approx;
+	background: $black_haze none repeat scroll 0 0;
+	li {
+		border-bottom: 1px solid $color_bon_jour_approx;
+		a {
+			@extend %extend_1;
+			&:hover {
+				background: $color_sunglow_approx;
+				text-decoration: none;
+			}
+		}
+		> span {
+			@extend %extend_1;
+			&:hover {
+				background: $color_sunglow_approx;
+				text-decoration: none;
+			}
+		}
+		&.saveObject {
+			position: relative;
+		}
+		ul {
+			margin: auto;
+			position: absolute;
+			right: 100%;
+			top: 0;
+			width: 100px;
+		}
+		&:hover {
+			background: $color_sunglow_approx;
+			text-decoration: none;
+		}
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+}
+.container.ng-scope {
+	position: relative;
+}
+.btn-group.bootstrap-select.clearfix input {
+	margin-left: 65px;
+}
+.saveObject:hover .ulChildMenu {
+	display: block;
+}
+.dropdown-menu > li > a:hover {
+	@extend %extend_3;
+}
+.colorPicker2 md-input-container {
+	margin: 0;
+	padding: 0;
+}
+.transparency md-input-container input {
+	border: none;
+}
+.handtool md-input-container input {
+	border: none;
+}
+button.md-button {
+	margin: 0;
+	min-width: 42px;
+	min-height: 40px;
+}
+a.md-button {
+	&.md-default-theme.md-raised:hover:not([disabled]) {
+		background-color: $alabaster;
+		color: $black;
+	}
+	&.md-raised:hover:not([disabled]) {
+		background-color: $alabaster;
+		color: $black;
+	}
+}
+.md-raised.md-cornered.dropdown-toggle.md-button.md-ink-ripple {
+	width: 100%;
+}
+.form-group md-switch {
+	position: relative;
+	display: inline;
+}
+#Text .row {
+	margin: 10px 0;
+}
+div#wordcloud svg {
+	display: none;
+}
+.m-prod_detail_attr .m-prod_counter {
+	padding-left: 60px;
+	position: relative;
+	input {
+		border: 1px solid $color_gallery_approx;
+		font-size: 18px;
+		font-weight: bold;
+		height: 41px;
+		left: 0;
+		line-height: 41px;
+		position: absolute;
+		text-align: center;
+		top: 0;
+		width: 60px;
+	}
+	span {
+		background: $seashell none repeat scroll 0 0;
+		color: $color_dove_gray_approx;
+		cursor: pointer;
+		display: block;
+		font-size: 14px;
+		height: 20px;
+		line-height: 20px;
+		margin-bottom: 1px;
+		text-align: center;
+		width: 35px;
+		&:hover {
+			color: $white;
+		}
+	}
+}
+md-radio-group md-radio-button {
+	float: left;
+	margin: 15px 5px;
+	max-width: 20%;
+	width: 100%;
+}
+.social-share a {
+	&:first-child {
+		border-bottom: medium none !important;
+	}
+	&:nth-child(2) {
+		border-bottom: medium none !important;
+	}
+	&:hover {
+		text-decoration: none !important;
+	}
+}
+.input-group .form-control:last-child {
+	//Instead of the line below you could use @include border-bottom-left-radius($radius)
+	border-bottom-left-radius: 0;
+	//Instead of the line below you could use @include border-top-left-radius($radius)
+	border-top-left-radius: 4px;
+}
+.editor_section .activeControlsElem {
+	background: $color_concrete_approx none repeat scroll 0 0 !important;
+	height: calc(100% - 70px);
+	padding: 20px;
+	position: absolute;
+	top: 70px;
+	width: 100%;
+	z-index: 2;
+	left: 0;
+	> div.well {
+		margin: auto;
+		width: 94%;
+		min-height: auto;
+		.row {
+			margin-left: 0;
+			margin-right: 0;
+			&.row-margin {
+				margin: 0 -15px;
+			}
+		}
+	}
+}
+.colorpicker-element span.input-group-addon {
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 0 5px 5px 0;
+}
+#Products .filter_by_cat {
+	padding: 0 20px;
+}
+#customizer > img {
+	display: block;
+	left: -65px;
+	margin: auto auto 10px;
+	max-width: 50px;
+	position: relative;
+}
+.thumb_listing ul li.ng-scope.selected {
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: 0 0 3px $color_dove_gray_approx;
+}

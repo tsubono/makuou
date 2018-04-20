@@ -1,0 +1,36 @@
+---
+ip: "10.0.0.10"
+memory: 2048
+cpus: 1
+hostname: reassosystem
+name: reassosystem
+provider: virtualbox
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    - map: "~/workspace/reasso_system"
+      to: "/home/vagrant/reasso_system"
+
+sites:
+    - map: reasso_system.app
+      to: "/home/vagrant/reasso_system/public"
+
+databases:
+    - homestead
+
+# blackfire:
+#     - id: foo
+#       token: bar
+#       client-id: foo
+#       client-token: bar
+
+# ports:
+#     - send: 50000
+#       to: 5000
+#     - send: 7777
+#       to: 777
+#       protocol: udp

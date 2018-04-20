@@ -1,0 +1,755 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Project:	Tshirt Design
+Version:	1.1
+Last change:	24/12/2015   
+Primary use:	Tshirt Design
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+[Table of contents]
+-------------------------------------------------------------------*/
+
+//colors
+$black_haze: #f6f7f7;
+$color_limed_spruce_approx: #3e4954;
+$color_cola_approx: #3a2800;
+$white: #fff;
+$color_shark_approx: #21272c;
+$color_geyser_approx: #d7dcdf;
+$color_sunglow_approx: #ffc23f;
+$color_manatee_approx: #929ba6;
+$color_tree_poppy_90_approx: rgba(255, 160, 24, 0.9);
+$color_tree_poppy_approx: #ffa018;
+$color_orange_90_approx: rgba(255, 89, 24, 0.9);
+$color_orange_approx: #ff5918;
+$color_azure_90_approx: rgba(49, 87, 166, 0.9);
+$color_azure_approx: #3157a6;
+$color_wedgewood_90_approx: rgba(82, 128, 164, 0.9);
+$color_wedgewood_approx: #5280a4;
+$color_star_dust_approx: #a1a1a1;
+$color_pumice_approx: #c7c7c7;
+$black: #000000;
+$color_gray_nurse_approx: #e8e8e8;
+$color_masala_approx: #423d3e;
+$color_mountain_mist_approx: #969696;
+$mercury: #e5e5e5;
+$color_bon_jour_approx: #dfdfdf;
+$color_curious_blue_approx: #28a9e0;
+
+//fonts
+$font_0: lato;
+$font_1: sans-serif;
+$font_2: Vollkorn;
+
+//urls
+$url_0: url(../images/pattern-bg.jpg);
+$url_1: url(../images/site_bg_01.jpg);
+$url_2: url(../images/site_bg_02.jpg);
+$url_3: url(../images/site_bg_03.jpg);
+$url_4: url(../images/site_bg_04.jpg);
+
+//@extend-elements
+//original selectors
+//.tabing .nav-tabs >li.active >a, .tabing .nav-tabs >li.active >a:focus, .tabing .nav-tabs >li.active >a:hover
+%extend_1 {
+  border: none;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 0;
+  color: $color_cola_approx;
+}
+
+//original selectors
+//.color i, .text i, .products i, .graphics i
+%extend_2 {
+  font-size: 24px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 8px;
+}
+
+
+[ng-cloak] {
+  display: none !important;
+}
+[data-ng-cloak] {
+  display: none !important;
+}
+[x-ng-cloak] {
+  display: none !important;
+}
+.ng-cloak {
+  display: none !important;
+}
+.x-ng-cloak {
+  display: none !important;
+}
+.t-transtion {
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all 0.5s ease-out;
+}
+label {
+  font-weight: normal;
+}
+.container {
+  background: $url_0;
+}
+.loadMore {
+  margin-top: 20px;
+  color: $color_limed_spruce_approx;
+  cursor: pointer;
+  display: block;
+  letter-spacing: 0.5px;
+  margin: 15px auto auto;
+  max-width: 110px;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none !important;
+}
+.tabing {
+  margin: 0 -15px;
+  background: $black_haze;
+  .nav-tabs {
+    border: none;
+    > li {
+      > a {
+        border: none;
+        //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+        border-radius: 0;
+        color: $color_limed_spruce_approx;
+        padding: 40px 10px 10px;
+        text-align: center;
+        font-size: 14px;
+        position: relative;
+        &:after {
+          position: absolute;
+          content: "";
+          width: 26px;
+          height: 32px;
+          background-size: 26px auto;
+          left: 0;
+          right: 0;
+          top: 5px;
+          margin: auto;
+        }
+      }
+      &.active > a {
+        @extend %extend_1;
+        &:focus {
+          @extend %extend_1;
+        }
+        &:hover {
+          @extend %extend_1;
+        }
+      }
+    }
+  }
+  ul#tabs {
+    background: $black_haze none repeat scroll 0 0;
+    li {
+      width: 33.33%;
+    }
+  }
+}
+.action_tabs {
+  padding-bottom: 30px;
+  .fileUpload {
+    span {
+      background: none;
+    }
+    &.btn {
+      background: $color_sunglow_approx;
+    }
+  }
+  .btn-group {
+    &.bootstrap-select {
+      width: 210px;
+      display: block;
+      margin: auto;
+      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+      border-radius: 5px;
+    }
+    > .btn + .dropdown-toggle {
+      border-left: 1px solid $color_shark_approx;
+      &:hover {
+        border-left: 1px solid $color_shark_approx;
+      }
+    }
+  }
+  .btn {
+    border: none;
+    background: $color_limed_spruce_approx;
+    color: $white;
+    &.learn_more {
+      color: $color_manatee_approx;
+      width: 165px;
+      text-align: center;
+      padding: 6px;
+      &:hover {
+        color: $white;
+      }
+    }
+    &.upload_image {
+      background: $color_tree_poppy_90_approx;
+      &:hover {
+        background: $color_tree_poppy_approx;
+      }
+    }
+    &.shape_plugin {
+      background: $color_orange_90_approx;
+      &:hover {
+        background: $color_orange_approx;
+      }
+    }
+    &.fb_photo {
+      background: $color_azure_90_approx;
+      &:hover {
+        background: $color_azure_approx;
+      }
+    }
+    &.insta_photo {
+      background: $color_wedgewood_90_approx;
+      &:hover {
+        background: $color_wedgewood_approx;
+      }
+    }
+  }
+}
+.select_all {
+  width: 185px;
+  background: $color_limed_spruce_approx;
+  text-align: left;
+}
+.tabing_bottom_buttons {
+  padding: 0 20px;
+}
+.action_buttons {
+  margin: 25px 0 0;
+  li {
+    width: 49%;
+    float: left;
+    margin-bottom: 10px;
+    text-align: center;
+    &:nth-child(2n + 2) {
+      float: right;
+    }
+    button.btn {
+      width: 100%;
+      i {
+        display: inline-block;
+        font-size: 18px;
+        margin-right: 5px;
+        position: relative;
+        top: 1px;
+      }
+    }
+  }
+}
+.canvas_options {
+  background: $white none repeat scroll 0 0;
+  ul {
+    background: $black_haze;
+  }
+  li {
+    cursor: pointer;
+    display: block;
+    float: left;
+    height: 70px;
+    margin: auto;
+    padding: 10px 12.5px 0;
+    text-align: center;
+    span {
+      color: $color_limed_spruce_approx;
+      display: block;
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 13px;
+      padding-top: 5px;
+    }
+    &:hover {
+      span {
+      }
+      i {
+      }
+    }
+  }
+}
+.canvas_image {
+  padding: 25px 0;
+  > img {
+    display: block;
+    margin: auto;
+  }
+}
+.canvas_details {
+  background: $white;
+  padding: 25px 35px 25px 15px;
+  top: 100%;
+  width: 100%;
+}
+//.quantity {
+//  background: $color_limed_spruce_approx;
+//  color: $color_manatee_approx;
+//  &:hover {
+//    color: $white;
+//  }
+//}
+.cart_icon {
+  background: $color_sunglow_approx none repeat scroll 0 0;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 30px 0 0 30px;
+  color: $white;
+  display: inline-block;
+  font-size: 26px;
+  padding: 5px 10px 5px 20px;
+  position: absolute;
+  right: -34px;
+  text-align: center;
+  top: -7px;
+  width: 85px;
+}
+.price_title {
+  color: $color_limed_spruce_approx;
+  font-size: 13px;
+}
+.price_amnt {
+  color: $color_star_dust_approx;
+  font-size: 16px;
+}
+.ul_layer_canvas {
+  > li {
+    border-top: 1px solid $color_pumice_approx;
+    height: 80px;
+    padding: 10px;
+    position: relative;
+    &:last-child {
+      border-bottom: 1px solid $color_pumice_approx;
+    }
+  }
+  img {
+    max-height: 40px;
+    max-width: 40px;
+    position: relative;
+    top: -8px;
+  }
+  span {
+    display: block;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  ul.ulInner {
+    border: 1px solid $color_pumice_approx;
+    height: 34px;
+    margin: auto;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+}
+.ulInner {
+  .liActions {
+    background: $black_haze none repeat scroll 0 0;
+    display: block;
+    float: left;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    width: 32px;
+    a {
+      display: block;
+      color: $color_limed_spruce_approx;
+      &:hover {
+        background: $color_sunglow_approx;
+      }
+    }
+  }
+  li.liActions {
+    &:nth-child(2) {
+      border-left: 1px solid $color_pumice_approx;
+      border-right: 1px solid $color_pumice_approx;
+    }
+    &:nth-child(3) {
+      border-right: 1px solid $color_pumice_approx;
+    }
+  }
+}
+.fileUpload {
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 0;
+  margin: 5px;
+  overflow: hidden;
+  padding: 10px 25px;
+  position: relative;
+  text-transform: uppercase;
+  input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+}
+#uploadFile {
+  display: none;
+  background: $white none repeat scroll 0 0;
+  border: medium none;
+  padding: 11px 6px;
+  position: relative;
+  top: 1px;
+}
+md-input-container {
+  margin-bottom: 0;
+}
+md-tabs-content-wrapper {
+  height: 100%;
+}
+md-tabs {
+  height: 100%;
+  md-ink-bar {
+    background: $color_sunglow_approx;
+  }
+  &.md-default-theme md-ink-bar {
+    background: $color_sunglow_approx;
+  }
+}
+md-tab-content {
+  height: 90%;
+}
+.well {
+  overflow: hidden;
+}
+.customizer {
+  background: $white none repeat scroll 0 0;
+  left: -290px;
+  padding: 20px 0;
+  position: fixed;
+  top: 80px;
+  width: 290px;
+  z-index: 99999;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all 0.5s ease-out 0s;
+  &.customizer_toggle {
+    left: 0;
+  }
+  .form-control {
+    padding: 6px 5px;
+    text-transform: uppercase;
+  }
+}
+.layout_options {
+  text-align: center;
+  > li {
+    display: inline-block;
+    height: auto;
+    margin: 15px 4px 0;
+    width: 125px;
+    img {
+      width: 100% !important;
+    }
+  }
+}
+.selector {
+  background: $color_masala_approx none repeat scroll 0 0;
+  color: $white;
+  h2 {
+    color: $black;
+    font: 18px/22px $font_0, $font_1;
+    margin: auto;
+    position: absolute;
+    right: 50px;
+    text-align: center;
+    top: 32px;
+  }
+}
+.color_section {
+  border-top: 1px solid $color_gray_nurse_approx;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  p {
+    color: $color_mountain_mist_approx;
+    font: italic 13px/18px $font_2, $font_1;
+  }
+  ul {
+    padding: 0 7px;
+  }
+  span.customizer_headings {
+    color: $white;
+    display: block;
+    font: 15px/18px $font_0, $font_1;
+    text-align: center;
+  }
+  .color_selector li {
+    border: 2px solid transparent;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 0 2px $color_pumice_approx;
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+    margin: 10px 4px 0;
+    width: 50px;
+  }
+  li.color_selector:hover {
+    border-color: $mercury;
+  }
+}
+.canvas_1 {
+  background: $url_1;
+}
+.canvas_2 {
+  background: $url_2;
+}
+.canvas_3 {
+  background: $url_3;
+}
+.canvas_4 {
+  background: $url_4;
+}
+#selector_icon {
+  background: $white none repeat scroll 0 0;
+  color: $black;
+  cursor: pointer;
+  font-size: 27px;
+  height: 50px;
+  line-height: 50px;
+  position: absolute;
+  right: -50px;
+  text-align: center;
+  top: 0;
+  width: 50px;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 0 1px 5px $color_pumice_approx;
+}
+.social-share {
+  clear: both;
+  position: relative;
+  top: 15px;
+  a {
+    background: $black_haze none repeat scroll 0 0;
+    border: 1px solid $color_bon_jour_approx;
+    display: inline-block;
+    max-width: 37px;
+    padding: 10px 0;
+    position: relative;
+    right: 0;
+    text-align: center;
+    width: 100%;
+    &.fa {
+      &.fa-facebook {
+        color: $color_azure_approx;
+      }
+      &.fa-twitter {
+        color: $color_curious_blue_approx;
+      }
+    }
+  }
+}
+.canvas-pos {
+  margin-top: 10px;
+  input {
+    display: inline-block;
+    margin: 0 5px 0 0;
+  }
+  label {
+    margin-right: 15px;
+    cursor: pointer;
+  }
+}
+@media(min-width: 992px) and(max-width: 1199px) {
+  .canvas_options li {
+    margin: 0 8.5px;
+  }
+  #Products .thumb_listing span {
+    font-size: 10px;
+  }
+  .thumb_listing ul li {
+    margin: auto 4px 10px;
+  }
+}
+@media(min-width: 768px) and(max-width: 991px) {
+  .canvas_section {
+    margin-top: 75px;
+  }
+  .thumb_listing ul li {
+    max-width: 31.9%;
+    img {
+      max-width: 150px;
+    }
+  }
+  .canvas_options li {
+    margin: auto 12px;
+  }
+}
+@media(min-width: 640px) and(max-width: 767px) {
+  .canvas_options li {
+    margin: auto 8.5px;
+  }
+}
+@media(max-width: 767px) {
+  .cart_icon {
+    position: static;
+    max-width: 140px;
+    margin: 20px auto auto;
+    padding: 2px 5px;
+    width: 100%;
+    display: block;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 30px;
+  }
+  #word_cloud {
+    height: auto !important;
+  }
+  .thumb_listing ul li {
+    max-width: 31.6%;
+    img {
+      max-width: 150px;
+    }
+  }
+  .m-prod_detail_attr .m-prod_counter {
+    padding-left: 0 !important;
+    input {
+      position: static !important;
+    }
+  }
+  .tab-content > #text_design {
+    height: auto !important;
+  }
+  #Graphics .tab-pane {
+    height: auto !important;
+  }
+}
+@media(min-width: 480px) and(max-width: 639px) {
+  .thumb_listing ul li {
+    max-width: 47.6%;
+    img {
+      max-width: 170px;
+    }
+  }
+}
+@media(max-width: 639px) {
+  .tab-pane {
+    height: auto !important;
+  }
+  #Graphics.tab-pane {
+    height: auto !important;
+  }
+  .canvas_options li {
+    margin: auto;
+    width: 20%;
+  }
+}
+@media(max-width: 479px) {
+  .thumb_listing ul li {
+    margin: auto auto 15px;
+    max-width: 100%;
+  }
+  .canvas_options li {
+    margin: auto;
+    width: 25%;
+  }
+}
+[ng\:cloak] {
+  display: none !important;
+}
+#Products .thumb_listing {
+  span {
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: all 0.5s ease-out;
+    display: none;
+    font-size: 12px;
+    background: $color_geyser_approx;
+    &.product_title {
+      padding-top: 5px;
+      margin-top: 5px;
+    }
+    &.product_price {
+      padding-bottom: 5px;
+    }
+  }
+  ul li {
+    &:hover span {
+      background: $color_sunglow_approx;
+    }
+    &.selected span {
+      background: $color_sunglow_approx;
+    }
+  }
+}
+.color i {
+  @extend %extend_2;
+}
+.text i {
+  @extend %extend_2;
+}
+.products i {
+  @extend %extend_2;
+}
+.graphics i {
+  @extend %extend_2;
+}
+.editor_section h1 {
+  text-align: center;
+  color: $color_limed_spruce_approx;
+  font-size: 24px;
+  text-transform: uppercase;
+  padding: 15px 0 0;
+}
+.btn-group.open .dropdown-toggle {
+  background: $color_limed_spruce_approx;
+  color: $white;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: none;
+}
+.thumb_listing ul {
+  padding: 15px 0 0;
+  margin: auto;
+  li {
+    background: $white none repeat scroll 0 0;
+    display: inline-block;
+    margin: auto 5px 5px;
+    max-width: 22%;
+    padding: 5px 0;
+    text-align: center;
+    width: 100%;
+    &.list-fonts {
+      background: $white none repeat scroll 0 0;
+      display: inline-block;
+      margin: auto 5px 10px;
+      max-width: 42.2%;
+      padding: 10px 0 0;
+      text-align: center;
+      width: 100%;
+    }
+    img {
+      display: block;
+      max-width: 65px;
+      margin: auto;
+    }
+  }
+}
+.canvas_sub_image ul {
+  text-align: center;
+  li {
+    display: inline-block;
+    cursor: pointer;
+  }
+}
+.pricing span {
+  display: inline-block;
+  text-align: center;
+  line-height: 17px;
+}
+.shape_selector a {
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 50%;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+}

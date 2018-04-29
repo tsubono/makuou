@@ -116,19 +116,19 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="canvas_layers">
-                                    <ul>
-                                        <li ng-repeat="layer in objectLayers" class="ng-scope" ng-click="selectObject(layer.object);">
-                                            <img ng-src="@{{layer.src}}" alt=""/>
-                                        </li>
-                                    </ul>
-                                </div>
                                 <!--// canvas本体 -->
                             </div>
                         </div>
                         <!--// canvas -->
+                        <div class="canvas_layers">
+                            <ul>
+                                <li ng-repeat="layer in objectLayers" class="ng-scope" ng-click="selectObject(layer.object);">
+                                    <img ng-src="@{{layer.src}}" alt=""/>
+                                </li>
+                            </ul>
+                        </div>
 
-                        <div class="row clearfix" ng-cloak>
+                        <div class="row clearfix clear" ng-cloak>
                             <!-- 編集コントロール諸々 -->
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 editor_section" style="height: 400px;overflow: auto;">
                                 <div id="content" class="tabing">

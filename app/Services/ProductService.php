@@ -38,12 +38,12 @@ class ProductService
         if (empty($res["id"]) || $request->hasFile('product.image') || $res["image_edit"] == "1") {
             $res["image"] = $this->uploadFile($request, '', '');
         }
-        if (empty($res["id"]) || $request->hasFile('product.image_600_layout') || $res["image_600_layout_edit"] == "1") {
-            $res["image_600_layout"] = $this->uploadFile($request, '600', 'layout');
-        }
-        if (empty($res["id"]) || $request->hasFile('product.image_600_copy') || $res["image_600_copy_edit"] == "1") {
-            $res["image_600_copy"] = $this->uploadFile($request, '600', 'copy');
-        }
+//        if (empty($res["id"]) || $request->hasFile('product.image_600_layout') || $res["image_600_layout_edit"] == "1") {
+//            $res["image_600_layout"] = $this->uploadFile($request, '600', 'layout');
+//        }
+//        if (empty($res["id"]) || $request->hasFile('product.image_600_copy') || $res["image_600_copy_edit"] == "1") {
+//            $res["image_600_copy"] = $this->uploadFile($request, '600', 'copy');
+//        }
 //        if (empty($res["id"]) || $request->hasFile('product.image_900_layout') || $res["image_900_layout_edit"] == "1") {
 //            $res["image_900_layout"] = $this->uploadFile($request, '900', 'layout');
 //        }

@@ -605,8 +605,11 @@ angular.module('productApp', [
                 curvedTextDefaults: FabricConstants.curvedTextDefaults,
                 imageDefaults: FabricConstants.imageDefaults,
                 imageFilters: FabricConstants.imageFilters,
-                json: {"width": width, "height": height}
+                json: {"width": parseInt(width)+24, "height": parseInt(height)+24}
             });
+
+            jQuery('.canvas-container-outer').css('width', parseInt(width)+"px");
+            jQuery('.canvas-container-outer').css('height', parseInt(height)+"px");
         };
 
         /*

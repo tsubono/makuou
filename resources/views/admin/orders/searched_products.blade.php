@@ -14,7 +14,8 @@
             <td>
                 <button type="button" class="btn btn-default btn-sm set-product"
                         data-id="{{ $product->id }}" data-name="{{ $product->title }}"
-                        data-image="{{ $product->image }}">
+                        data-image="{{ $product->image }}"
+                        data-width="{{ $product->ratio->width * 600 }}" data-height="{{ $product->ratio->height * 600 }}">
                     決定
                 </button>
             </td>
@@ -27,6 +28,7 @@
     // 商品選択時
     $('.set-product').click(function () {
         var id = $(this).data('id');
+        $('#productApp').scope().initFabric($(this).attr('data-width'), $(this).attr('data-height'));
         $('#productApp').scope().loadProduct( $(this).data('name'), $(this).data('image'), id);
         setTimeout(function(){
             $('#productApp').scope().deactivateAll();

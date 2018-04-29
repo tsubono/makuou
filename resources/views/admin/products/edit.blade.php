@@ -93,30 +93,30 @@
                         </div>
                     </div>
                     <div class="form-group input_row">
-                        <label class="control-label col-md-3">表示用画像</label>
+                        <label class="control-label col-md-3">画像</label>
                         <div class="col-md-6">
                             <input type="hidden" name="product[image_edit]" value="-1">
                             <input class="upload_file" name="product[image]" type="file"
                                    multiple="" accept=".svg" value="{{ old('product.image', $product->image) }}">
                         </div>
                     </div>
-                    <div class="form-group input_row">
-                        <label for="product-category_3" class="control-label col-md-3">画像 ( サイズ：600 )</label>
-                        <div class="col-md-9 pict">
-                            <div class="col-md-6 col-xs-12">
-                                <div>【 レイアウト用画像 】</div>
-                                <input type="hidden" name="product[image_600_layout_edit]" value="-1">
-                                <input class="upload_file" name="product[image_600_layout]" type="file"
-                                       multiple="" accept=".svg" value="{{ old('product.image_600_layout', $product->image_600_layout) }}">
-                            </div>
-                            <div class="col-md-6 col-xs-12">
-                                <div>【 印刷用データ 】</div>
-                                <input type="hidden" name="product[image_600_copy_edit]" value="-1">
-                                <input class="upload_file" name="product[image_600_copy]" type="file" multiple=""
-                                       accept=".ai,.eps,.svg" value="{{ old('product.image_600_copy', $product->image_600_copy) }}">
-                            </div>
-                        </div>
-                    </div>
+                    {{--<div class="form-group input_row">--}}
+                        {{--<label for="product-category_3" class="control-label col-md-3">画像 ( サイズ：600 )</label>--}}
+                        {{--<div class="col-md-9 pict">--}}
+                            {{--<div class="col-md-6 col-xs-12">--}}
+                                {{--<div>【 レイアウト用画像 】</div>--}}
+                                {{--<input type="hidden" name="product[image_600_layout_edit]" value="-1">--}}
+                                {{--<input class="upload_file" name="product[image_600_layout]" type="file"--}}
+                                       {{--multiple="" accept=".svg" value="{{ old('product.image_600_layout', $product->image_600_layout) }}">--}}
+                            {{--</div>--}}
+                            {{--<div class="col-md-6 col-xs-12">--}}
+                                {{--<div>【 印刷用データ 】</div>--}}
+                                {{--<input type="hidden" name="product[image_600_copy_edit]" value="-1">--}}
+                                {{--<input class="upload_file" name="product[image_600_copy]" type="file" multiple=""--}}
+                                       {{--accept=".ai,.eps,.svg" value="{{ old('product.image_600_copy', $product->image_600_copy) }}">--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
                     {{--<div class="form-group input_row">--}}
                         {{--<label for="product-category_3" class="control-label col-md-3">画像 ( サイズ：900 )</label>--}}
                         {{--<div class="col-md-9 pict">--}}
@@ -325,45 +325,45 @@
                 $("[name='product[image]']").attr('required', true);
             });
 
-            $("[name='product[image_600_layout]']").fileinput({
-                maxFilePreviewSize: 10240,
-                showUpload: false,
-                maxFileCount: 1,
-                browseClass: 'btn btn-info fileinput-browse-button',
-                browseLabel: '',
-                showRemove: true,
-                removeLabel: '',
-                removeClass: 'btn btn-danger',
-                @if (!empty(old('product.image_600_layout', $product->image_600_layout)))
-                    initialPreview: "{{ asset(env('PUBLIC', ''). old('product.image_600_layout', $product->image_600_layout)) }}",
-                    initialPreviewAsData: true,
-                    overwriteInitial : true,
-                    initialPreviewDownloadUrl: "{{ asset(env('PUBLIC', ''). old('product.image_600_layout', $product->image_600_layout)) }}"
-                @endif
-            });
-            $("[name='product[image_600_layout]']").on('filecleared', function(event) {
-                $("[name='product[image_600_layout_edit]']").val(1);
-            });
+            {{--$("[name='product[image_600_layout]']").fileinput({--}}
+                {{--maxFilePreviewSize: 10240,--}}
+                {{--showUpload: false,--}}
+                {{--maxFileCount: 1,--}}
+                {{--browseClass: 'btn btn-info fileinput-browse-button',--}}
+                {{--browseLabel: '',--}}
+                {{--showRemove: true,--}}
+                {{--removeLabel: '',--}}
+                {{--removeClass: 'btn btn-danger',--}}
+                {{--@if (!empty(old('product.image_600_layout', $product->image_600_layout)))--}}
+                    {{--initialPreview: "{{ asset(env('PUBLIC', ''). old('product.image_600_layout', $product->image_600_layout)) }}",--}}
+                    {{--initialPreviewAsData: true,--}}
+                    {{--overwriteInitial : true,--}}
+                    {{--initialPreviewDownloadUrl: "{{ asset(env('PUBLIC', ''). old('product.image_600_layout', $product->image_600_layout)) }}"--}}
+                {{--@endif--}}
+            {{--});--}}
+            {{--$("[name='product[image_600_layout]']").on('filecleared', function(event) {--}}
+                {{--$("[name='product[image_600_layout_edit]']").val(1);--}}
+            {{--});--}}
             
-            $("[name='product[image_600_copy]']").fileinput({
-                maxFilePreviewSize: 10240,
-                showUpload: false,
-                maxFileCount: 1,
-                browseClass: 'btn btn-info fileinput-browse-button',
-                browseLabel: '',
-                showRemove: true,
-                removeLabel: '',
-                removeClass: 'btn btn-danger',
-                @if (!empty(old('product.image_600_copy', $product->image_600_copy)))
-                    initialPreview: "{{ asset(env('PUBLIC', ''). old('product.image_600_copy', $product->image_600_copy)) }}",
-                    initialPreviewAsData: true,
-                    overwriteInitial : true,
-                    initialPreviewDownloadUrl: "{{ asset(env('PUBLIC', ''). old('product.image_600_copy', $product->image_600_copy)) }}",
-                @endif
-            });
-            $("[name='product[image_600_copy]']").on('filecleared', function(event) {
-                $("[name='product[image_600_copy_edit]']").val(1);
-            });
+            {{--$("[name='product[image_600_copy]']").fileinput({--}}
+                {{--maxFilePreviewSize: 10240,--}}
+                {{--showUpload: false,--}}
+                {{--maxFileCount: 1,--}}
+                {{--browseClass: 'btn btn-info fileinput-browse-button',--}}
+                {{--browseLabel: '',--}}
+                {{--showRemove: true,--}}
+                {{--removeLabel: '',--}}
+                {{--removeClass: 'btn btn-danger',--}}
+                {{--@if (!empty(old('product.image_600_copy', $product->image_600_copy)))--}}
+                    {{--initialPreview: "{{ asset(env('PUBLIC', ''). old('product.image_600_copy', $product->image_600_copy)) }}",--}}
+                    {{--initialPreviewAsData: true,--}}
+                    {{--overwriteInitial : true,--}}
+                    {{--initialPreviewDownloadUrl: "{{ asset(env('PUBLIC', ''). old('product.image_600_copy', $product->image_600_copy)) }}",--}}
+                {{--@endif--}}
+            {{--});--}}
+            {{--$("[name='product[image_600_copy]']").on('filecleared', function(event) {--}}
+                {{--$("[name='product[image_600_copy_edit]']").val(1);--}}
+            {{--});--}}
 
             {{--$("[name='product[image_900_layout]']").fileinput({--}}
                 {{--maxFilePreviewSize: 10240,--}}

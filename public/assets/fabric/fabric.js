@@ -1904,28 +1904,30 @@ angular.module('common.fabric', [
                         });
                     });
 
+                    // add:canvasの外から出れないようにする
                     canvas.on('object:moving', function(e) {
                         e.target.opacity = 0.5;
 
-                        var activeObject = e.target;
-
-                        if (activeObject.get('left') < 0) {
-                            activeObject.set('left', 0);
-                        }
-
-                        if (activeObject.get('top') < 0) {
-                            activeObject.set('top', 0);
-                        }
-
-                        if (activeObject.get('left') + activeObject.get('width') > canvas.getWidth())
-                        {
-                            activeObject.set('left', canvas.getWidth() - activeObject.get('width'));
-                        }
-
-                        if (activeObject.get('top') + activeObject.get('height') > canvas.getHeight())
-                        {
-                            activeObject.set('top', canvas.getHeight() - activeObject.get('height'));
-                        }
+                        // やっぱりなし
+                        // var activeObject = e.target;
+                        //
+                        // if (activeObject.get('left') < 0) {
+                        //     activeObject.set('left', 0);
+                        // }
+                        //
+                        // if (activeObject.get('top') < 0) {
+                        //     activeObject.set('top', 0);
+                        // }
+                        //
+                        // if (activeObject.get('left') + activeObject.get('width') > canvas.getWidth())
+                        // {
+                        //     activeObject.set('left', canvas.getWidth() - activeObject.get('width'));
+                        // }
+                        //
+                        // if (activeObject.get('top') + activeObject.get('height') > canvas.getHeight())
+                        // {
+                        //     activeObject.set('top', canvas.getHeight() - activeObject.get('height'));
+                        // }
                     });
 
                     canvas.on('object:modified', function(e) {

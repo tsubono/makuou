@@ -35,6 +35,9 @@ li {
 .navbar-nav>.user-menu>.dropdown-menu>.user-body a {
     color: #fff !important;
 }
+.clear {
+    clear: both;
+}
 .mt-10 {
     margin-top: 10px;
 }

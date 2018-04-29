@@ -170,9 +170,13 @@ body {
     display: block;
     float: none;
     margin: auto;
-    max-width: 1000px;
     border: 1px dashed #D91E18;
+    overflow: auto;
 }
+.canvas-container, .canvas {
+    padding-bottom: 12px;
+}
+
 .canvas_details .clearfix > span{margin-top: 10px; margin-right: 10px;}
 .fabric-container {
     position: relative;
@@ -1203,29 +1207,31 @@ body.body_overlay::after {
     width: 92%;
 }
 .canvas_layers {
-    float: left;
-    width: 55px;
+    /*float: left;*/
+    width: 100%;
     position: relative;
-    top: 45px;
     left: 20px;
-    max-height: 597px;
+    max-width: 92%;
     overflow: auto;
+    max-height: 200px;
 }
 .canvas_layers ul li {
     height: 55px;
     width: 55px;
     margin-bottom: 10px;
     background: gainsboro;
+    display: inline;
+    float: left;
+    margin-left: 10px;
 }
 .canvas_layers ul li img {
     max-height: 40px;
     max-width: 40px;
 
 }
-/*.fabric-container {*/
-    /*overflow: auto;*/
-    /*max-height: 500px;*/
-/*}*/
+.fabric-container {
+    overflow: auto;
+}
 
 .tabing ul#tabs.design_modal li {
     width: 33.3%;

@@ -96,21 +96,21 @@
                                    multiple="" accept=".svg" required>
                         </div>
                     </div>
-                    <div class="form-group input_row">
-                        <label for="product-category_3" class="control-label col-md-3">画像 ( サイズ：600 )</label>
-                        <div class="col-md-9">
-                            <div class="col-md-6 col-xs-12">
-                                <div>【 レイアウト用画像 】</div>
-                                <input class="upload_file" name="product[image_600_layout]" type="file"
-                                       multiple="" accept=".svg">
-                            </div>
-                            <div class="col-md-6 col-xs-12">
-                                <div>【 印刷用データ 】</div>
-                                <input class="upload_file" name="product[image_600_copy]" type="file" multiple=""
-                                       accept=".ai,.eps,.svg">
-                            </div>
-                        </div>
-                    </div>
+                    {{--<div class="form-group input_row">--}}
+                        {{--<label for="product-category_3" class="control-label col-md-3">画像 ( サイズ：600 )</label>--}}
+                        {{--<div class="col-md-9">--}}
+                            {{--<div class="col-md-6 col-xs-12">--}}
+                                {{--<div>【 レイアウト用画像 】</div>--}}
+                                {{--<input class="upload_file" name="product[image_600_layout]" type="file"--}}
+                                       {{--multiple="" accept=".svg">--}}
+                            {{--</div>--}}
+                            {{--<div class="col-md-6 col-xs-12">--}}
+                                {{--<div>【 印刷用データ 】</div>--}}
+                                {{--<input class="upload_file" name="product[image_600_copy]" type="file" multiple=""--}}
+                                       {{--accept=".ai,.eps,.svg">--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
                     {{--<div class="form-group input_row">--}}
                         {{--<label for="product-category_3" class="control-label col-md-3">画像 ( サイズ：900 )</label>--}}
                         {{--<div class="col-md-9">--}}

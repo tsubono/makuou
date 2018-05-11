@@ -2,8 +2,8 @@
 ip: "10.0.0.10"
 memory: 2048
 cpus: 1
-hostname: reassosystem
-name: reassosystem
+hostname: laravel
+name: laravel
 provider: virtualbox
 
 authorize: ~/.ssh/id_rsa.pub
@@ -12,12 +12,12 @@ keys:
     - ~/.ssh/id_rsa
 
 folders:
-    - map: "~/workspace/reasso_system"
-      to: "/home/vagrant/reasso_system"
+    - map: ~/Code
+      to: /home/vagrant/laravel
 
 sites:
-    - map: reasso_system.app
-      to: "/home/vagrant/reasso_system/public"
+    - map: laravel.test
+      to: /home/vagrant/laravel/public
 
 databases:
     - homestead

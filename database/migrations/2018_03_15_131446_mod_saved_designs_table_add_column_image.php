@@ -25,8 +25,10 @@ class ModSavedDesignsTableAddColumnImage extends Migration
      */
     public function down()
     {
-        Schema::table('saved_designs', function (Blueprint $table) {
-            $table->dropColumn('image');
-        });
+        if (Schema::hasTable('saved_designs')) {
+            Schema::table('saved_designs', function (Blueprint $table) {
+                $table->dropColumn('image');
+            });
+        }
     }
 }

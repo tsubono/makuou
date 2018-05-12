@@ -16,3 +16,4 @@ yarn-error.log
 /storage/stamp_files/*
 /storage/upload/*
 *.log
+composer.phar

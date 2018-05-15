@@ -605,11 +605,11 @@ angular.module('productApp', [
                 curvedTextDefaults: FabricConstants.curvedTextDefaults,
                 imageDefaults: FabricConstants.imageDefaults,
                 imageFilters: FabricConstants.imageFilters,
-                json: {"width": parseInt(width)+24, "height": parseInt(height)+24}
+                json: {"width": (parseInt(width)+24)*3.78, "height": (parseInt(height)+24)*3.78}
             });
 
-            jQuery('.canvas-container-outer').css('width', parseInt(width)+"px");
-            jQuery('.canvas-container-outer').css('height', parseInt(height)+"px");
+            jQuery('.canvas-container-outer').css('width', parseInt(width)*3.78+"px");
+            jQuery('.canvas-container-outer').css('height', parseInt(height)*3.78+"px");
         };
 
         /*

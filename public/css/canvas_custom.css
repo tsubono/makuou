@@ -1231,6 +1231,7 @@ body.body_overlay::after {
 }
 .fabric-container {
     overflow: auto;
+    height: 600px;
 }
 
 .tabing ul#tabs.design_modal li {

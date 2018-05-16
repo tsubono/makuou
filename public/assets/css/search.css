@@ -169,12 +169,18 @@ img {
 }
 
 .pickup__heading {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    position: relative;
     height: 60px;
     overflow: hidden;
     background: url("../img/search/bg--heading.png") center center repeat, linear-gradient(#9eeaf7, #034099);
+}
+
+.pickup__heading img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
 }
 
 .pickup__content {

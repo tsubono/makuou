@@ -1,5 +1,9 @@
 @extends('front/layouts.default')
 
+@push('css')
+    <link rel="stylesheet" type="text/css" href="{{asset("assets/css/search.css")}}">
+@endpush
+
 @section('title', '横断幕を作る')
 
 @section('content')
@@ -15,7 +19,7 @@
                 <li><a href="{{url('/')}}">HOME</a></li>
                 <li>横断幕を作る</li>
             </ul>
-            @include('front/search_form')
+            @include('front.components.search_form')
             <!-- /.search -->
             <section class="pickup">
                 <h2 class="pickup__heading">

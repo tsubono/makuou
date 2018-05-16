@@ -1,5 +1,9 @@
 @extends('front/layouts.default')
 
+@push('css')
+    <link rel="stylesheet" type="text/css" href="{{asset("assets/css/search.css")}}">
+@endpush
+
 @section('title', '検索結果')
 
 @section('content')
@@ -206,7 +210,7 @@
                 </div>
                 <!-- .result__box -->
             </div>
-            @include('front/search_form')
+            @include('front.components.search_form')
         </div>
     </div>
 </main>

@@ -1,5 +1,14 @@
 @extends('front/layouts.default')
 
+@push('css')
+    <link rel="stylesheet" type="text/css" href="{{asset("assets/css/search.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/css/layer.css")}}">
+@endpush
+
+@push('script')
+    <script src="{{asset("assets/js/search.js")}}"></script>
+@endpush
+
 @section('title', '価格表')
 
 @section('content')

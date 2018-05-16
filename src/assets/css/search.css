@@ -1,0 +1,316 @@
+img {
+    display: block;
+}
+
+/* search
+------------------------------------------------------------ */
+.search {
+    padding: 20px 6px;
+    background-color: #00daa1;
+}
+
+.search__inner {
+    background-color: #fff;
+}
+
+.search__heading {
+    position: relative;
+    height: 58px;
+    border: 3px solid #fe8301;
+    background: linear-gradient(#ffd900, #fe8400);
+    box-shadow: 0 2px 0 0 #ffe866 inset;
+}
+
+.search__heading img {
+    position: absolute;
+    top: -12px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.search__form {
+    padding: 30px;
+    background-color: #feff99;
+}
+
+.search__item {
+    position: relative;
+    height: 20px;
+    margin-bottom: 20px;
+    padding-left: 32px;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.search__item::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    content: "";
+    background-color: #000;
+}
+
+.search__item:not(:first-of-type) {
+    margin-top: 30px;
+}
+
+.search__option--radio {
+    display: grid;
+    grid-gap: 15px 20px;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.search__option--radio li {
+    position: relative;
+    height: 40px;
+}
+
+.search__option--radio input[type="radio"] {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+}
+
+.search__option--radio label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 40px;
+    width: 100%;
+    border: 1px solid #d2d2d2;
+    border-radius: 2px;
+    line-height: 38px;
+    text-align: center;
+    cursor: pointer;
+    background: linear-gradient(#fffefe, #d2d2d2);
+}
+
+.search__option--radio input[type="radio"]:checked + label {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+    background: linear-gradient(#3a5fda, #7ba8fe);
+}
+
+.search__option--checkbox {
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 1;
+}
+
+.search__option--checkbox li {
+    margin: 0 25px 1em 0;
+}
+
+.search__option--checkbox input[type="checkbox"] {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+}
+
+.search__option--checkbox label {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    font-size: 0.875rem;
+}
+
+.search__option--checkbox label::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 17px;
+    height: 15px;
+    content: "";
+    overflow: hidden;
+    background: url("../img/search/bg--checkbox.png") 1px top no-repeat;
+    background-size: 40px 15px;
+}
+
+.search__option--checkbox input[type="checkbox"]:checked + label::before {
+    background-position: right 1px top;
+}
+
+.search input[type="submit"] {
+    display: block;
+    margin: 30px auto 0 auto;
+    width: 240px;
+    height: 56px;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    text-indent: 240px;
+    white-space: nowrap;
+    cursor: pointer;
+    overflow: hidden;
+    background: url("../img/search/text--btn@2x.png") center 12px no-repeat, linear-gradient(#ff0000, #bd0000);
+    background-size: 78px 34px, auto auto;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1119px) {
+    .search__option--checkbox label::before {
+        background: url("../img/search/bg--checkbox@2x.png") 1px top no-repeat;
+        background-size: 40px 15px;
+    }
+}
+
+/* pickup
+------------------------------------------------------------ */
+.pickup {
+    margin-top: 40px;
+}
+
+.pickup__heading {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 60px;
+    overflow: hidden;
+    background: url("../img/search/bg--heading.png") center center repeat, linear-gradient(#9eeaf7, #034099);
+}
+
+.pickup__content {
+    display: grid;
+    margin-top: 30px;
+    grid-gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.pickup__box > div {
+    width: 100%;
+}
+
+.pickup__box img {
+    width: 100%;
+    height: auto;
+}
+
+.pickup__info {
+    margin-top: 5px;
+    font-size: 1.125rem;
+    font-weight: bold;
+}
+
+.pickup__info dt, .pickup__info dd {
+    display: inline-block;
+}
+
+.pickup__info dt:not(:first-child) {
+    margin-left: 1em;
+}
+
+@media screen and (max-width: 767px) {
+    .pickup__content {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* result
+------------------------------------------------------------ */
+.result {
+    display: grid;
+    margin-bottom: 50px;
+    grid-gap: 45px 30px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.result__box > div {
+    width: 100%;
+}
+
+.result__box img {
+    width: 100%;
+}
+
+.result__title {
+    position: relative;
+    height: 40px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 40px;
+}
+
+.result__title::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 8px;
+    height: 40px;
+    content: "";
+    background: linear-gradient(#fff001, #ef8201);
+}
+
+.result__img {
+    width: 100%;
+    height: auto;
+}
+
+.result__list {
+    display: flex;
+}
+
+.result__list dt {
+    position: relative;
+    width: 80px;
+    margin-top: 10px;
+    padding-left: 20px;
+    line-height: 32px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.result__list dt::before {
+    position: absolute;
+    top: 9px;
+    left: 0;
+    display: block;
+    width: 14px;
+    height: 14px;
+    content: "";
+    background-color: #000;
+}
+
+.result__list dd {
+    flex: 1;
+}
+
+.result__tags li {
+    display: inline-block;
+    height: 32px;
+    margin: 10px 0 0 5px;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+}
+
+.result__tags a {
+    display: block;
+    padding: 0 10px;
+    color: #0006ff;
+    font-size: 13px;
+    line-height: 30px;
+    white-space: nowrap;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1119px) {
+    .result {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .result {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

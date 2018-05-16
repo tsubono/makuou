@@ -21,18 +21,18 @@ Auth::routes();
 */
 Route::get('/', function () { return redirect('/home'); });
 
-//Route::get('/canvas',     'CanvasController@index')->name('canvas');
-//Route::post('/canvas/getProducts',     'CanvasController@getProducts')->name('getProducts');
-//Route::post('/canvas/getProduct',     'CanvasController@getProduct')->name('getProduct');
-//Route::post('/canvas/getSavedDesigns',     'CanvasController@getSavedDesigns')->name('getSavedDesigns');
-//Route::post('/canvas/getStampCategories',     'CanvasController@getStampCategories')->name('getStampCategories');
-//Route::post('/canvas/getStamps',     'CanvasController@getStamps')->name('getStamps');
-//Route::post('/canvas/uploadImage',     'CanvasController@uploadImage')->name('uploadImage');
-//Route::post('/canvas/saveObjectAsSvg',     'CanvasController@saveObjectAsSvg')->name('saveObjectAsSvg');
-//Route::post('/canvas/saveDesignDB',     'CanvasController@saveDesignDB')->name('saveDesignDB');
-//Route::post('/canvas/saveDesign',     'CanvasController@saveDesign')->name('saveDesign');
-//Route::post('/canvas/getSavedDesign',     'CanvasController@getSavedDesign')->name('getSavedDesign');
-//Route::post('/canvas/deleteSavedDesign',     'CanvasController@deleteSavedDesign')->name('deleteSavedDesign');
+Route::get('/canvas',     'CanvasController@index')->name('canvas');
+Route::post('/canvas/getProducts',     'CanvasController@getProducts')->name('getProducts');
+Route::post('/canvas/getProduct',     'CanvasController@getProduct')->name('getProduct');
+Route::post('/canvas/getSavedDesigns',     'CanvasController@getSavedDesigns')->name('getSavedDesigns');
+Route::post('/canvas/getStampCategories',     'CanvasController@getStampCategories')->name('getStampCategories');
+Route::post('/canvas/getStamps',     'CanvasController@getStamps')->name('getStamps');
+Route::post('/canvas/uploadImage',     'CanvasController@uploadImage')->name('uploadImage');
+Route::post('/canvas/saveObjectAsSvg',     'CanvasController@saveObjectAsSvg')->name('saveObjectAsSvg');
+Route::post('/canvas/saveDesignDB',     'CanvasController@saveDesignDB')->name('saveDesignDB');
+Route::post('/canvas/saveDesign',     'CanvasController@saveDesign')->name('saveDesign');
+Route::post('/canvas/getSavedDesign',     'CanvasController@getSavedDesign')->name('getSavedDesign');
+Route::post('/canvas/deleteSavedDesign',     'CanvasController@deleteSavedDesign')->name('deleteSavedDesign');
 
 
 /*

@@ -340,7 +340,7 @@ angular.module('common.fabric', [
                     self.setObjectZoom(object);
                     canvas.setActiveObject(object);
                     object.bringToFront();
-                    self.center();
+                    // self.center();
                     self.render();
 
                 };

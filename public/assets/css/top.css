@@ -1,0 +1,457 @@
+@charset "UTF-8";
+/* ------------------------------------------------------------
+   TOPページ
+------------------------------------------------------------ */
+/*
+ * 目次
+ * 01.background
+ * 02.mainimg
+ * 03.pickup
+ * 04.contents
+ * 05.feature
+ */
+/* 01.background
+------------------------------------------------------------ */
+div.bg {
+    background-image: url(../img/common/bg.png), url(../img/common/bg_pattern.gif);
+    background-repeat: no-repeat, repeat;
+    background-size: 100%, auto;
+    padding-bottom: 100px;
+}
+
+/* 02.mainimg
+------------------------------------------------------------ */
+.mainimg {
+    padding: 35px 0 0;
+    text-align: center;
+    position: relative;
+}
+
+.mainimg div img {
+    width: 100%;
+    max-width: 1436px;
+}
+
+.mainimg div.btn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 1%;
+}
+
+.mainimg div.btn img {
+    width: 40%;
+    max-width: 511px;
+}
+
+.mainimg div.btn a {
+    transition: .3s;
+}
+
+.mainimg div.btn a:hover {
+    opacity: 0.7;
+}
+
+/* 03.pickup
+------------------------------------------------------------ */
+.pickup {
+    width: 90%;
+    max-width: 1225px;
+    margin: 80px auto 50px;
+}
+
+.pickup li {
+    width: 22.75%;
+    margin-right: 3%;
+    border: solid 3px #231815;
+    text-align: center;
+    padding: 30px 0;
+    background: url(../img/common/p_bg.gif);
+    float: left;
+    box-sizing: border-box;
+}
+
+.pickup li:last-child {
+    margin-right: 0;
+}
+
+.pickup li img {
+    width: 40%;
+}
+
+.pickup li:first-child img {
+    max-width: 47px;
+}
+
+.pickup li:nth-child(2) img {
+    max-width: 43px;
+}
+
+.pickup li:nth-child(3) img {
+    max-width: 58px;
+}
+
+.pickup li:nth-child(4) img {
+    max-width: 58px;
+}
+
+.pickup li div {
+    margin-bottom: 10px;
+}
+
+.pickup li:nth-child(3) div {
+    margin-top: 14px;
+}
+
+.pickup li:nth-child(4) div {
+    margin-top: 12px;
+}
+
+.pickup li p {
+    font-weight: 600;
+}
+
+/* 04.contents
+------------------------------------------------------------ */
+.contents {
+    width: 90%;
+    max-width: 1225px;
+    margin: auto;
+    background: #fff;
+    border: solid 3px #231815;
+    box-sizing: border-box;
+    padding: 35px 35px 100px;
+}
+
+.contents h2 {
+    background: url(../img/common/bg_headorg.gif);
+    position: relative;
+    font-size: 171%;
+    font-weight: 600;
+    color: #fff;
+    padding: 17px 0 15px 7%;
+    margin-bottom: 30px;
+}
+
+.contents h2::before {
+    position: absolute;
+    content: "";
+    background: url(../img/top/head_mark.png) no-repeat;
+    background-size: contain;
+    width: 61px;
+    height: 75px;
+    left: -10px;
+    bottom: -5px;
+}
+
+.contents section {
+    margin-bottom: 100px;
+}
+
+.contents section li a {
+    transition: .3s;
+}
+
+.contents section li a:hover {
+    opacity: 0.7;
+}
+
+.contents section.box3 li {
+    float: left;
+    width: 31%;
+    margin-right: 3%;
+    margin-bottom: 20px;
+}
+
+.contents section.box3 li:nth-child(3n) {
+    margin-right: 0;
+}
+
+.contents section.box3 li img {
+    width: 100%;
+    max-width: 363px;
+}
+
+.contents section.box5 li {
+    float: left;
+    width: 18%;
+    margin-right: 2.5%;
+    margin-bottom: 20px;
+}
+
+.contents section.box5 li:nth-child(5n) {
+    margin-right: 0;
+}
+
+.contents section.box5 li img {
+    width: 100%;
+    max-width: 363px;
+}
+
+.contents .btn {
+    text-align: center;
+}
+
+.contents .btn img {
+    width: 100%;
+    max-width: 600px;
+}
+
+.contents .btn a {
+    transition: .3s;
+}
+
+.contents .btn a:hover {
+    opacity: 0.7;
+}
+
+/* 05.feature
+------------------------------------------------------------ */
+.contents .feature {
+    margin-bottom: 0;
+}
+
+.feature li {
+    width: 48.6%;
+    float: left;
+    margin-right: 2.6%;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    border: solid 3px #231815;
+    text-align: center;
+    padding: 30px;
+}
+
+.feature li:nth-child(1) {
+    background-image: url(../img/top/01.png), url(../img/common/bg_dotwh.gif);
+    background-repeat: no-repeat,repeat;
+    background-size: 90px, auto;
+}
+
+.feature li:nth-child(2) {
+    background-image: url(../img/top/02.png), url(../img/common/bg_dotwh.gif);
+    background-repeat: no-repeat,repeat;
+    background-size: 90px, auto;
+}
+
+.feature li:nth-child(3) {
+    background-image: url(../img/top/03.png), url(../img/common/bg_dotwh.gif);
+    background-repeat: no-repeat,repeat;
+    background-size: 90px, auto;
+}
+
+.feature li:nth-child(4) {
+    background-image: url(../img/top/04.png), url(../img/common/bg_dotwh.gif);
+    background-repeat: no-repeat,repeat;
+    background-size: 90px, auto;
+}
+
+.feature li:nth-child(5) {
+    background-image: url(../img/top/05.png), url(../img/common/bg_dotwh.gif);
+    background-repeat: no-repeat,repeat;
+    background-size: 90px, auto;
+}
+
+.feature li:nth-child(6) {
+    background-image: url(../img/top/06.png), url(../img/common/bg_dotwh.gif);
+    background-repeat: no-repeat,repeat;
+    background-size: 90px, auto;
+}
+
+.feature li:nth-child(2n) {
+    margin-right: 0;
+}
+
+.feature dt {
+    font-weight: bold;
+    font-size: 128%;
+    position: relative;
+    padding: 40px 0 10px;
+    margin-bottom: 15px;
+}
+
+.feature dt span.blue {
+    font-size: 122%;
+    color: #003f97;
+}
+
+.feature li dt::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    margin: auto;
+    width: 31px;
+    height: 31px;
+}
+
+.feature li:first-child dt::before {
+    background: url(../img/top/01_ico.png) no-repeat;
+    background-size: contain;
+}
+
+.feature li:nth-child(2) dt::before {
+    background: url(../img/top/02_ico.png) no-repeat;
+    background-size: contain;
+}
+
+.feature li:nth-child(3) dt::before {
+    background: url(../img/top/03_ico.png) no-repeat;
+    background-size: contain;
+}
+
+.feature li:nth-child(4) dt::before {
+    background: url(../img/top/04_ico.png) no-repeat;
+    background-size: contain;
+}
+
+.feature li:nth-child(5) dt::before {
+    background: url(../img/top/05_ico.png) no-repeat;
+    background-size: contain;
+}
+
+.feature li:nth-child(6) dt::before {
+    background: url(../img/top/06_ico.png) no-repeat;
+    background-size: contain;
+}
+
+.feature dt::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: url(../img/common/sl_blue.gif);
+    background-position: bottom;
+}
+
+@media screen and (max-width: 767px) {
+    /* 02.mainimg
+    ------------------------------------------------------------ */
+    .mainimg {
+        padding: 20px 0 0;
+    }
+    /* 03.pickup
+    ------------------------------------------------------------ */
+    .pickup {
+        width: 90%;
+        max-width: 1225px;
+        margin: 30px auto 10px;
+    }
+    .pickup li, .pickup li:last-child {
+        width: 47%;
+        margin-right: 4.5%;
+        margin-bottom: 15px;
+        padding: 15px 0;
+    }
+    .pickup li:nth-child(2n) {
+        margin-right: 0;
+    }
+    .pickup li p {
+        font-size: 12px;
+    }
+    .pickup li:first-child img {
+        max-width: 39px;
+    }
+    .pickup li:nth-child(2) img {
+        max-width: 35px;
+    }
+    .pickup li:nth-child(3) img {
+        max-width: 50px;
+    }
+    .pickup li:nth-child(4) img {
+        max-width: 50px;
+    }
+    /* 04.contents
+    ------------------------------------------------------------ */
+    .contents {
+        width: 90%;
+        max-width: 1225px;
+        margin: auto;
+        background: #fff;
+        border: solid 3px #231815;
+        box-sizing: border-box;
+        padding: 35px 15px 60px;
+    }
+    .contents section {
+        margin-bottom: 60px;
+    }
+    .contents h2 {
+        font-size: 114%;
+        padding: 13px 0 13px 15%;
+    }
+    .contents h2::before {
+        width: 40px;
+        height: 49px;
+        left: -3px;
+        bottom: 5px;
+    }
+    .contents .btn img {
+        max-width: 450px;
+    }
+    .contents section.box3 li, .contents section.box3 li:nth-child(3n) {
+        float: none;
+        width: 100%;
+        margin: 0 auto 20px;
+    }
+    .contents section.box3 li img {
+        max-width: none;
+    }
+    .contents section.box5 li, .contents section.box5 li:nth-child(5n) {
+        float: left;
+        width: 47%;
+        margin-right: 4.5%;
+        margin-bottom: 10px;
+    }
+    .contents section.box5 li:nth-child(2n) {
+        margin-right: 0;
+    }
+    /* 05.feature
+    ------------------------------------------------------------ */
+    .feature li {
+        width: 100%;
+        float: none;
+        margin-right: 0;
+        border: solid 2px #003f97;
+        padding: 25px 20px;
+    }
+    .feature dt {
+        font-size: 114%;
+    }
+    .feature dd {
+        text-align: left;
+    }
+    .feature li:nth-child(1) {
+        background-image: url(../img/top/01.png), url(../img/common/bg_dotwh.gif);
+        background-repeat: no-repeat,repeat;
+        background-size: 70px, auto;
+    }
+    .feature li:nth-child(2) {
+        background-image: url(../img/top/02.png), url(../img/common/bg_dotwh.gif);
+        background-repeat: no-repeat,repeat;
+        background-size: 70px, auto;
+    }
+    .feature li:nth-child(3) {
+        background-image: url(../img/top/03.png), url(../img/common/bg_dotwh.gif);
+        background-repeat: no-repeat,repeat;
+        background-size: 70px, auto;
+    }
+    .feature li:nth-child(4) {
+        background-image: url(../img/top/04.png), url(../img/common/bg_dotwh.gif);
+        background-repeat: no-repeat,repeat;
+        background-size: 70px, auto;
+    }
+    .feature li:nth-child(5) {
+        background-image: url(../img/top/05.png), url(../img/common/bg_dotwh.gif);
+        background-repeat: no-repeat,repeat;
+        background-size: 70px, auto;
+    }
+    .feature li:nth-child(6) {
+        background-image: url(../img/top/06.png), url(../img/common/bg_dotwh.gif);
+        background-repeat: no-repeat,repeat;
+        background-size: 70px, auto;
+    }
+}

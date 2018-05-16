@@ -50,6 +50,7 @@ Route::namespace('Front')->group(function() {
     Route::get('/concept',      'ConceptController@index')->name('concept');
     Route::get('/price',      'PriceController@index')->name('price');
     Route::get('/faq',      'FaqController@index')->name('faq');
+    Route::get('/company',      'CompanyController@index')->name('company');
 });
 /*
 |--------------------------------------------------------------------------

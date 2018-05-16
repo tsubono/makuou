@@ -1,0 +1,112 @@
+@charset "UTF-8";
+/* ------------------------------------------------------------
+   下層ページ tanaka作成分
+------------------------------------------------------------ */
+/*
+ * 目次
+ * 
+ * 
+ * 
+ * 
+ */
+
+/* common
+------------------------------------------------------------ */
+/*.main__title h1 img {
+    margin: 0 auto;
+    width: 100%;
+}*/
+p.txt {
+    font-size: .875rem;
+    line-height: 1.8;
+}
+.l-inner > .pickup {
+    width: 100%;
+    margin: 40px auto 0;
+    padding: 30px 30px 50px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+}
+.pickup .btn { width: 100%; }
+.pickup .btn img { 
+    margin: 50px auto 0;
+    width: 100%;
+    max-width: 606px;
+}
+
+/* contract
+------------------------------------------------------------ */
+.contract h1 img { width: 100%; max-width: 191px; }
+.contract p.txt { margin: 8px auto 30px; }
+
+/* privacy
+------------------------------------------------------------ */
+.privacy h1 img { width: 100%; max-width: 452px; }
+.privacy p.txt { margin: 8px auto 30px; }
+
+/* order
+------------------------------------------------------------ */
+.order h1 img { width: 100%; max-width: 657px; }
+
+/* concept
+------------------------------------------------------------ */
+.concept h1 img { width: 100%; max-width: 276px; }
+
+/* guide
+------------------------------------------------------------ */
+.guide h1 img { width: 100%; max-width: 276px; }
+
+/* company
+------------------------------------------------------------ */
+.company h1 img { width: 100%; max-width: 364px; }
+.table01.tate th,.table01.tate td { text-align: left; }
+
+/* price
+------------------------------------------------------------ */
+.price h1 img { width: 100%; max-width: 149px; }
+.scroll {
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+}
+.scroll table {
+    width: 100%;
+    border-left: 1px solid #cccccc;
+    border-top: 1px solid #cccccc;
+    border-collapse: collapse;
+}
+.scroll table th {
+    background: url(../img/common/ttl_single_04.png) no-repeat left center;
+    font-weight: bold;
+    text-align: center;
+}
+.scroll table th, .scroll table td {
+    padding: 8px;
+    border-right: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    white-space: nowrap;
+}
+
+
+
+@media screen and (min-width: 768px) and (max-width: 1119px) {
+	/* common
+	------------------------------------------------------------ */	
+	.l-inner > .pickup { 
+        width: 96%;
+    }
+    
+    
+}
+@media screen and (max-width: 767px) {
+	/* company
+	------------------------------------------------------------ */
+    .table01.tate th { text-align: center; }
+    .table01.tate th,.table01.tate td {
+        display: block;
+        width: 100%;
+    }
+
+}

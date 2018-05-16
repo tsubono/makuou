@@ -1,0 +1,498 @@
+@charset "UTF-8";
+/* ------------------------------------------------------------
+   下層ページ ogawa作成分
+------------------------------------------------------------ */
+/*
+ * 目次
+ * login
+ * regist
+ * 
+ * 
+ * 
+ */
+/* common
+------------------------------------------------------------ */
+
+.ttl01{
+	background: url("../img/common/ttl_single_01.gif") repeat left center;
+	font-size: 24px;
+	font-weight: bold;
+	color: #fff;
+	text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+	padding: 15px;
+	margin: 40px 0 20px;
+}
+.ttl02{
+	background: url("../img/common/ttl_single_02.gif") repeat left center;
+	font-size: 20px;
+	font-weight: bold;
+	color: #fff;
+	padding: 15px;
+	margin: 30px 0 25px;
+}
+.ttl03{
+	background: url(../img/common/arrow_r_pp.png) no-repeat left 10px center / 15px auto,
+		url("../img/common/bg_formhead.gif") repeat left center / 6px auto;
+	font-size: 17px;
+	font-weight: bold;
+	border: dashed 2px #ccc;
+	color: #ff5925;
+	padding: 15px;
+	padding-left: 35px;
+	margin: 30px 0 20px;
+}
+.list_dot li{
+	background: url(../img/common/list_style.png) no-repeat left center / 12px auto;
+	padding-left: 18px;
+	list-style: none;
+}
+.table01 {
+	border-left: 1px solid #cccccc;
+	border-top: 1px solid #cccccc;
+	width: 100%;
+	margin: 30px 0;
+}
+.table01 th {
+	background: url(../img/common/ttl_single_04.gif) repeat left center;
+	font-weight: bold;
+	text-align: center;
+	padding: 10px;
+}
+.table01 th, .table01 td {
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	padding: 10px;
+}
+.table01 td {
+    font-size: .875em;
+}
+.various h6, .various p {
+	font-size: 14px;
+	line-height: 54px;
+	padding-left: 19px;
+	padding-right: 19px;
+}
+.various h6 {
+	background: #ff7800;
+	color: #fff;
+	margin-bottom: 0px;
+}
+.various .evennumber { font-size: 14px; background: rgba(35, 40, 255, 0.1); }
+
+.leftBox {
+	float: left;
+	width: 65%;
+	display: inline-block;
+}
+.rightBox {
+	float: right;
+	width: 30%;
+	display: inline-block;
+}
+.rightBox.pho img,
+.leftBox.pho img{ width: 100%; height: auto; }
+
+
+
+/* login
+------------------------------------------------------------ */
+.login h1 img {  width: 100%; max-width: 189px; }
+.login__column{ margin: 30px 0;}
+.login__box{
+	display: inline-block;
+	width: 49%;
+	border-radius: 10px;
+}
+.login__box.member{ float: left; }
+.login__box.first{ float: right; }
+.login__box h2{
+	color: #fff;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	padding: 20px 10px 20px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+.login__box.member h2{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9ad43+0,ff7800+70 */
+	background: rgb(249,173,67); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(249,173,67,1) 0%, rgba(255,120,0,1) 70%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(249,173,67,1) 0%,rgba(255,120,0,1) 70%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(249,173,67,1) 0%,rgba(255,120,0,1) 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9ad43', endColorstr='#ff7800',GradientType=0 ); /* IE6-9 */
+}
+.login__box.first h2{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#dcdcfc+0,bdbdfc+70 */
+	background: rgb(220,220,252); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(220,220,252,1) 0%, rgba(189,189,252,1) 70%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(220,220,252,1) 0%,rgba(189,189,252,1) 70%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(220,220,252,1) 0%,rgba(189,189,252,1) 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dcdcfc', endColorstr='#bdbdfc',GradientType=0 ); /* IE6-9 */
+}
+.login__box .innar{
+	background: #fff;
+	border: solid 10px;
+	border-top: none;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	padding: 30px 40px;
+}
+.login__box.member .innar{ border-color: #ff7800; }
+.login__box.first .innar{ border-color: #bdbdfc; text-align: center; }
+.login__box .innar .btn{
+	border-top: solid 2px #ca5a2d;
+	border-radius: 3px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fc6c35+0,f7280d+46,f7240b+47,f30a01+50,fb5b2a+100 */
+	background: rgb(252,108,53); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(252,108,53,1) 0%, rgba(247,40,13,1) 46%, rgba(247,36,11,1) 47%, rgba(243,10,1,1) 50%, rgba(251,91,42,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc6c35', endColorstr='#fb5b2a',GradientType=0 ); /* IE6-9 */
+	max-width: 280px;
+	margin: 20px auto 0;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	-o-transition: all .3s;
+	transition: all .3s;
+}
+.login__box .innar .btn:hover{
+	opacity: 0.7;
+	filter: alpha(opacity=70);
+	-ms-filter: "alpha(opacity=70)";
+}
+.login__box.first p.tec{ margin: 40px 0; }
+.login__box .innar .btn a{
+	color: #fff;
+	display: block;
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;
+}
+.forget{
+	float: right;
+	position: relative;
+	padding-left: 20px;
+}
+.forget a{ text-decoration: none; color: #000; }
+.forget a:hover{ text-decoration: underline; }
+.forget::before{
+	background: url(../img/common/arrow_r_red.gif) no-repeat 0 0 / 14px auto;
+	content: "";
+	position: absolute;
+	width: 14px;
+	height: 18px;
+	left: 0;
+	top: 4px;
+}
+.login__box dt{ margin-bottom: 10px; }
+.login__box input[type="text"]{ width: 100%; height: 3em; }
+.login__box input[type="submit"]{
+	width: 100%;
+	border: none;
+	border-top: solid 2px #ca5a2d;
+	border-radius: 3px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fc6c35+0,f7280d+46,f7240b+47,f30a01+50,fb5b2a+100 */
+	background: rgb(252,108,53); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(252,108,53,1) 0%, rgba(247,40,13,1) 46%, rgba(247,36,11,1) 47%, rgba(243,10,1,1) 50%, rgba(251,91,42,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc6c35', endColorstr='#fb5b2a',GradientType=0 ); /* IE6-9 */
+	color: #fff;
+	padding: 10px;
+	font-size: 100%;
+}
+.login__box .login_btn{ max-width: 200px; margin: 30px auto; }
+
+/* contact
+------------------------------------------------------------ */
+.contact h1 img { width: 100%; max-width: 278px; }
+
+/* sample
+------------------------------------------------------------ */
+.sample h1 img { width: 100%; max-width: 278px; }
+
+/* regist
+------------------------------------------------------------ */
+.regist h1 img { width: 100%; max-width: 192px; }
+.form_template .form__bd{
+	border: dashed 2px #ccc;
+	border-bottom: none;
+	margin: 20px 0;
+}
+.form_template dl{
+	display: table;
+	width: 100%;
+	border-bottom: dashed 2px #ccc;
+}
+.form_template dt{
+	padding: 35px;
+	display: table-cell;
+	vertical-align: middle;
+	color: #ff5925;
+	font-weight: bold;
+	width: 30%;
+	background: url(../img/common/bg_formhead.gif) repeat;
+	border-right: dashed 2px #ccc;
+}
+.form_template dt span{
+	background: #f93211;
+	border-radius: 3px;
+	color: #fff;
+	padding: 10px;
+	margin-right: 10px;
+}
+.form_template dd{ padding: 35px; display: table-cell; }
+.innerlist_name { list-style-type: none; }
+.innerlist_name li {
+	display: table;
+	float: right;
+	width: 47%;
+}
+.innerlist_name li:first-child { float: left; }
+.innerlist_name li::before {
+	content: "名：";
+	display: table-cell;
+	text-align: right;
+	width: 2em;
+}
+.innerlist_name li:first-child::before { content: "姓："; }
+.innerlist_name li input { display: table-cell; }
+
+/* ■カナ */
+.innerlist_kana::after {
+	clear: both;
+	content: "";
+	display: block;
+}
+.innerlist_kana { display: inline-block; }
+.innerlist_kana { display: block; }
+.innerlist_kana { list-style-type: none; }
+.innerlist_kana li {
+	display: table;
+	float: right;
+	width: 47%;
+}
+.innerlist_kana li:first-child { float: left; }
+.innerlist_kana li::before {
+	content: "めい：";
+	display: table-cell;
+	width: 4em;
+}
+.innerlist_kana li:first-child::before { content: "せい："; }
+.innerlist_kana li input { display: table-cell; }
+
+.form_template input[type="text"]{
+	width: 100%;
+	height: 3em;
+	border: solid 1px #ccc;
+}
+.innar_list li{
+	display: inline-block;
+	float: left;
+	width: 48%;
+}
+.innar_list li:nth-child(2n){ float: right; }
+.innar_list li input[type="text"]{ width: 80%; margin-left: 2%; }
+.innar_list2 li{
+	display: inline-block;
+	float: left;
+	width: 30%;
+}
+.innar_list2 li:nth-child(3n){ margin-right: 0; }
+.innar_list2 li input[type="text"]{ width: 80%; margin-right: 7%; }
+.form_template input[type="submit"]{
+	width: 100%;
+	border: none;
+	border-bottom: solid 2px #ca5a2d;
+	border-radius: 3px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fc6c35+0,f7280d+46,f7240b+47,f30a01+50,fb5b2a+100 */
+	background: rgb(252,108,53); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(252,108,53,1) 0%, rgba(247,40,13,1) 46%, rgba(247,36,11,1) 47%, rgba(243,10,1,1) 50%, rgba(251,91,42,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc6c35', endColorstr='#fb5b2a',GradientType=0 ); /* IE6-9 */
+	color: #fff;
+	padding: 15px;
+	font-size: 120%;
+}
+.form_template .sendarea li{ max-width: 200px; margin: 30px auto; }
+.form_template dd input[type="text"],
+.form_template dd input[type="textarea"],
+.form_template dd select,
+.form_template dd textarea {
+	width: 96%;
+	max-width: 100%;
+	font-family: inherit;
+	padding: 7px 12px;
+	font-size: 14px;
+	background: #fff;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+}
+.form_template dd select{
+	width: 30%;
+	max-width: 100%;
+	font-family: inherit;
+	padding: 7px 12px;
+	font-size: 14px;
+	background: #fff;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+}
+.form_template dd .innerlist_tel li input[type="text"]{ width: 22%; }
+.form_template dd input[type="radio"],
+.form_template dd input[type="checkbox"]:{
+	box-shadow: none;
+	border: 5px solid #ccc;
+}
+.form_template dd .nest { padding-left: 45px; margin: 10px 0;}
+.form_template dd input[type="textarea"] {
+	width: 100%;
+	height: 200px;
+	box-sizing: border-box;
+	resize: vertical;
+}
+.form_template .address_num dd input[type="text"]{ width: 22%; }
+.form_template .address_num2 dd select{ width: 30%; }
+
+/* thanks
+------------------------------------------------------------ */
+.thanks__info{
+	background: #fdffce;
+	border-radius: 20px;
+	display: table;
+	width: 100%;
+	margin: 30px 0;
+}
+.thanks__info .pho{
+	display: table-cell;
+	width: 30%;
+	padding: 40px 20px;
+}
+.thanks__info .pho img{ width: 100%; }
+.thanks__info .txt{
+	display: table-cell;
+	vertical-align: middle;
+	padding: 40px 20px;
+}
+.thanks__info .txt h2{
+	color: #ff5b26;
+	font-size: 160%;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+.thanks__info .btn{
+	max-width: 300px;
+	border: none;
+	border-bottom: solid 2px #ca5a2d;
+	border-radius: 3px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fc6c35+0,f7280d+46,f7240b+47,f30a01+50,fb5b2a+100 */
+	background: rgb(252,108,53); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(252,108,53,1) 0%, rgba(247,40,13,1) 46%, rgba(247,36,11,1) 47%, rgba(243,10,1,1) 50%, rgba(251,91,42,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc6c35', endColorstr='#fb5b2a',GradientType=0 ); /* IE6-9 */
+	margin-top: 20px;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	-o-transition: all .3s;
+	transition: all .3s;
+}
+.thanks__info .btn a{
+	color: #fff;
+	padding: 10px 15px;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+}
+.thanks__info .btn:hover{ opacity: 0.8; }
+
+
+@media screen and (min-width: 768px) and (max-width: 1119px) {
+	/* regist
+	------------------------------------------------------------ */	
+	.form_template dt{ width: 40%; }
+	
+}
+@media screen and (max-width: 767px) {
+
+	/* common
+	------------------------------------------------------------ */
+	.leftBox {
+		float: none;
+		width: auto;
+		display: block;
+	}
+	.rightBox {
+		float: none;
+		width: auto;
+		display: block;
+	}
+	.rightBox.pho,
+	.leftBox.pho { width: 80%; margin: 20px auto; }
+	
+	/* login
+	------------------------------------------------------------ */
+	.login__box{ display: block; width: auto; }
+	.login__box.member{ float: none; margin-bottom: 20px; }
+	.login__box.first{ float: none; }
+	.login__box h2{ font-size: 16px; padding: 15px 10px 15px; }
+	.login__box .innar{ border: solid 5px; padding: 20px; }
+	.login__box.first p.tec{ margin: 0; }
+
+	/* regist
+	------------------------------------------------------------ */
+	.form_template dl{ border-bottom: none; }
+	.form_template dl:last-child{ border-bottom: dashed 2px #ccc; }
+	.form_template dt{
+		padding: 20px;
+		display: block;
+		width: auto;
+		background: url(../img/common/bg_formhead.gif) repeat;
+		border-right: none;
+	}
+	.form_template dd{
+		padding: 20px;
+		display: block;
+		width: auto;
+	}
+	.form_template dd input[type="text"],
+	.form_template dd select, dd textarea{ width: 96%; padding: 5px 2%; }
+	.form_template input[type="text"]{ height: 2em; }
+	.form_template dd .innerlist_tel li input[type="text"]{ width: 15%; }
+	.innerlist_name li {
+		display: block;
+		float: none;
+		width: auto;
+	}
+	.innerlist_kana li {
+		display: block;
+		float: none;
+		width: auto;
+	}
+	.innerlist_name li:first-child,
+	.innerlist_kana li:first-child{ float: none; }
+
+	/* thanks
+	------------------------------------------------------------ */
+	.thanks__info{
+		display: block;
+		padding: 20px;
+		width: auto;
+	}
+	.thanks__info .pho{
+		display: block;
+		width: auto;
+		max-width: 300px;
+		margin: auto;
+		padding: 0;
+	}
+	.thanks__info .pho img{ width: 100%; }
+	.thanks__info .txt{
+		display: block;
+		width: auto;
+		padding: 0;
+		margin-top: 30px;
+	}
+}

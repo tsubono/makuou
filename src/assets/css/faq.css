@@ -1,0 +1,120 @@
+img {
+    display: block;
+}
+
+/* ----- faq ----- */
+.faq__tabs {
+    display: grid;
+    grid-gap: 20px 30px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.faq__tab {
+    height: 50px;
+    border: 1px solid #fdad03;
+    border-radius: 6px;
+    box-shadow: 0 1px 0 0 #ffce2a inset;
+    background: linear-gradient(#ffc803, #fc9604);
+}
+
+.faq__tab a {
+    display: block;
+    color: #fff;
+    font-weight: bold;
+    line-height: 48px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.faq__tab.is-current {
+    background: linear-gradient(#fc6604, #ff9203);
+}
+
+.faq__section:nth-of-type(n + 2) {
+    display: none;
+}
+
+.faq__heading {
+    margin-top: 40px;
+    padding-bottom: 20px;
+    color: #8b4404;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    background: url("../img/faq/bg--dots.png") center bottom repeat-x;
+    background-size: 24px 8px;
+}
+
+.faq__list {
+    margin-top: 30px;
+}
+
+.faq__list dt {
+    position: relative;
+    width: 100%;
+    min-height: 56px;
+    padding: 14px 50px 14px 68px;
+    border: 2px dotted #d0d0c8;
+    cursor: pointer;
+    color: #8b4404;
+    background: #f7f3a9 url("../img/faq/icon--question.png") 13px 6px no-repeat;
+    background-size: 40px 40px;
+}
+
+.faq__list dt::after {
+    position: absolute;
+    right: 13px;
+    top: 13px;
+    display: block;
+    width: 22px;
+    height: 26px;
+    content: "";
+    overflow: hidden;
+    background: url("../img/faq/icon--arrow.png") 0 0 no-repeat;
+    background-size: 22px 26px;
+}
+
+.faq__list dt.is-active::after {
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+}
+
+.faq__list dt:not(:first-child) {
+    margin-top: 10px;
+}
+
+.faq__list dd {
+    padding: 30px 20px 30px 70px;
+    font-size: 0.875rem;
+    line-height: 1.71429;
+    display: none;
+    background: url("../img/faq/icon--answer.png") 15px 18px no-repeat, url("../img/faq/bg--answer.png") 0 0 repeat;
+    background-size: 40px 40px, 57px 57px;
+}
+
+.faq__btn {
+    display: block;
+    width: 623px;
+    margin: 50px auto 0 auto;
+}
+
+.faq__btn img {
+    width: 100%;
+    max-width: 623px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1119px) {
+    .faq__tabs {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .faq__tabs {
+        grid-gap: 10px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .faq__btn {
+        width: 100%;
+    }
+}

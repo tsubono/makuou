@@ -21,196 +21,49 @@
                 <li>検索結果</li>
             </ul>
             <div class="result">
-                <div class="result__box">
-                    <div>
-                        <h2 class="result__title">タイトルが入ります</h2>
-                        <img class="result__img" src="{{asset("assets/img/banner/banner01.png")}}" alt="">
-                        <dl class="result__list">
-                            <dt>スポーツ</dt>
-                            <dd>
-                                <ul class="result__tags">
-                                    <li><a href="">2.野球・ソフトボール</a></li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl class="result__list">
-                            <dt>テイスト</dt>
-                            <dd>
-                                <ul class="result__tags">
-                                    <li><a href="">2.熱血</a></li>
-                                    <li><a href="">3.スポーティー</a></li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl class="result__list">
-                            <dt>シーン</dt>
-                            <dd>
-                                <ul class="result__tags">
-                                    <li><a href="">1.スポーツ応援</a></li>
-                                </ul>
-                            </dd>
-                        </dl>
+                @foreach($products as $product)
+                    <div class="result__box">
+
+                        <div>
+                            <h2 class="result__title">{{ $product->title }}</h2>
+                            <img class="result__img" src="{!! asset(env('PUBLIC', ''). $product->image) !!}" alt="{{ $product->title }}">
+
+                            <dl class="result__list">
+                                <dt>スポーツ</dt>
+                                <dd>
+                                    <ul class="result__tags">
+                                        @foreach ($product->getCategories($product->category_1) as $category)
+                                            <li><a href="">{{ $category->name }}</a></li>
+                                        @endforeach
+                                    </ul>
+                                </dd>
+                            </dl>
+                            <dl class="result__list">
+                                <dt>テイスト</dt>
+                                <dd>
+                                    <ul class="result__tags">
+                                        @foreach ($product->getCategories($product->category_2) as $category)
+                                            <li><a href="">{{ $category->name }}</a></li>
+                                        @endforeach
+                                    </ul>
+                                </dd>
+                            </dl>
+                            <dl class="result__list">
+                                <dt>シーン</dt>
+                                <dd>
+                                    <ul class="result__tags">
+                                        @foreach ($product->getCategories($product->category_3) as $category)
+                                            <li><a href="">{{ $category->name }}</a></li>
+                                        @endforeach
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
                     </div>
-                </div>
-                <!-- .result__box -->
-                <div class="result__box">
-                    <div>
-                        <h2 class="result__title">タイトルが入ります</h2>
-                        <img class="result__img" src="{{asset("assets/img/banner/banner02.png")}}" alt="">
-                        <dl class="result__list">
-                            <dt>テイスト</dt>
-                            <dd>
-                                <ul class="result__tags">
-                                    <li>
-                                        <a href="">2.熱血</a>
-                                    </li>
-                                    <li>
-                                        <a href="">5.インパクト</a>
-                                    </li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl class="result__list">
-                            <dt>シーン</dt>
-                            <dd>
-                                <ul class="result__tags">
-                                    <li>
-                                        <a href="">3.学校行事</a>
-                                    </li>
-                                </ul>
-                            </dd>
-                        </dl>
-                    </div>
-                </div>
-                <!-- .result__box -->
-                <div class="result__box">
-                    <div>
-                        <h2 class="result__title">タイトルが入ります</h2>
-                        <img class="result__img" src="{{asset("assets/img/banner/banner03.png")}}" alt="">
-                        <dl class="result__list">
-                            <dt>スポーツ</dt>
-                            <dd>
-                                <ul class="result__tags">
-                                    <li><a href="">1.サッカー・フットサル</a></li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl class="result__list">
-                            <dt>テイスト</dt>
-                            <dd>
-                                <ul class="result__tags">
-                                    <li><a href="">2.熱血</a></li>
-                                    <li><a href="">3.スポーティー</a></li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl class="result__list">
-                            <dt>シーン</dt>
-                            <dd>
-                                <ul class="result__tags">
-                                    <li><a href="">1.スポーツ応援</a></li>
-                                </ul>
-                            </dd>
-                        </dl>
-                    </div>
-                </div>
-                <!-- .result__box -->
-                <div class="result__box">
-                    <div>
-                        <h2 class="result__title">タイトルが入ります</h2>
-                        <img class="result__img" src="{{asset("assets/img/banner/banner01.png")}}" alt="">
-                        <dl class="result__list">
-                            <dt>スポーツ</dt>
-                            <dd>
-                                <ul class="result__tags">
-                                    <li><a href="">2.野球・ソフトボール</a></li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl class="result__list">
-                            <dt>テイスト</dt>
-                            <dd>
-                                <ul class="result__tags">
-                                    <li><a href="">2.熱血</a></li>
-                                    <li><a href="">3.スポーティー</a></li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl class="result__list">
-                            <dt>シーン</dt>
-                            <dd>
-                                <ul class="result__tags">
-                                    <li><a href="">1.スポーツ応援</a></li>
-                                </ul>
-                            </dd>
-                        </dl>
-                    </div>
-                </div>
-                <!-- .result__box -->
-                <div class="result__box">
-                    <div>
-                        <h2 class="result__title">タイトルが入ります</h2>
-                        <img class="result__img" src="{{asset("assets/img/banner/banner02.png")}}" alt="">
-                        <dl class="result__list">
-                            <dt>テイスト</dt>
-                            <dd>
-                                <ul class="result__tags">
-                                    <li>
-                                        <a href="">2.熱血</a>
-                                    </li>
-                                    <li>
-                                        <a href="">5.インパクト</a>
-                                    </li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl class="result__list">
-                            <dt>シーン</dt>
-                            <dd>
-                                <ul class="result__tags">
-                                    <li>
-                                        <a href="">3.学校行事</a>
-                                    </li>
-                                </ul>
-                            </dd>
-                        </dl>
-                    </div>
-                </div>
-                <!-- .result__box -->
-                <div class="result__box">
-                    <div>
-                        <h2 class="result__title">タイトルが入ります</h2>
-                        <img class="result__img" src="{{asset("assets/img/banner/banner03.png")}}" alt="">
-                        <dl class="result__list">
-                            <dt>スポーツ</dt>
-                            <dd>
-                                <ul class="result__tags">
-                                    <li><a href="">1.サッカー・フットサル</a></li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl class="result__list">
-                            <dt>テイスト</dt>
-                            <dd>
-                                <ul class="result__tags">
-                                    <li><a href="">2.熱血</a></li>
-                                    <li><a href="">3.スポーティー</a></li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <dl class="result__list">
-                            <dt>シーン</dt>
-                            <dd>
-                                <ul class="result__tags">
-                                    <li><a href="">1.スポーツ応援</a></li>
-                                </ul>
-                            </dd>
-                        </dl>
-                    </div>
-                </div>
+                @endforeach
                 <!-- .result__box -->
             </div>
-            @include('front.components.search_form')
+            @include('front.components.search_form', compact('category_1', 'category_2', 'category_3', 'ratios', 'search'))
         </div>
     </div>
 </main>

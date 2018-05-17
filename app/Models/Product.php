@@ -28,6 +28,21 @@ class Product extends Model
         return $this->belongsTo(Ratio::class);
     }
 
+    public function getCategories($categories)
+    {
+        $res = [];
+        if (!empty($categories)) {
+            $categories = explode(",", $categories);
+            foreach ($categories as $category) {
+                $target = ProductCategory::find($category);
+                if (!empty($target)) {
+                    $res[] = $target;
+                }
+            }
+        }
+        return $res;
+    }
+
     public function getCategoryForDisp($categories)
     {
         $res = "";

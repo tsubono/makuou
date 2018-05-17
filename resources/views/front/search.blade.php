@@ -19,7 +19,7 @@
                 <li><a href="{{url('/')}}">HOME</a></li>
                 <li>横断幕を作る</li>
             </ul>
-            @include('front.components.search_form')
+            @include('front.components.search_form', compact('category_1', 'category_2', 'category_3', 'ratios'))
             <!-- /.search -->
             <section class="pickup">
                 <h2 class="pickup__heading">

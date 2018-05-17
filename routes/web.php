@@ -53,6 +53,7 @@ Route::namespace('Front')->group(function() {
     Route::get('/company',      'CompanyController@index')->name('company');
     Route::get('/contract',      'ContractController@index')->name('contract');
     Route::get('/order',      'OrderController@index')->name('order');
+    Route::get('/privacy',      'PrivacyController@index')->name('privacy');
 });
 /*
 |--------------------------------------------------------------------------

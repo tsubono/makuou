@@ -455,7 +455,128 @@ p.txt {
 
 /* guide
 ------------------------------------------------------------ */
-.guide h1 img { width: 100%; max-width: 276px; }
+
+.guide h1 img { width: 100%; max-width: 277px; }
+
+.guide_flow {
+	display: flex;
+	justify-content: center;
+	flex-wrap: nowrap;
+}
+
+.fl_box {
+	flex: auto;
+	width: 230px;
+	position: relative;
+	margin: 10px 18px;
+}
+
+.fl_box:after{
+	border: 20px solid transparent;
+	border-left-color: #fff799;
+	border-right-width:0;
+	right: -20px;
+	content: "";
+	display: block;
+	bottom: 68px;
+	position: absolute;
+	width: 0;
+}
+
+.fl_box:last-child:after {
+	display: none;
+}
+
+.fl_title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 60px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffbf04+0,fb7f05+80 */
+	background: rgb(255,191,4); /* Old browsers */
+	background: -moz-linear-gradient(top, rgb(255,191,4) 0%, rgb(251,127,5) 80%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgb(255,191,4) 0%,rgb(251,127,5) 80%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgb(255,191,4) 0%,rgb(251,127,5) 80%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffbf04', endColorstr='#fb7f05',GradientType=0 ); /* IE6-9 */
+}
+
+.fl_sh {
+	color: #fff;
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 8px;
+}
+
+.fl_bg {
+	color: #fff;
+	font-size: 30px;
+	font-weight: bold;
+	margin-left: 6px;
+}
+
+.fl_contents {
+	height: 170px;	
+	background-color: #fff799;
+}
+
+.fl_img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 60%;
+}
+
+.fl_icon1 {
+	background-image: url(../img/guide/icon_step1.png);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 160px;
+	height: 100px;
+}
+
+.fl_icon2 {
+	background-image: url(../img/guide/icon_step2.png);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 160px;
+	height: 100px;
+}
+
+.fl_icon3 {
+	background-image: url(../img/guide/icon_step3.png);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 160px;
+	height: 100px;
+}
+
+.fl_icon4 {
+	background-image: url(../img/guide/icon_step4.png);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 160px;
+	height: 100px;
+}
+
+.fl_text {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 40%;
+	padding-bottom: 20px;
+}
+
+.fl_p {
+	color: #fd5c01;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+}
+
 
 /* company
 ------------------------------------------------------------ */
@@ -503,7 +624,29 @@ p.txt {
 	------------------------------------------------------------ */	
 	.form_template dt{ width: 40%; }
 	
+	/* guide
+	------------------------------------------------------------ */	
+	.fl_icon1 {
+		width: 90%;
+		height: 100%;
+	}
+	
+	.fl_icon2 {
+		width: 90%;
+		height: 100%;
+	}
+
+	.fl_icon3 {
+		width: 90%;
+		height: 100%;
+	}
+	
+	.fl_icon4 {
+		width: 90%;
+		height: 100%;
+	}	
 }
+
 @media screen and (max-width: 767px) {
 
 	/* common
@@ -590,4 +733,33 @@ p.txt {
 		padding: 0;
 		margin-top: 30px;
 	}
+	
+	/* guide
+	------------------------------------------------------------ */
+	
+	.guide_flow {
+	max-width: 230px;
+	margin: auto;
+	flex-wrap: wrap;
+	}
+	
+	.fl_box {
+    flex: 0 0 230px;
+	margin: 10px 0px 30px;
+	}
+	
+	.fl_box:after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -20px;
+	border: 20px solid transparent;
+	border-top: 20px solid #fff799;
+	}
+	
+	.fl_box:last-child {
+	margin: 10px 0px;
+	}
+     	
 }

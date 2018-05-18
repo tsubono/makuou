@@ -79,7 +79,7 @@ angular.module('productApp', [
 
                 Upload.upload({
                     type: 'save_tmp_image',
-                    url: '/canvas/uploadImage',
+                    url: $scope.path + '/canvas/uploadImage',
                     file: file,
                     data: {
                         file: Upload.rename(file, filename)

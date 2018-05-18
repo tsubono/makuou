@@ -611,6 +611,35 @@ p.txt {
     white-space: nowrap;
 }
 
+/* layout
+------------------------------------------------------------ */
+.layout h1 img { width: 100%; max-width: 359px; }
+.layout div img { width: 100%;  }
+.layout .btn {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto 0;
+    box-sizing: border-box;
+    border: solid 2px #231814;
+    box-shadow: 8px 8px 0 #231814;
+}
+.layout .btn a {
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 114%;
+    font-weight: 600;
+    padding: 20px 0;
+    display: block;
+    background-image: url(../img/common/arrow-r-wh.gif),url(../img/common/bg_btnred.gif);
+    background-repeat: no-repeat, repeat;
+    background-size: 10px auto , auto;
+    background-position: right 20px center, left;
+    transition: .3s;
+}
+.layout .btn a:hover {
+    opacity: 0.8;
+}
 
 
 @media screen and (min-width: 768px) and (max-width: 1119px) {
@@ -761,5 +790,11 @@ p.txt {
 	.fl_box:last-child {
 	margin: 10px 0px;
 	}
+    /* layout
+    ------------------------------------------------------------ */
+
+    .layout .btn a {
+        padding: 10px 0;
+    }
      	
 }

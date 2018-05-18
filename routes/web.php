@@ -53,6 +53,8 @@ Route::namespace('Front')->group(function() {
     Route::get('/faq',      'FaqController@index')->name('faq');
     Route::get('/regist',      'RegistController@index')->name('regist');
     Route::post('/regist',      'RegistController@store')->name('registThanks');
+    Route::get('/login',      'LoginController@index')->name('login');
+    Route::post('/login',      'LoginController@login')->name('login');
     Route::get('/company',      'CompanyController@index')->name('company');
     Route::get('/contract',      'ContractController@index')->name('contract');
     Route::get('/order',      'OrderController@index')->name('order');

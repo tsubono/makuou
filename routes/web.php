@@ -55,7 +55,9 @@ Route::namespace('Front')->group(function() {
     Route::get('/order',      'OrderController@index')->name('order');
     Route::get('/privacy',      'PrivacyController@index')->name('privacy');
     Route::get('/contact',      'ContactController@index')->name('contact');
-    Route::post('/contact',      'ContactController@store')->name('thanks');
+    Route::post('/contact',      'ContactController@store')->name('contactThanks');
+    Route::get('/sample',      'SampleController@index')->name('sample');
+    Route::post('/sample',      'SampleController@store')->name('sampleThanks');
 });
 /*
 |--------------------------------------------------------------------------

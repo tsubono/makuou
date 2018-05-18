@@ -48,6 +48,7 @@ Route::namespace('Front')->group(function() {
     Route::get('/search',      'SearchController@index')->name('search');
     Route::get('/result',      'SearchController@search')->name('result');
     Route::get('/concept',      'ConceptController@index')->name('concept');
+    Route::get('/guide',      'GuideController@index')->name('guide');
     Route::get('/price',      'PriceController@index')->name('price');
     Route::get('/faq',      'FaqController@index')->name('faq');
     Route::get('/company',      'CompanyController@index')->name('company');

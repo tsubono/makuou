@@ -54,6 +54,8 @@ Route::namespace('Front')->group(function() {
     Route::get('/contract',      'ContractController@index')->name('contract');
     Route::get('/order',      'OrderController@index')->name('order');
     Route::get('/privacy',      'PrivacyController@index')->name('privacy');
+    Route::get('/contact',      'ContactController@index')->name('contact');
+    Route::post('/contact',      'ContactController@store')->name('thanks');
 });
 /*
 |--------------------------------------------------------------------------

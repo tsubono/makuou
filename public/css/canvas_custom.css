@@ -171,7 +171,6 @@ body {
     float: none;
     margin: auto;
     border: 1px dashed #D91E18;
-    overflow: auto;
 }
 .canvas-container, .canvas {
     padding-bottom: 12px;

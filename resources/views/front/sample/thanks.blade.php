@@ -9,7 +9,7 @@
     <script src="{{asset("assets/js/search.js")}}"></script>
 @endpush
 
-@section('title', 'お問い合わせ')
+@section('title', 'サンプル請求')
 
 @section('content')
     <main class="l-main">

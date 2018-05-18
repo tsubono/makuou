@@ -41,7 +41,7 @@
 }
 .ttl03{
 	background: url(../img/common/arrow_r_pp.png) no-repeat left 10px center / 15px auto,
-		url("../img/common/bg_formhead.gif") repeat left center / 6px auto;
+	url("../img/common/bg_formhead.gif") repeat left center / 6px auto;
 	font-size: 17px;
 	font-weight: bold;
 	border: dashed 2px #ccc;
@@ -73,7 +73,7 @@
 	padding: 10px;
 }
 .table01 td {
-    font-size: .875em;
+	font-size: .875em;
 }
 .various h6, .various p {
 	font-size: 14px;
@@ -103,21 +103,21 @@
 
 
 p.txt {
-    font-size: .875rem;
-    line-height: 1.8;
+	font-size: .875rem;
+	line-height: 1.8;
 }
 .l-inner > .pickup {
-    width: 100%;
-    margin: 40px auto 0;
-    padding: 30px 30px 50px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    background-color: #fff;
+	width: 100%;
+	margin: 40px auto 0;
+	padding: 30px 30px 50px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+	background-color: #fff;
 }
 .pickup .btn { width: 100%; }
-.pickup .btn img { 
-    margin: 50px auto 0;
-    width: 100%;
-    max-width: 606px;
+.pickup .btn img {
+	margin: 50px auto 0;
+	width: 100%;
+	max-width: 606px;
 }
 
 /* login
@@ -455,7 +455,128 @@ p.txt {
 
 /* guide
 ------------------------------------------------------------ */
-.guide h1 img { width: 100%; max-width: 276px; }
+
+.guide h1 img { width: 100%; max-width: 277px; }
+
+.guide_flow {
+	display: flex;
+	justify-content: center;
+	flex-wrap: nowrap;
+}
+
+.fl_box {
+	flex: auto;
+	width: 230px;
+	position: relative;
+	margin: 10px 18px;
+}
+
+.fl_box:after{
+	border: 20px solid transparent;
+	border-left-color: #fff799;
+	border-right-width:0;
+	right: -20px;
+	content: "";
+	display: block;
+	bottom: 68px;
+	position: absolute;
+	width: 0;
+}
+
+.fl_box:last-child:after {
+	display: none;
+}
+
+.fl_title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 60px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffbf04+0,fb7f05+80 */
+	background: rgb(255,191,4); /* Old browsers */
+	background: -moz-linear-gradient(top, rgb(255,191,4) 0%, rgb(251,127,5) 80%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgb(255,191,4) 0%,rgb(251,127,5) 80%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgb(255,191,4) 0%,rgb(251,127,5) 80%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffbf04', endColorstr='#fb7f05',GradientType=0 ); /* IE6-9 */
+}
+
+.fl_sh {
+	color: #fff;
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 8px;
+}
+
+.fl_bg {
+	color: #fff;
+	font-size: 30px;
+	font-weight: bold;
+	margin-left: 6px;
+}
+
+.fl_contents {
+	height: 170px;
+	background-color: #fff799;
+}
+
+.fl_img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 60%;
+}
+
+.fl_icon1 {
+	background-image: url(../img/guide/icon_step1.png);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 160px;
+	height: 100px;
+}
+
+.fl_icon2 {
+	background-image: url(../img/guide/icon_step2.png);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 160px;
+	height: 100px;
+}
+
+.fl_icon3 {
+	background-image: url(../img/guide/icon_step3.png);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 160px;
+	height: 100px;
+}
+
+.fl_icon4 {
+	background-image: url(../img/guide/icon_step4.png);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 160px;
+	height: 100px;
+}
+
+.fl_text {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 40%;
+	padding-bottom: 20px;
+}
+
+.fl_p {
+	color: #fd5c01;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+}
+
 
 /* company
 ------------------------------------------------------------ */
@@ -466,44 +587,95 @@ p.txt {
 ------------------------------------------------------------ */
 .price h1 img { width: 100%; max-width: 149px; }
 .scroll {
-    width: 100%;
-    overflow-y: hidden;
-    overflow-x: auto;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    -webkit-overflow-scrolling: touch;
+	width: 100%;
+	overflow-y: hidden;
+	overflow-x: auto;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+	-webkit-overflow-scrolling: touch;
 }
 .scroll table {
-    width: 100%;
-    border-left: 1px solid #cccccc;
-    border-top: 1px solid #cccccc;
-    border-collapse: collapse;
+	width: 100%;
+	border-left: 1px solid #cccccc;
+	border-top: 1px solid #cccccc;
+	border-collapse: collapse;
 }
 .scroll table th {
-    background: url(../img/common/ttl_single_04.png) no-repeat left center;
-    font-weight: bold;
-    text-align: center;
+	background: url(../img/common/ttl_single_04.png) no-repeat left center;
+	font-weight: bold;
+	text-align: center;
 }
 .scroll table th, .scroll table td {
-    padding: 8px;
-    border-right: 1px solid #cccccc;
-    border-bottom: 1px solid #cccccc;
-    white-space: nowrap;
+	padding: 8px;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	white-space: nowrap;
 }
 
+/* layout
+------------------------------------------------------------ */
+.layout h1 img { width: 100%; max-width: 359px; }
+.layout div img { width: 100%;  }
+.layout .btn {
+	width: 100%;
+	max-width: 600px;
+	margin: 50px auto 0;
+	box-sizing: border-box;
+	border: solid 2px #231814;
+	box-shadow: 8px 8px 0 #231814;
+}
+.layout .btn a {
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	font-size: 114%;
+	font-weight: 600;
+	padding: 20px 0;
+	display: block;
+	background-image: url(../img/common/arrow-r-wh.gif),url(../img/common/bg_btnred.gif);
+	background-repeat: no-repeat, repeat;
+	background-size: 10px auto , auto;
+	background-position: right 20px center, left;
+	transition: .3s;
+}
+.layout .btn a:hover {
+	opacity: 0.8;
+}
 
 
 @media screen and (min-width: 768px) and (max-width: 1119px) {
-    
-    /* common
-	------------------------------------------------------------ */	
-	.l-inner > .pickup { 
-        width: 96%;
-    }
+
+	/* common
+    ------------------------------------------------------------ */
+	.l-inner > .pickup {
+		width: 96%;
+	}
 	/* regist
-	------------------------------------------------------------ */	
+	------------------------------------------------------------ */
 	.form_template dt{ width: 40%; }
-	
+
+	/* guide
+	------------------------------------------------------------ */
+	.fl_icon1 {
+		width: 90%;
+		height: 100%;
+	}
+
+	.fl_icon2 {
+		width: 90%;
+		height: 100%;
+	}
+
+	.fl_icon3 {
+		width: 90%;
+		height: 100%;
+	}
+
+	.fl_icon4 {
+		width: 90%;
+		height: 100%;
+	}
 }
+
 @media screen and (max-width: 767px) {
 
 	/* common
@@ -520,13 +692,13 @@ p.txt {
 	}
 	.rightBox.pho,
 	.leftBox.pho { width: 80%; margin: 20px auto; }
-    
-    .table01.tate th { text-align: center; }
-    .table01.tate th,.table01.tate td {
-        display: block;
-        width: 100%;
-    }
-	
+
+	.table01.tate th { text-align: center; }
+	.table01.tate th,.table01.tate td {
+		display: block;
+		width: 100%;
+	}
+
 	/* login
 	------------------------------------------------------------ */
 	.login__box{ display: block; width: auto; }
@@ -590,4 +762,39 @@ p.txt {
 		padding: 0;
 		margin-top: 30px;
 	}
+
+	/* guide
+	------------------------------------------------------------ */
+
+	.guide_flow {
+		max-width: 230px;
+		margin: auto;
+		flex-wrap: wrap;
+	}
+
+	.fl_box {
+		flex: 0 0 230px;
+		margin: 10px 0px 30px;
+	}
+
+	.fl_box:after {
+		content: "";
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		margin-left: -20px;
+		border: 20px solid transparent;
+		border-top: 20px solid #fff799;
+	}
+
+	.fl_box:last-child {
+		margin: 10px 0px;
+	}
+	/* layout
+    ------------------------------------------------------------ */
+
+	.layout .btn a {
+		padding: 10px 0;
+	}
+
 }

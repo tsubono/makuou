@@ -166,8 +166,7 @@
                         </dl>
                     </section>
                     <!-- /#faq06 -->
-                    <a class="faq__btn" href=""><img src="{{asset("assets/img/faq/btn--order.png")}}"
-                                                     alt="ネットでレイアウトを調整しながら自分でデザイン！オリジナル横断幕を作る"></a>
+                    <a class="faq__btn" href=""><img src="{{asset("assets/img/top/make_btn.png")}}" alt="ネットでレイアウトを調整しながら自分でデザイン！オリジナル横断幕を作る"></a>
                 </div>
             </div>
         </div>

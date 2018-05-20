@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/register/thanks';
 
     /**
      * Create a new controller instance.
@@ -40,31 +40,56 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    public function showRegistrationForm()
+    {
+        return view('front.register.index');
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
+            'lastName' => 'required|string',
+            'firstName' => 'required|string',
+            'lastNameKana' => 'required|string',
+            'firstNameKana' => 'required|string',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'telOne' => '',
+            'telTwo' => '',
+            'telThree' => '',
+            'mobileOne' => '',
+            'mobileTwo' => '',
+            'mobileThree' => '',
+            'zipCodeOne' => ['required', 'regex:/^[0-9]{3}$/'],
+            'zipCodeTwo' => ['required', 'regex:/^[0-9]{4}$/'],
+            'prefecture' => 'required|numeric|between:0,47',
+            'addressOne' => 'required',
+            'addressTwo' => '',
+            'password' => 'required',
         ]);
     }
 
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
-     * @return \App\User
+     * @param  array $data
+     * @return \App\Models\User
      */
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'name' => $data['lastName'] .$data['firstName'],
+            'name_kana' => $data['lastNameKana'] .$data['firstNameKana'],
+            'zip_code' => $data['zipCodeOne'] .$data['zipCodeTwo'],
+            'pref_id' => $data['prefecture'],
+            'address1' => $data['addressOne'],
+            'address2' => $data['addressTwo']||'',
+            'tel' => $data['telOne'] .$data['telTwo'] .$data['telThree'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);

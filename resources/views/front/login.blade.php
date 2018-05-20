@@ -31,11 +31,11 @@
                                     @csrf
                                     <dl>
                                         <dt>ID（メールアドレス）</dt>
-                                        <dd><input type="text"></dd>
+                                        <dd><input type="text" name="email"></dd>
                                     </dl>
                                     <dl>
                                         <dt>パスワード</dt>
-                                        <dd><input type="text"></dd>
+                                        <dd><input type="text" name="password"></dd>
                                     </dl>
                                     <p class="login_btn"><input type="submit" value="ログインする"></p>
                                 </form>
@@ -48,7 +48,7 @@
                             <h2>はじめての方</h2>
                             <div class="innar">
                                 <p class="tec">当サイトからご注文・ご購入いただくには、<br>事前に無料会員登録が必要です。</p>
-                                <p class="btn"><a href="{{url('/regist')}}">新規会員登録はこちら</a></p>
+                                <p class="btn"><a href="{{url('/register')}}">新規会員登録はこちら</a></p>
                             </div>
                         </div>
                     </div>

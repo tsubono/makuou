@@ -16,7 +16,7 @@
         <div class="l-inner">
             <section class="regist">
 
-                <h1 class="main__title"><img src="{{asset("assets/img/regist/title.png")}}" alt="会員登録"></h1>
+                <h1 class="main__title"><img src="{{asset("assets/img/register/title.png")}}" alt="会員登録"></h1>
                 <div class="main__content">
                     <ul class="main__breadcrumb">
                         <li><a href="{{url('/')}}">HOME</a></li>

@@ -6,10 +6,10 @@
  * 目次
  * common
  * login
- * regist
+ * register
  * contact
  * sample
- * regist
+ * register
  * thanks
  * contract
  * privacy
@@ -238,7 +238,7 @@ p.txt {
 ------------------------------------------------------------ */
 .sample h1 img { width: 100%; max-width: 278px; }
 
-/* regist
+/* register
 ------------------------------------------------------------ */
 .regist h1 img { width: 100%; max-width: 192px; }
 .form_template .form__bd{
@@ -649,7 +649,7 @@ p.txt {
 	.l-inner > .pickup {
 		width: 96%;
 	}
-	/* regist
+	/* register
 	------------------------------------------------------------ */
 	.form_template dt{ width: 40%; }
 
@@ -708,7 +708,7 @@ p.txt {
 	.login__box .innar{ border: solid 5px; padding: 20px; }
 	.login__box.first p.tec{ margin: 0; }
 
-	/* regist
+	/* register
 	------------------------------------------------------------ */
 	.form_template dl{ border-bottom: none; }
 	.form_template dl:last-child{ border-bottom: dashed 2px #ccc; }

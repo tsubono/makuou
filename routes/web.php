@@ -50,6 +50,7 @@ Route::namespace('Front')->group(function() {
     Route::get('/concept',      'ConceptController@index')->name('concept');
     Route::get('/guide',      'GuideController@index')->name('guide');
     Route::get('/price',      'PriceController@index')->name('price');
+    Route::get('/material',      'MaterialController@index')->name('material');
     Route::get('/example',      'ExampleController@index')->name('example');
     Route::get('/faq',      'FaqController@index')->name('faq');
     Route::get('/register/thanks', function (){

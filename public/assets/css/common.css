@@ -647,14 +647,18 @@ body {
     background-image: url("../img/common/main__character.png");
 }
 
-.main__breadcrumb {
-    display: flex;
-    margin-bottom: 30px;
+.main__breadcrumb:after {
+    content: "";
+    display: block;
+    clear: both;
 }
+.main__breadcrumb { display: inline-block; }
+.main__breadcrumb { display: block; }
+.main__breadcrumb { margin-bottom: 30px; }
+
 
 .main__breadcrumb li {
-    height: 18px;
-    line-height: 18px;
+    display: inline;
     font-size: 0.875rem;
 }
 

@@ -1,0 +1,244 @@
+@charset "UTF-8";
+/* ------------------------------------------------------------
+   下層ページ osaki作成分
+------------------------------------------------------------ */
+/*
+ * 目次
+ * 
+ * 
+ * 
+ * 
+ */
+
+/* size
+------------------------------------------------------------ */
+
+.size_hiritsu {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-end;
+	margin-top: 40px;
+}
+
+.size_hiritsu1 {
+	flex: auto;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 368px;
+	height: 227px;
+	background-image: url(../img/size/hiritsu1.png);
+	margin: 0 10px;
+}
+
+.size_hiritsu2 {
+	flex: auto;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 503px;
+	height: 206px;
+	background-image: url(../img/size/hiritsu2.png);
+	margin: 0 10px;
+}
+
+.size_hiritsu3 {
+	flex: auto;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 203px;
+	height: 153px;
+	background-image: url(../img/size/hiritsu3.png);
+	margin: 0 10px;
+}
+
+.size_right {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+.size_left {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: space-between;
+	flex-direction: row-reverse;
+}
+
+.size_img60 {
+	background-image: url(../img/size/size60.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 422px;
+	height: 220px;
+	margin-right: 50px;
+}
+
+.size_img90 {
+	background-image: url(../img/size/size90.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 422px;
+	height: 220px;
+}
+
+.size_img120 {
+	background-image: url(../img/size/size120.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 422px;
+	height: 220px;
+	margin-right: 50px;
+}
+
+.size_img150 {
+	background-image: url(../img/size/size150.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 422px;
+	height: 220px;
+}
+
+.size_img180 {
+	background-image: url(../img/size/size180.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 422px;
+	height: 220px;
+	margin-right: 50px;
+}
+
+.size_text {
+	flex: auto;
+}
+
+.size_p {
+	font-size: 15px;
+	font-weight: 100;
+	color: #ff5925;
+}
+
+.btn_three {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	margin-top: 40px;
+}
+
+.btn_return {
+	background: url(../img/common/arrow-r-wh.gif) no-repeat right 15px center / 9px auto,
+		url("../img/common/bg_btnred.gif") repeat left center / 6px auto;
+	font-size: 17px;
+	font-weight: bold;
+	border: solid 2px #000;
+	box-shadow: 5px 5px #000;
+	color: #ffffff;
+	width: 310px;
+	height: 70px;
+	margin: 20px 10px 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.size .btn { width: 100%; }
+.size .btn img { 
+    margin: 30px auto 0;
+    width: 100%;
+    max-width: 606px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1119px) {
+	/* size
+	------------------------------------------------------------ */	
+.size_right {
+	flex: 1;
+}
+
+.size_left {
+	flex: 1;
+}
+
+.size_img60 {
+	flex: 1;
+	margin-right: 20px;
+}
+
+.size_img90 {
+	flex: 1;
+	margin-left: 20px;
+}
+
+.size_img120 {
+	flex: 1;
+	margin-right: 20px;
+}
+
+.size_img150 {
+	flex: 1;
+	margin-left: 20px;
+}
+
+.size_img180 {
+	flex: 1;
+	margin-right: 20px;
+}
+	
+.size_text {
+	flex: 1;
+}	
+    
+    
+}
+@media screen and (max-width: 767px) {
+	/* size
+	------------------------------------------------------------ */
+.size_right {
+	justify-content: center;
+}		
+	
+.size_left {
+	justify-content: center;
+}	
+	
+.size_img60 {
+	margin-right: 0;
+	background-position: center; 
+}
+
+.size_img90 {
+	margin-left: 0;
+	background-position: center; 
+}
+
+.size_img120 {
+	margin-right: 0;
+	background-position: center; 
+}
+
+.size_img150 {
+	margin-left: 0;
+	background-position: center; 
+}
+
+.size_img180 {
+	margin-right: 0;
+	background-position: center; 
+}
+	
+.size_text {
+	display: flex;
+    justify-content: center;	
+	margin-top: 10px;
+}	
+
+.btn_return {
+	margin: 20px 10px 10px;
+}
+
+}

@@ -8,8 +8,8 @@
         <div class="search__form">
             <form method="get" action="{{url('result')}}">
                 <h3 class="search__item">縦横比率を選択する</h3>
-                <ul class="search__option--radio">
-                    @foreach ($ratios as $index => $ratio)
+                <ul class="search__option--radio cf">
+                @foreach ($ratios as $index => $ratio)
                         <li>
                             <input type="radio" name="ratio" id="ratio_{{$index}}" value="{{ $ratio->id }}" {{ (isset($search['ratio']) ? $search['ratio'] : $index)==$ratio->id ? "checked":"" }}>
                             <label for="ratio_{{$index}}">{{ $ratio->height }}:{{ $ratio->width }}</label>

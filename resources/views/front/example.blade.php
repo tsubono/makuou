@@ -122,7 +122,7 @@
                     </a>
                 </div>
                 <!-- /.example__content -->
-                <a class="example__btn" href=""><img src="{{asset("assets/img/top/make_btn.png")}}"
+                <a class="example__btn" href="{{url('/search')}}"><img src="{{asset("assets/img/top/make_btn.png")}}"
                                                      alt="ネットでレイアウトを調整しながら自分でデザイン！オリジナル横断幕を作る"></a>
             </div>
         </div>

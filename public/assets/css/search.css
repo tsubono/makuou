@@ -58,15 +58,12 @@ img {
     margin-top: 30px;
 }
 
-.search__option--radio {
-    display: grid;
-    grid-gap: 15px 20px;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-}
-
 .search__option--radio li {
     position: relative;
+    float: left;
+    width: 160px;
     height: 40px;
+    margin: 0 20px 15px 0;
 }
 
 .search__option--radio input[type="radio"] {
@@ -162,6 +159,17 @@ img {
     }
 }
 
+@media screen and (max-width: 767px) {
+    .search__option--radio li {
+        float: none;
+        width: 100%;
+        margin: 0;
+    }
+    .search__option--radio li:nth-child(n+2) {
+        margin-top: 15px;
+    }
+}
+
 /* pickup
 ------------------------------------------------------------ */
 .pickup {
@@ -184,10 +192,16 @@ img {
 }
 
 .pickup__content {
-    display: grid;
+    display: flex;
+    flex: 1;
+}
+
+.pickup__box {
     margin-top: 30px;
-    grid-gap: 30px;
-    grid-template-columns: repeat(3, 1fr);
+}
+
+.pickup__box:nth-child(n+2) {
+    margin-left: 30px;
 }
 
 .pickup__box > div {
@@ -215,17 +229,31 @@ img {
 
 @media screen and (max-width: 767px) {
     .pickup__content {
-        grid-template-columns: repeat(1, 1fr);
+        flex-wrap: wrap;
+    }
+    .pickup__box {
+        width: 100%;
+        margin-left: 0 !important;
+        margin-top: 30px;
     }
 }
 
 /* result
 ------------------------------------------------------------ */
 .result {
-    display: grid;
-    margin-bottom: 50px;
-    grid-gap: 45px 30px;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+}
+
+.result__box {
+    width: calc((100% - 60px)/3);
+    margin: 0 0 45px 30px;
+}
+
+.result__box:nth-child(3n+1) {
+    margin-left: 0;
 }
 
 .result__box > div {
@@ -310,13 +338,21 @@ img {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1119px) {
-    .result {
-        grid-template-columns: repeat(2, 1fr);
+    .result__box {
+        width: calc((100% - 30px)/2);
+        margin: 0 0 45px 30px;
+    }
+    .result__box:nth-child(3n+1) {
+        margin-left: 30px;
+    }
+    .result__box:nth-child(2n+1) {
+        margin-left: 0;
     }
 }
 
 @media screen and (max-width: 767px) {
-    .result {
-        grid-template-columns: repeat(1, 1fr);
+    .result__box {
+        width: 100%;
+        margin-left: 0 !important;
     }
 }

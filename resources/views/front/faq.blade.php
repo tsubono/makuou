@@ -21,17 +21,17 @@
             </h1>
             <div class="main__content">
                 <ul class="main__breadcrumb">
-                    <li><a href="">HOME</a></li>
+                    <li><a href="{{url('/')}}">HOME</a></li>
                     <li>よくあるご質問</li>
                 </ul>
                 <div class="faq">
                     <ul class="faq__tabs">
-                        <li class="faq__tab is-current"><a href="#faq01">注文方法について</a></li>
-                        <li class="faq__tab"><a href="#faq02">幕の仕様について</a></li>
-                        <li class="faq__tab"><a href="#faq03">オリジナルのロゴや写真について</a></li>
-                        <li class="faq__tab"><a href="#faq04">デザイン制作について</a></li>
-                        <li class="faq__tab"><a href="#faq05">発送について</a></li>
-                        <li class="faq__tab"><a href="#faq06">耐久性・アフターサポートについて</a></li>
+                        <li class="faq__tab is-current"><a href="faq01">注文方法について</a></li>
+                        <li class="faq__tab"><a href="faq02">幕の仕様について</a></li>
+                        <li class="faq__tab"><a href="faq03">オリジナルのロゴや写真について</a></li>
+                        <li class="faq__tab"><a href="faq04">デザイン制作について</a></li>
+                        <li class="faq__tab"><a href="faq05">発送について</a></li>
+                        <li class="faq__tab"><a href="faq06">耐久性・アフターサポートについて</a></li>
                     </ul>
                     <section id="faq01" class="faq__section">
                         <h2 class="faq__heading">注文方法について</h2>
@@ -166,7 +166,7 @@
                         </dl>
                     </section>
                     <!-- /#faq06 -->
-                    <a class="faq__btn" href=""><img src="{{asset("assets/img/top/make_btn.png")}}" alt="ネットでレイアウトを調整しながら自分でデザイン！オリジナル横断幕を作る"></a>
+                    <a class="faq__btn" href="{{url('/search')}}"><img src="{{asset("assets/img/top/make_btn.png")}}" alt="ネットでレイアウトを調整しながら自分でデザイン！オリジナル横断幕を作る"></a>
                 </div>
             </div>
         </div>

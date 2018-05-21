@@ -82,7 +82,7 @@
             </section>
             <!-- /.search -->
             <section class="pickup">
-                <h2 class="pickup__heading"><img src="{{asset("assets/img/search/heading--pickup.png")}}" alt=""></h2>
+                <h2 class="pickup__heading"><img src="{{asset("assets/img/search/heading--pickup.png")}}" alt="Pick Up!"></h2>
                 <div class="pickup__content">
                     <div class="pickup__box">
                         <div>
@@ -118,7 +118,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="btn"><a href="#"><img src="{{asset("assets/img/top/make_btn.png")}}"
+                <div class="btn"><a href="{{url('/search')}}"><img src="{{asset("assets/img/top/make_btn.png")}}"
                                                   alt="ネットでレイアウトを調整しながら自分でデザイン！オリジナル横断幕を作る"></a></div>
             </section>
             <!-- /.pickup -->

@@ -5,10 +5,10 @@
 @section('content')
     <div class="mainimg sp_none">
         <div class="img"><img src="{{asset("assets/img/top/mainimg.png")}}" alt="誰でも簡単にオリジナル横断幕デザインが作れます！幕デザインの幕王～幕王は試合を盛り上げるお手伝いをします～"></div>
-        <div class="btn"><a href="#"><img src="{{asset("assets/img/top/main_btn.png")}}" alt="オリジナル横断幕を作る"></a></div>
+        <div class="btn"><a href="{{url('/search')}}"><img src="{{asset("assets/img/top/main_btn.png")}}" alt="オリジナル横断幕を作る"></a></div>
     </div>
     <div class="mainimg pc_none tab_none">
-        <div class="img"><a href="#"><img src="{{asset("assets/img/top/mainimg-sp.png")}}" alt="誰でも簡単にオリジナル横断幕デザインが作れます！幕デザインの幕王～幕王は試合を盛り上げるお手伝いをします～オリジナル横断幕を作る"></a></div>
+        <div class="img"><a href="{{url('/search')}}"><img src="{{asset("assets/img/top/mainimg-sp.png")}}" alt="誰でも簡単にオリジナル横断幕デザインが作れます！幕デザインの幕王～幕王は試合を盛り上げるお手伝いをします～オリジナル横断幕を作る"></a></div>
     </div>
     <div class="pickup">
         <ul class="cf">

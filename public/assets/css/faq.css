@@ -4,17 +4,23 @@ img {
 
 /* ----- faq ----- */
 .faq__tabs {
-    display: grid;
-    grid-gap: 20px 30px;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
 }
 
 .faq__tab {
+    width: calc((100% - 60px)/3);
     height: 50px;
+    margin: 0 0 20px 30px;
     border: 1px solid #fdad03;
     border-radius: 6px;
     box-shadow: 0 1px 0 0 #ffce2a inset;
     background: linear-gradient(#ffc803, #fc9604);
+}
+
+.faq__tab:nth-child(3n+1) {
+    margin-left: 0;
 }
 
 .faq__tab a {
@@ -35,7 +41,7 @@ img {
 }
 
 .faq__heading {
-    margin-top: 40px;
+    margin-top: 20px;
     padding-bottom: 20px;
     color: #8b4404;
     font-size: 2rem;
@@ -104,17 +110,24 @@ img {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1119px) {
-    .faq__tabs {
-        grid-template-columns: repeat(2, 1fr);
+    .faq__tab {
+        width: calc((100% - 30px)/2);
+    }
+    .faq__tab:nth-child(3n+1) {
+        margin-left: 30px;
+    }
+    .faq__tab:nth-child(2n+1) {
+        margin-left: 0;
     }
 }
 
 @media screen and (max-width: 767px) {
-    .faq__tabs {
-        grid-gap: 10px;
-        grid-template-columns: repeat(1, 1fr);
+    .faq__tab {
+        width: 100%;
+        margin-left: 0 !important;
     }
     .faq__btn {
+        max-width: 623px;
         width: 100%;
     }
 }

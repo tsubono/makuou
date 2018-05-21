@@ -29,7 +29,7 @@ time, mark, audio, video {
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+footer, header, hgroup, menu, nav, section, main {
     display: block;
 }
 
@@ -646,19 +646,17 @@ body {
     overflow: hidden;
     background-image: url("../img/common/main__character.png");
 }
-
 .main__breadcrumb:after {
-    content: "";
-    display: block;
-    clear: both;
+	content: "";
+	display: block;
+	clear: both;
 }
 .main__breadcrumb { display: inline-block; }
 .main__breadcrumb { display: block; }
 .main__breadcrumb { margin-bottom: 30px; }
 
-
 .main__breadcrumb li {
-    display: inline;
+	display: inline;
     font-size: 0.875rem;
 }
 

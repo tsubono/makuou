@@ -35,8 +35,7 @@
                         <tr>
                             <th>住所</th>
                             <td>〒566-0035<br>
-                                大阪府摂津市鶴野2-3-19
-                            </td>
+                                大阪府摂津市鶴野2-3-19</td>
                         </tr>
                         <tr>
                             <th>電話番号</th>
@@ -53,40 +52,34 @@
                         <tr>
                             <th>商品以外の必要代金</th>
                             <td>1. 送料<br>
-                                2. 消費税(税込表示)
-                            </td>
+                                2. 消費税(税込表示)</td>
                         </tr>
                         <tr>
                             <th>注文方法</th>
                             <td>1. インターネット受付<br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;24時間(但し、定休日の場合は翌営業日の受付です)<br>
-                                ご注文フォームにご入力いただき、ご送信ください。
-                            </td>
+                                ご注文フォームにご入力いただき、ご送信ください。</td>
                         </tr>
                         <tr>
                             <th>支払方法</th>
                             <td>1. クレジットカード決済<br>
                                 2. コンビニ決済<br>
-                                3. 銀行振り込み
-                            </td>
+                                3. 銀行振り込み</td>
                         </tr>
                         <tr>
                             <th>支払期限</th>
                             <td>1. クレジットカード決済の場合：ご利用のカード会社ごとに異なります。<br>
                                 2. コンビニ決済の場合：商品到着後1週間以内にお支払いください。<br>
-                                3. 銀行振り込みの場合：商品到着後1週間以内にお振込みください。
-                            </td>
+                                3. 銀行振り込みの場合：商品到着後1週間以内にお振込みください。</td>
                         </tr>
                         <tr>
                             <th>引渡し時期</th>
                             <td>原則として、在庫商品については受注当日の発送、オーダー製作品については受注日から2営業日後の発送となります。<br>
-                                ただし、午後3時以降の注文の場合は、翌営業日の受注としての取り扱いになります。
-                            </td>
+                                ただし、午後3時以降の注文の場合は、翌営業日の受注としての取り扱いになります。</td>
                         </tr>
                         <tr>
                             <th>返品・交換について</th>
-                            <td>返品は、商品到着後1週間以内にお申し出頂き、お客様の御都合による返品は返送料を御負担願います。<br>尚、オーダー制作品は、不良品以外のお客様の御都合による返品は出来ません。
-                            </td>
+                            <td>返品は、商品到着後1週間以内にお申し出頂き、お客様の御都合による返品は返送料を御負担願います。<br>尚、オーダー制作品は、不良品以外のお客様の御都合による返品は出来ません。</td>
                         </tr>
                         </tbody>
                     </table>
@@ -94,7 +87,7 @@
             </section>
             <!-- /.search -->
             <section class="pickup">
-                <h2 class="pickup__heading"><img src="{{asset("assets/img/search/heading--pickup.png")}}" alt=""></h2>
+                <h2 class="pickup__heading"><img src="{{asset("assets/img/search/heading--pickup.png")}}" alt="Pick Up!"></h2>
                 <div class="pickup__content">
                     <div class="pickup__box">
                         <div>
@@ -130,7 +123,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="btn"><a href="#"><img src="{{asset("assets/img/top/make_btn.png")}}"
+                <div class="btn"><a href="{{url('/search')}}"><img src="{{asset("assets/img/top/make_btn.png")}}"
                                                   alt="ネットでレイアウトを調整しながら自分でデザイン！オリジナル横断幕を作る"></a></div>
             </section>
             <!-- /.pickup -->

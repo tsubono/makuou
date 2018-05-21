@@ -92,7 +92,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="btn"><a href="#"><img src="{{asset("assets/img/top/make_btn.png")}}"
+                <div class="btn"><a href="{{url('/search')}}"><img src="{{asset("assets/img/top/make_btn.png")}}"
                                                   alt="ネットでレイアウトを調整しながら自分でデザイン！オリジナル横断幕を作る"></a></div>
             </section>
             <!-- /.pickup -->

@@ -17,7 +17,7 @@
         <div class="main__content">
             <ul class="main__breadcrumb">
                 <li><a href="{{url('/')}}">HOME</a></li>
-                <li><a href="{{url('search')}}">横断幕を作る</a></li>
+                <li><a href="{{url('/search')}}">横断幕を作る</a></li>
                 <li>検索結果</li>
             </ul>
             <div class="result">

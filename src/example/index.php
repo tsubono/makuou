@@ -25,7 +25,7 @@
         </h1>
         <div class="main__content">
             <ul class="main__breadcrumb">
-                <li><a href="">HOME</a></li>
+                <li><a href="/">HOME</a></li>
                 <li>ギャラリー</li>
             </ul>
             <div class="select-box">
@@ -126,7 +126,7 @@
                     </a>
                 </div>
                 <!-- /.example__content -->
-                <a class="example__btn" href=""><img src="../assets/img/top/make_btn.png" alt="ネットでレイアウトを調整しながら自分でデザイン！オリジナル横断幕を作る"></a>
+                <a class="example__btn" href="/search/"><img src="../assets/img/top/make_btn.png" alt="ネットでレイアウトを調整しながら自分でデザイン！オリジナル横断幕を作る"></a>
             </div>
         </div>
     </div>

@@ -24,7 +24,7 @@
             <h1 class="main__title"><img src="../assets/img/layout/title.png" alt="レイアウトを作る"></h1>
             <div class="main__content">
                 <ul class="main__breadcrumb">
-                    <li><a href="">HOME</a></li>
+                    <li><a href="/">HOME</a></li>
                     <li>レイアウトを作る</li>
                 </ul>
                 <div>
@@ -34,9 +34,8 @@
                     <a href="#">デザイン確認</a>
                 </div>
             </div>
-        </section>    
-        <!-- /.search -->
-        <!-- /.pickup -->
+        </section>
+        <!-- /.layout -->
     </div>
 </main>
 <!-- /.l-main -->

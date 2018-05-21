@@ -25,7 +25,7 @@
             <h1 class="main__title"><img src="../assets/img/regist/title.png" alt="会員登録"></h1>
             <div class="main__content">
                 <ul class="main__breadcrumb">
-                    <li><a href="">HOME</a></li>
+                    <li><a href="/">HOME</a></li>
                     <li>会員登録</li>
                 </ul>
                 <h4 class="ttl01">会員登録</h4>
@@ -40,46 +40,46 @@
             </div>    
         </section>
         
-				<section class="pickup">
-					<h2 class="pickup__heading"><img src="../assets/img/search/heading--pickup.png" alt=""></h2>
-					<div class="pickup__content">
-						<div class="pickup__box">
-							<div>
-								<img src="../assets/img/banner/banner01.png" alt="">
-								<dl class="pickup__info">
-									<dt>比率</dt>
-									<dd>1:1.5</dd>
-									<dt>サイズ</dt>
-									<dd>600</dd>
-								</dl>
-							</div>
-						</div>
-						<div class="pickup__box">
-							<div>
-								<img src="../assets/img/banner/banner01.png" alt="">
-								<dl class="pickup__info">
-									<dt>比率</dt>
-									<dd>1:1.5</dd>
-									<dt>サイズ</dt>
-									<dd>600</dd>
-								</dl>
-							</div>
-						</div>
-						<div class="pickup__box">
-							<div>
-								<img src="../assets/img/banner/banner01.png" alt="">
-								<dl class="pickup__info">
-									<dt>比率</dt>
-									<dd>1:1.5</dd>
-									<dt>サイズ</dt>
-									<dd>600</dd>
-								</dl>
-							</div>
-						</div>
-					</div>
-                    <div class="btn"><a href="#"><img src="../assets/img/top/make_btn.png" alt="ネットでレイアウトを調整しながら自分でデザイン！オリジナル横断幕を作る"></a></div>
-				</section>
-				<!-- /.pickup -->
+                <section class="pickup">
+                    <h2 class="pickup__heading"><img src="../assets/img/search/heading--pickup.png" alt="Pick Up!"></h2>
+                    <div class="pickup__content">
+                        <div class="pickup__box">
+                            <div>
+                                <img src="../assets/img/banner/banner01.png" alt="">
+                                <dl class="pickup__info">
+                                    <dt>比率</dt>
+                                    <dd>1:1.5</dd>
+                                    <dt>サイズ</dt>
+                                    <dd>600</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="pickup__box">
+                            <div>
+                                <img src="../assets/img/banner/banner01.png" alt="">
+                                <dl class="pickup__info">
+                                    <dt>比率</dt>
+                                    <dd>1:1.5</dd>
+                                    <dt>サイズ</dt>
+                                    <dd>600</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="pickup__box">
+                            <div>
+                                <img src="../assets/img/banner/banner01.png" alt="">
+                                <dl class="pickup__info">
+                                    <dt>比率</dt>
+                                    <dd>1:1.5</dd>
+                                    <dt>サイズ</dt>
+                                    <dd>600</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn"><a href="/search/"><img src="../assets/img/top/make_btn.png" alt="ネットでレイアウトを調整しながら自分でデザイン！オリジナル横断幕を作る"></a></div>
+                </section>
+                <!-- /.pickup -->
     </div>
 </main>
 <!-- /.l-main -->
@@ -87,7 +87,7 @@
 <?php include_once "../inc/footer.inc"; ?>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="../assets/js/common.js?v=1"></script>
+<script src="../assets/js/common.js"></script>
 <script src="../assets/js/search.js"></script>
 </body>
 </html>

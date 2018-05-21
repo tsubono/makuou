@@ -7,8 +7,8 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
-    <link rel="shortcut icon" href="assets/img/favicon.ico">
-    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+    <link rel="shortcut icon" href="../assets/img/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
     <link rel="stylesheet" href="../assets/css/common.css">
     <link rel="stylesheet" href="../assets/css/search.css">
 	<link rel="stylesheet" href="../assets/css/layer.css">
@@ -22,7 +22,7 @@
         <h1 class="main__title"><img src="../assets/img/guide/title.png" alt="ご利用ガイド"></h1>
         <div class="main__content">
             <ul class="main__breadcrumb">
-                <li><a href="">HOME</a></li>
+                <li><a href="/">HOME</a></li>
                 <li>ご利用ガイド</li>
             </ul>
 			
@@ -119,7 +119,7 @@
             </section>    
             <!-- /.search -->
             <section class="pickup">
-                <h2 class="pickup__heading"><img src="../assets/img/search/heading--pickup.png" alt=""></h2>
+                <h2 class="pickup__heading"><img src="../assets/img/search/heading--pickup.png" alt="Pick Up!"></h2>
                 <div class="pickup__content">
                     <div class="pickup__box">
                         <div>

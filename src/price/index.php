@@ -25,7 +25,7 @@
             <h1 class="main__title"><img src="../assets/img/price/title.png" alt="価格表"></h1>
             <div class="main__content">
                 <ul class="main__breadcrumb">
-                    <li><a href="">HOME</a></li>
+                    <li><a href="/">HOME</a></li>
                     <li>価格表</li>
                 </ul>
                 <h5 class="ttl03">通常生地（社内呼称：トロマット）</h5>
@@ -262,7 +262,7 @@
             </section> 
             <!-- /.search -->
             <section class="pickup">
-                <h2 class="pickup__heading"><img src="../assets/img/search/heading--pickup.png" alt=""></h2>
+                <h2 class="pickup__heading"><img src="../assets/img/search/heading--pickup.png" alt="Pick Up!"></h2>
                 <div class="pickup__content">
                     <div class="pickup__box">
                         <div>
@@ -298,7 +298,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="btn"><a href="#"><img src="../assets/img/top/make_btn.png" alt="ネットでレイアウトを調整しながら自分でデザイン！オリジナル横断幕を作る"></a></div>
+                <div class="btn"><a href="/search/"><img src="../assets/img/top/make_btn.png" alt="ネットでレイアウトを調整しながら自分でデザイン！オリジナル横断幕を作る"></a></div>
             </section>
             <!-- /.pickup -->
     </div>

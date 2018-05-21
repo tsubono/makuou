@@ -25,7 +25,7 @@
             <h1 class="main__title"><img src="../assets/img/contact/title.png" alt="お問い合わせ"></h1>
             <div class="main__content">
                 <ul class="main__breadcrumb">
-                    <li><a href="">HOME</a></li>
+                    <li><a href="/">HOME</a></li>
                     <li>お問い合わせ</li>
                 </ul>
                 <h4 class="ttl01">お問い合わせ</h4>
@@ -65,14 +65,14 @@
                         </dl>
                     </div>
                     <ul class="sendarea type_css">
-                        <li><input type="submit" name="submit" value="確認する" class="btn_css_check" /></li>
+                        <li><input type="submit" name="submit" value="確認する" class="btn_css_check"></li>
                     </ul>
                 </form>
             </div>    
         </section>
         
 				<section class="pickup">
-					<h2 class="pickup__heading"><img src="../assets/img/search/heading--pickup.png" alt=""></h2>
+					<h2 class="pickup__heading"><img src="../assets/img/search/heading--pickup.png" alt="Pick Up!"></h2>
 					<div class="pickup__content">
 						<div class="pickup__box">
 							<div>
@@ -108,7 +108,7 @@
 							</div>
 						</div>
 					</div>
-                    <div class="btn"><a href="#"><img src="../assets/img/top/make_btn.png" alt="ネットでレイアウトを調整しながら自分でデザイン！オリジナル横断幕を作る"></a></div>
+                    <div class="btn"><a href="/search/"><img src="../assets/img/top/make_btn.png" alt="ネットでレイアウトを調整しながら自分でデザイン！オリジナル横断幕を作る"></a></div>
 				</section>
 				<!-- /.pickup -->
     </div>

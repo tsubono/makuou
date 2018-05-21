@@ -23,8 +23,8 @@
         <h1 class="main__title"><img src="../assets/img/size/size_title.png" alt="サイズ選びについて"></h1>
         <div class="main__content">
             <ul class="main__breadcrumb">
-                <li><a href="">HOME</a></li>
-                <li><a href="">価格表</a></li>
+                <li><a href="/">HOME</a></li>
+                <li><a href="/price/">価格表</a></li>
                 <li>サイズ選びについて</li>
             </ul>
 
@@ -121,12 +121,12 @@
                 
                 
             <div class="btn_three">
-                <div class="btn_return"><a href="../price/"><p>価格表に戻る</p></a></div>
-                <div class="btn_return"><a href="../material/"><p>素材について</p></a></div>
-                <div class="btn_return"><a href="../option/"><p>オプションについて</p></div>
+                <div class="btn_return"><a href="/price/"><p>価格表に戻る</p></a></div>
+                <div class="btn_return"><a href="/material/"><p>素材について</p></a></div>
+                <div class="btn_return"><a href="/option/"><p>オプションについて</p></div>
             </div>
                 
-            <div class="btn"><a href="#"><img src="../assets/img/top/make_btn.png" alt="ネットでレイアウトを調整しながら自分でデザイン！オリジナル横断幕を作る"></a></div>
+            <div class="btn"><a href="/search/"><img src="../assets/img/top/make_btn.png" alt="ネットでレイアウトを調整しながら自分でデザイン！オリジナル横断幕を作る"></a></div>
 
             </section>    
         </div>

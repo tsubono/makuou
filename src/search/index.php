@@ -25,7 +25,7 @@
         </h1>
         <div class="main__content">
             <ul class="main__breadcrumb">
-                <li><a href="">HOME</a></li>
+                <li><a href="/">HOME</a></li>
                 <li>横断幕を作る</li>
             </ul>
             <section class="search">

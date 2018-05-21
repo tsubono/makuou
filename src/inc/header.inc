@@ -10,7 +10,7 @@
         <div class="right sp_none">
             <div class="login cf">
                 <p class="name">ようこそゲスト様</p>
-                <p class="btn"><a href="#">ログイン</a></p>
+                <p class="btn"><a href="/login/">ログイン</a></p>
             </div>
             <div class="hour">
                 <div><img src="<?php echo $host; ?>/assets/img/common/tel.png" alt="0120-805-266"></div>
@@ -28,20 +28,20 @@
     <nav class="sp_none">
         <ul class="cf">
             <li><a href="/">HOME</a></li>
-            <li><a href="#">横断幕を作る</a></li>
-            <li><a href="#">テンプレートを検索</a></li>
-            <li><a href="#">ご注文の流れ</a></li>
-            <li><a href="#">価格表</a></li>
-            <li><a href="#">事例紹介</a></li>
-            <li><a href="#">よくあるご質問</a></li>
-            <li><a href="#">お問い合わせ</a></li>
+            <li><a href="/search/">横断幕を作る</a></li>
+            <li><a href="/search/">テンプレートを検索</a></li>
+            <li><a href="/guide/">ご注文の流れ</a></li>
+            <li><a href="/price/">価格表</a></li>
+            <li><a href="/example/">事例紹介</a></li>
+            <li><a href="/faq/">よくあるご質問</a></li>
+            <li><a href="/contact/">お問い合わせ</a></li>
         </ul>
     </nav>
 </header>
     <div class="sp-nav">
         <div class="login cf">
             <p class="name">ようこそゲスト様</p>
-            <p class="btn"><a href="#">ログイン</a></p>
+            <p class="btn"><a href="/login/">ログイン</a></p>
         </div>
         <div class="hour">
             <div><a href="tel:0120805266"><img src="<?php echo $host; ?>/assets/img/common/tel.png" alt="0120-805-266"></a></div>
@@ -49,12 +49,12 @@
         </div>
         <ul class="cf">
             <li><a href="/">HOME</a></li>
-            <li><a href="#">横断幕を作る</a></li>
-            <li><a href="#">テンプレートを検索</a></li>
-            <li><a href="#">ご注文の流れ</a></li>
-            <li><a href="#">価格表</a></li>
-            <li><a href="#">事例紹介</a></li>
-            <li><a href="#">よくあるご質問</a></li>
-            <li><a href="#">お問い合わせ</a></li>
+            <li><a href="/search/">横断幕を作る</a></li>
+            <li><a href="/search/">テンプレートを検索</a></li>
+            <li><a href="/guide/">ご注文の流れ</a></li>
+            <li><a href="/price/">価格表</a></li>
+            <li><a href="/example/">事例紹介</a></li>
+            <li><a href="/faq/">よくあるご質問</a></li>
+            <li><a href="/contact/">お問い合わせ</a></li>
         </ul>
     </div>

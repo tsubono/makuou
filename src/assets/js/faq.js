@@ -5,7 +5,7 @@ $(function(){
     });
     $('.faq__tabs a').click(function(e){
         e.preventDefault();
-        var id = $(this).attr('href');
+        var id = '#' + $(this).attr('href');
         $('.faq__section').hide();
         $(id).show();
         $('.faq__tab').removeClass('is-current');

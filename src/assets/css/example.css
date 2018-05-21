@@ -2,22 +2,8 @@ img {
     display: block;
 }
 
-select {
-    margin: 0;
-    padding: 0;
-    background: none;
-    border: none;
-    border-radius: 0;
-    outline: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
 .select-box {
     position: relative;
-    display: grid;
-    grid-template-columns: 150px 1fr;
     margin-bottom: 50px;
     padding: 25px 30px;
     border-radius: 10px;
@@ -27,10 +13,15 @@ select {
 }
 
 .select-box__title {
+    float: left;
     width: 150px;
     color: #fff;
     font-size: 1.25rem;
     font-weight: bold;
+}
+
+.select-box__group {
+    float: left;
 }
 
 .select-box__group p {
@@ -45,14 +36,29 @@ select {
     font-weight: bold;
 }
 
+.select-box span {
+    display: inline-block;
+    overflow: hidden;
+}
+
 .select-box select {
     height: 30px;
+    margin: 0;
     padding: 0 36px 0 10px;
     border: 1px solid #d7d6d6;
+    border-radius: 0;
     font-size: 0.875rem;
     line-height: 28px;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     background: #fff url("../img/example/arrow--select.png") right 2px top 2px no-repeat;
     background-size: 24px 24px;
+}
+
+.select-box select::-ms-expand {
+    display: none;
 }
 
 .select-box dd:last-of-type > select {
@@ -64,18 +70,12 @@ select {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1119px) {
-    .select-box {
-        grid-template-columns: 1fr;
-    }
     .select-box__group p {
         margin-top: 15px;
     }
 }
 
 @media screen and (max-width: 767px) {
-    .select-box {
-        grid-template-columns: 1fr;
-    }
     .select-box__group p {
         width: 100%;
         margin: 15px 0 0 0;
@@ -83,13 +83,21 @@ select {
 }
 
 .example__content {
-    display: grid;
-    grid-gap: 30px;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
 }
 
 .example__content a {
+    float: left;
+    display: block;
+    width: calc((100% - 60px)/3);
+    margin: 0 0 30px 30px;
     text-decoration: none;
+}
+
+.example__content a:nth-child(3n+1) {
+    margin-left: 0;
 }
 
 .example__content img {
@@ -111,7 +119,7 @@ select {
     display: block;
     width: 100%;
     max-width: 606px;
-    margin: 50px auto 0 auto;
+    margin: 30px auto 0 auto;
 }
 
 .example__btn img {
@@ -119,8 +127,9 @@ select {
 }
 
 @media screen and (max-width: 767px) {
-    .example__content {
-        grid-template-columns: 1fr;
+    .example__content a {
+        width: 100%;
+        margin-left: 0 !important;
     }
 }
 

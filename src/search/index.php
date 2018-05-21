@@ -38,7 +38,7 @@
                     <div class="search__form">
                         <form method="" action="">
                             <h3 class="search__item">縦横比率を選択する</h3>
-                            <ul class="search__option--radio">
+                            <ul class="search__option--radio cf">
                                 <li><input type="radio" name="aspect" id="aspect01" checked><label for="aspect01">1:1</label></li>
                                 <li><input type="radio" name="aspect" id="aspect02"><label for="aspect02">1:1.5</label></li>
                                 <li><input type="radio" name="aspect" id="aspect03"><label for="aspect03">1:2</label></li>

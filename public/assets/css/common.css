@@ -1295,3 +1295,28 @@ body {
     padding-left: 5em;
     text-indent: -5em;
 }
+
+/* /contact /sampleページ
+------------------------------------------------------------ */
+.error{
+    color: red;
+}
+
+.confirm_sendarea{
+    text-align: center;
+}
+
+.confirm_sendarea .confirm_wrapper button{
+    width: auto;
+    border: none;
+    border-bottom: solid 2px ;
+    border-radius: 3px;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fc6c35', endColorstr='#fb5b2a', GradientType=0); /* IE6-9 */
+    color: #fff;
+    padding: 15px;
+    font-size: 120%;
+}
+
+.confirm_sendarea .confirm_wrapper .back_btn{
+    background: grey;
+}

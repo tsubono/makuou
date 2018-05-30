@@ -1,3 +1,4 @@
+{{\Illuminate\Support\Facades\Session::flash('status','contact')}}
 @extends('front/layouts.default')
 
 @push('css')
@@ -23,66 +24,46 @@
                         <li>お問い合わせ</li>
                     </ul>
                     <h4 class="ttl01">お問い合わせ</h4>
-                    <p>下記フォームにお問い合わせ内容を記入の上、画面下部の「確認する」を押して、登録確認にお進みください。</p>
-                    @if($errors->has('exception'))
-                        <div>
-                            <span class="error">{{$errors->first('exception')}}</span>
-                        </div>
-                    @endif
-                    <form method="post" action="{{url('/contact/confirm')}}" class="form_template">
+                    <p>下記フォームにお問い合わせ内容を記入の上、画面下部の「送信する」を押して、お問い合わせを送信してください。</p>
+
+                    <form method="post" action="{{url('/contact')}}" class="form_template">
                         {{csrf_field()}}
                         <div class="form__bd">
                             <dl>
                                 <dt><span>必須</span>お名前</dt>
                                 <dd>
-                                    <input type="text" name="name" id="" value="{{old('name')}}"
-                                           placeholder=" 田中太郎"/>
-                                    @if($errors->has('name'))
-                                        <div>
-                                            <span class="error">{{$errors->first('name')}}</span>
-                                        </div>
-                                    @endif
+                                    {{$data['name']}}
+                                    <input type="hidden" name="name" value="{{$data['name']}}"/>
                                 </dd>
                             </dl>
                             <dl>
                                 <dt><span>必須</span>おなまえ（ふりがな）</dt>
                                 <dd>
-                                    <input type="text" name="nameKana" id="" value="{{old('nameKana')}}"
-                                           placeholder=" たなかたろう"/></li>
-                                    @if($errors->has('nameKana'))
-                                        <div>
-                                            <span class="error">{{$errors->first('nameKana')}}</span>
-                                        </div>
-                                    @endif
+                                    {{$data['nameKana']}}
+                                    <input type="hidden" name="nameKana" value="{{$data['nameKana']}}"/>
                                 </dd>
                             </dl>
                             <dl>
                                 <dt><span>必須</span>メールアドレス</dt>
                                 <dd>
-                                    <input type="text" name="email" id="" value="{{old('email')}}"
-                                           placeholder="例：tanaka@jp">
-                                    @if($errors->has('email'))
-                                        <div>
-                                            <span class="error">{{$errors->first('email')}}</span>
-                                        </div>
-                                    @endif
+                                    {{$data['email']}}
+                                    <input type="hidden" name="email" value="{{$data['email']}}"/>
                                 </dd>
                             </dl>
                             <dl>
                                 <dt><span>必須</span>お問い合わせ内容</dt>
                                 <dd>
-                                    <input type="textarea" name="content" id="" value="{{old('content')}}"/>
-                                    @if($errors->has('content'))
-                                        <div>
-                                            <span class="error">{{$errors->first('content')}}</span>
-                                        </div>
-                                    @endif
+                                    {{$data['content']}}
+                                    <input type="hidden" name="content" value="{{$data['content']}}"/>
                                 </dd>
                             </dl>
                         </div>
-                        <ul class="sendarea type_css">
-                            <li><input type="submit" name="submit" value="確認する" class="btn_css_check"></li>
-                        </ul>
+                        <div class="confirm_sendarea type_css">
+                            <div class="confirm_wrapper">
+                                <button name="submit" value="0" class="back_btn">前に戻る</button>
+                                <button name="submit" value="1" class="btn_css_check">送信する</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </section>

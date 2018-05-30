@@ -572,7 +572,7 @@ p.txt {
     margin-right: 7%;
 }
 
-.form_template input[type="submit"] {
+.form_template input[type="submit"],.form_template button {
     width: 100%;
     border: none;
     border-bottom: solid 2px #ca5a2d;

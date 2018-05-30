@@ -68,6 +68,8 @@ Route::namespace('Front')->group(function() {
     Route::post('/contact/confirm',      'ContactController@confirm')->name('contactConfirm');
     Route::get('/sample',      'SampleController@index')->name('sample');
     Route::post('/sample',      'SampleController@store')->name('sampleThanks');
+    Route::post('/sample/confirm',      'SampleController@confirm')->name('sampleConfirm');
+
 });
 /*
 |--------------------------------------------------------------------------

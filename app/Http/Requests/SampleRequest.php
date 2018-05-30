@@ -1,0 +1,78 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class SampleRequest extends FormRequest
+{
+    protected $redirect = '/sample';
+
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+            'name'=>['required', 'regex:/^[ぁ-んァ-ヶー一-龠]+$/'],
+            'nameKana'=>['required','regex:/^[あ-ん゛゜ぁ-ぉゃ-ょー「」、]+/'],
+            'email'=>'required|email',
+            'mobileOne'=>['nullable','regex:/^0\d{1,3}$/'],
+            'mobileTwo'=>['nullable','regex:/^\d{1,4}$/'],
+            'mobileThree'=>['nullable','regex:/^\d{3,4}$/'],
+            'telOne'=>['nullable','regex:/^.{0}$|^0\d{1,3}$/'],
+            'telTwo'=>['nullable','regex:/^.{0}$|^\d{1,4}$/'],
+            'telThree'=>['nullable','regex:/^.{0}$|^\d{3,4}$/'],
+            'zipCodeOne'=>['required','regex:/^\d{3}$/'],
+            'zipCodeTwo'=>['required','regex:/^\d{4}$/'],
+            'prefecture'=>'required|integer|between:1,48',
+            'addressOne'=>'required',
+            'addressTwo'=>'',
+            'remarks'=>'',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'required' => ':attributeは必須項目です',
+            'email' => 'メールアドレスとして正しくありません',
+            'regex' => ':attributeとして正しくありません',
+            'integer' => ':attributeを選択して下さい',
+            'between' => ':attributeとして正しくありません',
+        ];
+    }
+
+    public function attributes()
+    {
+        return [
+            'name'=>'名前',
+            'nameKana'=>'ふりがな',
+            'email'=>'メールアドレス',
+            'mobileOne'=>'携帯電話番号',
+            'mobileTwo'=>'携帯電話番号',
+            'mobileThree'=>'携帯電話番号',
+            'telOne'=>'自宅電話番号',
+            'telTwo'=>'自宅電話番号',
+            'telThree'=>'自宅電話番号',
+            'zipCodeOne'=>'郵便番号',
+            'zipCodeTwo'=>'郵便番号',
+            'prefecture'=>'都道府県',
+            'addressOne'=>'住所1（市町村名・番地）',
+            'addressTwo'=>'住所2（建物名・マンション名）',
+            '備考欄'=>'',
+        ];
+    }
+}

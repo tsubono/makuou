@@ -78,17 +78,9 @@
                                             <input type="text" name="mobileThree" value="{{old('mobileThree')}}" id=""/>
                                         </li>
                                     </ul>
-                                    @if($errors->has('mobileOne'))
+                                    @if($errors->has('mobile'))
                                         <div>
-                                            <span class="error">{{$errors->first('mobileOne')}}</span>
-                                        </div>
-                                    @elseif($errors->has('mobileTwo'))
-                                        <div>
-                                            <span class="error">{{$errors->first('mobileTwo')}}</span>
-                                        </div>
-                                    @elseif($errors->has('mobileThree'))
-                                        <div>
-                                            <span class="error">{{$errors->first('mobileThree')}}</span>
+                                            <span class="error">{{$errors->first('mobile')}}</span>
                                         </div>
                                     @endif
                                 </dd>
@@ -102,17 +94,9 @@
                                             <input type="text" name="telThree" value="{{old('telThree')}}" id=""/>
                                         </li>
                                     </ul>
-                                    @if($errors->has('telOne'))
+                                    @if($errors->has('tel'))
                                         <div>
-                                            <span class="error">{{$errors->first('telOne')}}</span>
-                                        </div>
-                                    @elseif($errors->has('telTwo'))
-                                        <div>
-                                            <span class="error">{{$errors->first('telTwo')}}</span>
-                                        </div>
-                                    @elseif($errors->has('telThree'))
-                                        <div>
-                                            <span class="error">{{$errors->first('telThree')}}</span>
+                                            <span class="error">{{$errors->first('tel')}}</span>
                                         </div>
                                     @endif
                                 </dd>

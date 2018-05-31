@@ -29,11 +29,11 @@ class SampleRequest extends FormRequest
         return [
             'name' => ['required', 'regex:/^[ぁ-んァ-ヶー一-龠]+$/'],
             'nameKana' => ['required', 'regex:/^[あ-ん゛゜ぁ-ぉゃ-ょー「」、]+/'],
-            'email' => 'required|email',
+            'email' => 'required|email|max:255',
             'mobile' => new TelRule(),
             'tel' => new TelRule(),
-            'zipCodeOne' => ['required', 'regex:/^\d{3}$/'],
-            'zipCodeTwo' => ['required', 'regex:/^\d{4}$/'],
+            'zipCodeOne' => 'required|digits:3',
+            'zipCodeTwo' => 'required|digits:4',
             'prefecture' => 'required|integer|between:1,48',
             'addressOne' => 'required',
             'addressTwo' => '',
@@ -41,6 +41,8 @@ class SampleRequest extends FormRequest
         ];
     }
 
+    //携帯電話番号,自宅電話番号をそれぞれまとめてバリデーションにかけるため、一まとまりの配列を作成
+    //実際のバリデーションは$this->rules()の new TelRule()
     protected function validationData()
     {
         return array_merge($this->all(), [

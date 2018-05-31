@@ -28,9 +28,11 @@ class TelRule implements Rule
         $one = preg_replace("/( |　)/", "", $value[0]);
         $two = preg_replace("/( |　)/", "", $value[1]);
         $three = preg_replace("/( |　)/", "", $value[2]);
+        //全て空ならバリデーションにかけない
         if ($one === '' && $two === '' && $three === '') {
             return true;
         } else if ($one !== '' && $two !== '' && $three !== '') {
+            //各input要素からの値が正しいかどうか
             if (preg_match('/^0\d{1,3}$/', $one) &&
                 preg_match('/^\d{1,4}$/', $two) &&
                 preg_match('/^\d{3,4}$/', $three)) {

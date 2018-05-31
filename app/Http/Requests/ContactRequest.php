@@ -29,7 +29,7 @@ class ContactRequest extends FormRequest
         return [
             'name' => ['required', 'regex:/^[ぁ-んァ-ヶー一-龠]+$/'],
             'nameKana' => ['required', 'regex:/^[あ-ん゛゜ぁ-ぉゃ-ょー「」、]+/'],
-            'email' => 'required|email',
+            'email' => 'required|email|max:255',
             'content' => 'required',
         ];
     }

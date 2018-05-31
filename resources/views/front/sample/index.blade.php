@@ -37,7 +37,6 @@
                                 <dd>
                                     <input type="text" name="name" value="{{old('name')}}" id=""
                                            placeholder=" 田中太郎"/>
-                                    </ul>
                                     @if($errors->has('name'))
                                         <div>
                                             <span class="error">{{$errors->first('name')}}</span>
@@ -49,7 +48,7 @@
                                 <dt><span>必須</span>おなまえ（ふりがな）</dt>
                                 <dd>
                                     <input type="text" name="nameKana" value="{{old('nameKana')}}" id=""
-                                           placeholder=" タナカタロウ"/>
+                                           placeholder=" たなかたろう"/>
                                     @if($errors->has('nameKana'))
                                         <div>
                                             <span class="error">{{$errors->first('nameKana')}}</span>
@@ -119,7 +118,8 @@
                             </dl>
                             <dl class="innerlist_address add02">
                                 <dt><span>必須</span>都道府県</dt>
-                                <dd><select name="prefecture" id="address1">
+                                <dd>
+                                    <select name="prefecture" id="address1">
                                         <option value="none" selected="selected">選択して下さい</option>
                                         @foreach(config('pref') as $index => $name)
                                             <option value="{{ $index }}"

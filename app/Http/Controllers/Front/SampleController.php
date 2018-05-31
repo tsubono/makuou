@@ -35,6 +35,7 @@ class SampleController extends Controller
     public function confirm(SampleRequest $request)
     {
 
+        //input要素から受け取ったデータをconfirmページへ受け流す
         return view('front.sample.confirm')
             ->with('data', $request->all([
                 'name',
@@ -59,8 +60,10 @@ class SampleController extends Controller
     public function store(SampleRequest $request)
     {
 
+        //confirmページからの繊維であれば処理を開始
         if ($request->session()->has('status') &&
             $request->session()->get('status') === 'sample') {
+            //完了ボタン押下時
             if ($request->input('submit', 0) === '1') {
 
                 DB::beginTransaction();
@@ -82,11 +85,12 @@ class SampleController extends Controller
                     Mail::to($sample->email)
                         ->queue(new Thanks($template, $sample, 'mail.sample_thank_plain'));
 
+                    //2重送信防止
                     $request->session()->regenerateToken();
                     DB::commit();
                 } catch (\Exception $e) {
+                    //エラー発生時はDBをロールバックして入力画面へリダイレクト
                     DB::rollBack();
-                    info($e);
                     return redirect('/sample')->withInput()
                         ->withErrors(
                             ['exception' => '大変申し訳ございません。内部エラーが発生しました。お手数ですが初めからやり直して下さい']
@@ -94,8 +98,10 @@ class SampleController extends Controller
                 }
                 return view('front.sample.thanks');
             }
+            //戻るボタン押下時
             return redirect('/sample')->withInput();
         }
+        //不正な遷移
         return redirect('/sample');
     }
 }

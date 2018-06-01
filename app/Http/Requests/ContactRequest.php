@@ -39,6 +39,7 @@ class ContactRequest extends FormRequest
         return [
             'required' => ':attributeは必須項目です',
             'email' => 'メールアドレスとして正しくありません',
+            'email.max' => 'メールアドレスを255文字以内で入力してください。',
             'regex' => ':attributeとして正しくありません',
         ];
     }

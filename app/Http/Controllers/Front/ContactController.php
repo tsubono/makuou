@@ -36,7 +36,7 @@ class ContactController extends Controller
 
         //input要素から受け取ったデータをconfirmページへ受け流す
         return view('front.contact.confirm')
-            ->with('data', $request->all([
+            ->with('data', $request->only([
                 'name',
                 'nameKana',
                 'email',

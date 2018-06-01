@@ -64,9 +64,11 @@ class SampleRequest extends FormRequest
         return [
             'required' => ':attributeは必須項目です',
             'email' => 'メールアドレスとして正しくありません',
+            'email.max' => 'メールアドレスを255文字以内で入力してください。',
             'regex' => ':attributeとして正しくありません',
             'integer' => ':attributeを選択して下さい',
             'between' => ':attributeとして正しくありません',
+            'digits' => ':attributeとして正しくありません',
         ];
     }
 

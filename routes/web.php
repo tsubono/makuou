@@ -56,6 +56,9 @@ Route::namespace('Front')->group(function() {
     Route::get('/option',      'OptionController@index')->name('option');
     Route::get('/example',      'ExampleController@index')->name('example');
     Route::get('/faq',      'FaqController@index')->name('faq');
+    Route::get('/register', 'UserController@index')->name('register');
+    Route::post('/register',      'UserController@store')->name('registerStore');
+    Route::post('/register/confirm',      'UserController@confirm')->name('registerConfirm');
     Route::get('/register/thanks', function (){
         return view('front.register.thanks');
     });

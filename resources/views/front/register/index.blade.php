@@ -25,30 +25,36 @@
                     <h4 class="ttl01">会員登録</h4>
                     <p>新規に会員を登録します。<br>
                         下記フォームに登録内容を記入の上、画面下部の「確認する」を押して、登録確認にお進みください。</p>
-                    <form method="post" action="{{'/register'}}" class="form_template">
+                    @if($errors->has('exception'))
+                        <div>
+                            <span class="error">{{$errors->first('exception')}}</span>
+                        </div>
+                    @endif
+                    <form method="post" action="{{url('/register/confirm')}}" class="form_template">
                         @csrf
                         <div class="form__bd">
                             <dl>
                                 <dt><span>必須</span>お名前</dt>
                                 <dd>
-                                    <ul class="innerlist_name cf">
-                                        <li><input type="text" name="lastName" value="{{old('lastName')}}" id=""
-                                                   placeholder=" 田中"/></li>
-                                        <li><input type="text" name="firstName" value="{{old('firstName')}}" id=""
-                                                   placeholder=" 太郎"/></li>
-                                    </ul>
+                                    <input type="text" name="name" value="{{old('name')}}" id=""
+                                           placeholder=" 田中太郎"/>
+                                    @if($errors->has('name'))
+                                        <div>
+                                            <span class="error">{{$errors->first('name')}}</span>
+                                        </div>
+                                    @endif
                                 </dd>
                             </dl>
                             <dl>
                                 <dt><span>必須</span>おなまえ（ふりがな）</dt>
                                 <dd>
-                                    <ul class="innerlist_kana cf">
-                                        <li><input type="text" name="lastNameKana" value="{{old('lastNameKana')}}" id=""
-                                                   placeholder=" タナカ"/></li>
-                                        <li><input type="text" name="firstNameKana" value="{{old('firstNameKana')}}"
-                                                   id=""
-                                                   placeholder=" タロウ"/></li>
-                                    </ul>
+                                    <input type="text" name="nameKana" value="{{old('nameKana')}}" id=""
+                                           placeholder=" たなかたろう"/>
+                                    @if($errors->has('nameKana'))
+                                        <div>
+                                            <span class="error">{{$errors->first('nameKana')}}</span>
+                                        </div>
+                                    @endif
                                 </dd>
                             </dl>
                             <dl>
@@ -56,66 +62,109 @@
                                 <dd>
                                     <input type="text" name="email" value="{{old('email')}}" id=""
                                            placeholder="例：tanaka@jp">
+                                    @if($errors->has('email'))
+                                        <div>
+                                            <span class="error">{{$errors->first('email')}}</span>
+                                        </div>
+                                    @endif
                                 </dd>
                             </dl>
                             <dl>
                                 <dt>携帯電話番号</dt>
                                 <dd>
                                     <ul class="innerlist_tel">
-                                        <li><input type="text" name="telOne" value="{{old('mobileOne')}}" id=""/>&emsp;-&emsp;<input
-                                                    type="text" name="telTwo"
-                                                    value="{{old('mobileTwo')}}" id=""/>&emsp;-&emsp;<input
-                                                    type="text" name="telThree" value="{{old('mobileThree')}}" id=""/></li>
+                                        <li><input type="text" name="mobileOne" value="{{old('mobileOne')}}" id=""/>&emsp;-&emsp;
+                                            <input type="text" name="mobileTwo" value="{{old('mobileTwo')}}" id=""/>&emsp;-&emsp;
+                                            <input type="text" name="mobileThree" value="{{old('mobileThree')}}" id=""/>
+                                        </li>
                                     </ul>
+                                    @if($errors->has('mobile'))
+                                        <div>
+                                            <span class="error">{{$errors->first('mobile')}}</span>
+                                        </div>
+                                    @endif
                                 </dd>
                             </dl>
                             <dl>
                                 <dt>自宅電話番号</dt>
                                 <dd>
                                     <ul class="innerlist_tel">
-                                        <li><input type="text" name="mobileOne" value="{{old('telOne')}}" id=""/>&emsp;-&emsp;<input
-                                                    type="text" name="mobileTwo"
-                                                    value="{{old('telTwo')}}" id=""/>&emsp;-&emsp;<input
-                                                    type="text" name="mobileThree" value="{{old('telThree')}}"
-                                                    id=""/>
+                                        <li><input type="text" name="telOne" value="{{old('telOne')}}" id=""/>&emsp;-&emsp;
+                                            <input type="text" name="telTwo" value="{{old('telTwo')}}" id=""/>&emsp;-&emsp;
+                                            <input type="text" name="telThree" value="{{old('telThree')}}" id=""/>
                                         </li>
                                     </ul>
+                                    @if($errors->has('tel'))
+                                        <div>
+                                            <span class="error">{{$errors->first('tel')}}</span>
+                                        </div>
+                                    @endif
                                 </dd>
                             </dl>
                             <dl class="address_num">
                                 <dt><span>必須</span>郵便番号</dt>
-                                <dd><input type="text" name="zipCodeOne" value="{{old('zipCodeOne')}}" id=""/>&emsp;-&emsp;<input
-                                            type="text" name="zipCodeTwo"
-                                            value="{{old('zipCodeTwo')}}" id=""/>
+                                <dd>
+                                    <input type="text" name="zipCodeOne" value="{{old('zipCodeOne')}}" id=""/>&emsp;-&emsp;<input
+                                            type="text" name="zipCodeTwo" value="{{old('zipCodeTwo')}}" id=""/>
+                                    @if($errors->has('zipCodeOne'))
+                                        <div>
+                                            <span class="error">{{$errors->first('zipCodeOne')}}</span>
+                                        </div>
+                                    @elseif($errors->has('zipCodeTwo'))
+                                        <div>
+                                            <span class="error">{{$errors->first('zipCodeTwo')}}</span>
+                                        </div>
+                                    @endif
                                 </dd>
                             </dl>
                             <dl class="innerlist_address add02">
                                 <dt><span>必須</span>都道府県</dt>
                                 <dd><select name="prefecture" id="address1">
-                                        @foreach(config('pref') as $name)
-                                            <option value="{{ $name }}"
-                                                    @if(old('prefecture') == $name) selected @endif>{{$name}}
+                                        <option value="none" selected="selected">選択して下さい</option>
+                                        @foreach(config('pref') as $index => $name)
+                                            <option value="{{ $index }}"
+                                                    @if(old('prefecture') == $index) selected @endif>{{$name}}
                                             </option>
                                         @endforeach
-                                        <option value="日本国外">日本国外</option>
-                                    </select></dd>
+                                        <option value="48">日本国外</option>
+                                    </select>
+                                    @if($errors->has('prefecture'))
+                                        <div>
+                                            <span class="error">{{$errors->first('prefecture')}}</span>
+                                        </div>
+                                    @endif</dd>
                             </dl>
                             <dl>
                                 <dt><span>必須</span>住所1（市町村名・番地）</dt>
                                 <dd>
                                     <input type="text" name="addressOne" value="{{old('addressOne')}}" id=""/>
+                                    @if($errors->has('addressOne'))
+                                        <div>
+                                            <span class="error">{{$errors->first('addressOne')}}</span>
+                                        </div>
+                                    @endif
                                 </dd>
                             </dl>
                             <dl>
                                 <dt>住所2（建物名・マンション名）</dt>
                                 <dd>
                                     <input type="text" name="addressTwo" value="{{old('addressTwo')}}" id=""/>
+                                    @if($errors->has('addressTwo'))
+                                        <div>
+                                            <span class="error">{{$errors->first('addressTwo')}}</span>
+                                        </div>
+                                    @endif
                                 </dd>
                             </dl>
                             <dl>
                                 <dt><span>必須</span>パスワード</dt>
                                 <dd>
                                     <input type="text" name="password" id=""/>
+                                    @if($errors->has('password'))
+                                        <div>
+                                            <span class="error">{{$errors->first('password')}}</span>
+                                        </div>
+                                    @endif
                                 </dd>
                             </dl>
                         </div>

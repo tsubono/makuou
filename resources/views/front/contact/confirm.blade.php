@@ -37,7 +37,7 @@
                                 </dd>
                             </dl>
                             <dl>
-                                <dt><span>必須</span>おなまえ（ふりがな）</dt>
+                                <dt><span>必須</span>おなまえ（フリガナ）</dt>
                                 <dd>
                                     {{$data['nameKana']}}
                                     <input type="hidden" name="nameKana" value="{{$data['nameKana']}}"/>

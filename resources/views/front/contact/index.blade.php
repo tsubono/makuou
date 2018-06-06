@@ -45,10 +45,10 @@
                                 </dd>
                             </dl>
                             <dl>
-                                <dt><span>必須</span>おなまえ（ふりがな）</dt>
+                                <dt><span>必須</span>おなまえ（フリガナ）</dt>
                                 <dd>
                                     <input type="text" name="nameKana" id="" value="{{old('nameKana')}}"
-                                           placeholder=" たなかたろう"/></li>
+                                           placeholder=" タナカタロウ"/></li>
                                     @if($errors->has('nameKana'))
                                         <div>
                                             <span class="error">{{$errors->first('nameKana')}}</span>

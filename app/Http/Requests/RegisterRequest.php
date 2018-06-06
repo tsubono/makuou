@@ -29,7 +29,7 @@ class RegisterRequest extends FormRequest
     {
         return [
             'name' => ['required', 'regex:/^[ぁ-んァ-ヶー一-龠]+$/'],
-            'nameKana' => ['required', 'regex:/^[あ-ん゛゜ぁ-ぉゃ-ょー「」、]+/'],
+            'nameKana' => ['required', 'regex:/[ァ-ヶ]/u'],
             'email' => ['required', 'email', 'max:255', Rule::unique('users')->whereNull('deleted_at')],
             'mobile' => new TelRule(),
             'tel' => new TelRule(),

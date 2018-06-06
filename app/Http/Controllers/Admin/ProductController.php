@@ -80,7 +80,7 @@ class ProductController extends Controller
 
         // リレーションテーブル
         for ($i=1; $i<4; $i++) {
-            foreach ($request->get('product.category_'. $i, []) as $product_category_id) {
+            foreach ($request->input('product.category_'. $i, []) as $product_category_id) {
                 $productProductCategory = [
                     'product_id' => $product->id,
                     'product_category_id' => $product_category_id,
@@ -148,7 +148,7 @@ class ProductController extends Controller
         }
         // リレーションテーブル
         for ($i=1; $i<4; $i++) {
-            foreach ($request->get('product.category_'. $i, []) as $product_category_id) {
+            foreach ($request->input('product.category_'. $i, []) as $product_category_id) {
                 $productProductCategory = [
                     'product_id' => $product->id,
                     'product_category_id' => $product_category_id,

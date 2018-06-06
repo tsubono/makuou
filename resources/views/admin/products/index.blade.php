@@ -50,9 +50,27 @@
                             @endif
                         </td>
                         <td>{{ $product->ratio->height }} : {{ $product->ratio->width }}</td>
-                        <td class="max-w-150">{{ $product->getCategoryForDisp($product->category_1) }}</td>
-                        <td class="max-w-150">{{ $product->getCategoryForDisp($product->category_2) }}</td>
-                        <td class="max-w-150">{{ $product->getCategoryForDisp($product->category_3) }}</td>
+                        <td class="max-w-150">
+                            @foreach($product->product_categories as $index => $product_category)
+                                @if ($product_category->path == 1)
+                                    @if ($index!=0),@endif {{ $product_category->name }}
+                                @endif
+                            @endforeach
+                        </td>
+                        <td class="max-w-150">
+                            @foreach($product->product_categories as $index => $product_category)
+                                @if ($product_category->path == 2)
+                                    @if ($index!=0),@endif {{ $product_category->name }}
+                                @endif
+                            @endforeach
+                        </td>
+                        <td class="max-w-150">
+                            @foreach($product->product_categories as $index => $product_category)
+                                @if ($product_category->path == 3)
+                                    @if ($index!=0),@endif {{ $product_category->name }}
+                                @endif
+                            @endforeach
+                        </td>
                         <td>{{ \Carbon\Carbon::parse($product->updated_at)->format('Y年m月d日 h:i') }}</td>
                         <td>
                             <a href="{{ url('/admin/products/'. $product->id. '/edit') }}" class="btn btn-sm btn-primary">

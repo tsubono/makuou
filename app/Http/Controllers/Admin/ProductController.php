@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Product;
 use App\Models\ProductCategory;
+use App\Models\ProductProductCategory;
 use App\Models\Ratio;
 use App\Services\ProductService;
 use Carbon\Carbon;
@@ -21,12 +22,14 @@ class ProductController extends Controller
 {
     private $product;
     private $productCategory;
+    private $productProductCategory;
     private $productService;
     private $ratio;
 
-    public function __construct(Product $product, ProductCategory $productCategory, ProductService $productService, Ratio $ratio) {
+    public function __construct(Product $product, ProductCategory $productCategory, ProductProductCategory $productProductCategory, ProductService $productService, Ratio $ratio) {
         $this->product = $product;
         $this->productCategory = $productCategory;
+        $this->productProductCategory = $productProductCategory;
         $this->productService = $productService;
         $this->ratio = $ratio;
     }
@@ -73,7 +76,19 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $create = $this->productService->getDataForDB($request);
-        $this->product->create($create);
+        $product = $this->product->create($create);
+
+        // リレーションテーブル
+        for ($i=1; $i<4; $i++) {
+            foreach ($request->input('product.category_'. $i) as $product_category_id) {
+                $productProductCategory = [
+                    'product_id' => $product->id,
+                    'product_category_id' => $product_category_id,
+                    'category_type' => $i
+                ];
+                $this->productProductCategory->create($productProductCategory);
+            }
+        }
 
         return redirect()->route('admin.products.index')->with('success', 'テンプレートを登録しました。');
     }
@@ -125,6 +140,23 @@ class ProductController extends Controller
         $product = $this->product->findOrFail($id);
         $update = $this->productService->getDataForDB($request);
         $product->update($update);
+
+        // 一旦クリア
+        $productProductCategorys = $this->productProductCategory->where('product_id', $id)->get();
+        foreach ($productProductCategorys as $productProductCategory) {
+            $productProductCategory->delete();
+        }
+        // リレーションテーブル
+        for ($i=1; $i<4; $i++) {
+            foreach ($request->input('product.category_'. $i) as $product_category_id) {
+                $productProductCategory = [
+                    'product_id' => $product->id,
+                    'product_category_id' => $product_category_id,
+                    'category_type' => $i
+                ];
+                $this->productProductCategory->create($productProductCategory);
+            }
+        }
 
         return redirect()->route('admin.products.index')->with('success', 'テンプレートを更新しました。');
     }

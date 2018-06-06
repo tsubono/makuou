@@ -72,4 +72,8 @@ class Product extends Model
         }
         return $res;
     }
+
+    public function product_categories(){
+        return $this->belongsToMany('App\Models\ProductCategory', 'product_product_categories');
+    }
 }

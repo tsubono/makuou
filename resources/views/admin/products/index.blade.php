@@ -53,21 +53,21 @@
                         <td class="max-w-150">
                             @foreach($product->product_categories as $index => $product_category)
                                 @if ($product_category->path == 1)
-                                    @if ($index!=0),@endif {{ $product_category->name }}
+                                    {{ $product_category->name }}@if (!$loop->last),@endif
                                 @endif
                             @endforeach
                         </td>
                         <td class="max-w-150">
                             @foreach($product->product_categories as $index => $product_category)
                                 @if ($product_category->path == 2)
-                                    @if ($index!=0),@endif {{ $product_category->name }}
+                                    {{ $product_category->name }}@if (!$loop->last),@endif
                                 @endif
                             @endforeach
                         </td>
                         <td class="max-w-150">
                             @foreach($product->product_categories as $index => $product_category)
                                 @if ($product_category->path == 3)
-                                    @if ($index!=0),@endif {{ $product_category->name }}
+                                    {{ $product_category->name }}@if (!$loop->last),@endif
                                 @endif
                             @endforeach
                         </td>

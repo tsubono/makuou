@@ -40,7 +40,7 @@ class Thanks extends Mailable
     {
         $from = Shop::find(1)->email_from;
         return $this->subject($this->template->title)
-            ->from('tsupo222@gmail.com','幕王')
+            ->from(env('MAIL_FROM','tsubono@ga-design.jp'),'幕王')
             ->text($this->viewName);
     }
 }

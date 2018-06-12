@@ -53,7 +53,7 @@
                                 @foreach( $category_1 as $category)
                                     <label class="checkbox-inline">
                                         <input type="checkbox" name="product[category_1][]" value="{{ $category->id }}"
-                                                {{ \App\Models\Product::isCategory(old('product.category_1', $product->category_1), $category->id) ? "checked" : "" }}>
+                                                {{ \App\Models\ProductProductCategory::isCategory($product->id, $category->id) ? "checked" : "" }}>
                                         {{ $category->name }}
                                     </label>
                                 @endforeach
@@ -69,7 +69,7 @@
                                 @foreach( $category_2 as $category)
                                     <label class="checkbox-inline">
                                         <input type="checkbox" name="product[category_2][]" value="{{ $category->id }}"
-                                                {{ \App\Models\Product::isCategory(old('product.category_2', $product->category_2), $category->id) ? "checked" : "" }}>
+                                                {{ \App\Models\ProductProductCategory::isCategory($product->id, $category->id) ? "checked" : "" }}>
                                         {{ $category->name }}
                                     </label>
                                 @endforeach
@@ -85,7 +85,7 @@
                                 @foreach( $category_3 as $category)
                                     <label class="checkbox-inline">
                                         <input type="checkbox" name="product[category_3][]" value="{{ $category->id }}"
-                                                {{ \App\Models\Product::isCategory(old('product.category_3', $product->category_3), $category->id) ? "checked" : "" }}>
+                                                {{ \App\Models\ProductProductCategory::isCategory($product->id, $category->id) ? "checked" : "" }}>
                                         {{ $category->name }}
                                     </label>
                                 @endforeach

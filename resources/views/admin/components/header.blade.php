@@ -9,6 +9,9 @@
     </a>
     <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
+            <li>
+                <a href="/" target="_blank">サイトを表示</a>
+            </li>
             <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                     <span class="hidden-xs">{{\Auth::user()->name}}</span>

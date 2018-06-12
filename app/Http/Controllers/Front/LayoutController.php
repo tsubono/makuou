@@ -3,16 +3,15 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 
 class LayoutController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    private $product;
+
+    public function __construct(Product $product)
     {
+        $this->product = $product;
     }
 
     /**
@@ -20,8 +19,9 @@ class LayoutController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        return view('front.layout');
+        $product = $this->product->findOrFail($id);
+        return view('front.layout', compact('product'));
     }
 }

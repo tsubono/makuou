@@ -84,6 +84,7 @@
                             <option value="scene06">商売繁盛</option>
                         </select>
                     </p>
+                    <p class="example__submit"><input type="submit" value="検索する"></p>
                 </div>
             </div>
             <!-- /.select-box -->

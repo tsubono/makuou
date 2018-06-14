@@ -1295,3 +1295,7 @@ body {
     padding-left: 5em;
     text-indent: -5em;
 }
+
+.bold{ font-weight: bold; }
+
+.blue{ color: #2a389d; }

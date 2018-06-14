@@ -47,6 +47,7 @@
                             </ul>
                             <h3 class="search__item">スポーツを選ぶ</h3>
                             <ul class="search__option--checkbox">
+                                <li><input type="checkbox" name="sports" id="sports00"><label for="sports00">0.すべて</label></li>
                                 <li><input type="checkbox" name="sports" id="sports01"><label for="sports01">1.サッカー・フットサル</label></li>
                                 <li><input type="checkbox" name="sports" id="sports02"><label for="sports02">2.野球・ソフトボール</label></li>
                                 <li><input type="checkbox" name="sports" id="sports03"><label for="sports03">3.バスケットボール</label></li>
@@ -70,6 +71,7 @@
                             </ul>
                             <h3 class="search__item">テイストを選ぶ</h3>
                             <ul class="search__option--checkbox">
+                                <li><input type="checkbox" name="taste" id="taste00"><label for="taste00">0.すべて</label></li>
                                 <li><input type="checkbox" name="taste" id="taste01"><label for="taste01">1.シンプル</label></li>
                                 <li><input type="checkbox" name="taste" id="taste02"><label for="taste02">2.熱血</label></li>
                                 <li><input type="checkbox" name="taste" id="taste03"><label for="taste03">3.スポーティ</label></li>
@@ -82,6 +84,7 @@
                             </ul>
                             <h3 class="search__item">シーンを選ぶ</h3>
                             <ul class="search__option--checkbox">
+                                <li><input type="checkbox" name="scene" id="scene00"><label for="scene00">0.すべて</label></li>
                                 <li><input type="checkbox" name="scene" id="scene01"><label for="scene01">1.スポーツ応援</label></li>
                                 <li><input type="checkbox" name="scene" id="scene02"><label for="scene02">2.お祝い・式典</label></li>
                                 <li><input type="checkbox" name="scene" id="scene03"><label for="scene03">3.学校行事</label></li>

@@ -32,6 +32,45 @@
                     <img class="pc" src="../assets/img/material/catch.png" alt="最適な素材をお選びください">
                 </h3>
                 
+				<h4 class="ttl01 mt60">通常生地（トロマット）</h4>
+				<div class="ph_tx cf">
+					<div class="pho"><img src="../assets/img/material/toromatto1.png" alt="通常生地（トロマット）"></div>
+					<div class="txt">
+						<p>ポリエステル生地です。メッシュ生地やサテン生地に比べると厚手ですが、軽くて耐久性があり、その上、持ち運びや取り扱いが楽な、ほどよい素材です。<br>耐久性・耐候性・耐質性にも優れています。付けたり外したりが多い用途に適しています。
+
+						</p>
+						<table class="tb01">
+							<tbody>
+								<tr>
+									<th>1㎡あたりの重さ</th>
+									<td>235g</td>
+								</tr>
+								<tr>
+									<th>暑さ</th>
+									<td>0.28mm厚</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="there_box cf">
+					<ul>
+						<li>
+							<h6 class="ttl03">拡大した図</h6>
+							<img src="../assets/img/material/toromatto2.png" alt="">
+						</li>
+						<li>
+							<h6 class="ttl03">後ろから光を当てた図</h6>
+							<img src="../assets/img/material/toromatto3.png" alt="">
+						</li>
+						<li>
+							<h6 class="ttl03">後ろから光を当てた図（拡大）</h6>
+							<img src="../assets/img/material/toromatto4.png" alt="">
+						</li>
+					</ul>
+				</div>
+
+                
                 <h4 class="ttl01">メッシュ生地（メッシュポリエステル）</h4>
                 <div class="ph_tx cf">
                     <div class="pho"><img src="../assets/img/material/mesyu1.png" alt="メッシュ生地（メッシュポリエステル）"></div>
@@ -53,57 +92,20 @@
                 <div class="there_box cf">
                     <ul>
                         <li>
-                            <h6 class="ttl03">メッシュポリエステルトリミング</h6>
+                            <h6 class="ttl03">拡大した図</h6>
                             <img src="../assets/img/material/mesyu2.png" alt="">
                         </li>
                         <li>
-                            <h6 class="ttl03">メッシュポリエステル光透過</h6>
+                            <h6 class="ttl03">後ろから光を当てた図</h6>
                             <img src="../assets/img/material/mesyu3.png" alt="">
                         </li>
                         <li>
-                            <h6 class="ttl03">メッシュポリエステル光透過トリミング</h6>
+                            <h6 class="ttl03">後ろから光を当てた図（拡大）</h6>
                             <img src="../assets/img/material/mesyu4.png" alt="">
                         </li>
                     </ul>
                 </div>
                 
-                <h4 class="ttl01 mt60">通常生地（トロマット）</h4>
-                <div class="ph_tx cf">
-                    <div class="pho"><img src="../assets/img/material/toromatto1.png" alt="通常生地（トロマット）"></div>
-                    <div class="txt">
-                        <p>ポリエステル生地です。メッシュ生地やサテン生地に比べると厚手ですが、軽くて耐久性があり、その上、持ち運びや取り扱いが楽な、ほどよい素材です。<br>耐久性・耐候性・耐質性にも優れています。付けたり外したりが多い用途に適しています。
-
-                        </p>
-                    <table class="tb01">
-                        <tbody>
-                            <tr>
-                                <th>1㎡あたりの重さ</th>
-                                <td>235g</td>
-                            </tr>
-                            <tr>
-                                <th>暑さ</th>
-                                <td>0.28mm厚</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    </div>
-                </div>
-                <div class="there_box cf">
-                    <ul>
-                        <li>
-                            <h6 class="ttl03">トロマットトリミング</h6>
-                            <img src="../assets/img/material/toromatto2.png" alt="">
-                        </li>
-                        <li>
-                            <h6 class="ttl03">トロマット光透過</h6>
-                            <img src="../assets/img/material/toromatto3.png" alt="">
-                        </li>
-                        <li>
-                            <h6 class="ttl03">トロマット光透過トリミング</h6>
-                            <img src="../assets/img/material/toromatto4.png" alt="">
-                        </li>
-                    </ul>
-                </div>
                 
                 <h4 class="ttl01 mt60">サテン生地</h4>
                 <div class="ph_tx cf">
@@ -127,15 +129,15 @@
                 <div class="there_box cf">
                     <ul>
                         <li>
-                            <h6 class="ttl03">サテントリミング</h6>
+                            <h6 class="ttl03">拡大した図</h6>
                             <img src="../assets/img/material/saten2.png" alt="">
                         </li>
                         <li>
-                            <h6 class="ttl03">サテン光透過</h6>
+                            <h6 class="ttl03">後ろから光を当てた図</h6>
                             <img src="../assets/img/material/saten3.png" alt="">
                         </li>
                         <li>
-                            <h6 class="ttl03">サテン光透過トリミング</h6>
+                            <h6 class="ttl03">後ろから光を当てた図（拡大）</h6>
                             <img src="../assets/img/material/saten4.png" alt="">
                         </li>
                     </ul>
@@ -163,15 +165,15 @@
                 <div class="there_box cf">
                     <ul>
                         <li>
-                            <h6 class="ttl03">ターポリントリミング</h6>
+                            <h6 class="ttl03">ターポリン拡大した図</h6>
                             <img src="../assets/img/material/taporin2.png" alt="">
                         </li>
                         <li>
-                            <h6 class="ttl03">ターポリン光透過</h6>
+                            <h6 class="ttl03">ターポリン後ろから光を当てた図</h6>
                             <img src="../assets/img/material/taporin3.png" alt="">
                         </li>
                         <li>
-                            <h6 class="ttl03">ターポリン光透過トリミング</h6>
+                            <h6 class="ttl03">ターポリン後ろから光を当てた図（拡大）</h6>
                             <img src="../assets/img/material/taporin4.png" alt="">
                         </li>
                     </ul>

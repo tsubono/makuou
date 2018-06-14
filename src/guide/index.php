@@ -27,7 +27,7 @@
             </ul>
 			
             <section>
-                <h4 class="ttl01">ご利用ガイド</h4>
+                <h4 class="ttl01" id="ank-01">ご利用ガイド</h4>
 				<div class="guide_flow">
 					<div class="fl_box">
 					<div class="fl_title">
@@ -40,7 +40,7 @@
 						<div class="fl_text">
 						<p class="fl_p">新規会員登録（無料）<br>して、ログイン</p>
 						</div>	
-					</div>				
+					</div>
 					</div>
 					
 					<div class="fl_box">
@@ -53,8 +53,8 @@
 						</div>
 						<div class="fl_text">
 						<p class="fl_p">デザイン<br>テンプレートを選ぶ</p>
-						</div>	
-					</div>				
+						</div>
+					</div>
 					</div>
 				
 					<div class="fl_box">
@@ -67,8 +67,8 @@
 						</div>
 						<div class="fl_text">
 						<p class="fl_p">デザインを作る</p>
-						</div>	
-					</div>				
+						</div>
+					</div>
 					</div>
 					
 					<div class="fl_box">
@@ -86,7 +86,7 @@
 					</div>
 				</div>				
 				
-                <h5 class="ttl02">納期・お届けについて</h5>
+				<h5 class="ttl02" id="ank-02">納期・お届けについて</h5>
                 <h5 class="ttl03">通常のご注文</h5>
                 <p class="txt">
                     15時までのご発注で、2営業日後で発送いたします。（※発注日は含みません）<br>
@@ -97,13 +97,13 @@
                 <p class="txt">
                     デザインのご確定後、3営業日後で発送いたします。（※発注日は含みません）
                 </p>
-                <h5 class="ttl02">お支払方法</h5>
+				<h5 class="ttl02" id="ank-03">お支払方法</h5>
                 <p class="txt">
                     クレジットカード：ご注文時にお支払い<br>
                     コンビニ決済：後払い<br>
                     郵便局・銀行振込：後払い→商品が届いてからお支払ください。請求書を一緒にお送りいたします。
                 </p>
-                <h5 class="ttl02">発送・送料について</h5>
+				<h5 class="ttl02" id="ank-04">発送・送料について</h5>
                 <h5 class="ttl03">発送について</h5>
                 <p class="txt">
                     発送後、お届けにかかる日数の目安は、本州四国（離島除く）は翌日、その他の地域は翌々日となります。<br>

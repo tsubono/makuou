@@ -50,7 +50,9 @@
                <h4 class="ttl01">各サイズの特徴（5 サイズ）</h4>
                 <h5 class="ttl03">縦60cm</h5>
                 <div class="size_right">
-                <div class="size_img60"></div>
+                <div class="size_img60">
+                	<div class="price_name">縦60cm×横90cm</div>
+                </div>
                 <div class="size_text">
                     <ul class="list_dot">
                     <li>
@@ -65,7 +67,9 @@
 
                 <h5 class="ttl03">縦90cm</h5>
                 <div class="size_left">
-                <div class="size_img90"></div>
+					<div class="size_img90">
+						<div class="price_name">縦90cm×横360cm</div>
+               		</div>
                 <div class="size_text">
                     <ul class="list_dot">
                     <li>
@@ -80,7 +84,9 @@
                 
                 <h5 class="ttl03">縦120cm</h5>
                 <div class="size_right">
-                <div class="size_img120"></div>
+					<div class="size_img120">
+						<div class="price_name">縦120cm×横180cm</div>
+               		</div>
                 <div class="size_text">
                     <ul class="list_dot">
                     <li>
@@ -95,7 +101,9 @@
                 
                 <h5 class="ttl03">縦150cm</h5>
                 <div class="size_left">
-                <div class="size_img150"></div>
+					<div class="size_img150">
+						<div class="price_name">縦150cm×横225cm</div>
+					</div>
                 <div class="size_text">
                     <ul class="list_dot">
                     <li>
@@ -103,12 +111,15 @@
                     <li>
                     <p>広さのあるフェンスや2階以上の手すり等につけても、遠くからよく目立つ大きさです。</p></li>
                     </ul>
+                    <p class="mt20 blue bold">※サテン生地は制作できません。</p>
                 </div>
                 </div>    
                 
                 <h5 class="ttl03">縦180cm<span class="size_p">（※サテン生地は制作できません）</span></h5>
                 <div class="size_right">
-                <div class="size_img180"></div>
+					<div class="size_img180">
+						<div class="price_name">縦180cm×横270cm</div>
+					</div>
                 <div class="size_text">
                     <ul class="list_dot">
                     <li>

@@ -738,6 +738,9 @@ p.txt {
     white-space: nowrap;
 }
 
+.scroll table .subhead{ background: #efffca; text-align: center; }
+
+
 /* layout
 ------------------------------------------------------------ */
 .layout h1 img { width: 80%; max-width: 359px; }
@@ -926,9 +929,11 @@ p.txt {
     width: 15%; 
     display: inline-block; 
 }
-.spec .material label {
-    width: 32%;
+.delivery label { 
+    width: auto; 
+    display: inline-block; 
 }
+.spec .material label { width: 24%; }
 .spec .material p { margin-bottom: 15px; font-weight: 600; color: #ff5925; }
 .spec .material li {
     padding-bottom: 15px;
@@ -957,6 +962,45 @@ p.txt {
     display: table-cell;
     width: 3em;
     text-align: center;
+}
+.btn_two {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin: 20px auto 0;
+    width: 50%;
+}
+.btn_two .btn_return { 
+	background: url(../img/common/arrow_r_blk.gif) no-repeat right 15px center / 9px auto, url("../img/common/bg_btnorg.gif") repeat left center / 6px auto;
+    width: 46%;
+    box-shadow: none;
+    font-size: .875rem;
+    height: auto;
+}
+.btn_two .btn_return a { 
+    color: #231814;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.btn_one { display: flex; margin: 20px auto 0; }
+.btn_one .btn_return { 
+    background: url(../img/common/arrow_r_blk.gif) no-repeat right 15px center / 9px auto, url("../img/common/bg_btnorg.gif") repeat left center / 6px auto;
+    margin: 20px auto; 
+    box-shadow: none;
+    font-size: .875rem;
+    height: auto;
+    width: 21%;
+}
+.btn_one .btn_return a { 
+    color: #231814;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 /* layout - confirm2
@@ -1137,6 +1181,7 @@ p.txt {
 	width: 422px;
 	height: 220px;
 	margin-right: 50px;
+	position: relative;
 }
 
 .size_img90 {
@@ -1146,6 +1191,7 @@ p.txt {
 	background-position: center;
 	width: 422px;
 	height: 220px;
+	position: relative;
 }
 
 .size_img120 {
@@ -1155,6 +1201,7 @@ p.txt {
 	width: 422px;
 	height: 220px;
 	margin-right: 50px;
+	position: relative;
 }
 
 .size_img150 {
@@ -1163,6 +1210,7 @@ p.txt {
 	background-repeat: no-repeat;
 	width: 422px;
 	height: 220px;
+	position: relative;
 }
 
 .size_img180 {
@@ -1172,6 +1220,16 @@ p.txt {
 	width: 422px;
 	height: 220px;
 	margin-right: 50px;
+	position: relative;
+}
+
+.price_name{
+	position: absolute;
+	bottom: 20px;
+	left: 1px;
+	background: #ff9203;
+	color: #fff;
+	padding: 10px 20px;
 }
 
 .size_text {
@@ -1232,6 +1290,9 @@ p.txt {
     .spec label { 
         width: 24%; 
         margin-bottom: 10px;
+    }
+	.spec .delivery label {
+        width: auto;
     }
     .btn_two { width: 80%; }
     .btn_one .btn_return { width: 37%; }

@@ -72,9 +72,21 @@ class SampleController extends Controller
                     $sample->name = $request->input('name');
                     $sample->name_kana = $request->input('nameKana');
                     $sample->email = $request->input('email');
-                    $sample->tel = $request->input('mobileOne') . $request->input('mobileTwo') . $request->input('mobileThree');
-                    $sample->fax = $request->input('telOne') . $request->input('telTwo') . $request->input('telThree');
-                    $sample->zip_code = $request->input('zipCodeOne') . $request->input('zipCodeTwo');
+                    if ($request->input('mobileOne') &&
+                        $request->input('mobileTwo') &&
+                        $request->input('mobileThree')) {
+                        $sample->tel = $request->input('mobileOne') . '-' . $request->input('mobileTwo') . '-' . $request->input('mobileThree');
+                    }else{
+                        $sample->tel = '';
+                    }
+                    if ($request->input('telOne') &&
+                        $request->input('telTwo') &&
+                        $request->input('telThree')) {
+                        $sample->fax = $request->input('telOne') . '-' . $request->input('telTwo') . '-' . $request->input('telThree');
+                    }else{
+                        $sample->fax = '';
+                    }
+                    $sample->zip_code = $request->input('zipCodeOne') . '-' . $request->input('zipCodeTwo');
                     $sample->pref_id = $request->input('prefecture');
                     $sample->address1 = $request->input('addressOne');
                     $sample->address2 = $request->input('addressTwo');

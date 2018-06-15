@@ -60,9 +60,21 @@ class UserController extends Controller
                     $user->name = $request->input('name');
                     $user->name_kana = $request->input('nameKana');
                     $user->email = $request->input('email');
-                    $user->tel = $request->input('mobileOne') . $request->input('mobileTwo') . $request->input('mobileThree');
-                    $user->fax = $request->input('telOne') . $request->input('telTwo') . $request->input('telThree');
-                    $user->zip_code = $request->input('zipCodeOne') . $request->input('zipCodeTwo');
+                    if ($request->input('mobileOne') &&
+                        $request->input('mobileTwo') &&
+                        $request->input('mobileThree')) {
+                        $user->tel = $request->input('mobileOne') . '-' . $request->input('mobileTwo') . '-' . $request->input('mobileThree');
+                    }else{
+                        $user->tel = '';
+                    }
+                    if ($request->input('telOne') &&
+                        $request->input('telTwo') &&
+                        $request->input('telThree')) {
+                        $user->fax = $request->input('mobileOne') . '-' . $request->input('mobileTwo') . '-' . $request->input('mobileThree');
+                    }else{
+                        $user->fax = '';
+                    }
+                    $user->zip_code = $request->input('zipCodeOne') . '-' . $request->input('zipCodeTwo');
                     $user->pref_id = $request->input('prefecture');
                     $user->address1 = $request->input('addressOne');
                     $user->address2 = $request->input('addressTwo');

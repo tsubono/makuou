@@ -48,7 +48,7 @@ class ContactRequest extends FormRequest
     {
         return [
             'name' => '名前',
-            'nameKana' => 'ふりがな',
+            'nameKana' => 'フリガナ',
             'email' => 'メールアドレス',
             'content' => 'お問い合わせ内容',
         ];

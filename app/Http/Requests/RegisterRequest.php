@@ -79,7 +79,7 @@ class RegisterRequest extends FormRequest
     {
         return [
             'name' => '名前',
-            'nameKana' => 'ふりがな',
+            'nameKana' => 'フリガナ',
             'email' => 'メールアドレス',
             'zipCodeOne' => '郵便番号',
             'zipCodeTwo' => '郵便番号',

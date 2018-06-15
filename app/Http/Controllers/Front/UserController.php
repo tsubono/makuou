@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Http\Requests\RegisterRequest;
 use App\Http\Controllers\Controller;
-use App\Mail\Thanks;
-use App\Models\MailTemplate;
+use App\Http\Requests\RegisterRequest;
+use App\Mail\UserRegister;
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
@@ -41,7 +39,7 @@ class UserController extends Controller
             'prefecture' => $request->input('prefecture'),
             'addressOne' => $request->input('addressOne'),
             'addressTwo' => $request->input('addressTwo'),
-            'password' => Hash::make($request->input('password'))
+            'password' => $request->input('password')
         ];
         return view('front.register.confirm')
             ->with('data', $userData);
@@ -57,6 +55,7 @@ class UserController extends Controller
 
                 DB::beginTransaction();
                 try {
+
                     $user = new User();
                     $user->name = $request->input('name');
                     $user->name_kana = $request->input('nameKana');
@@ -70,11 +69,11 @@ class UserController extends Controller
                     $user->password = $request->input('password');
                     $user->save();
 
-                    Auth::guard('user')->login($user);
+                    //ログインは会員様が各自で行う
+//                    Auth::guard('user')->login($user);
 
-                    $template = MailTemplate::find(2);
                     Mail::to($user->email)
-                        ->queue(new Thanks($template, $user, 'mail.register_thank_plain'));
+                        ->queue(new UserRegister($user));
 
                     $request->session()->regenerateToken();
                     DB::commit();

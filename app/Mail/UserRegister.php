@@ -8,13 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class Thanks extends Mailable
+class UserRegister extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $template;
     public $data;
-    private $viewName;
 
     /**
      * Create a new message instance.
@@ -23,11 +21,9 @@ class Thanks extends Mailable
      * @param Model $data
      * @param string $viewName
      */
-    public function __construct(MailTemplate $template, Model $data, string $viewName)
+    public function __construct(Model $data)
     {
-        $this->template = $template;
         $this->data = $data;
-        $this->viewName = $viewName;
     }
 
     /**
@@ -37,8 +33,9 @@ class Thanks extends Mailable
      */
     public function build()
     {
-        return $this->subject($this->template->title)
-            ->from(env('MAIL_FROM','tsubono@ga-design.jp'),'幕王')
-            ->text($this->viewName);
+        return $this
+            ->subject('ご登録ありがとうございます')
+            ->from(env('MAIL_FROM', 'tsubono@ga-design.jp'), '幕王')
+            ->text('mail.register_thank_plain');
     }
 }

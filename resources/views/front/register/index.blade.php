@@ -115,6 +115,7 @@
                                             <span class="error">{{$errors->first('zipCodeTwo')}}</span>
                                         </div>
                                     @endif
+                                        <button type="button" id="zip-btn">郵便番号から自動入力</button>
                                 </dd>
                             </dl>
                             <dl class="innerlist_address add02">
@@ -176,7 +177,8 @@
             </section>
 
             <section class="pickup">
-                <h2 class="pickup__heading"><img src="{{asset("assets/img/search/heading--pickup.png")}}" alt="Pick Up!"></h2>
+                <h2 class="pickup__heading"><img src="{{asset("assets/img/search/heading--pickup.png")}}"
+                                                 alt="Pick Up!"></h2>
                 <div class="pickup__content">
                     <div class="pickup__box">
                         <div>
@@ -212,10 +214,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="btn"><a href="{{url('/search')}}"><img src="{{asset("assets/img/top/make_btn.png")}}" alt="ネットでレイアウトを調整しながら自分でデザイン！オリジナル横断幕を作る"></a></div>
+                <div class="btn"><a href="{{url('/search')}}"><img src="{{asset("assets/img/top/make_btn.png")}}"
+                                                                   alt="ネットでレイアウトを調整しながら自分でデザイン！オリジナル横断幕を作る"></a></div>
             </section>
             <!-- /.pickup -->
         </div>
     </main>
+    <script>
+        window.onload = function () {
+            $('#zip-btn').click(function(){
+                AjaxZip3.zip2addr('zipCodeOne', 'zipCodeTwo', 'prefecture', 'addressOne');
+            });
+        }
+    </script>
     <!-- /.l-main -->
 @endsection

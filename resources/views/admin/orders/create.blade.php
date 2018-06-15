@@ -286,7 +286,7 @@
                                 <input type="hidden" name="order_details[{{ $index }}][image]"
                                        value="{{ $order_detail["image"] }}">
                                 <input type="hidden" name="order_details[{{ $index }}][json]"
-                                       id="order_details_json_{{ $order_detail["product_id"] }}"
+                                       id="order_details_json_{{ $order_detail["product_id"] }}_{{ $index }}"
                                        class="order_details_json" value="{{ $order_detail["json"] }}"
                                        data-index="{{ $index }}" data-name="{{ $order_detail["product_title"] }}"
                                        data-image="{{ $order_detail["image"] }}"
@@ -316,13 +316,14 @@
                                             <img src="{!! asset(env('PUBLIC', ''). $order_detail["image"]) !!}"
                                                  class="max-w-150">
                                             <a class="btn btn-default design_edit_btn"
-                                               id="design_edit_btn_{{ $order_detail["product_id"] }}"
+                                               id="design_edit_btn_{{ $order_detail["product_id"] }}_{{ $index }}"
                                                data-name="{{ $order_detail["product_title"] }}"
                                                data-id="{{ $order_detail["product_id"] }}"
                                                data-image="{{ $order_detail["image"] }}"
                                                data-json="{{ $order_detail["json"] }}"
                                                data-width="{{ $order_detail["width"] }}"
                                                data-height="{{ $order_detail["height"] }}"
+                                               data-index="{{ $index }}"
                                             >
                                                 編集する
                                             </a>

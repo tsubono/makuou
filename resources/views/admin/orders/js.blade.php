@@ -119,9 +119,10 @@
         // デザインモーダルの確定押下時
         $('#save_design').click(function () {
             var product_id = $('#productApp').scope().defaultProductId;
+            var index = $('#productApp').scope().index;
             var json = $('#productApp').scope().getDesignJson();
-            $('#design_edit_btn_' + product_id).attr('data-json', json);
-            $('#order_details_json_' + product_id).val(json);
+            $('#design_edit_btn_' + product_id+ '_' + index).attr('data-json', json);
+            $('#order_details_json_' + product_id + '_' + index).val(json);
             $('#design-modal').modal('hide');
         });
 

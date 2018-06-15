@@ -117,18 +117,23 @@ angular.module('productApp', [
          */
         $scope.removeSelectedObject = function () {
 
-            var confirm = $mdDialog.confirm()
-                .title('')
-                .content('選択中のレイヤーが削除されます。本当に削除してもよろしいでしょうか。')
-                .ariaLabel('Confirm')
-                .ok('Ok')
-                .cancel('Cancel');
-            $mdDialog.show(confirm).then(function () {
-                $scope.fabric.deleteActiveObject();
-                $scope.fabric.setDirty(true);
-                $scope.objectLayers = [];
-                $scope.objectLayers = $scope.fabric.canvasLayers();
-            });
+            // var confirm = $mdDialog.confirm()
+            //     .title('')
+            //     .content('選択中のレイヤーが削除されます。本当に削除してもよろしいでしょうか。')
+            //     .ariaLabel('Confirm')
+            //     .ok('Ok')
+            //     .cancel('Cancel');
+            // $mdDialog.show(confirm).then(function () {
+            //     $scope.fabric.deleteActiveObject();
+            //     $scope.fabric.setDirty(true);
+            //     $scope.objectLayers = [];
+            //     $scope.objectLayers = $scope.fabric.canvasLayers();
+            // });
+
+            $scope.fabric.deleteActiveObject();
+            $scope.fabric.setDirty(true);
+            $scope.objectLayers = [];
+            $scope.objectLayers = $scope.fabric.canvasLayers();
         };
 
         /*
@@ -423,19 +428,24 @@ angular.module('productApp', [
          * レイヤーを削除する（レイヤー一覧から）
          */
         $scope.deleteObject = function (object) {
-            var confirm = $mdDialog.confirm()
-                .title('')
-                .content('本当に削除してもよろしいでしょうか。')
-                .ariaLabel('Confirm')
-                .ok('Ok')
-                .cancel('Cancel');
-            $mdDialog.show(confirm).then(function () {
-                $scope.fabric.deleteObject(object);
-                $scope.fabric.setDirty(true);
-                $scope.objectLayers = [];
-                $scope.objectLayers = $scope.fabric.canvasLayers();
-                $scope.$broadcast('rebuild:layer');
-            });
+            // var confirm = $mdDialog.confirm()
+            //     .title('')
+            //     .content('本当に削除してもよろしいでしょうか。')
+            //     .ariaLabel('Confirm')
+            //     .ok('Ok')
+            //     .cancel('Cancel');
+            // $mdDialog.show(confirm).then(function () {
+            //     $scope.fabric.deleteObject(object);
+            //     $scope.fabric.setDirty(true);
+            //     $scope.objectLayers = [];
+            //     $scope.objectLayers = $scope.fabric.canvasLayers();
+            //     $scope.$broadcast('rebuild:layer');
+            // });
+            $scope.fabric.deleteObject(object);
+            $scope.fabric.setDirty(true);
+            $scope.objectLayers = [];
+            $scope.objectLayers = $scope.fabric.canvasLayers();
+            $scope.$broadcast('rebuild:layer');
         };
 
         /*
@@ -527,6 +537,7 @@ angular.module('productApp', [
             $scope.reverse = false;
             $scope.loadMore = true;
             $scope.defaultProductId = 1;
+            $scope.index = 0;
             $scope.path = jQuery('[name=path]').val();
 
             // 各一覧読み込み
@@ -688,7 +699,7 @@ angular.module('productApp', [
 
             $http({
                 method: 'post',
-                url: $scope.path + "/admin/orders/saveDesign",
+                url: $scope.path + "/saveDesign",
                 data: {
                     objects_svg: JSON.stringify(objects_svg),
                     objects_jpg: JSON.stringify(objects_jpg),

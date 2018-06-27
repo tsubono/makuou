@@ -77,6 +77,9 @@ Route::namespace('Front')->group(function() {
         Route::get('/member', 'MemberController@index')->name('member');
         Route::post('/member', 'MemberController@store')->name('memberThanks');
         Route::post('/member/confirm', 'MemberController@confirm')->name('memberConfirm');
+
+        Route::get('/ordered', 'OrderedController@index')->name('order');
+
     });
 
 

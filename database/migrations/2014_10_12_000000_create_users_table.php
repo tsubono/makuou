@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->integer('pref_id')->comment('都道府県ID');
             $table->string('address1')->comment('住所１');
             $table->string('address2')->nullable()->comment('住所2');
-            $table->string('tel')->comment('電話番号');
+            $table->string('tel')->comment('電話番号')->nullable();
             $table->string('fax')->comment('FAX番号')->nullable();
             $table->string('email')->unique()->comment('メールアドレス');
             $table->string('password')->comment('パスワード');

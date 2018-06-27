@@ -73,6 +73,13 @@ Route::namespace('Front')->group(function() {
     Route::post('/sample',      'SampleController@store')->name('sampleThanks');
     Route::post('/sample/confirm',      'SampleController@confirm')->name('sampleConfirm');
 
+    Route::middleware('auth:user')->group(function () {
+        Route::get('/member', 'MemberController@index')->name('member');
+        Route::post('/member', 'MemberController@store')->name('memberThanks');
+        Route::post('/member/confirm', 'MemberController@confirm')->name('memberConfirm');
+    });
+
+
 });
 /*
 |--------------------------------------------------------------------------

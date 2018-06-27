@@ -3,7 +3,8 @@
 <script src="{{asset("assets/js/jquery.matchHeight.js")}}"></script>
 
 <script src="{{asset("bower_components/bootstrap/dist/js/bootstrap.min.js")}}" type="text/javascript"></script>
-<script src="{{asset("bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}" type="text/javascript"></script>
+<script src="{{asset("bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"
+        type="text/javascript"></script>
 <script src="{{asset("bower_components/admin-lte/dist/js/adminlte.min.js")}}" type="text/javascript"></script>
 <script src="{{asset("bower_components/bootstrap-fileinput/js/fileinput.min.js")}}" type="text/javascript"></script>
 <script src="{{asset("js/canvas-to-blob.min.js")}}" type="text/javascript"></script>
@@ -45,9 +46,10 @@
 <script src="{{asset("assets/pdf/jspdf.debug.js")}}"></script>
 
 <script>
-    $(function(){
+    $(function () {
         $(".pickup li").matchHeight();
         $(".feature li").matchHeight();
+        $(".login__box .innar").matchHeight();
     });
 </script>
 @stack('script')

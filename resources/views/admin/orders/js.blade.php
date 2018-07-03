@@ -113,6 +113,7 @@
             $('#productApp').scope().loadByJson($(this).attr('data-json'));
 
             $('#productApp').scope().defaultProductId = $(this).attr('data-id');
+            $('#productApp').scope().index = $(this).attr('data-index');
             $('#design-modal').modal();
         });
 

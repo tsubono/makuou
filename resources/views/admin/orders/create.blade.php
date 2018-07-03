@@ -299,8 +299,8 @@
                                        value="{{ $order_detail["uploaded_files"] }}">
                                 <input type="hidden" name="order_details[{{ $index }}][designed_json]"
                                        value="{{ $order_detail["designed_json"] }}">
-                                <input type="hidden" name="order_details[{{ $index }}][json_text]"
-                                       value="{{ $order_detail["json"] }}">
+                                {{--<input type="hidden" name="order_details[{{ $index }}][json_text]"--}}
+                                       {{--value="{{ $order_detail["json"] }}">--}}
                                 <input type="hidden" name="order_details[{{ $index }}][width]"
                                        value="{{ $order_detail["width"] }}">
                                 <input type="hidden" name="order_details[{{ $index }}][height]"

@@ -300,11 +300,11 @@
                                        value="{{ $order_detail["uploaded_files"] }}">
                                 <input type="hidden" name="order_details[{{ $index }}][designed_json]"
                                        value="{{ $order_detail["designed_json"] }}">
-                                <input type="hidden" name="order_details[{{ $index }}][json_text]"
-                                       value="{{ empty($order_detail["json"]) ? (!empty($order_detail->id)?\App\Models\OrderDetail::getJsonText($order_detail->id):"") : $order_detail["json"] }}">
-                                <input type="hidden" name="order_details[{{ $index }}][width]"
+                                {{--<input type="hidden" name="order_details[{{ $index }}][json_text]"--}}
+                                       {{--value="{{ empty($order_detail["json"]) ? (!empty($order_detail->id)?\App\Models\OrderDetail::getJsonText($order_detail->id):"") : $order_detail["json"] }}">--}}
+                                <input type="hidden" name="order_details[{{ $index }}][width]" class="width-hidden"
                                        value="{{ empty($order_detail["width"]) ? $order_detail->product->ratio->width * 600 : $order_detail["width"] }}">
-                                <input type="hidden" name="order_details[{{ $index }}][height]"
+                                <input type="hidden" name="order_details[{{ $index }}][height]" class="height-hidden"
                                        value="{{ empty($order_detail["height"]) ? $order_detail->product->ratio->height * 600 : $order_detail["height"] }}">
 
                                 <div class="item_detail">
@@ -324,8 +324,8 @@
                                                data-id="{{ $order_detail["product_id"] }}"
                                                data-image="{{ empty($order_detail["image"]) ? $order_detail->product->image : $order_detail["image"] }}"
                                                data-json="{{ empty($order_detail["json"]) ? (!empty($order_detail->id)?\App\Models\OrderDetail::getJsonText($order_detail->id):"") : $order_detail["json"] }}"
-                                               data-width="{{ $order_detail->product->ratio->width * 600 }}"
-                                               data-height="{{ $order_detail->product->ratio->height * 600 }}"
+                                               data-width="{{ empty($order_detail["width"]) ?  $order_detail->product->ratio->width * 600 : $order_detail["width"] }}"
+                                               data-height="{{ empty($order_detail["height"]) ? $order_detail->product->ratio->height * 600 : $order_detail["height"] }}"
                                                data-index="{{ $index }}"
                                             >
                                                 編集する

@@ -670,6 +670,9 @@ angular.module('productApp', [
          */
         $scope.saveByJson = function (item_box) {
 
+            if ($scope.fabric == null) {
+                $scope.initFabric(item_box.find('.width-hidden').val(), item_box.find('.height-hidden').val());
+            }
             $scope.clearCanvas();
 
             var order_details_json = item_box.find('.order_details_json');
@@ -693,7 +696,7 @@ angular.module('productApp', [
             $scope.beforeSave();
 
             var objects_svg = $scope.fabric.designedSVGObjects;
-            var objects_jpg = $scope.fabric.designedJPGObjects;
+            // var objects_jpg = $scope.fabric.designedJPGObjects;
             var user_id = jQuery('[name="user[id]"]').val();
             var filename = user_id + "-" + Math.random().toString(36).slice(-8);
 
@@ -702,7 +705,7 @@ angular.module('productApp', [
                 url: $scope.path + "/saveDesign",
                 data: {
                     objects_svg: JSON.stringify(objects_svg),
-                    objects_jpg: JSON.stringify(objects_jpg),
+                    // objects_jpg: JSON.stringify(objects_jpg),
                     name: filename
                 },
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
@@ -738,7 +741,7 @@ angular.module('productApp', [
                 jQuery('[name="order_details[' + index + '][designed_filename]"').val(filename);
                 jQuery('[name="order_details[' + index + '][designed_image]"').val(data.designed_image);
                 jQuery('[name="order_details[' + index + '][uploaded_files]"').val(uploaded_files.join(','));
-                jQuery('[name="order_details[' + index + '][json_text]"').val(JSON.stringify(json_text));
+                // jQuery('[name="order_details[' + index + '][json_text]"').val(JSON.stringify(json_text));
 
                 if (item_box.nextAll('.item_box').length != 0) {
                     $scope.$emit("loopSave", {item_box: item_box.nextAll('.item_box')});

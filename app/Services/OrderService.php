@@ -70,7 +70,7 @@ class OrderService
             if (!file_exists(public_path() . '/storage/saved_designs/json')) {
                 mkdir(public_path() . '/storage/saved_designs/json');
             }
-            \File::put(public_path(). "/storage/saved_designs/json/". $form_order_detail['designed_filename']. ".json", $form_order_detail['json_text']);
+            \File::put(public_path(). "/storage/saved_designs/json/". $form_order_detail['designed_filename']. ".json", $form_order_detail['json']);
 
             $form_order_detail['designed_json'] = "/storage/saved_designs/json/". $form_order_detail['designed_filename']. ".json";
             if (!empty($form_order_detail["option_ids"])) {
@@ -177,7 +177,7 @@ class OrderService
                 mkdir(public_path() . '/storage/saved_designs/json');
             }
 
-            \File::put(public_path(). "/storage/saved_designs/json/". $form_order_detail['designed_filename']. ".json", $form_order_detail['json_text']);
+            \File::put(public_path(). "/storage/saved_designs/json/". $form_order_detail['designed_filename']. ".json", $form_order_detail['json']);
 
             $form_order_detail['designed_json'] = "/storage/saved_designs/json/". $form_order_detail['designed_filename']. ".json";
             if (!empty($form_order_detail["option_ids"])) {

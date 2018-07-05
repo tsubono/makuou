@@ -47,7 +47,6 @@ Route::namespace('Front')->group(function() {
     Route::get('/',      'HomeController@index')->name('home');
     Route::get('/search',      'SearchController@index')->name('search');
     Route::get('/result',      'SearchController@search')->name('result');
-    Route::get('/layout/{id}',      'LayoutController@index')->name('layout');
     Route::get('/concept',      'ConceptController@index')->name('concept');
     Route::get('/guide',      'GuideController@index')->name('guide');
     Route::get('/price',      'PriceController@index')->name('price');
@@ -74,6 +73,8 @@ Route::namespace('Front')->group(function() {
     Route::post('/sample/confirm',      'SampleController@confirm')->name('sampleConfirm');
 
     Route::middleware('auth:user')->group(function () {
+        Route::get('/layout/{id}',      'LayoutController@index')->name('layout');
+
         Route::get('/member', 'MemberController@index')->name('member');
         Route::post('/member', 'MemberController@store')->name('memberThanks');
         Route::post('/member/confirm', 'MemberController@confirm')->name('memberConfirm');

@@ -373,10 +373,13 @@ body {
     display: block;
     float: none;
     margin: auto;
-    border: 1px dashed #D91E18;
+    /*border: 1px dashed #D91E18;*/
+}
+canvas {
+    border: 1px dashed #D91E18
 }
 .canvas-container, .canvas {
-    padding-bottom: 12px;
+    /*padding-bottom: 12px;*/
 }
 
 .canvas_details .clearfix > span{margin-top: 10px; margin-right: 10px;}
@@ -1431,10 +1434,10 @@ body.body_overlay::after {
     max-width: 40px;
 
 }
-.fabric-container {
-    overflow: auto;
-    height: 600px;
-}
+/*.fabric-container {*/
+    /*overflow: auto;*/
+    /*height: 600px;*/
+/*}*/
 
 .tabing ul#tabs.design_modal li {
     width: 33.3%;

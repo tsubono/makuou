@@ -1,6 +1,9 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="{{asset("assets/js/common.js")}}"></script>
+@if (!isset($layoutFlg))
+    <script src="{{asset("assets/js/common.js")}}"></script>
+    @endif
 <script src="{{asset("assets/js/jquery.matchHeight.js")}}"></script>
+
 
 <script src="{{asset("bower_components/bootstrap/dist/js/bootstrap.min.js")}}" type="text/javascript"></script>
 <script src="{{asset("bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"

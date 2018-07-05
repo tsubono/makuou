@@ -7,7 +7,7 @@
     <input type="hidden" name="order_details[{{ $index }}][sub_total]" value="0">
     <input type="hidden" name="order_details[{{ $index }}][product_title]" value="{{ $product->title }}">
     <input type="hidden" name="order_details[{{ $index }}][image]" value="{{ $product->image }}">
-    <input type="hidden" name="order_details[{{ $index }}][json]" id="order_details_json_{{ $product->id }}"
+    <input type="hidden" name="order_details[{{ $index }}][json]" id="order_details_json_{{ $product->id }}_{{ $index }}"
            class="order_details_json" value="{{ $json }}" data-index="{{ $index }}" data-product_id="{{ $product->id }}"
            data-name="{{ $product->title }}" data-image="{{ $product->image }}">
 
@@ -31,13 +31,14 @@
                 <img src="{!! asset(env('PUBLIC', ''). $product->image) !!}"
                      class="max-w-150">
                 <a class="btn btn-default design_edit_btn"
-                   id="design_edit_btn_{{ $product->id }}"
+                   id="design_edit_btn_{{ $product->id }}_{{ $index }}"
                    data-name="{{ $product->name }}"
                    data-id="{{ $product->id }}"
                    data-image="{{ $product->image }}"
                    data-json="{{ $json }}"
                    data-width="{{ $product->ratio->width * 600 }}"
                    data-height="{{ $product->ratio->height * 600 }}"
+                   data-index="{{ $index }}"
                 >
                     編集する
                 </a>
@@ -156,27 +157,18 @@
         $('#productApp').scope().initFabric($(this).attr('data-width'), $(this).attr('data-height'));
         $('#productApp').scope().loadByJson($(this).attr('data-json'));
 
-        // // 既に読み込み、編集している場合
-        // if ($(this).attr('data-json') != "") {
-        //     $('#productApp').scope().loadByJson($(this).attr('data-json'));
-        // // 初回読み込み時
-        // } else {
-        //     $('#productApp').scope().loadProduct($(this).attr('data-name'), $(this).attr('data-image'), $(this).attr('data-id'));
-        // }
-        // 編集中の商品ID更新
         $('#productApp').scope().defaultProductId = $(this).attr('data-id');
-
+        $('#productApp').scope().index = $(this).attr('data-index');
         $('#design-modal').modal();
     });
 
     // デザインモーダルの確定押下時
     $('#save_design').click(function () {
         var product_id = $('#productApp').scope().defaultProductId;
+        var index = $('#productApp').scope().index;
         var json = $('#productApp').scope().getDesignJson();
-
-        $('#design_edit_btn_' + product_id).attr('data-json', json);
-        $('#order_details_json_' + product_id).val(json);
-
+        $('#design_edit_btn_' + product_id+ '_' + index).attr('data-json', json);
+        $('#order_details_json_' + product_id + '_' + index).val(json);
         $('#design-modal').modal('hide');
     });
 

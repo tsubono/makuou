@@ -1,13 +1,15 @@
-<div>
+<div class="item_box">
     <input type="hidden" name="path" value="{{ url('/') }}">
     <input type="hidden" name="asset" value="{!! asset(env('PUBLIC', '')) !!}">
+    <input type="hidden" class="order_details_json" name="order_details_json" value="" data-index="0">
 
     <div class="row justify-content-center">
         <div class="container ng-scope" ng-controller="ProductCtrl" ng-app="productApp" id="productApp">
             <!-- ローディング時に表示 -->
             <div ng-show="!isloaded" class="loading">
-                <h1 class="lodingMessage">Initializing Design Tool<img
-                            src="{!! asset(env('PUBLIC', ''). '/images/ajax-loader.gif') !!}"></h1>
+                <h1 class="lodingMessage">デザインツール読み込み中...
+                    {{--<img src="{!! asset(env('PUBLIC', ''). '/images/ajax-loader.gif') !!}">--}}
+                </h1>
             </div>
             <!--// ローディング時に表示 -->
 

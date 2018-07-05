@@ -36,7 +36,7 @@
                                     <dd>
                                         <ul class="result__tags">
                                             @foreach ($product->getCategories($product->category_1) as $category)
-                                                <li><a href="">{{ $category->name }}</a></li>
+                                                <li><a href="{{ url('result') }}?category_1[]={{ $category->id }}">{{ $category->name }}</a></li>
                                             @endforeach
                                         </ul>
                                     </dd>
@@ -46,7 +46,7 @@
                                     <dd>
                                         <ul class="result__tags">
                                             @foreach ($product->getCategories($product->category_2) as $category)
-                                                <li><a href="">{{ $category->name }}</a></li>
+                                                <li><a href="{{ url('result') }}?category_2[]={{ $category->id }}">{{ $category->name }}</a></li>
                                             @endforeach
                                         </ul>
                                     </dd>
@@ -56,7 +56,7 @@
                                     <dd>
                                         <ul class="result__tags">
                                             @foreach ($product->getCategories($product->category_3) as $category)
-                                                <li><a href="">{{ $category->name }}</a></li>
+                                                <li><a href="{{ url('result') }}?category_3[]={{ $category->id }}">{{ $category->name }}</a></li>
                                             @endforeach
                                         </ul>
                                     </dd>

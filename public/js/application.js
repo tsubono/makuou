@@ -117,18 +117,23 @@ angular.module('productApp', [
          */
         $scope.removeSelectedObject = function () {
 
-            var confirm = $mdDialog.confirm()
-                .title('')
-                .content('選択中のレイヤーが削除されます。本当に削除してもよろしいでしょうか。')
-                .ariaLabel('Confirm')
-                .ok('Ok')
-                .cancel('Cancel');
-            $mdDialog.show(confirm).then(function () {
-                $scope.fabric.deleteActiveObject();
-                $scope.fabric.setDirty(true);
-                $scope.objectLayers = [];
-                $scope.objectLayers = $scope.fabric.canvasLayers();
-            });
+            // var confirm = $mdDialog.confirm()
+            //     .title('')
+            //     .content('選択中のレイヤーが削除されます。本当に削除してもよろしいでしょうか。')
+            //     .ariaLabel('Confirm')
+            //     .ok('Ok')
+            //     .cancel('Cancel');
+            // $mdDialog.show(confirm).then(function () {
+            //     $scope.fabric.deleteActiveObject();
+            //     $scope.fabric.setDirty(true);
+            //     $scope.objectLayers = [];
+            //     $scope.objectLayers = $scope.fabric.canvasLayers();
+            // });
+
+            $scope.fabric.deleteActiveObject();
+            $scope.fabric.setDirty(true);
+            $scope.objectLayers = [];
+            $scope.objectLayers = $scope.fabric.canvasLayers();
         };
 
         /*
@@ -423,19 +428,24 @@ angular.module('productApp', [
          * レイヤーを削除する（レイヤー一覧から）
          */
         $scope.deleteObject = function (object) {
-            var confirm = $mdDialog.confirm()
-                .title('')
-                .content('本当に削除してもよろしいでしょうか。')
-                .ariaLabel('Confirm')
-                .ok('Ok')
-                .cancel('Cancel');
-            $mdDialog.show(confirm).then(function () {
-                $scope.fabric.deleteObject(object);
-                $scope.fabric.setDirty(true);
-                $scope.objectLayers = [];
-                $scope.objectLayers = $scope.fabric.canvasLayers();
-                $scope.$broadcast('rebuild:layer');
-            });
+            // var confirm = $mdDialog.confirm()
+            //     .title('')
+            //     .content('本当に削除してもよろしいでしょうか。')
+            //     .ariaLabel('Confirm')
+            //     .ok('Ok')
+            //     .cancel('Cancel');
+            // $mdDialog.show(confirm).then(function () {
+            //     $scope.fabric.deleteObject(object);
+            //     $scope.fabric.setDirty(true);
+            //     $scope.objectLayers = [];
+            //     $scope.objectLayers = $scope.fabric.canvasLayers();
+            //     $scope.$broadcast('rebuild:layer');
+            // });
+            $scope.fabric.deleteObject(object);
+            $scope.fabric.setDirty(true);
+            $scope.objectLayers = [];
+            $scope.objectLayers = $scope.fabric.canvasLayers();
+            $scope.$broadcast('rebuild:layer');
         };
 
         /*
@@ -527,6 +537,7 @@ angular.module('productApp', [
             $scope.reverse = false;
             $scope.loadMore = true;
             $scope.defaultProductId = 1;
+            $scope.index = 0;
             $scope.path = jQuery('[name=path]').val();
 
             // 各一覧読み込み
@@ -605,11 +616,12 @@ angular.module('productApp', [
                 curvedTextDefaults: FabricConstants.curvedTextDefaults,
                 imageDefaults: FabricConstants.imageDefaults,
                 imageFilters: FabricConstants.imageFilters,
-                json: {"width": (parseInt(width)+24)*3.78, "height": (parseInt(height)+24)*3.78}
+                // json: {"width": 680.315, "height": 170.079}
+                json: {"width": 687.118, "height": 176.882}
             });
 
-            jQuery('.canvas-container-outer').css('width', parseInt(width)*3.78+"px");
-            jQuery('.canvas-container-outer').css('height', parseInt(height)*3.78+"px");
+            jQuery('.canvas-container-outer').css('width', "680.315px");
+            jQuery('.canvas-container-outer').css('height', "170.079px");
         };
 
         /*
@@ -659,6 +671,9 @@ angular.module('productApp', [
          */
         $scope.saveByJson = function (item_box) {
 
+            if ($scope.fabric == null) {
+                $scope.initFabric(item_box.find('.width-hidden').val(), item_box.find('.height-hidden').val());
+            }
             $scope.clearCanvas();
 
             var order_details_json = item_box.find('.order_details_json');
@@ -682,16 +697,16 @@ angular.module('productApp', [
             $scope.beforeSave();
 
             var objects_svg = $scope.fabric.designedSVGObjects;
-            var objects_jpg = $scope.fabric.designedJPGObjects;
+            // var objects_jpg = $scope.fabric.designedJPGObjects;
             var user_id = jQuery('[name="user[id]"]').val();
             var filename = user_id + "-" + Math.random().toString(36).slice(-8);
 
             $http({
                 method: 'post',
-                url: $scope.path + "/admin/orders/saveDesign",
+                url: $scope.path + "/saveDesign",
                 data: {
                     objects_svg: JSON.stringify(objects_svg),
-                    objects_jpg: JSON.stringify(objects_jpg),
+                    // objects_jpg: JSON.stringify(objects_jpg),
                     name: filename
                 },
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
@@ -727,7 +742,7 @@ angular.module('productApp', [
                 jQuery('[name="order_details[' + index + '][designed_filename]"').val(filename);
                 jQuery('[name="order_details[' + index + '][designed_image]"').val(data.designed_image);
                 jQuery('[name="order_details[' + index + '][uploaded_files]"').val(uploaded_files.join(','));
-                jQuery('[name="order_details[' + index + '][json_text]"').val(JSON.stringify(json_text));
+                // jQuery('[name="order_details[' + index + '][json_text]"').val(JSON.stringify(json_text));
 
                 if (item_box.nextAll('.item_box').length != 0) {
                     $scope.$emit("loopSave", {item_box: item_box.nextAll('.item_box')});

@@ -1,4 +1,4 @@
-@extends('front/layouts.default')
+@extends('front.layouts.default')
 
 @push('css')
     <!-- bootstrap -->
@@ -31,12 +31,12 @@
 @endpush
 
 @push('script')
-    <script src="{{asset("assets/js/search.js")}}"></script>
+    {{--<script src="{{asset("assets/js/search.js")}}"></script>--}}
     <script>
         $(function () {
             var id = "{{ $product->id }}";
             $('#productApp').scope().initFabric("{{ $product->ratio->width * 600 }}", "{{ $product->ratio->height * 600 }}");
-            $('#productApp').scope().loadProduct("{{ $product->title }}", "{{ $product->image }}", id);
+            $('#productApp').scope().loadProduct("{{ $product->title }}", "{{ $product->image }}", id, 0);
 
             setTimeout(function () {
                 $('#productApp').scope().deactivateAll();
@@ -49,6 +49,14 @@
 
 
             }, 100);
+
+            $('#save_design').click(function () {
+                var json = $('#productApp').scope().getDesignJson();
+                $('.order_details_json').val(json);
+
+                // $('#productApp').scope().saveByJson($('.item_box:first'));
+                $('#productApp').scope().saveByJson($('.item_box:first'));
+            });
         });
     </script>
 
@@ -71,9 +79,17 @@
                         @include('front.design')
                     </div>
                     <div class="btn">
-                        <a href="#">デザイン確認</a>
+                        <a href="#" id="save_design">デザイン確認</a>
                     </div>
                 </div>
+                <form class="form-horizontal" id="form12" action="{{ url('/layout/confirm') }}" method="post">
+                    {{ csrf_field() }}
+                    <input type="hidden" name="order_details[0][designed_filename]" value="">
+                    <input type="hidden" name="order_details[0][designed_image]" value="">
+                    <input type="hidden" name="order_details[0][uploaded_files]" value="">
+                    <input type="hidden" name="order_details[0][json_text]" value="">
+                    <input type="hidden" name="user[id]" value="1">
+                </form>
             </section>
             <!-- /.layout -->
         </div>

@@ -35,6 +35,8 @@ Route::post('/canvas/getSavedDesign',     'CanvasController@getSavedDesign')->na
 Route::post('/canvas/deleteSavedDesign',     'CanvasController@deleteSavedDesign')->name('deleteSavedDesign');
 
 
+Route::post('saveDesign', 'Admin\OrderController@saveDesign');
+
 /*
 |--------------------------------------------------------------------------
 | 2) User before login
@@ -47,6 +49,7 @@ Route::namespace('Front')->group(function() {
     Route::get('/',      'HomeController@index')->name('home');
     Route::get('/search',      'SearchController@index')->name('search');
     Route::get('/result',      'SearchController@search')->name('result');
+
     Route::get('/concept',      'ConceptController@index')->name('concept');
     Route::get('/guide',      'GuideController@index')->name('guide');
     Route::get('/price',      'PriceController@index')->name('price');
@@ -74,7 +77,10 @@ Route::namespace('Front')->group(function() {
 
     Route::middleware('auth:user')->group(function () {
         Route::get('/layout/{id}',      'LayoutController@index')->name('layout');
-
+        Route::post('/layout/confirm',      'LayoutController@confirm')->name('layout.confirm');
+        Route::post('/layout/complete',      'LayoutController@postComplete')->name('layout.postComplete');
+        Route::get('/layout/complete',      'LayoutController@getComplete')->name('layout.getComplete');
+        
         Route::get('/member', 'MemberController@index')->name('member');
         Route::post('/member', 'MemberController@store')->name('memberThanks');
         Route::post('/member/confirm', 'MemberController@confirm')->name('memberConfirm');

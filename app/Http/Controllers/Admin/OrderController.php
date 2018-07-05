@@ -205,7 +205,7 @@ class OrderController extends Controller
         $filename = "";
         $post_data_svg = json_decode($request->get('objects_svg'), true);
         // $post_data_jpg = json_decode($request->get('objects_jpg'), true);
-
+        \Log::info($post_data_svg);
         foreach ($post_data_svg as $key => $value) {
             if (!empty($value) && $value != null) {
                 if (!file_exists(public_path() . '/storage/saved_designs')) {

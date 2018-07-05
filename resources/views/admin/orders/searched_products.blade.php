@@ -52,6 +52,6 @@
             }).fail(function (data) {
                 // alert("error!");
             });
-        },100);
+        },500);
     });
 </script>

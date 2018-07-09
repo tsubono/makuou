@@ -11,7 +11,7 @@
             <div class="login cf">
                     <p class="name">
                         @if(\Illuminate\Support\Facades\Auth::check())
-                        ようこそ{{\Illuminate\Support\Facades\Auth::user()->name}}様
+                        ようこそ{{\Illuminate\Support\Facades\Auth::user()->name}} 様
                         @endif
                     </p>
                 <p class="btn">
@@ -51,8 +51,18 @@
 </header>
 <div class="sp-nav">
     <div class="login cf">
-        <p class="name">ようこそゲスト様</p>
-        <p class="btn"><a href="{{url('login')}}">ログイン</a></p>
+        <p class="name">
+            @if(\Illuminate\Support\Facades\Auth::check())
+            ようこそ{{\Illuminate\Support\Facades\Auth::user()->name}} 様
+            @endif
+        </p>
+        <p class="btn">
+            @if(\Illuminate\Support\Facades\Auth::check())
+                <a href="{{url('/logout')}}">ログアウト</a>
+            @else
+                <a href="{{url('/login')}}">ログイン</a>
+            @endif
+        </p>
     </div>
     <div class="hour">
         <div><a href="tel:0120805266"><img src="{{asset("assets/img/common/tel.png")}}" alt="0120-805-266"></a></div>
@@ -60,7 +70,7 @@
         </div>
     </div>
     <ul class="cf">
-        <li><a href="/">HOME</a></li>
+        <li><a href="{{url('/')}}">HOME</a></li>
         <li><a href="{{url('/search')}}">横断幕を作る</a></li>
         <li><a href="{{url('/search')}}">テンプレートを検索</a></li>
         <li><a href="{{url('/guide')}}">ご注文の流れ</a></li>

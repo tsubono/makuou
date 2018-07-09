@@ -8,20 +8,20 @@
 {{$data->name}} 様
 
 おなまえ(フリガナ)
-{{$data->name}} 様
+{{$data->name_kana}} 様
 
 メールアドレス
 {{$data->email}}
 
 携帯電話番号
-@if($data->tel) !== '')
+@if($data->tel !== '')
 {{$data->tel}}
 @else
     記入なし
 @endif
 
 自宅電話番号
-@if($data->fax) !== '')
+@if($data->fax !== '')
 {{$data->fax}}
 @else
     記入なし

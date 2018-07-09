@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterRequest;
 use App\Mail\UserRegister;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
@@ -64,15 +65,11 @@ class UserController extends Controller
                         $request->input('mobileTwo') &&
                         $request->input('mobileThree')) {
                         $user->tel = $request->input('mobileOne') . '-' . $request->input('mobileTwo') . '-' . $request->input('mobileThree');
-                    }else{
-                        $user->tel = '';
                     }
                     if ($request->input('telOne') &&
                         $request->input('telTwo') &&
                         $request->input('telThree')) {
                         $user->fax = $request->input('mobileOne') . '-' . $request->input('mobileTwo') . '-' . $request->input('mobileThree');
-                    }else{
-                        $user->fax = '';
                     }
                     $user->zip_code = $request->input('zipCodeOne') . '-' . $request->input('zipCodeTwo');
                     $user->pref_id = $request->input('prefecture');
@@ -81,11 +78,12 @@ class UserController extends Controller
                     $user->password = $request->input('password');
                     $user->save();
 
-                    //ログインは会員様が各自で行う
-//                    Auth::guard('user')->login($user);
 
                     Mail::to($user->email)
                         ->queue(new UserRegister($user));
+
+                    //ログインは会員様が各自で行う
+                    Auth::guard('user')->login($user);
 
                     $request->session()->regenerateToken();
                     DB::commit();
@@ -97,7 +95,7 @@ class UserController extends Controller
                             ['exception' => '大変申し訳ございません。内部エラーが発生しました。お手数ですが初めからやり直して下さい']
                         );
                 }
-                return redirect('/');
+                return redirect('/mypage');
             }
             return redirect('/register')->withInput();
         }

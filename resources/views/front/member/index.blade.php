@@ -79,7 +79,7 @@
                                             <ul class="innerlist_tel">
                                                 <li><input type="text" name="mobileOne" value="@php
                                                         if($user->tel){
-                                                            echo old('mobileOne','sts');
+                                                            echo old('mobileOne',explode('-',$user->tel)[0]);
                                                         }else{
                                                             echo old('mobileOne');
                                                         }

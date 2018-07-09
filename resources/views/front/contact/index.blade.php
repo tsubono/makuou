@@ -71,7 +71,7 @@
                             <dl>
                                 <dt><span>必須</span>お問い合わせ内容</dt>
                                 <dd>
-                                    <input type="textarea" name="content" id="" value="{{old('content')}}"/>
+                                    <textarea  name="content" id="" style="resize: vertical">{{old('content')}}</textarea>
                                     @if($errors->has('content'))
                                         <div>
                                             <span class="error">{{$errors->first('content')}}</span>

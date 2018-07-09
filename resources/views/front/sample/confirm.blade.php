@@ -129,7 +129,7 @@
                             <dl>
                                 <dt>備考欄</dt>
                                 <dd>
-                                    @if(preg_replace("/( |　)/", "", $data['addressTwo']) !== '')
+                                    @if(preg_replace("/( |　)/", "", $data['remarks']) !== '')
                                         {{$data['remarks']}}
                                     @else
                                         記入なし

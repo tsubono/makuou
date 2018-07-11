@@ -1296,6 +1296,10 @@ body {
     text-indent: -5em;
 }
 
+.bold{ font-weight: bold; }
+
+.blue{ color: #2a389d; }
+
 /* /contact /sampleページ
 ------------------------------------------------------------ */
 .error{

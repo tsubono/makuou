@@ -1,7 +1,8 @@
 @extends('front.layouts.default')
 
 @push('css')
-
+    <link rel="stylesheet" type="text/css" href="{{asset("assets/css/search.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/css/layer.css")}}">
 @endpush
 
 @section('title', 'レイアウトを作る')

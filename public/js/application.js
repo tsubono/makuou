@@ -667,6 +667,71 @@ angular.module('productApp', [
          * デザインデータ保存部分
          ****************************************/
         /*
+         * フロント用プレセーブ
+         */
+        $scope.getPreSaveDatas = function () {
+
+            $scope.deactivateAll();
+            $scope.beforeSave();
+
+            var objects_svg = $scope.fabric.designedSVGObjects;
+            var user_id = jQuery('[name="order[user_id]"]').val();
+            var filename = Math.random().toString(36).slice(-8);
+
+            $http({
+                method: 'post',
+                url: $scope.path + "/layout/getPreSaveDatas",
+                data: {
+                    objects_svg: JSON.stringify(objects_svg),
+                    name: filename,
+                    user_id: user_id
+                },
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                transformRequest: _this.transformRequest
+            }).success(function (data, status, headers, config) {
+
+                $scope.objectLayers = [];
+                $scope.objectLayers = $scope.fabric.canvasLayers();
+
+                var uploaded_files = [];
+                var array = [];
+                var json_text = {};
+                json_text["objects"] = [];
+                var count = 0;
+                var array_count = 0;
+
+                // 全レイヤーを一つずつループ
+                angular.forEach($scope.objectLayers, function (value, key) {
+                    // typeが画像の場合はtmpからsavedに変更
+                    if (value.object.type == "image") {
+                        var src = value.object._originalElement.src;
+                        var saved_src = src.replace('tmp', 'saved');
+                        value.object._originalElement.src = saved_src;
+                        uploaded_files[count] = saved_src.match(".+/(.+?)([\?#;].*)?$")[1];
+                        count++;
+                    }
+                    // JSON用デザインデータ
+                    array[array_count] = value.object;
+                    array_count++;
+                });
+                json_text["objects"] = array.reverse();
+
+                jQuery('[name="order_detail[designed_filename]"]').val(filename);
+                jQuery('[name="order_detail[designed_image]"]').val(data.designed_image);
+                jQuery('[name="order_detail[uploaded_files]"]').val(uploaded_files.join(','));
+                jQuery('[name="order_detail[json]"]').val(JSON.stringify(json_text));
+
+                jQuery('[name=confirmForm]').submit();
+
+
+                // jQuery('#form1').submit();
+
+            }).error(function (data, status, headers, config) {
+                $scope.$broadcast("AjaxCallHappened", false);
+            });
+        };
+
+        /*
          * デザインデータをJsonから保存する
          */
         $scope.saveByJson = function (item_box) {
@@ -682,7 +747,7 @@ angular.module('productApp', [
 
             $timeout(function () {
                 $scope.saveDesign(item_box);
-            }, 100);
+            }, 300);
         };
 
         /*

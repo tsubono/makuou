@@ -76,11 +76,15 @@ Route::namespace('Front')->group(function() {
     Route::post('/sample/confirm',      'SampleController@confirm')->name('sampleConfirm');
 
     Route::middleware('auth:user')->group(function () {
+
         Route::get('/layout/{id}',      'LayoutController@index')->name('layout');
-        Route::post('/layout/confirm',      'LayoutController@confirm')->name('layout.confirm');
-        Route::post('/layout/complete',      'LayoutController@postComplete')->name('layout.postComplete');
-        Route::get('/layout/complete',      'LayoutController@getComplete')->name('layout.getComplete');
-        
+        Route::post('/layout/confirm',      'LayoutController@confirm');
+        Route::post('/layout/spec',      'LayoutController@spec');
+        Route::post('/layout/confirm2',      'LayoutController@confirm2');
+        Route::post('/layout/complete',      'LayoutController@postComplete');
+        Route::post('/layout/getPreSaveDatas', 'LayoutController@getPreSaveDatas');
+
+
         Route::get('/member', 'MemberController@index')->name('member');
         Route::post('/member', 'MemberController@store')->name('memberThanks');
         Route::post('/member/confirm', 'MemberController@confirm')->name('memberConfirm');

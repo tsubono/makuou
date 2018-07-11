@@ -34,6 +34,7 @@
     {{--<script src="{{asset("assets/js/search.js")}}"></script>--}}
     <script>
         $(function () {
+
             var id = "{{ $product->id }}";
             $('#productApp').scope().initFabric("{{ $product->ratio->width * 600 }}", "{{ $product->ratio->height * 600 }}");
             $('#productApp').scope().loadProduct("{{ $product->title }}", "{{ $product->image }}", id, 0);
@@ -46,17 +47,25 @@
 
                 // 編集中の商品ID更新
                 $('#productApp').scope().defaultProductId = id;
-
+                $('#productApp').scope().index = 0;
 
             }, 100);
 
-            $('#save_design').click(function () {
-                var json = $('#productApp').scope().getDesignJson();
-                $('.order_details_json').val(json);
 
-                // $('#productApp').scope().saveByJson($('.item_box:first'));
-                $('#productApp').scope().saveByJson($('.item_box:first'));
+            // デザインモーダルの確定押下時
+            // $('#save_design').click(function () {
+            //     var product_id = $('#productApp').scope().defaultProductId;
+            //
+            //     var json = $('#productApp').scope().getDesignJson();
+            //     $('.order_details_json').val(json);
+            //
+            //     $('#productApp').scope().saveByJson($('.item_box:first'));
+            // });
+
+            $('#save_design').click(function () {
+                $('#productApp').scope().getPreSaveDatas();
             });
+
         });
     </script>
 
@@ -75,21 +84,25 @@
                         <li>レイアウトを作る</li>
                     </ul>
                     <div>
-                        {{--<img src="{{asset("assets/img/layout/scrn.png")}}" alt="デザイン編集画面">--}}
                         @include('front.design')
                     </div>
-                    <div class="btn">
-                        <a href="#" id="save_design">デザイン確認</a>
-                    </div>
+                    <form method="post" action="{{ url('/layout/confirm') }}" name="confirmForm">
+                        @csrf
+                        <input type="hidden" name="order_detail[designed_filename]" value="">
+                        <input type="hidden" name="order_detail[designed_image]" value="">
+                        <input type="hidden" name="order_detail[uploaded_files]" value="">
+                        <input type="hidden" name="order_detail[json]" value="">
+                        <input type="hidden" name="order[user_id]" value="{{ \Illuminate\Support\Facades\Auth::user()->id }}">
+                        <input type="hidden" name="order_detail[product_id]" value="{{ $product->id }}">
+
+                        <div class="btn">
+                            <a href="#" id="save_design">デザイン確認</a>
+                        </div>
+                    </form>
+
                 </div>
-                <form class="form-horizontal" id="form12" action="{{ url('/layout/confirm') }}" method="post">
-                    {{ csrf_field() }}
-                    <input type="hidden" name="order_details[0][designed_filename]" value="">
-                    <input type="hidden" name="order_details[0][designed_image]" value="">
-                    <input type="hidden" name="order_details[0][uploaded_files]" value="">
-                    <input type="hidden" name="order_details[0][json_text]" value="">
-                    <input type="hidden" name="user[id]" value="1">
-                </form>
+
+
             </section>
             <!-- /.layout -->
         </div>

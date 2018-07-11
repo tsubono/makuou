@@ -2,6 +2,7 @@
     <input type="hidden" name="path" value="{{ url('/') }}">
     <input type="hidden" name="asset" value="{!! asset(env('PUBLIC', '')) !!}">
     <input type="hidden" class="order_details_json" name="order_details_json" value="" data-index="0">
+    <div class="svgElements"></div>
 
     <div class="row justify-content-center">
         <div class="container ng-scope" ng-controller="ProductCtrl" ng-app="productApp" id="productApp">

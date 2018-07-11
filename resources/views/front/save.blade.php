@@ -21,7 +21,8 @@
             <section class="save">
                 <h1 class="main__title">
                     <picture>
-                        <img src="{{asset("assets/img/save/title.png")}}" srcset="{{ asset("assets/img/save/title.png")}}" alt="保存作品">
+                        <img src="{{asset("assets/img/save/title.png")}}"
+                             srcset="{{ asset("assets/img/save/title.png")}}" alt="保存作品">
                     </picture>
                 </h1>
                 <div class="main__content">
@@ -34,78 +35,35 @@
                         <div class="main__block_r">
                             <h2 class="ttl01 mt25">保存作品</h2>
                             <div class="example__content">
-                                <a class="js-showing-modal" href="#c001">
-                                    <h3 class="ttl03">作品名</h3>
-                                    <figure>
-                                        <img src="{{asset("assets/img/example/c001_thumbnail.jpg")}}" alt="">
-                                    </figure>
-                                    <table>
-                                        <tr>
-                                            <th>比率</th>
-                                            <td>1:1.5</td>
-                                        </tr>
-                                    </table>
-                                </a>
-                                <a class="js-showing-modal" href="#c002">
-                                    <h3 class="ttl03">作品名</h3>
-                                    <figure>
-                                        <img src="{{asset("assets/img/example/c001_thumbnail.jpg")}}" alt="">
-                                    </figure>
-                                    <table>
-                                        <tr>
-                                            <th>比率</th>
-                                            <td>1:1.5</td>
-                                        </tr>
-                                    </table>
-                                </a>
-                                <a class="js-showing-modal" href="#c003">
-                                    <h3 class="ttl03">作品名</h3>
-                                    <figure><img src="{{asset("assets/img/example/c001_thumbnail.jpg")}}" alt=""></figure>
-                                    <table>
-                                        <tr>
-                                            <th>比率</th>
-                                            <td>1:1.5</td>
-                                        </tr>
-                                    </table>
-                                </a>
 
-                                <a class="js-showing-modal" href="#c004">
-                                    <h3 class="ttl03">作品名</h3>
-                                    <figure><img src="{{asset("assets/img/example/c001_thumbnail.jpg")}}" alt=""></figure>
-                                    <table>
-                                        <tr>
-                                            <th>比率</th>
-                                            <td>1:1.5</td>
-                                        </tr>
-                                    </table>
-                                </a>
-
-                                <a class="js-showing-modal" href="#c005">
-                                    <h3 class="ttl03">作品名</h3>
-                                    <figure><img src="{{asset("assets/img/example/c001_thumbnail.jpg")}}" alt=""></figure>
-                                    <table>
-                                        <tr>
-                                            <th>比率</th>
-                                            <td>1:1.5</td>
-                                        </tr>
-                                    </table>
-                                </a>
-
-                                <a class="js-showing-modal" href="#c006">
-                                    <h3 class="ttl03">作品名</h3>
-                                    <figure><img src="{{asset("assets/img/example/c001_thumbnail.jpg")}}" alt=""></figure>
-                                    <table>
-                                        <tr>
-                                            <th>比率</th>
-                                            <td>1:1.5</td>
-                                        </tr>
-                                    </table>
-                                </a>
+                                @foreach ($orders as $order)
+                                    @foreach ($order->order_details as $order_detail)
+                                        <a class="js-showing-modal" href="#{{$order_detail->id}}">
+                                            <h3 class="ttl03">
+                                                {{ !empty($order_detail->design_name) ? $order_detail->design_name : ' NO TITLE ' }}
+                                            </h3>
+                                            <figure>
+                                                <img src="{!! asset(env('PUBLIC', ''). $order_detail->designed_image) !!}"
+                                                     alt="">
+                                            </figure>
+                                            <table>
+                                                <tr>
+                                                    <th>比率</th>
+                                                    <td>
+                                                        {{ $order_detail->product->ratio->height }}
+                                                        :{{ $order_detail->product->ratio->width }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </a>
+                                    @endforeach
+                                @endforeach
 
                             </div>
                             <!-- /.example__content -->
                             <a class="example__btn" href="{{url("search/")}}">
-                                <img src="{{asset("assets/img/top/make_btn.png")}}" alt="ネットでレイアウトを調整しながら自分でデザイン！オリジナル横断幕を作る">
+                                <img src="{{asset("assets/img/top/make_btn.png")}}"
+                                     alt="ネットでレイアウトを調整しながら自分でデザイン！オリジナル横断幕を作る">
                             </a>
                         </div>
                         <!--/.main_blockr -->
@@ -123,60 +81,21 @@
 
     <div class="modal">
         <div class="modal__inner">
-            <div id="c001" class="modal__content">
-                <div class="modal__close"></div>
-                <figure>
-                    <img src="{{asset("assets/img/example/c001_photo.jpg")}}" alt="">
-                    <figcaption>
-                        <p class="modal__heading">作品名</p>
-                    </figcaption>
-                </figure>
-            </div>
-            <div id="c002" class="modal__content">
-                <div class="modal__close"></div>
-                <figure>
-                    <img src="{{asset("assets/img/example/c001_photo.jpg")}}" alt="">
-                    <figcaption>
-                        <p class="modal__heading">作品名</p>
-                    </figcaption>
-                </figure>
-            </div>
-            <div id="c003" class="modal__content">
-                <div class="modal__close"></div>
-                <figure>
-                    <img src="{{asset("assets/img/example/c001_photo.jpg")}}" alt="">
-                    <figcaption>
-                        <p class="modal__heading">作品名</p>
-                    </figcaption>
-                </figure>
-            </div>
-            <div id="c004" class="modal__content">
-                <div class="modal__close"></div>
-                <figure>
-                    <img src="{{asset("assets/img/example/c001_photo.jpg")}}" alt="">
-                    <figcaption>
-                        <p class="modal__heading">作品名</p>
-                    </figcaption>
-                </figure>
-            </div>
-            <div id="c005" class="modal__content">
-                <div class="modal__close"></div>
-                <figure>
-                    <img src="{{asset("assets/img/example/c001_photo.jpg")}}" alt="">
-                    <figcaption>
-                        <p class="modal__heading">作品名</p>
-                    </figcaption>
-                </figure>
-            </div>
-            <div id="c006" class="modal__content">
-                <div class="modal__close"></div>
-                <figure>
-                    <img src="{{asset("assets/img/example/c001_photo.jpg")}}" alt="">
-                    <figcaption>
-                        <p class="modal__heading">作品名</p>
-                    </figcaption>
-                </figure>
-            </div>
+            @foreach ($orders as $order)
+                @foreach ($order->order_details as $order_detail)
+                    <div id="{{ $order_detail->id }}" class="modal__content">
+                        <div class="modal__close"></div>
+                        <figure>
+                            <img src="{!! asset(env('PUBLIC', ''). $order_detail->designed_image) !!}" alt="">
+                            <figcaption>
+                                <p class="modal__heading">
+                                    {{ !empty($order_detail->design_name) ? $order_detail->design_name : ' NO TITLE ' }}
+                                </p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                @endforeach
+            @endforeach
         </div>
     </div>
     <!-- /.modal -->

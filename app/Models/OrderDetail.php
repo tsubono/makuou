@@ -16,7 +16,7 @@ class OrderDetail extends Model
      */
     protected $fillable = [
         'order_id', 'product_id', 'product_type_id', 'price_id', 'option_ids', 'option_price', 'price', 'quantity', 'tax_rate', 'sub_total',
-        'designed_filename', 'designed_image', 'uploaded_files', 'designed_json'
+        'designed_filename', 'designed_image', 'uploaded_files', 'designed_json', 'design_name', 'note'
     ];
 
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];

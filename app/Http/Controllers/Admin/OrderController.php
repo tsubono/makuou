@@ -32,7 +32,7 @@ class OrderController extends Controller
      */
     public function index(Request $request)
     {
-        $orders = $this->order->orderBy('created_at', 'desc')->paginate(15);
+        $orders = $this->order->whereNotNull('status')->orderBy('created_at', 'desc')->paginate(15);
 
         return view('admin.orders.index', compact('orders'));
     }
@@ -205,7 +205,7 @@ class OrderController extends Controller
         $filename = "";
         $post_data_svg = json_decode($request->get('objects_svg'), true);
         // $post_data_jpg = json_decode($request->get('objects_jpg'), true);
-        \Log::info($post_data_svg);
+
         foreach ($post_data_svg as $key => $value) {
             if (!empty($value) && $value != null) {
                 if (!file_exists(public_path() . '/storage/saved_designs')) {
@@ -223,101 +223,12 @@ class OrderController extends Controller
             }
         }
 
-        // リサイズ用にjpg保存
-//        foreach ($post_data_jpg as $key => $value) {
-//            if (!empty($value) && $value != null) {
-//                if (!file_exists(public_path() . '/storage/saved_designs/jpg')) {
-//                    mkdir(public_path() . '/storage/saved_designs/jpg/');
-//                }
-//
-//                $destination = public_path() . "/storage/saved_designs/jpg/";
-//                $filename = $request->get('name') . '.jpg';
-//                $content = file_get_contents($value);
-//
-//                file_put_contents($destination . $filename, $content);
-//
-//                list($width, $height) = getimagesize($destination . $filename );
-//                $new_width = $width * 5;
-//                $new_height = $height * 5;
-//
-//                $image_p = imagecreatetruecolor($new_width, $new_height);
-//                // $image = imagecreatefromjpeg($destination . $filename);
-//                $image = imagecreatefromstring(file_get_contents($destination . $filename));
-//                imagecopyresampled($image_p, $image, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
-//
-//                imagestring($image_p, 5, 0, 0, file_get_contents($destination . $filename), 100);
-//            }
-//        }
-
-
         echo json_encode([
             'filename' => $filename,
             'designed_image' => "/storage/saved_designs/svg/".$filename
         ]);
 
     }
-
-    public function saveDesignDB(Request $request) {
-
-        $product_id = $request->get('product_id');
-        $filename = $request->get('filename');
-        $user_id = $request->get('user_id');
-        $saved_design_id = $request->get('saved_design_id');
-        $uploaded_files = json_decode($request->get('uploaded_files'), true);
-        $json = $request->get('json');
-
-        // 更新
-        if (!empty($saved_design_id)) {
-            $saved_design = $this->saved_design->findOrFail($saved_design_id);
-
-            // 前回のデザイン画像を削除
-            if (file_exists(public_path(). $saved_design->image)) {
-                unlink(public_path(). $saved_design->image);
-            }
-            if (file_exists(public_path(). $saved_design->json)) {
-                unlink(public_path(). $saved_design->json);
-            }
-
-            $delete_array = array_diff(explode(',', $saved_design->uploaded_files), $uploaded_files);
-            foreach ($delete_array as $delete) {
-                if (file_exists(public_path(). "/storage/upload/saved/". $delete) && !empty($delete)) {
-                    unlink(public_path(). "/storage/upload/saved/". $delete);
-                }
-            }
-            // 新規追加
-        } else {
-            $saved_design = new SavedDesign();
-        }
-        $saved_design->product_id = $product_id;
-        $saved_design->filename = $filename;
-        $saved_design->image = "/storage/saved_designs/svg/". $filename. ".svg";
-        $saved_design->user_id = $user_id;
-        $saved_design->uploaded_files = implode(',', $uploaded_files);
-        $saved_design->json = "/storage/saved_designs/json/". $filename. ".json";
-        $saved_design->save();
-
-        $saved_design_id = $saved_design->id;
-
-        // canvasにアップロードされた写真一覧をsavedに移動する
-        foreach ($uploaded_files as $uploaded_file) {
-            if (file_exists(public_path() . '/storage/upload/tmp/' . $uploaded_file)) {
-                if (!file_exists(public_path() . '/storage/upload/saved')) {
-                    mkdir(public_path() . '/storage/upload/saved');
-                }
-                rename(public_path() . '/storage/upload/tmp/' . $uploaded_file,
-                    public_path() . '/storage/upload/saved/' . $uploaded_file);
-            }
-        }
-        // jsonファイル書き出し
-        if (!file_exists(public_path() . '/storage/saved_designs/json')) {
-            mkdir(public_path() . '/storage/saved_designs/json');
-        }
-        \File::put(public_path(). "/storage/saved_designs/json/". $filename. ".json", $json);
-
-        echo json_encode(['activeSavedDesignId' => $saved_design_id]);
-
-    }
-
 
     /**
      * バリデーション関連

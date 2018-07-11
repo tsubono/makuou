@@ -9,7 +9,7 @@
     <script src="{{asset("assets/js/search.js")}}"></script>
 @endpush
 
-@section('title', '特定商取引に関する法律に基づく表記')
+@section('title', 'マイページ')
 
 @section('content')
     <main class="l-main">

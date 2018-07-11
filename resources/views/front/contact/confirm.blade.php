@@ -53,7 +53,7 @@
                             <dl>
                                 <dt><span>必須</span>お問い合わせ内容</dt>
                                 <dd>
-                                    {{$data['content']}}
+                                    {!! nl2br(htmlspecialchars($data['content'])) !!}
                                     <input type="hidden" name="content" value="{{$data['content']}}"/>
                                 </dd>
                             </dl>

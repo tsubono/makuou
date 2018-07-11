@@ -130,7 +130,7 @@
                                 <dt>備考欄</dt>
                                 <dd>
                                     @if(preg_replace("/( |　)/", "", $data['remarks']) !== '')
-                                        {{$data['remarks']}}
+                                        {!! nl2br(htmlspecialchars($data['remarks'])) !!}
                                     @else
                                         記入なし
                                     @endif

@@ -114,6 +114,7 @@
                                             <span class="error">{{$errors->first('zipCodeTwo')}}</span>
                                         </div>
                                     @endif
+                                    <button type="button" id="zip-btn">郵便番号から自動入力</button>
                                 </dd>
                             </dl>
                             <dl class="innerlist_address add02">
@@ -160,7 +161,7 @@
                             <dl>
                                 <dt>備考欄</dt>
                                 <dd>
-                                    <input type="textarea" name="remarks" value="{{old('remarks')}}" id=""/>
+                                    <textarea  name="remarks" id="" style="resize: vertical">{{old('remarks')}}</textarea>
                                     @if($errors->has('remarks'))
                                         <div>
                                             <span class="error">{{$errors->first('remarks')}}</span>
@@ -220,5 +221,12 @@
             <!-- /.pickup -->
         </div>
     </main>
+    <script>
+        window.onload = function () {
+            $('#zip-btn').click(function(){
+                AjaxZip3.zip2addr('zipCodeOne', 'zipCodeTwo', 'prefecture', 'addressOne');
+            });
+        }
+    </script>
     <!-- /.l-main -->
 @endsection

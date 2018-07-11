@@ -6,6 +6,6 @@
         <li><a href="{{url("member/")}}"><img src="{{asset("assets/img/ordered/mypage_menu03.png")}}" alt="登録情報編集"></a></li>
         <li><a href="{{url("ordered/")}}"><img src="{{asset("assets/img/ordered/mypage_menu04.png")}}" alt="注文履歴"></a></li>
         <li><a href="{{url("logout/")}}"><img src="{{asset("assets/img/ordered/mypage_menu05.png")}}" alt="ログアウト"></a></li>
-        <li><a href="{{url("cancell/")}}"><img src="{{asset("assets/img/ordered/mypage_menu06.png")}}" alt="退会"></a></li>
+        <li><a href="{{url("cancel/")}}"><img src="{{asset("assets/img/ordered/mypage_menu06.png")}}" alt="退会"></a></li>
     </ul>
 </div>

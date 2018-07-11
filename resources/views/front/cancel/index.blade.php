@@ -28,7 +28,12 @@
                             <h2 class="mt0">退会する</h2>
                             <p class="txt_c mb30">退会すると、これまでの保存作品や注文履歴、登録情報が削除されます。</p>
                             <p class="btn mb10"><a href="{{url("mypage")}}">マイページへもどる</a></p>
-                            <p class="btn"><a href="{{url("cancel/complete")}}">退会を確定する</a></p>
+                            <form name="cancel_form" action="{{url("cancel/complete")}}" method="post">
+                                @csrf
+                            <p class="btn">
+                                <a href="javascript:cancel_form.submit()">退会を確定する</a>
+                            </p>
+                            </form>
                         </div>
                     </div>
 

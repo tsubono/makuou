@@ -54,7 +54,7 @@
 @section('title', '仕様を決める')
 
 @section('content')
-    <main class="l-main">
+    <main class="l-main spec">
         <div class="l-inner">
             <section class="layout confirm">
                 <h1 class="main__title">
@@ -67,7 +67,7 @@
                         <li><a>デザイン確認</a></li>
                         <li>仕様を決める</li>
                     </ul>
-                    <form method="post" action="{{ url('layout/confirm2') }}" class="form_template" id="form1">
+                    <form method="post" action="{{ url('layout/confirm2') }}" class="form_template confirm" id="form1">
                         @csrf
                         <input type="hidden" name="order_detail[designed_filename]" value="{{ $order_detail['designed_filename'] }}">
                         <input type="hidden" name="order_detail[designed_image]" value="{{ $order_detail['designed_image'] }}">

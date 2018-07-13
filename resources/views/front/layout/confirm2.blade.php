@@ -29,7 +29,7 @@
                         <li>確認画面</li>
                     </ul>
 
-                    <form method="post" action="{{ url('layout/complete') }}" class="form_template" id="form1">
+                    <form method="post" action="{{ url('layout/complete') }}" class="form_template confirm" id="form1">
                         @csrf
                         <input type="hidden" name="order[user_id]" value="{{ $order['user_id'] }}">
                         <input type="hidden" name="order_detail[product_id]" value="{{ $order_detail['product_id'] }}">
@@ -98,8 +98,8 @@
                             <dl>
                                 <dt>付属品（旗用ポール）</dt>
                                 <dd>
-                                    {{ $order_detail['pole'] }}
-                                    <input type="hidden" name="order_detail[pole]" value="{{ $order_detail['pole'] }}">
+                                    {{ !empty($order_detail['pole']) ? $order_detail['pole'] : '' }}
+                                    <input type="hidden" name="order_detail[pole]" value="{{ !empty($order_detail['pole']) ? $order_detail['pole'] : '' }}">
                                 </dd>
                             </dl>
                             <dl>

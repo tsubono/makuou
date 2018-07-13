@@ -39,7 +39,7 @@
                         <img src="{!! asset(env('PUBLIC', ''). $order_detail['designed_image']) !!}" alt="デザイン確認">
                     </div>
 
-                    <form method="post" action="{{ url('layout/spec') }}" class="form_template" id="form1">
+                    <form method="post" action="{{ url('layout/spec') }}" class="form_template confirm" id="form1">
                         @csrf
                         <input type="hidden" name="preSaveFlg">
                         <input type="hidden" name="order_detail[designed_filename]" value="{{ $order_detail['designed_filename'] }}">

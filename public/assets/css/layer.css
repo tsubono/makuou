@@ -440,6 +440,9 @@ p.txt {
     padding: 15px;
     font-size: 120%;
 }
+.form_template input[type="submit"]#preSaveBtn {
+    border-bottom: none;
+}
 .form_template .sendarea li{ max-width: 200px; margin: 30px auto; }
 .form_template .sendarea li:hover{ opacity: 0.8; }
 .form_template dd input[type="text"],
@@ -759,6 +762,9 @@ p.txt {
     box-sizing: border-box;
     border: solid 2px #231814;
     box-shadow: 8px 8px 0 #231814;
+    border-radius: 0px;
+    padding: 0px;
+    display: block;
 }
 .layout .btn a {
     color: #fff;
@@ -826,7 +832,8 @@ p.txt {
     box-sizing: border-box;
     border: solid 2px #231814;
 }
-.confirm .share ul li.btn_org a {
+.confirm .share ul li.btn_org a,
+.confirm .share ul li.btn_org input {
 
     background-image: url(../img/common/arrow_r_blk.gif) , url(../img/common/bg_btnorg.gif);
     background-repeat: no-repeat , repeat;
@@ -1305,7 +1312,8 @@ p.txt {
 .logout__info .btn:hover{ opacity: 0.8; }
 
 
-.form_template input[type="submit"],.form_template button {
+.form_template:not(.confirm) input[type="submit"],
+.form_template button {
     width: 100%;
     border: none;
     border-bottom: solid 2px #ca5a2d;

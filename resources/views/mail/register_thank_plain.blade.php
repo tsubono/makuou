@@ -17,14 +17,14 @@
 @if($data->tel !== '')
 {{$data->tel}}
 @else
-    記入なし
+記入なし
 @endif
 
 FAX番号
 @if($data->fax !== '')
 {{$data->fax}}
 @else
-    記入なし
+記入なし
 @endif
 
 ご住所

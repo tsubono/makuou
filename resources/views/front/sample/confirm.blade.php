@@ -51,7 +51,7 @@
                                 </dd>
                             </dl>
                             <dl>
-                                <dt>携帯電話番号</dt>
+                                <dt>電話番号</dt>
                                 <dd>
                                     <ul class="innerlist_tel">
                                         <li>
@@ -72,7 +72,7 @@
                                 </dd>
                             </dl>
                             <dl>
-                                <dt>自宅電話番号</dt>
+                                <dt>FAX番号</dt>
                                 <dd>
                                     <ul class="innerlist_tel">
                                         <li>

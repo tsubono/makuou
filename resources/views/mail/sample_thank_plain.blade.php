@@ -19,14 +19,14 @@ $dataはSampleモデル
 {{config('pref')[$data->pref_id]}}{{$data->address1}}
 {{$data->address2}}
 
-携帯電話番号
+電話番号
 @if($data->tel !== '')
 {{$data->tel}}
 @else
 記入なし
 @endif
 
-自宅電話番号
+FAX番号
 @if($data->fax !== '')
 {{$data->fax}}
 @else

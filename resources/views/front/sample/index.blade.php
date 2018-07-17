@@ -69,7 +69,7 @@
                                 </dd>
                             </dl>
                             <dl>
-                                <dt>携帯電話番号</dt>
+                                <dt>電話番号</dt>
                                 <dd>
                                     <ul class="innerlist_tel">
                                         <li><input type="text" name="mobileOne" value="{{old('mobileOne')}}" id=""/>&emsp;-&emsp;
@@ -85,7 +85,7 @@
                                 </dd>
                             </dl>
                             <dl>
-                                <dt>自宅電話番号</dt>
+                                <dt>FAX番号</dt>
                                 <dd>
                                     <ul class="innerlist_tel">
                                         <li><input type="text" name="telOne" value="{{old('telOne')}}" id=""/>&emsp;-&emsp;

@@ -49,7 +49,7 @@
                 $('#productApp').scope().defaultProductId = id;
                 $('#productApp').scope().index = 0;
 
-            }, 100);
+            }, 300);
 
 
             // デザインモーダルの確定押下時

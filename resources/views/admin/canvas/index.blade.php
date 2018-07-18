@@ -354,12 +354,12 @@
                                 <md-button class="md-raised md-cornered dropdown-toggle" data-toggle="dropdown"
                                            aria-label="Font Family">
                             <span class='object-font-family-preview'
-                                  style='font-family: "@{{ fabric.selectedObject.fontFamily }}";'> @{{ fabric.selectedObject.fontFamily }} </span>
+                                  style='font-family: "@{{ fabric.selectedObject.fontFamily }}";'> @{{ currentFontName }} </span>
                                     <span class="caret"></span>
                                 </md-button>
                                 <ul class="dropdown-menu">
-                                    <li ng-repeat='font in FabricConstants.fonts' ng-click='toggleFont(font.name);'
-                                        style='font-family: "@{{ font.name }}";'>
+                                    <li ng-repeat='font in FabricConstants.fonts' ng-click='toggleFont(font.family, font.name);'
+                                        style='font-family: "@{{ font.family }}";'>
                                         <a>@{{ font.name }}</a>
                                     </li>
                                 </ul>

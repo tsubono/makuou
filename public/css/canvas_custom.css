@@ -1,134 +1,134 @@
 /* fonts */
 @font-face {
-    font-family: '龍神';
+    font-family: 'KswRyujin3N';
     src: url("../fonts/template/KswRyujin3N.ttf");
 }
 @font-face {
-    font-family: '雷神';
+    font-family: 'KswRaijinN';
     src: url("../fonts/template/KswRaijinN.ttf");
 }
 @font-face {
-    font-family: '風神';
+    font-family: 'KswFujinN';
     src: url("../fonts/template/KswFujinN.ttf");
 }
 @font-face {
-    font-family: '清龍';
+    font-family: 'KswSeiryuN';
     src: url("../fonts/template/KswSeiryuN.ttf");
 }
 @font-face {
-    font-family: '昇龍';
+    font-family: 'KswShoryuN';
     src: url("../fonts/template/KswShoryuN.ttf");
 }
 @font-face {
-    font-family: '花神';
+    font-family: 'KswKashinN';
     src: url("../fonts/template/KswKashinN.ttf");
 }
 @font-face {
-    font-family: '太楷書';
+    font-family: 'KswFutokaishoN';
     src: url("../fonts/template/KswFutokaishoN.ttf");
 }
 @font-face {
-    font-family: '太行書';
+    font-family: 'KswFutogyoshoN';
     src: url("../fonts/template/KswFutogyoshoN.ttf");
 }
 @font-face {
-    font-family: '昭和楷書';
+    font-family: 'KswKaishoN';
     src: url("../fonts/template/KswKaishoN.ttf");
 }
 @font-face {
-    font-family: '昭和隷書';
+    font-family: 'KswReishoN';
     src: url("../fonts/template/KswReishoN.ttf");
 }
 @font-face {
-    font-family: '昭和行書';
+    font-family: 'KswGyoshoN';
     src: url("../fonts/template/KswGyoshoN.ttf");
 }
 @font-face {
-    font-family: '青柳隷書しも';
+    font-family: 'aoyagireisyosimo';
     src: url("../fonts/template/aoyagireisyosimo.ttf");
 }
 @font-face {
-    font-family: '衡山毛筆フォント';
+    font-family: 'KouzanBrushFont';
     src: url("../fonts/template/衡山毛筆フォント.ttf");
 }
 @font-face {
-    font-family: 'さむらい';
+    font-family: 'Samurai';
     src: url("../fonts/template/samurai.ttf");
 }
 @font-face {
-    font-family: '康印体';
+    font-family: 'DFKoIn-W4-WINP-RKSJ-H';
     src: url("../fonts/template/DF-KouIn-W4.TTC");
 }
 @font-face {
-    font-family: 'ゴシック体';
+    font-family: 'DFHSGothic-W5-WINP-RKSJ-H';
     src: url("../fonts/template/DF-HeiSeiGothic-W5.TTC");
 }
 @font-face {
-    font-family: 'やさしさゴシック';
+    font-family: '07YasashisaGothicBold';
     src: url("../fonts/template/07やさしさゴシックボールド.ttf");
 }
 @font-face {
-    font-family: 'フォーク';
+    font-family: 'FolkPro-Bold-90ms-RKSJ-H';
     src: url("../fonts/template/A-OTF-FolkPro-Bold.otf");
 }
 @font-face {
-    font-family: 'スターゴシック体';
+    font-family: 'DFStarGothic-W12-WINP-RKSJ-H';
     src: url("../fonts/template/DF-StarGothic-W12.TTC");
 }
 @font-face {
-    font-family: 'ひびゴシック体';
+    font-family: 'DFHibiGothic-W14-WIN-RKSJ-H';
     src: url("../fonts/template/DF-HibiGothic-W14.TTC");
 }
 @font-face {
-    font-family: '太丸ゴシック体';
+    font-family: 'DFMaruGothic-SB-WINP-RKSJ-H';
     src: url("../fonts/template/DF-FutoMaruGothic-W9.TTC");
 }
 @font-face {
-    font-family: '細丸ゴシック体';
+    font-family: 'DFMaruGothic-Lt-WINP-RKSJ-H';
     src: url("../fonts/template/DF-HosoMaruGothic-W3.TTC");
 }
 @font-face {
-    font-family: '猫まる体';
+    font-family: 'DFNekoMaru-W12-WINP-RKSJ-H';
     src: url("../fonts/template/DF-NekoMaru-W12.TTC");
 }
 @font-face {
-    font-family: '丸シャドー';
+    font-family: 'GMYPMSHADOWOREB';
     src: url("../fonts/template/GMYPMSHADOWOREB_0.TTF");
 }
 @font-face {
-    font-family: 'ポップ体';
+    font-family: 'HGPSoeiKakupoptai';
     src: url("../fonts/template/HGRPP1.TTC");
 }
 @font-face {
-    font-family: 'たぬき油性マジック';
+    font-family: 'Tanuki-Permanent-Marker';
     src: url("../fonts/template/TanukiMagic.ttf");
 }
 @font-face {
-    font-family: 'てがき筆';
+    font-family: 'RiiTegakiFude-90ms-RKSJ-H';
     src: url("../fonts/template/RiiT.otf");
 }
 @font-face {
-    font-family: '明朝体';
+    font-family: 'DFMincho-UB-WINP-RKSJ-H';
     src: url("../fonts/template/DF-GokuButoMinCho-W12.TTC");
 }
 @font-face {
-    font-family: '華康明朝体';
+    font-family: 'DFMinchoP-W5-WINP-RKSJ-H';
     src: url("../fonts/template/DF-KaKouMinCho-W3.TTC");
 }
 @font-face {
-    font-family: '優雅宋';
+    font-family: 'DFYuGaSo-W5-WINP-RKSJ-H';
     src: url("../fonts/template/DF-YuGaSou-W5.TTC");
 }
 @font-face {
-    font-family: 'Arial';
+    font-family: 'ArialMT';
     src: url("../fonts/template/arial.ttf");
 }
 @font-face {
-    font-family: 'Times New Roman';
+    font-family: 'TimesNewRomanPSMT';
     src: url("../fonts/template/times.ttf");
 }
 @font-face {
-    font-family: 'Beau';
+    font-family: 'BeauNormal';
     src: url("../fonts/template/BEAUNORM.TTF");
 }
 @font-face {
@@ -136,15 +136,15 @@
     src: url("../fonts/template/impact.ttf");
 }
 @font-face {
-    font-family: 'Banty';
+    font-family: 'BantyNormal';
     src: url("../fonts/template/BANTYITA.TTF");
 }
 @font-face {
-    font-family: 'Vogel';
+    font-family: 'VogelNormal';
     src: url("../fonts/template/VOGELNOR.TTF");
 }
 @font-face {
-    font-family: 'Cupid';
+    font-family: 'CupidWideNormal';
     src: url("../fonts/template/CUPIDNOR.TTF");
 }
 @font-face {
@@ -152,51 +152,51 @@
     src: url("../fonts/template/arenski.ttf");
 }
 @font-face {
-    font-family: 'Magneto';
+    font-family: 'Magneto-Bold';
     src: url("../fonts/template/MAGNETOB.TTF");
 }
 @font-face {
-    font-family: 'Gregory';
+    font-family: 'GregoryNormal';
     src: url("../fonts/template/GREGORYN.TTF");
 }
 @font-face {
-    font-family: 'Time';
+    font-family: 'TimeNormal';
     src: url("../fonts/template/TIMENORM.TTF");
 }
 @font-face {
-    font-family: 'Ninepin';
+    font-family: 'NinepinNormal';
     src: url("../fonts/template/NINEPINN.TTF");
 }
 @font-face {
-    font-family: 'stencil';
+    font-family: 'Stencil';
     src: url("../fonts/template/STENCIL.TTF");
 }
 @font-face {
-    font-family: 'DEATH';
+    font-family: 'DEATH-FONT-ver1.0';
     src: url("../fonts/template/DEATH_FONT.TTF");
 }
 @font-face {
-    font-family: 'Saltpeter';
+    font-family: 'Saltpeter-N-Fungus';
     src: url("../fonts/template/Saltpeter_N_Fungus.ttf");
 }
 @font-face {
-    font-family: 'Tangiers';
+    font-family: 'TangiersNormal';
     src: url("../fonts/template/TANGIERN.TTF");
 }
 @font-face {
-    font-family: 'Rosewood';
+    font-family: 'RosewoodStd-Regular';
     src: url("../fonts/template/RosewoodStd-Regular.otf");
 }
 @font-face {
-    font-family: 'Collegiate';
+    font-family: 'CollegiateHeavyOutline-Medium';
     src: url("../fonts/template/collegiateHeavyOutline_Medium.ttf");
 }
 @font-face {
-    font-family: 'Phoenix';
+    font-family: 'PhoenixNormal';
     src: url("../fonts/template/PHOENIXN.TTF");
 }
 @font-face {
-    font-family: 'Native';
+    font-family: 'NativeNormal';
     src: url("../fonts/template/NATIVENO.TTF");
 }
 

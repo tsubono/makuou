@@ -46,6 +46,7 @@ angular.module('productApp', [
         $scope.FabricConstants = FabricConstants;
         $scope.activeSavedId = 0;
         $scope.validatedFlg = false;
+        $scope.currentFontName = '';
 
         $scope.path = "";
 
@@ -379,8 +380,10 @@ angular.module('productApp', [
         /*
          * フォント形式を変更する
          */
-        $scope.toggleFont = function (font) {
+        $scope.toggleFont = function (font, name) {
             $scope.fabric.selectedObject.fontFamily = font;
+            $scope.currentFontName = name;
+            jQuery('.object-font-family-preview').text(name);
             $scope.objectLayers = [];
             $scope.objectLayers = $scope.fabric.canvasLayers();
         };
@@ -539,6 +542,8 @@ angular.module('productApp', [
             $scope.defaultProductId = 1;
             $scope.index = 0;
             $scope.path = jQuery('[name=path]').val();
+            $scope.currentFontName = 'ゴシック体';
+
 
             // 各一覧読み込み
             _this.initStampCategories();

@@ -12,25 +12,28 @@
             <li>
                 <a href="/" target="_blank">サイトを表示</a>
             </li>
-            <li class="dropdown user user-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <span class="hidden-xs">{{\Auth::user()->name}}</span>
-                </a>
-                <ul class="dropdown-menu">
-                    <!-- Menu Body -->
-                    <li class="user-body">
-                        <div class="row">
-                            <div class="col-xs-12 text-center">
-                                <a href="{{ url('/admin/admins/'. \Auth::user()->id. '/edit') }}" class="btn btn-primary btn-flat">スタッフ情報変更</a>
+            @if (!empty(\Auth::user()))
+                <li class="dropdown user user-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <span class="hidden-xs">{{\Auth::user()->name}}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- Menu Body -->
+                        <li class="user-body">
+                            <div class="row">
+                                <div class="col-xs-12 text-center">
+                                    <a href="{{ url('/admin/admins/'. \Auth::user()->id. '/edit') }}"
+                                       class="btn btn-primary btn-flat">スタッフ情報変更</a>
+                                </div>
+                                <div class="col-xs-12 text-center mt-10">
+                                    <a href="{{ url('/admin/logout') }}" class="btn btn-primary btn-flat">ログアウト</a>
+                                </div>
                             </div>
-                            <div class="col-xs-12 text-center mt-10">
-                                <a href="{{ url('/admin/logout') }}" class="btn btn-primary btn-flat">ログアウト</a>
-                            </div>
-                        </div>
-                        <!-- /.row -->
-                    </li>
-                </ul>
-            </li>
+                            <!-- /.row -->
+                        </li>
+                    </ul>
+                </li>
+            @endif
         </ul>
     </div>
 </nav>

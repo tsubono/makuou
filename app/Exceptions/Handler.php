@@ -50,16 +50,29 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $exception)
     {
         if($this->isHttpException($exception)) {
-            // 403
-            if($exception->getStatusCode() == 403) {
-                return response()->view('errors.403');
+            if ($request->is('admin/*')) {
+                // 403
+                if($exception->getStatusCode() == 403) {
+                    return response()->view('admin.errors.403');
+                }
+                // 404
+                if($exception->getStatusCode() == 404) {
+                    return response()->view('admin.errors.404');
+                }
+                // 500
+                return response()->view('admin.errors.500');
+            } else {
+                // 403
+                if($exception->getStatusCode() == 403) {
+                    return response()->view('front.errors.403');
+                }
+                // 404
+                if($exception->getStatusCode() == 404) {
+                    return response()->view('front.errors.404');
+                }
+                // 500
+                return response()->view('front.errors.500');
             }
-            // 404
-            if($exception->getStatusCode() == 404) {
-                return response()->view('errors.404');
-            }
-            // 500
-            return response()->view('errors.500');
         }
 
         return parent::render($request, $exception);

@@ -195,16 +195,21 @@ class OrderService
     public function delete($order_id)
     {
         $order = $this->order->findOrFail($order_id);
-        $order_shipping_address = $this->orderShippingAddress->findOrFail($order->order_shipping_address_id);
 
         // 受注詳細情報削除
         foreach ($order->order_details as $order_detail) {
             $order_detail->delete();
         }
+
+        if (!empty($order->order_shipping_address_id)) {
+            $order_shipping_address = $this->orderShippingAddress->findOrFail($order->order_shipping_address_id);
+            // 受注配送先情報削除
+            $order_shipping_address->delete();
+        }
+
         // 受注情報削除
         $order->delete();
-        // 受注配送先情報削除
-        $order_shipping_address->delete();
+
     }
 
     /**

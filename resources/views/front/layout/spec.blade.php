@@ -24,28 +24,21 @@
 
         //チェックボックスとラジオボタン連動
         function checkBox() {
-            if (document.option.polecheck.checked == true) {
-                document.option.pole[0].checked = true;
+            if ($('#polecheck').is(':checked')) {
+                $('[name="order_detail[pole]"]:first').prop('checked', true);
             } else {
-                document.option.pole[0].checked = false;
-                document.option.pole[1].checked = false;
-                document.option.pole[2].checked = false;
-                document.option.pole[3].checked = false;
+                $('[name="order_detail[pole]"]').prop('checked', false);
             }
         }
         function radioButton() {
-            if (document.option.pole[0].checked == true) {
-                document.option.polecheck.checked = true;
-            }
-            if (document.option.pole[1].checked == true) {
-                document.option.polecheck.checked = true;
-            }
-            if (document.option.pole[2].checked == true) {
-                document.option.polecheck.checked = true;
-            }
-            if (document.option.pole[3].checked == true) {
-                document.option.polecheck.checked = true;
-            }
+
+            $('[name="order_detail[pole]"]').each (function() {
+                if ($(this).is(':checked')) {
+                    $('#polecheck').prop('checked', true);
+                }
+            });
+
+
         }
     </script>
 
@@ -139,7 +132,7 @@
                                             </ul>
                                         </li>
                                         <li class="pole">
-                                            <p><label><input type="checkbox" name="polecheck" id="" value="旗用ポール" onclick="checkBox()">旗用ポール</label></p>
+                                            <p><label><input type="checkbox" name="polecheck" id="polecheck" value="旗用ポール" onclick="checkBox()">旗用ポール</label></p>
                                             <div>
                                                 <label><input type="radio" name="order_detail[pole]" value="2m・3段伸縮" onclick="radioButton()">2m・3段伸縮</label>
                                                 <label><input type="radio" name="order_detail[pole]" value="3m・3段伸縮" onclick="radioButton()">3m・3段伸縮</label>

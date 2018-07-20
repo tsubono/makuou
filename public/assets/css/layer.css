@@ -30,85 +30,86 @@
  * member
  * favorite
  * ordered
+ * password
  */
 /* common
 ------------------------------------------------------------ */
 
 .ttl01{
-    background: url("../img/common/ttl_single_01.gif") repeat left center;
-    font-size: 24px;
-    font-weight: bold;
-    color: #fff;
-    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-    padding: 15px;
-    margin: 40px 0 20px;
+	background: url("../img/common/ttl_single_01.gif") repeat left center;
+	font-size: 24px;
+	font-weight: bold;
+	color: #fff;
+	text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+	padding: 15px;
+	margin: 40px 0 20px;
 }
 .ttl02{
-    background: url("../img/common/ttl_single_02.gif") repeat left center;
-    font-size: 20px;
-    font-weight: bold;
-    color: #fff;
-    padding: 15px;
-    margin: 30px 0 25px;
+	background: url("../img/common/ttl_single_02.gif") repeat left center;
+	font-size: 20px;
+	font-weight: bold;
+	color: #fff;
+	padding: 15px;
+	margin: 30px 0 25px;
 }
 .ttl03{
-    background: url(../img/common/arrow_r_pp.png) no-repeat left 10px center / 15px auto,
-    url("../img/common/bg_formhead.gif") repeat left center / 6px auto;
-    font-size: 17px;
-    font-weight: bold;
-    border: dashed 2px #ccc;
-    color: #ff5925;
-    padding: 15px;
-    padding-left: 35px;
-    margin: 30px 0 20px;
+	background: url(../img/common/arrow_r_pp.png) no-repeat left 10px center / 15px auto,
+		url("../img/common/bg_formhead.gif") repeat left center / 6px auto;
+	font-size: 17px;
+	font-weight: bold;
+	border: dashed 2px #ccc;
+	color: #ff5925;
+	padding: 15px;
+	padding-left: 35px;
+	margin: 30px 0 20px;
 }
 .list_dot li{
-    background: url(../img/common/list_style.png) no-repeat left center / 12px auto;
-    padding-left: 18px;
-    list-style: none;
+	background: url(../img/common/list_style.png) no-repeat left center / 12px auto;
+	padding-left: 18px;
+	list-style: none;
 }
 .table01 {
-    border-left: 1px solid #cccccc;
-    border-top: 1px solid #cccccc;
-    width: 100%;
-    margin: 30px 0;
+	border-left: 1px solid #cccccc;
+	border-top: 1px solid #cccccc;
+	width: 100%;
+	margin: 30px 0;
 }
 .table01 th {
-    background: url(../img/common/ttl_single_04.gif) repeat left center;
-    font-weight: bold;
-    text-align: center;
-    padding: 10px;
+	background: url(../img/common/ttl_single_04.gif) repeat left center;
+	font-weight: bold;
+	text-align: center;
+	padding: 10px;
 }
 .table01 th, .table01 td {
-    border-right: 1px solid #cccccc;
-    border-bottom: 1px solid #cccccc;
-    padding: 10px;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	padding: 10px;
 }
 .table01 td {
     font-size: .875em;
 }
 .various h6, .various p {
-    font-size: 14px;
-    line-height: 54px;
-    padding-left: 19px;
-    padding-right: 19px;
+	font-size: 14px;
+	line-height: 54px;
+	padding-left: 19px;
+	padding-right: 19px;
 }
 .various h6 {
-    background: #ff7800;
-    color: #fff;
-    margin-bottom: 0px;
+	background: #ff7800;
+	color: #fff;
+	margin-bottom: 0px;
 }
 .various .evennumber { font-size: 14px; background: rgba(35, 40, 255, 0.1); }
 
 .leftBox {
-    float: left;
-    width: 65%;
-    display: inline-block;
+	float: left;
+	width: 65%;
+	display: inline-block;
 }
 .rightBox {
-    float: right;
-    width: 30%;
-    display: inline-block;
+	float: right;
+	width: 30%;
+	display: inline-block;
 }
 .rightBox.pho img,
 .leftBox.pho img{ width: 100%; height: auto; }
@@ -126,57 +127,57 @@ p.txt {
     background-color: #fff;
 }
 .pickup .btn { width: 100%; }
-.pickup .btn img {
+.pickup .btn img { 
     margin: 50px auto 0;
     width: 100%;
     max-width: 606px;
 }
 .pdf_list{ margin: 10px 0; }
 .pdf_list li{
-    background: url(../img/common/arrow-r-wh.gif) no-repeat right 15px center / 10px auto, url(../img/common/bg_btnorg2.gif) repeat;
-    border: solid 2px #000;
-    margin-bottom: 10px;
-    transition: .3s;
+	background: url(../img/common/arrow-r-wh.gif) no-repeat right 15px center / 10px auto, url(../img/common/bg_btnorg2.gif) repeat;
+	border: solid 2px #000;
+	margin-bottom: 10px;
+	transition: .3s;
 }
 .pdf_list li:hover{ opacity: 0.8; }
 .pdf_list li a{
-    padding: 16px;
-    padding-left: 45px;
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    background: url(../img/common/pdf_icon.png) no-repeat left 10px center / 25px auto;
+	padding: 16px;
+	padding-left: 45px;
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	background: url(../img/common/pdf_icon.png) no-repeat left 10px center / 25px auto;
 }
 
 
 .ph_tx .pho {
-    width: 30%;
-    display: inline-block;
-    float: left;
+	width: 30%;
+	display: inline-block;
+	float: left;
 }
 .tx_ph .pho img,
 .ph_tx .pho img{ width: 100%; }
 .ph_tx .txt {
-    width: 65%;
-    display: inline-block;
-    float: right;
+	width: 65%;
+	display: inline-block;
+	float: right;
 }
 .tx_ph .pho {
-    width: 30%;
-    display: inline-block;
-    float: right;
+	width: 30%;
+	display: inline-block;
+	float: right;
 }
 .tx_ph .txt {
-    width: 65%;
-    display: inline-block;
-    float: left;
+	width: 65%;
+	display: inline-block;
+	float: left;
 }
 
 .btn_three {
-    display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
+	display: flex;
+	display: -webkit-box;  
+	display: -webkit-flex; 
+	display: -ms-flexbox; 
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
@@ -184,24 +185,24 @@ p.txt {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    margin-top: 20px;
+	margin-top: 20px;
 }
 
 .btn_return {
-    background: url(../img/common/arrow-r-wh.gif) no-repeat right 15px center / 9px auto,
-    url("../img/common/bg_btnred.gif") repeat left center / 6px auto;
-    font-size: 17px;
-    font-weight: bold;
-    border: solid 2px #000;
-    box-shadow: 5px 5px #000;
-    color: #ffffff;
-    width: 30%;
-    height: 70px;
-    margin: 20px 10px 20px;
-    display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
+	background: url(../img/common/arrow-r-wh.gif) no-repeat right 15px center / 9px auto,
+		url("../img/common/bg_btnred.gif") repeat left center / 6px auto;
+	font-size: 17px;
+	font-weight: bold;
+	border: solid 2px #000;
+	box-shadow: 5px 5px #000;
+	color: #ffffff;
+	width: 30%;
+	height: 70px;
+	margin: 20px 10px 20px;
+	display: flex;
+	display: -webkit-box;  
+	display: -webkit-flex; 
+	display: -ms-flexbox; 
     -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
@@ -213,8 +214,8 @@ p.txt {
 }
 
 .btn_return a {
-    color: #fff;
-    text-decoration: none;
+	color: #fff;
+	text-decoration: none;
 }
 
 
@@ -223,108 +224,108 @@ p.txt {
 .login h1 img {  width: 80%; max-width: 189px; }
 .login__column{ margin: 30px 0;}
 .login__box{
-    display: inline-block;
-    width: 49%;
-    border-radius: 10px;
+	display: inline-block;
+	width: 49%;
+	border-radius: 10px;
 }
 .login__box.member{ float: left; }
 .login__box.first{ float: right; }
 .login__box h2{
-    color: #fff;
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    padding: 20px 10px 20px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+	color: #fff;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	padding: 20px 10px 20px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
 }
 .login__box.member h2{
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9ad43+0,ff7800+70 */
-    background: rgb(249,173,67); /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(249,173,67,1) 0%, rgba(255,120,0,1) 70%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(249,173,67,1) 0%,rgba(255,120,0,1) 70%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(249,173,67,1) 0%,rgba(255,120,0,1) 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9ad43', endColorstr='#ff7800',GradientType=0 ); /* IE6-9 */
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9ad43+0,ff7800+70 */
+	background: rgb(249,173,67); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(249,173,67,1) 0%, rgba(255,120,0,1) 70%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(249,173,67,1) 0%,rgba(255,120,0,1) 70%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(249,173,67,1) 0%,rgba(255,120,0,1) 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9ad43', endColorstr='#ff7800',GradientType=0 ); /* IE6-9 */
 }
 .login__box.first h2{
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#dcdcfc+0,bdbdfc+70 */
-    background: rgb(220,220,252); /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(220,220,252,1) 0%, rgba(189,189,252,1) 70%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(220,220,252,1) 0%,rgba(189,189,252,1) 70%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(220,220,252,1) 0%,rgba(189,189,252,1) 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dcdcfc', endColorstr='#bdbdfc',GradientType=0 ); /* IE6-9 */
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#dcdcfc+0,bdbdfc+70 */
+	background: rgb(220,220,252); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(220,220,252,1) 0%, rgba(189,189,252,1) 70%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(220,220,252,1) 0%,rgba(189,189,252,1) 70%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(220,220,252,1) 0%,rgba(189,189,252,1) 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dcdcfc', endColorstr='#bdbdfc',GradientType=0 ); /* IE6-9 */
 }
 .login__box .innar{
-    background: #fff;
-    border: solid 10px;
-    border-top: none;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    padding: 30px 40px;
+	background: #fff;
+	border: solid 10px;
+	border-top: none;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	padding: 30px 40px;
 }
 .login__box.member .innar{ border-color: #ff7800; }
 .login__box.first .innar{ border-color: #bdbdfc; text-align: center; }
 .login__box .innar .btn{
-    border-top: solid 2px #ca5a2d;
-    border-radius: 3px;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fc6c35+0,f7280d+46,f7240b+47,f30a01+50,fb5b2a+100 */
-    background: rgb(252,108,53); /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(252,108,53,1) 0%, rgba(247,40,13,1) 46%, rgba(247,36,11,1) 47%, rgba(243,10,1,1) 50%, rgba(251,91,42,1) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc6c35', endColorstr='#fb5b2a',GradientType=0 ); /* IE6-9 */
-    max-width: 280px;
-    margin: 20px auto 0;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    -o-transition: all .3s;
-    transition: all .3s;
+	border-top: solid 2px #ca5a2d;
+	border-radius: 3px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fc6c35+0,f7280d+46,f7240b+47,f30a01+50,fb5b2a+100 */
+	background: rgb(252,108,53); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(252,108,53,1) 0%, rgba(247,40,13,1) 46%, rgba(247,36,11,1) 47%, rgba(243,10,1,1) 50%, rgba(251,91,42,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc6c35', endColorstr='#fb5b2a',GradientType=0 ); /* IE6-9 */
+	max-width: 280px;
+	margin: 20px auto 0;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	-o-transition: all .3s;
+	transition: all .3s;
 }
 .login__box .innar .btn:hover{
-    opacity: 0.7;
-    filter: alpha(opacity=70);
-    -ms-filter: "alpha(opacity=70)";
+	opacity: 0.7;
+	filter: alpha(opacity=70);
+	-ms-filter: "alpha(opacity=70)";
 }
 .login__box.first p.tec{ margin: 40px 0; }
 .login__box .innar .btn a{
-    color: #fff;
-    display: block;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
+	color: #fff;
+	display: block;
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;
 }
 .forget{
-    float: right;
-    position: relative;
-    padding-left: 20px;
+	float: right;
+	position: relative;
+	padding-left: 20px;
 }
 .forget a{ text-decoration: none; color: #000; }
 .forget a:hover{ text-decoration: underline; }
 .forget::before{
-    background: url(../img/common/arrow_r_red.gif) no-repeat 0 0 / 14px auto;
-    content: "";
-    position: absolute;
-    width: 14px;
-    height: 18px;
-    left: 0;
-    top: 4px;
+	background: url(../img/common/arrow_r_red.gif) no-repeat 0 0 / 14px auto;
+	content: "";
+	position: absolute;
+	width: 14px;
+	height: 18px;
+	left: 0;
+	top: 4px;
 }
 .login__box dt{ margin-bottom: 10px; }
 .login__box input[type="text"]{ width: 100%; height: 3em; }
 .login__box input[type="submit"]{
-    width: 100%;
-    border: none;
-    border-top: solid 2px #ca5a2d;
-    border-radius: 3px;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fc6c35+0,f7280d+46,f7240b+47,f30a01+50,fb5b2a+100 */
-    background: rgb(252,108,53); /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(252,108,53,1) 0%, rgba(247,40,13,1) 46%, rgba(247,36,11,1) 47%, rgba(243,10,1,1) 50%, rgba(251,91,42,1) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc6c35', endColorstr='#fb5b2a',GradientType=0 ); /* IE6-9 */
-    color: #fff;
-    padding: 10px;
-    font-size: 100%;
+	width: 100%;
+	border: none;
+	border-top: solid 2px #ca5a2d;
+	border-radius: 3px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fc6c35+0,f7280d+46,f7240b+47,f30a01+50,fb5b2a+100 */
+	background: rgb(252,108,53); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(252,108,53,1) 0%, rgba(247,40,13,1) 46%, rgba(247,36,11,1) 47%, rgba(243,10,1,1) 50%, rgba(251,91,42,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc6c35', endColorstr='#fb5b2a',GradientType=0 ); /* IE6-9 */
+	color: #fff;
+	padding: 10px;
+	font-size: 100%;
 }
 .login__box .login_btn{ max-width: 200px; margin: 30px auto; }
 
@@ -340,108 +341,105 @@ p.txt {
 ------------------------------------------------------------ */
 .regist h1 img { width: 80%; max-width: 192px; }
 .form_template .form__bd{
-    border: dashed 2px #ccc;
-    border-bottom: none;
-    margin: 20px 0;
+	border: dashed 2px #ccc;
+	border-bottom: none;
+	margin: 20px 0;
 }
 .form_template dl{
-    display: table;
-    width: 100%;
-    border-bottom: dashed 2px #ccc;
+	display: table;
+	width: 100%;
+	border-bottom: dashed 2px #ccc;
 }
 .form_template dt{
-    padding: 35px;
-    display: table-cell;
-    vertical-align: middle;
-    color: #ff5925;
-    font-weight: bold;
-    width: 30%;
-    background: url(../img/common/bg_formhead.gif) repeat;
-    border-right: dashed 2px #ccc;
+	padding: 35px;
+	display: table-cell;
+	vertical-align: middle;
+	color: #ff5925;
+	font-weight: bold;
+	width: 30%;
+	background: url(../img/common/bg_formhead.gif) repeat;
+	border-right: dashed 2px #ccc;
 }
 .form_template dt span{
-    background: #f93211;
-    border-radius: 3px;
-    color: #fff;
-    padding: 10px;
-    margin-right: 10px;
+	background: #f93211;
+	border-radius: 3px;
+	color: #fff;
+	padding: 10px;
+	margin-right: 10px;
 }
 .form_template dd{ padding: 35px; display: table-cell; }
 .innerlist_name { list-style-type: none; }
 .innerlist_name li {
-    display: table;
-    float: right;
-    width: 47%;
+	display: table;
+	float: right;
+	width: 47%;
 }
 .innerlist_name li:first-child { float: left; }
 .innerlist_name li::before {
-    content: "名：";
-    display: table-cell;
-    text-align: right;
-    width: 2em;
+	content: "名：";
+	display: table-cell;
+	text-align: right;
+	width: 2em;
 }
 .innerlist_name li:first-child::before { content: "姓："; }
 .innerlist_name li input { display: table-cell; }
 
 /* ■カナ */
 .innerlist_kana::after {
-    clear: both;
-    content: "";
-    display: block;
+	clear: both;
+	content: "";
+	display: block;
 }
 .innerlist_kana { display: inline-block; }
 .innerlist_kana { display: block; }
 .innerlist_kana { list-style-type: none; }
 .innerlist_kana li {
-    display: table;
-    float: right;
-    width: 47%;
+	display: table;
+	float: right;
+	width: 47%;
 }
 .innerlist_kana li:first-child { float: left; }
 .innerlist_kana li::before {
-    content: "めい：";
-    display: table-cell;
-    width: 4em;
+	content: "めい：";
+	display: table-cell;
+	width: 4em;
 }
 .innerlist_kana li:first-child::before { content: "せい："; }
 .innerlist_kana li input { display: table-cell; }
 
 .form_template input[type="text"]{
-    width: 100%;
-    height: 3em;
-    border: solid 1px #ccc;
+	width: 100%;
+	height: 3em;
+	border: solid 1px #ccc;
 }
 .innar_list li{
-    display: inline-block;
-    float: left;
-    width: 48%;
+	display: inline-block;
+	float: left;
+	width: 48%;
 }
 .innar_list li:nth-child(2n){ float: right; }
 .innar_list li input[type="text"]{ width: 80%; margin-left: 2%; }
 .innar_list2 li{
-    display: inline-block;
-    float: left;
-    width: 30%;
+	display: inline-block;
+	float: left;
+	width: 30%;
 }
 .innar_list2 li:nth-child(3n){ margin-right: 0; }
 .innar_list2 li input[type="text"]{ width: 80%; margin-right: 7%; }
 .form_template input[type="submit"]{
-    width: 100%;
-    border: none;
-    border-bottom: solid 2px #ca5a2d;
-    border-radius: 3px;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fc6c35+0,f7280d+46,f7240b+47,f30a01+50,fb5b2a+100 */
-    background: rgb(252,108,53); /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(252,108,53,1) 0%, rgba(247,40,13,1) 46%, rgba(247,36,11,1) 47%, rgba(243,10,1,1) 50%, rgba(251,91,42,1) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc6c35', endColorstr='#fb5b2a',GradientType=0 ); /* IE6-9 */
-    color: #fff;
-    padding: 15px;
-    font-size: 120%;
-}
-.form_template input[type="submit"]#preSaveBtn {
-    border-bottom: none;
+	width: 100%;
+	border: none;
+	border-bottom: solid 2px #ca5a2d;
+	border-radius: 3px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fc6c35+0,f7280d+46,f7240b+47,f30a01+50,fb5b2a+100 */
+	background: rgb(252,108,53); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(252,108,53,1) 0%, rgba(247,40,13,1) 46%, rgba(247,36,11,1) 47%, rgba(243,10,1,1) 50%, rgba(251,91,42,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc6c35', endColorstr='#fb5b2a',GradientType=0 ); /* IE6-9 */
+	color: #fff;
+	padding: 15px;
+	font-size: 120%;
 }
 .form_template .sendarea li{ max-width: 200px; margin: 30px auto; }
 .form_template .sendarea li:hover{ opacity: 0.8; }
@@ -449,37 +447,37 @@ p.txt {
 .form_template dd input[type="textarea"],
 .form_template dd select,
 .form_template dd textarea {
-    width: 96%;
-    max-width: 100%;
-    font-family: inherit;
-    padding: 7px 12px;
-    font-size: 14px;
-    background: #fff;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+	width: 96%;
+	max-width: 100%;
+	font-family: inherit;
+	padding: 7px 12px;
+	font-size: 14px;
+	background: #fff;
+	border-radius: 4px;
+	border: 1px solid #ccc;
 }
 .form_template dd select{
-    width: 30%;
-    max-width: 100%;
-    font-family: inherit;
-    padding: 7px 12px;
-    font-size: 14px;
-    background: #fff;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+	width: 30%;
+	max-width: 100%;
+	font-family: inherit;
+	padding: 7px 12px;
+	font-size: 14px;
+	background: #fff;
+	border-radius: 4px;
+	border: 1px solid #ccc;
 }
 .form_template dd .innerlist_tel li input[type="text"]{ width: 22%; }
 .form_template dd input[type="radio"],
 .form_template dd input[type="checkbox"]:{
-    box-shadow: none;
-    border: 5px solid #ccc;
+	box-shadow: none;
+	border: 5px solid #ccc;
 }
 .form_template dd .nest { padding-left: 45px; margin: 10px 0;}
 .form_template dd input[type="textarea"] {
-    width: 100%;
-    height: 200px;
-    box-sizing: border-box;
-    resize: vertical;
+	width: 100%;
+	height: 200px;
+	box-sizing: border-box;
+	resize: vertical;
 }
 .form_template .address_num dd input[type="text"]{ width: 22%; }
 .form_template .address_num2 dd select{ width: 30%; }
@@ -487,52 +485,52 @@ p.txt {
 /* thanks
 ------------------------------------------------------------ */
 .thanks__info{
-    background: #fdffce;
-    border-radius: 20px;
-    display: table;
-    width: 100%;
-    margin: 30px 0;
+	background: #fdffce;
+	border-radius: 20px;
+	display: table;
+	width: 100%;
+	margin: 30px 0;
 }
 .thanks__info .pho{
-    display: table-cell;
-    width: 30%;
-    padding: 40px 20px;
+	display: table-cell;
+	width: 30%;
+	padding: 40px 20px;
 }
 .thanks__info .pho img{ width: 100%; }
 .thanks__info .txt{
-    display: table-cell;
-    vertical-align: middle;
-    padding: 40px 20px;
+	display: table-cell;
+	vertical-align: middle;
+	padding: 40px 20px;
 }
 .thanks__info .txt h2{
-    color: #ff5b26;
-    font-size: 160%;
-    font-weight: bold;
-    margin-bottom: 20px;
+	color: #ff5b26;
+	font-size: 160%;
+	font-weight: bold;
+	margin-bottom: 20px;
 }
 .thanks__info .btn{
-    max-width: 300px;
-    border: none;
-    border-bottom: solid 2px #ca5a2d;
-    border-radius: 3px;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fc6c35+0,f7280d+46,f7240b+47,f30a01+50,fb5b2a+100 */
-    background: rgb(252,108,53); /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(252,108,53,1) 0%, rgba(247,40,13,1) 46%, rgba(247,36,11,1) 47%, rgba(243,10,1,1) 50%, rgba(251,91,42,1) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc6c35', endColorstr='#fb5b2a',GradientType=0 ); /* IE6-9 */
-    margin-top: 20px;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    -o-transition: all .3s;
-    transition: all .3s;
+	max-width: 300px;
+	border: none;
+	border-bottom: solid 2px #ca5a2d;
+	border-radius: 3px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fc6c35+0,f7280d+46,f7240b+47,f30a01+50,fb5b2a+100 */
+	background: rgb(252,108,53); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(252,108,53,1) 0%, rgba(247,40,13,1) 46%, rgba(247,36,11,1) 47%, rgba(243,10,1,1) 50%, rgba(251,91,42,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc6c35', endColorstr='#fb5b2a',GradientType=0 ); /* IE6-9 */
+	margin-top: 20px;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	-o-transition: all .3s;
+	transition: all .3s;
 }
 .thanks__info .btn a{
-    color: #fff;
-    padding: 10px 15px;
-    text-decoration: none;
-    text-align: center;
-    display: block;
+	color: #fff;
+	padding: 10px 15px;
+	text-decoration: none;
+	text-align: center;
+	display: block;
 }
 .thanks__info .btn:hover{ opacity: 0.8; }
 
@@ -561,10 +559,10 @@ p.txt {
 .guide h1 img { width: 80%; max-width: 277px; }
 
 .guide_flow {
-    display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
+	display: flex;
+	display: -webkit-box;  
+	display: -webkit-flex; 
+	display: -ms-flexbox; 
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
@@ -575,33 +573,33 @@ p.txt {
 }
 
 .fl_box {
-    flex: auto;
-    width: 230px;
-    position: relative;
-    margin: 10px 18px;
+	flex: auto;
+	width: 230px;
+	position: relative;
+	margin: 10px 18px;
 }
 
 .fl_box:after{
-    border: 20px solid transparent;
-    border-left-color: #fff799;
-    border-right-width:0;
-    right: -20px;
-    content: "";
-    display: block;
-    bottom: 68px;
-    position: absolute;
-    width: 0;
+	border: 20px solid transparent;
+	border-left-color: #fff799;
+	border-right-width:0;
+	right: -20px;
+	content: "";
+	display: block;
+	bottom: 68px;
+	position: absolute;
+	width: 0;
 }
 
 .fl_box:last-child:after {
-    display: none;
+	display: none;
 }
 
 .fl_title {
-    display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
+	display: flex;
+	display: -webkit-box;  
+	display: -webkit-flex; 
+	display: -ms-flexbox; 
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
@@ -610,39 +608,39 @@ p.txt {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    height: 60px;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffbf04+0,fb7f05+80 */
-    background: rgb(255,191,4); /* Old browsers */
-    background: -moz-linear-gradient(top, rgb(255,191,4) 0%, rgb(251,127,5) 80%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgb(255,191,4) 0%,rgb(251,127,5) 80%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgb(255,191,4) 0%,rgb(251,127,5) 80%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffbf04', endColorstr='#fb7f05',GradientType=0 ); /* IE6-9 */
+	height: 60px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffbf04+0,fb7f05+80 */
+	background: rgb(255,191,4); /* Old browsers */
+	background: -moz-linear-gradient(top, rgb(255,191,4) 0%, rgb(251,127,5) 80%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgb(255,191,4) 0%,rgb(251,127,5) 80%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgb(255,191,4) 0%,rgb(251,127,5) 80%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffbf04', endColorstr='#fb7f05',GradientType=0 ); /* IE6-9 */
 }
 
 .fl_sh {
-    color: #fff;
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 8px;
+	color: #fff;
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 8px;
 }
 
 .fl_bg {
-    color: #fff;
-    font-size: 30px;
-    font-weight: bold;
-    margin-left: 6px;
+	color: #fff;
+	font-size: 30px;
+	font-weight: bold;
+	margin-left: 6px;
 }
 
 .fl_contents {
-    height: 170px;
-    background-color: #fff799;
+	height: 170px;	
+	background-color: #fff799;
 }
 
 .fl_img {
-    display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
+	display: flex;
+	display: -webkit-box;  
+	display: -webkit-flex; 
+	display: -ms-flexbox; 
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
@@ -651,50 +649,50 @@ p.txt {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    height: 60%;
+	height: 60%;
 }
 
 .fl_icon1 {
-    background-image: url(../img/guide/icon_step1.png);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 160px;
-    height: 100px;
+	background-image: url(../img/guide/icon_step1.png);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 160px;
+	height: 100px;
 }
 
 .fl_icon2 {
-    background-image: url(../img/guide/icon_step2.png);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 160px;
-    height: 100px;
+	background-image: url(../img/guide/icon_step2.png);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 160px;
+	height: 100px;
 }
 
 .fl_icon3 {
-    background-image: url(../img/guide/icon_step3.png);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 160px;
-    height: 100px;
+	background-image: url(../img/guide/icon_step3.png);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 160px;
+	height: 100px;
 }
 
 .fl_icon4 {
-    background-image: url(../img/guide/icon_step4.png);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 160px;
-    height: 100px;
+	background-image: url(../img/guide/icon_step4.png);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 160px;
+	height: 100px;
 }
 
 .fl_text {
-    display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
+	display: flex;
+	display: -webkit-box;  
+	display: -webkit-flex; 
+	display: -ms-flexbox; 
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
@@ -703,15 +701,15 @@ p.txt {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    height: 40%;
-    padding-bottom: 20px;
+	height: 40%;
+	padding-bottom: 20px;
 }
 
 .fl_p {
-    color: #fd5c01;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
+	color: #fd5c01;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
 }
 
 
@@ -762,9 +760,6 @@ p.txt {
     box-sizing: border-box;
     border: solid 2px #231814;
     box-shadow: 8px 8px 0 #231814;
-    border-radius: 0px;
-    padding: 0px;
-    display: block;
 }
 .layout .btn a {
     color: #fff;
@@ -827,14 +822,13 @@ p.txt {
 .confirm .share ul li:nth-child(3) { margin-right: 5.4%; }
 .confirm .share ul li:nth-child(4) { margin-right: 0; }
 .confirm .share ul li img { width: 100%; max-width: 41px; min-width: 41px; }
-.confirm .share ul li.btn_org {
+.confirm .share ul li.btn_org { 
     width: 54.9%;
     box-sizing: border-box;
     border: solid 2px #231814;
-}
-.confirm .share ul li.btn_org a,
-.confirm .share ul li.btn_org input {
-
+} 
+.confirm .share ul li.btn_org a {
+    
     background-image: url(../img/common/arrow_r_blk.gif) , url(../img/common/bg_btnorg.gif);
     background-repeat: no-repeat , repeat;
     background-position: right 10px center, left;
@@ -867,13 +861,13 @@ p.txt {
     font-size: 1.125rem;
     font-weight: 500;
 }
-.tab.tab03 li {
+.tab.tab03 li { 
     width: 32.2%;
     margin-right: 1.7%;
 }
 .tab.tab03 li:nth-child(3n) { margin-right: 0; }
 
-.tab.tab02 li {
+.tab.tab02 li { 
     width: 49.15%;
     margin-right: 1.7%;
 }
@@ -901,8 +895,8 @@ p.txt {
 }
 .tab_content > li { display: none; }
 .tab_content > li:first-child { display: block; }
-.spec .form_template .form__bd {
-    margin: 0;
+.spec .form_template .form__bd { 
+    margin: 0; 
     background: #fff;
     border: dashed 2px #ccc;
 }
@@ -910,7 +904,7 @@ p.txt {
     display: block;
     border: none;
 }
-.spec .form_template dt {
+.spec .form_template dt { 
     width: 100%;
     display: block;
     border: none;
@@ -939,13 +933,13 @@ p.txt {
 .option > li > p { margin-bottom: 10px; }
 .option > li > p label { width: 100%; }
 .spec input[type="radio"] { margin-right: 0.5em; }
-.spec label {
-    width: 15%;
-    display: inline-block;
+.spec label { 
+    width: 15%; 
+    display: inline-block; 
 }
-.delivery label {
-    width: auto;
-    display: inline-block;
+.delivery label { 
+    width: auto; 
+    display: inline-block; 
 }
 .spec .material label { width: 24%; }
 .spec .material p { margin-bottom: 15px; font-weight: 600; color: #ff5925; }
@@ -978,20 +972,20 @@ p.txt {
     text-align: center;
 }
 .btn_two {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin: 20px auto 0;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin: 20px auto 0;
     width: 50%;
 }
-.btn_two .btn_return {
-    background: url(../img/common/arrow_r_blk.gif) no-repeat right 15px center / 9px auto, url("../img/common/bg_btnorg.gif") repeat left center / 6px auto;
+.btn_two .btn_return { 
+	background: url(../img/common/arrow_r_blk.gif) no-repeat right 15px center / 9px auto, url("../img/common/bg_btnorg.gif") repeat left center / 6px auto;
     width: 46%;
     box-shadow: none;
     font-size: .875rem;
     height: auto;
 }
-.btn_two .btn_return a {
+.btn_two .btn_return a { 
     color: #231814;
     width: 100%;
     height: 50px;
@@ -1000,15 +994,15 @@ p.txt {
     justify-content: center;
 }
 .btn_one { display: flex; margin: 20px auto 0; }
-.btn_one .btn_return {
+.btn_one .btn_return { 
     background: url(../img/common/arrow_r_blk.gif) no-repeat right 15px center / 9px auto, url("../img/common/bg_btnorg.gif") repeat left center / 6px auto;
-    margin: 20px auto;
+    margin: 20px auto; 
     box-shadow: none;
     font-size: .875rem;
     height: auto;
     width: 21%;
 }
-.btn_one .btn_return a {
+.btn_one .btn_return a { 
     color: #231814;
     width: 100%;
     height: 50px;
@@ -1025,19 +1019,19 @@ p.txt {
 ------------------------------------------------------------ */
 .option .main__title img{ max-width: 400px; width: 90%; }
 .option .catch {
-    max-width: 780px;
-    margin: auto;
-    width: 70%;
+	max-width: 780px;
+	margin: auto;
+	width: 70%;
 }
 .option .catch .sp{ display: none; }
 .option .catch img{ width: 100%; }
 
 .option .there_box{ margin: 30px 0;}
 .option .there_box > ul >li{
-    display: inline-block;
-    float: left;
-    width: 30%;
-    margin-right: 3%;
+	display: inline-block;
+	float: left;
+	width: 30%;
+	margin-right: 3%;
 }
 .option .there_box > ul >li:last-child{ margin-bottom: 0; }
 .option .there_box > ul >li li{ margin-bottom: 15px; }
@@ -1048,41 +1042,41 @@ p.txt {
 
 .material .main__title img{ max-width: 275px; width: 60%; }
 .material .catch{
-    max-width: 554px;
-    margin: auto;
+	max-width: 554px;
+	margin: auto;
 }
 .material .catch img{ width: 100%; }
 .material .there_box{ margin: 30px 0;}
 .material .there_box > ul >li{
-    display: inline-block;
-    float: left;
-    width: 30%;
-    margin-right: 3%;
+	display: inline-block;
+	float: left;
+	width: 30%;
+	margin-right: 3%;
 }
 .material .there_box > ul >li:last-child{ margin-bottom: 0; }
 .material .there_box img{ width: 100%; }
 .material .there_box h6{ font-size: 100%; margin-top: 0; }
 
 .material .tb01{
-    border-left: solid 1px #ccc;
-    border-top: solid 1px #ccc;
-    max-width: 400px;
-    width: 100%;
-    margin: 20px 0;
+	border-left: solid 1px #ccc;
+	border-top: solid 1px #ccc;
+	max-width: 400px;
+	width: 100%;
+	margin: 20px 0;
 }
 .material .tb01 th{
-    background: #e9e9ff;
-    text-align: center;
-    padding: 20px;
-    border-right: solid 1px #ccc;
-    border-bottom: solid 1px #ccc;
-    width: 50%;
+	background: #e9e9ff;
+	text-align: center;
+	padding: 20px;
+	border-right: solid 1px #ccc;
+	border-bottom: solid 1px #ccc;
+	width: 50%;
 }
 .material .tb01 td{
-    padding: 20px;
-    border-right: solid 1px #ccc;
-    border-bottom: solid 1px #ccc;
-    width: 50%;
+	padding: 20px;
+	border-right: solid 1px #ccc;
+	border-bottom: solid 1px #ccc;
+	width: 50%;
 }
 
 /* size
@@ -1094,10 +1088,10 @@ p.txt {
 }
 
 .size_hiritsu {
-    display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
+	display: flex;
+	display: -webkit-box;  
+	display: -webkit-flex; 
+	display: -ms-flexbox; 
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -1109,47 +1103,47 @@ p.txt {
     -webkit-align-items: flex-end;
     -ms-flex-align: end;
     align-items: flex-end;
-    margin: 40px 0 80px;
+	margin: 40px 0 80px;
 }
 
 .size_hiritsu1 {
-    flex: auto;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 368px;
-    height: 227px;
-    background-image: url(../img/size/hiritsu1.png);
-    margin: 0 10px;
+	flex: auto;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 368px;
+	height: 227px;
+	background-image: url(../img/size/hiritsu1.png);
+	margin: 0 10px;
 }
 
 .size_hiritsu2 {
-    flex: auto;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 503px;
-    height: 206px;
-    background-image: url(../img/size/hiritsu2.png);
-    margin: 0 10px;
+	flex: auto;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 503px;
+	height: 206px;
+	background-image: url(../img/size/hiritsu2.png);
+	margin: 0 10px;
 }
 
 .size_hiritsu3 {
-    flex: auto;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 203px;
-    height: 153px;
-    background-image: url(../img/size/hiritsu3.png);
-    margin: 0 10px;
+	flex: auto;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 203px;
+	height: 153px;
+	background-image: url(../img/size/hiritsu3.png);
+	margin: 0 10px;
 }
 
 .size_right {
-    display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
+	display: flex;
+	display: -webkit-box;  
+	display: -webkit-flex; 
+	display: -ms-flexbox; 
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -1161,14 +1155,14 @@ p.txt {
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding-bottom: 20px;
+	padding-bottom: 20px;
 }
 
 .size_left {
-    display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
+	display: flex;
+	display: -webkit-box;  
+	display: -webkit-flex; 
+	display: -ms-flexbox; 
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -1185,73 +1179,73 @@ p.txt {
     -webkit-flex-direction: row-reverse;
     -ms-flex-direction: row-reverse;
     flex-direction: row-reverse;
-    padding-bottom: 20px;
+	padding-bottom: 20px;
 }
 
 .size_img60 {
-    background-image: url(../img/size/size60.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 422px;
-    height: 220px;
-    margin-right: 50px;
-    position: relative;
+	background-image: url(../img/size/size60.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 422px;
+	height: 220px;
+	margin-right: 50px;
+	position: relative;
 }
 
 .size_img90 {
-    background-image: url(../img/size/size90.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 422px;
-    height: 220px;
-    position: relative;
+	background-image: url(../img/size/size90.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 422px;
+	height: 220px;
+	position: relative;
 }
 
 .size_img120 {
-    background-image: url(../img/size/size120.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 422px;
-    height: 220px;
-    margin-right: 50px;
-    position: relative;
+	background-image: url(../img/size/size120.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 422px;
+	height: 220px;
+	margin-right: 50px;
+	position: relative;
 }
 
 .size_img150 {
-    background-image: url(../img/size/size150.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 422px;
-    height: 220px;
-    position: relative;
+	background-image: url(../img/size/size150.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 422px;
+	height: 220px;
+	position: relative;
 }
 
 .size_img180 {
-    background-image: url(../img/size/size180.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 422px;
-    height: 220px;
-    margin-right: 50px;
-    position: relative;
+	background-image: url(../img/size/size180.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 422px;
+	height: 220px;
+	margin-right: 50px;
+	position: relative;
 }
 .price_name{
-    position: absolute;
-    bottom: 20px;
-    left: 1px;
-    background: #ff9203;
-    color: #fff;
-    padding: 10px 20px;
+	position: absolute;
+	bottom: 20px;
+	left: 1px;
+	background: #ff9203;
+	color: #fff;
+	padding: 10px 20px;
 }
 .size_text { flex: auto; }
 .size_p {
-    font-size: 15px;
-    font-weight: 100;
-    color: #ff5925;
+	font-size: 15px;
+	font-weight: 100;
+	color: #ff5925;
 }
 .size .btn { width: 100%; }
-.size .btn img {
+.size .btn img { 
     margin: 30px auto 0;
     width: 100%;
     max-width: 606px;
@@ -1279,55 +1273,39 @@ p.txt {
 .logout__info .img{ max-width: 260px; margin: auto; }
 .logout__info .img img{ width: 100%;}
 .logout__info h2{
-    color: #ff7800;
-    font-size: 160%;
-    font-weight: bold;
-    text-align: center;
-    margin: 40px 0 20px;
+	color: #ff7800;
+	font-size: 160%;
+	font-weight: bold;
+	text-align: center;
+	margin: 40px 0 20px;
 }
 .logout__info .btn{
-    max-width: 300px;
-    margin: auto;
-    border: none;
-    border-bottom: solid 2px #ca5a2d;
-    border-radius: 3px;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fc6c35+0,f7280d+46,f7240b+47,f30a01+50,fb5b2a+100 */
-    background: rgb(252,108,53); /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(252,108,53,1) 0%, rgba(247,40,13,1) 46%, rgba(247,36,11,1) 47%, rgba(243,10,1,1) 50%, rgba(251,91,42,1) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc6c35', endColorstr='#fb5b2a',GradientType=0 ); /* IE6-9 */
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    -o-transition: all .3s;
-    transition: all .3s;
+	max-width: 300px;
+	margin: auto;
+	border: none;
+	border-bottom: solid 2px #ca5a2d;
+	border-radius: 3px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fc6c35+0,f7280d+46,f7240b+47,f30a01+50,fb5b2a+100 */
+	background: rgb(252,108,53); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(252,108,53,1) 0%, rgba(247,40,13,1) 46%, rgba(247,36,11,1) 47%, rgba(243,10,1,1) 50%, rgba(251,91,42,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc6c35', endColorstr='#fb5b2a',GradientType=0 ); /* IE6-9 */
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	-o-transition: all .3s;
+	transition: all .3s;
 }
 .logout__info .btn a{
-    color: #fff;
-    padding: 10px 15px;
-    text-decoration: none;
-    text-align: center;
-    display: block;
+	color: #fff;
+	padding: 10px 15px;
+	text-decoration: none;
+	text-align: center;
+	display: block;
 }
 .logout__info .btn:hover{ opacity: 0.8; }
 
 
-.form_template:not(.confirm) input[type="submit"],
-.form_template button {
-    width: 100%;
-    border: none;
-    border-bottom: solid 2px #ca5a2d;
-    border-radius: 3px;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fc6c35+0,f7280d+46,f7240b+47,f30a01+50,fb5b2a+100 */
-    background: rgb(252, 108, 53); /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(252, 108, 53, 1) 0%, rgba(247, 40, 13, 1) 46%, rgba(247, 36, 11, 1) 47%, rgba(243, 10, 1, 1) 50%, rgba(251, 91, 42, 1) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(252, 108, 53, 1) 0%, rgba(247, 40, 13, 1) 46%, rgba(247, 36, 11, 1) 47%, rgba(243, 10, 1, 1) 50%, rgba(251, 91, 42, 1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(252, 108, 53, 1) 0%, rgba(247, 40, 13, 1) 46%, rgba(247, 36, 11, 1) 47%, rgba(243, 10, 1, 1) 50%, rgba(251, 91, 42, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fc6c35', endColorstr='#fb5b2a', GradientType=0); /* IE6-9 */
-    color: #fff;
-    padding: 15px;
-    font-size: 120%;
-}
 /* cancel
 ------------------------------------------------------------ */
 .cancel h1 img { width: 80%; max-width: 190px; }
@@ -1351,9 +1329,9 @@ p.txt {
 ------------------------------------------------------------ */
 .favorite h1 img { width: 80%; max-width: 485px; }
 .favorite .result__title {
-    font-size: 1.15rem;
-    height: 30px;
-    line-height: 30px;
+	font-size: 1.15rem;
+	height: 30px;
+	line-height: 30px;
 }
 .favorite .result__title::before{ height: 30px; }
 
@@ -1365,11 +1343,11 @@ p.txt {
 .save .ttl03{ margin: 0; }
 .save .example__content table{ width: 100%; border: solid 1px #ccc; }
 .save .example__content th{
-    padding: 10px;
-    background: #efffca;
-    border-right: solid 1px #ccc;
-    font-weight: bold;
-    color: #000;
+	padding: 10px;
+	background: #efffca;
+	border-right: solid 1px #ccc;
+	font-weight: bold;
+	color: #000;
 }
 .save .example__content td{ padding: 10px; color: #000; }
 
@@ -1378,10 +1356,10 @@ p.txt {
 .ordered h1 img { width: 80%; max-width: 172px; }
 
 .ordered_box {
-    background: #fffbe5;
-    border-radius: 10px;
-    padding: 30px;
-    margin-bottom: 30px;
+	background: #fffbe5;
+	border-radius: 10px;
+	padding: 30px;
+	margin-bottom: 30px;
 }
 .ordered_box .ordered_box__top { display: flex; align-items: center; }
 .ordered_box .ordered_box__side { width: 60%; margin-right: 4%; }
@@ -1392,209 +1370,256 @@ p.txt {
 .ordered_box .ordered_box__bottom { margin-top: 30px; }
 .ordered_box .ordered_box__bottom ul { display: flex; }
 .ordered_box .ordered_box__bottom li {
-    width: 32%;
-    border: solid 1px #ff9203;
-    border-radius: 4px;
-    margin: 1%;
-    text-align: center;
-    background: linear-gradient(#ffbd04, #ff9203);
+	width: 32%;
+	border: solid 1px #ff9203;
+	border-radius: 4px;
+	margin: 1%;
+	text-align: center;
+	background: linear-gradient(#ffbd04, #ff9203);
 }
 .ordered_box .ordered_box__bottom li:first-child{ margin-left: 0; }
 .ordered_box .ordered_box__bottom li:last-child{ margin-right: 0; }
 .ordered_box .ordered_box__bottom li:hover{ opacity: 0.8; }
 .ordered_box .ordered_box__bottom a {
-    color: #fff;
-    background: url(../img/common/arrow-r-wh.gif) no-repeat right 10px center / 6px auto;
-    border-top: solid 1px #ffce2a;
-    border-radius: 4px;
-    text-decoration: none;
-    display: block;
-    padding: 15px;
+	color: #fff;
+	background: url(../img/common/arrow-r-wh.gif) no-repeat right 10px center / 6px auto;
+	border-top: solid 1px #ffce2a;
+	border-radius: 4px;
+	text-decoration: none;
+	display: block;
+	padding: 15px;
 }
 
+/* password
+------------------------------------------------------------ */
+.pass_forgot .main__title img { width: 80%; max-width: 450px; }
+.pass_accept .main__title img { width: 80%; max-width: 492px; }
+.pass_reset .main__title img { width: 80%; max-width: 364px; }
+.pass_complete .main__title img { width: 80%; max-width: 622px; }
+.password .password__wrap {
+    width: 100%;
+    max-width: 900px;
+    padding: 80px;
+    background: #f8f5e8;
+    margin: 50px auto 20px;
+}
+
+.password input[type="submit"]{
+	width: 100%;
+	border: none;
+	border-top: solid 2px #ca5a2d;
+	border-radius: 3px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fc6c35+0,f7280d+46,f7240b+47,f30a01+50,fb5b2a+100 */
+	background: rgb(252,108,53); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(252,108,53,1) 0%, rgba(247,40,13,1) 46%, rgba(247,36,11,1) 47%, rgba(243,10,1,1) 50%, rgba(251,91,42,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc6c35', endColorstr='#fb5b2a',GradientType=0 ); /* IE6-9 */
+	color: #fff;
+	padding: 10px;
+	font-size: 100%;
+}
+.password .submit_btn{ 
+    max-width: 300px;
+    margin: 50px auto 0;
+}
+.password p { 
+    text-align: center;
+    font-size: 1rem;
+    margin: 0 auto;
+}
+.password dl { margin: 0 0 20px; }
+.password dl { width: 90%; margin: 0 auto 20px; }
+.pass_forgot dl { max-width: 600px; }
+.pass_reset dl { max-width: 400px; }
+.password dl.again { margin-top: 10px; }
+.password dt { margin-bottom: 10px; }
+.password input { padding: 5px;}
+.password input[type="email"] { width: 100%; max-width: 600px; }
+.password input[type="password"] { width: 100%; max-width: 400px; }
 
 
 @media screen and (min-width: 768px) and (max-width: 1119px) {
 
     /* common
-	------------------------------------------------------------ */
-    .l-inner > .pickup { width: 96%; }
-    /* regist
-    ------------------------------------------------------------ */
-    .form_template dt{ width: 40%; }
-
-    /* guide
-    ------------------------------------------------------------ */
-    .fl_icon1 { width: 90%; height: 100%; }
-    .fl_icon2 { width: 90%; height: 100%; }
-    .fl_icon3 { width: 90%; height: 100%; }
-    .fl_icon4 { width: 90%; height: 100%; }
-
-
+	------------------------------------------------------------ */	
+	.l-inner > .pickup { width: 96%; }
+	/* regist
+	------------------------------------------------------------ */	
+	.form_template dt{ width: 40%; }
+	
+	/* guide
+	------------------------------------------------------------ */	
+	.fl_icon1 { width: 90%; height: 100%; }
+	.fl_icon2 { width: 90%; height: 100%; }
+	.fl_icon3 { width: 90%; height: 100%; }
+	.fl_icon4 { width: 90%; height: 100%; }
+ 	
+    
     /* layout - spec
     ------------------------------------------------------------ */
     .option .rope ul { width: 100%; }
     .spec label { width: 24%; margin-bottom: 10px; }
-    .spec .delivery label { width: auto; }
+	.spec .delivery label { width: auto; }
     .btn_two { width: 80%; }
     .btn_one .btn_return { width: 37%; }
-    /* size
-    ------------------------------------------------------------ */
-    .size_right { flex: 1; }
-    .size_left { flex: 1; }
-    .size_img60 { flex: 1; margin-right: 20px; }
-    .size_img90 { flex: 1; margin-left: 20px; }
-    .size_img120 { flex: 1; margin-right: 20px; }
-    .size_img150 { flex: 1; margin-left: 20px; }
-    .size_img180 { flex: 1; margin-right: 20px; }
-    .size_text { flex: 1; }
+	/* size
+	------------------------------------------------------------ */	
+	.size_right { flex: 1; }
+	.size_left { flex: 1; }
+	.size_img60 { flex: 1; margin-right: 20px; }
+	.size_img90 { flex: 1; margin-left: 20px; }
+	.size_img120 { flex: 1; margin-right: 20px; }
+	.size_img150 { flex: 1; margin-left: 20px; }
+	.size_img180 { flex: 1; margin-right: 20px; }
+	.size_text { flex: 1; }
 }
 
 @media screen and (max-width: 767px) {
 
-    /* common
-    ------------------------------------------------------------ */
-    .leftBox {
-        float: none;
-        width: auto;
-        display: block;
-    }
-    .rightBox {
-        float: none;
-        width: auto;
-        display: block;
-    }
-    .rightBox.pho,
-    .leftBox.pho { width: 80%; margin: 20px auto; }
-
+	/* common
+	------------------------------------------------------------ */
+	.leftBox {
+		float: none;
+		width: auto;
+		display: block;
+	}
+	.rightBox {
+		float: none;
+		width: auto;
+		display: block;
+	}
+	.rightBox.pho,
+	.leftBox.pho { width: 80%; margin: 20px auto; }
+    
     .table01.tate th { text-align: center; }
     .table01.tate th,.table01.tate td { display: block; width: 100%; }
-    .ph_tx .pho {
-        width: auto;
-        display: block;
-        float: none;
-        margin-bottom: 20px;
-    }
-    .ph_tx .txt {
-        width: auto;
-        display: block;
-        float: none;
-    }
-    .tx_ph .pho {
-        width: auto;
-        display: block;
-        float: none;
-        margin-bottom: 20px;
-    }
-    .tx_ph .txt {
-        width: auto;
-        display: block;
-        float: none;
-    }
+	.ph_tx .pho {
+		width: auto;
+		display: block;
+		float: none;
+		margin-bottom: 20px;
+	}
+	.ph_tx .txt {
+		width: auto;
+		display: block;
+		float: none;
+	}
+	.tx_ph .pho {
+		width: auto;
+		display: block;
+		float: none;
+		margin-bottom: 20px;
+	}
+	.tx_ph .txt {
+		width: auto;
+		display: block;
+		float: none;
+	}
+	
+	.btn_return {
+		width: 100%;
+		margin: 20px 10px 10px;
+	}	
+	
+	/* login
+	------------------------------------------------------------ */
+	.login__box{ display: block; width: auto; }
+	.login__box.member{ float: none; margin-bottom: 20px; }
+	.login__box.first{ float: none; }
+	.login__box h2{ font-size: 16px; padding: 15px 10px 15px; }
+	.login__box .innar{ border: solid 5px; padding: 20px; }
+	.login__box.first p.tec{ margin: 0; }
 
-    .btn_return {
-        width: 100%;
-        margin: 20px 10px 10px;
-    }
+	/* regist
+	------------------------------------------------------------ */
+	.form_template dl{ border-bottom: none; }
+	.form_template dl:last-child{ border-bottom: dashed 2px #ccc; }
+	.form_template dt{
+		padding: 20px;
+		display: block;
+		width: auto;
+		background: url(../img/common/bg_formhead.gif) repeat;
+		border-right: none;
+	}
+	.form_template dd{
+		padding: 20px;
+		display: block;
+		width: auto;
+	}
+	.form_template dd input[type="text"],
+	.form_template dd select, dd textarea{ width: 96%; padding: 5px 2%; }
+	.form_template input[type="text"]{ height: 2em; }
+	.form_template dd .innerlist_tel li input[type="text"]{ width: 15%; }
+	.innerlist_name li {
+		display: block;
+		float: none;
+		width: auto;
+	}
+	.innerlist_kana li {
+		display: block;
+		float: none;
+		width: auto;
+	}
+	.innerlist_name li:first-child,
+	.innerlist_kana li:first-child{ float: none; }
 
-    /* login
-    ------------------------------------------------------------ */
-    .login__box{ display: block; width: auto; }
-    .login__box.member{ float: none; margin-bottom: 20px; }
-    .login__box.first{ float: none; }
-    .login__box h2{ font-size: 16px; padding: 15px 10px 15px; }
-    .login__box .innar{ border: solid 5px; padding: 20px; }
-    .login__box.first p.tec{ margin: 0; }
-
-    /* regist
-    ------------------------------------------------------------ */
-    .form_template dl{ border-bottom: none; }
-    .form_template dl:last-child{ border-bottom: dashed 2px #ccc; }
-    .form_template dt{
-        padding: 20px;
-        display: block;
-        width: auto;
-        background: url(../img/common/bg_formhead.gif) repeat;
-        border-right: none;
-    }
-    .form_template dd{
-        padding: 20px;
-        display: block;
-        width: auto;
-    }
-    .form_template dd input[type="text"],
-    .form_template dd select, dd textarea{ width: 96%; padding: 5px 2%; }
-    .form_template input[type="text"]{ height: 2em; }
-    .form_template dd .innerlist_tel li input[type="text"]{ width: 15%; }
-    .innerlist_name li {
-        display: block;
-        float: none;
-        width: auto;
-    }
-    .innerlist_kana li {
-        display: block;
-        float: none;
-        width: auto;
-    }
-    .innerlist_name li:first-child,
-    .innerlist_kana li:first-child{ float: none; }
-
-    /* thanks
-    ------------------------------------------------------------ */
-    .thanks__info{
-        display: block;
-        padding: 20px;
-        width: auto;
-    }
-    .thanks__info .pho{
-        display: block;
-        width: auto;
-        max-width: 300px;
-        margin: auto;
-        padding: 0;
-    }
-    .thanks__info .pho img{ width: 100%; }
-    .thanks__info .txt{
-        display: block;
-        width: auto;
-        padding: 0;
-        margin-top: 30px;
-    }
-
-    /* guide
-    ------------------------------------------------------------ */
-
-    .guide_flow {
-        max-width: 230px;
-        margin: auto;
-        flex-wrap: wrap;
-    }
-
-    .fl_box {
-        flex: 0 0 230px;
-        margin: 10px 0px 30px;
-    }
-
-    .fl_box:after {
-        content: "";
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        margin-left: -20px;
-        border: 20px solid transparent;
-        border-top: 20px solid #fff799;
-    }
-
-    .fl_box:last-child {
-        margin: 10px 0px;
-    }
+	/* thanks
+	------------------------------------------------------------ */
+	.thanks__info{
+		display: block;
+		padding: 20px;
+		width: auto;
+	}
+	.thanks__info .pho{
+		display: block;
+		width: auto;
+		max-width: 300px;
+		margin: auto;
+		padding: 0;
+	}
+	.thanks__info .pho img{ width: 100%; }
+	.thanks__info .txt{
+		display: block;
+		width: auto;
+		padding: 0;
+		margin-top: 30px;
+	}
+	
+	/* guide
+	------------------------------------------------------------ */
+	
+	.guide_flow {
+	max-width: 230px;
+	margin: auto;
+	flex-wrap: wrap;
+	}
+	
+	.fl_box {
+    flex: 0 0 230px;
+	margin: 10px 0px 30px;
+	}
+	
+	.fl_box:after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -20px;
+	border: 20px solid transparent;
+	border-top: 20px solid #fff799;
+	}
+	
+	.fl_box:last-child {
+	margin: 10px 0px;
+	}
     /* layout
     ------------------------------------------------------------ */
 
     .layout .btn a {
         padding: 10px 0;
     }
-
+    
 
     /* layout - confirm
     ------------------------------------------------------------ */
@@ -1606,16 +1631,16 @@ p.txt {
 
     /* layout - spec
     ------------------------------------------------------------ */
-
+    
     .tab li {
         font-size: .875rem;
     }
     .option .rope ul {
         width: 100%;
     }
-    .spec label,.spec .material label {
-        width: 100%;
-        display: block;
+    .spec label,.spec .material label { 
+        width: 100%; 
+        display: block; 
         margin-bottom: 10px;
     }
     .tab_content, .spec .form_template dt,.spec .form_template dd {
@@ -1626,90 +1651,102 @@ p.txt {
     .btn_one .btn_return { width: 100%; margin: 20px 10px; }
     .btn_two  { width: 80%; }
     .btn_two .btn_return  { width: 100%; margin: 10px 10px; }
+    
+	/* option
+	------------------------------------------------------------ */
+	.option .catch .pc{ display: none; }
+	.option .catch .sp{ display: inherit; }
+	
+	.option .there_box > ul >li{
+		width: 80%;
+		display: block;
+		float: none;
+		margin-right: 0;
+		margin: auto;
+		margin-bottom: 20px;
+	}
+	
+	/* material
+	------------------------------------------------------------ */
 
-    /* option
-    ------------------------------------------------------------ */
-    .option .catch .pc{ display: none; }
-    .option .catch .sp{ display: inherit; }
+	.material .there_box ul li{
+		width: auto;
+		display: block;
+		float: none;
+		margin-right: 0;
+		margin: auto;
+		margin-bottom: 20px;
+	}
+	.material .tb01 th{
+		padding: 10px;
+	}
+	.material .tb01 td{
+		padding: 10px;
+	}
+	
+		/* size
+			------------------------------------------------------------ */
+	.size_right { justify-content: center; }
+	.size_left { justify-content: center; }
+	.size_img60 { margin-right: 0; background-position: center;  }
+	.size_img90 { margin-left: 0; background-position: center;  }
+	.size_img120 { margin-right: 0; background-position: center;  }
+	.size_img150 { margin-left: 0; background-position: center; }
+	.size_img180 { margin-right: 0; background-position: center;  }
+	.size_text {
+		display: flex;
+		display: -webkit-box;  
+		display: -webkit-flex; 
+		display: -ms-flexbox; 
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		margin-top: 10px;
+	}
+	/* mypage
+	------------------------------------------------------------ */
+	.mypage .two_box,
+	.mypage .there_box{ display: block; width: 80%; margin: auto; }
+	.mypage .two_box li{ width: auto; }
+	.mypage .two_box li{ margin: 0; margin-bottom: 10px; }
+	.mypage .there_box li{ margin: 0; margin-bottom: 10px; }
 
-    .option .there_box > ul >li{
-        width: 80%;
-        display: block;
-        float: none;
-        margin-right: 0;
-        margin: auto;
-        margin-bottom: 20px;
+	/* member
+	------------------------------------------------------------ */
+	.main__block_lr{ display: block; flex-direction: row-reverse; }
+	.main__block_l{
+		width: auto;
+		max-width: 230px;
+		margin-right: 0;
+		margin: 30px auto;
+	}
+	.main__block_r{ width: auto; }
+	
+	
+
+	/* ordered
+	------------------------------------------------------------ */
+	.ordered_box { padding: 25px; }
+	.ordered_box .ordered_box__top { display: block; }
+	.ordered_box .ordered_box__side { width: auto; margin-right: 0; }
+	.ordered_box .ordered_box__reorder{ width: 90%; margin: 20px auto 0; }
+	.ordered_box .ordered_box__bottom ul { display: block; }
+	.ordered_box .ordered_box__bottom li { width: auto; margin: 0 auto 10px; }
+	.ordered_box .ordered_box__bottom li:first-child{ margin: 0 auto 10px; }
+	.ordered_box .ordered_box__bottom li:last-child{ margin: auto; margin-bottom: 0; }
+	.ordered_box .ordered_box__bottom a { padding: 12px; }
+    
+
+	/* ordered
+	------------------------------------------------------------ */
+    .password .password__wrap {
+        width: 100%;
+        max-width: 900px;
+        padding: 0;
+        background: none;
+        margin: 50px auto 20px;
     }
-
-    /* material
-    ------------------------------------------------------------ */
-
-    .material .there_box ul li{
-        width: auto;
-        display: block;
-        float: none;
-        margin-right: 0;
-        margin: auto;
-        margin-bottom: 20px;
-    }
-    .material .tb01 th{
-        padding: 10px;
-    }
-    .material .tb01 td{
-        padding: 10px;
-    }
-
-    /* size
-        ------------------------------------------------------------ */
-    .size_right { justify-content: center; }
-    .size_left { justify-content: center; }
-    .size_img60 { margin-right: 0; background-position: center;  }
-    .size_img90 { margin-left: 0; background-position: center;  }
-    .size_img120 { margin-right: 0; background-position: center;  }
-    .size_img150 { margin-left: 0; background-position: center; }
-    .size_img180 { margin-right: 0; background-position: center;  }
-    .size_text {
-        display: flex;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        -webkit-box-pack: center;
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        margin-top: 10px;
-    }
-    /* mypage
-    ------------------------------------------------------------ */
-    .mypage .two_box,
-    .mypage .there_box{ display: block; width: 80%; margin: auto; }
-    .mypage .two_box li{ width: auto; }
-    .mypage .two_box li{ margin: 0; margin-bottom: 10px; }
-    .mypage .there_box li{ margin: 0; margin-bottom: 10px; }
-
-    /* member
-    ------------------------------------------------------------ */
-    .main__block_lr{ display: block; flex-direction: row-reverse; }
-    .main__block_l{
-        width: auto;
-        max-width: 230px;
-        margin-right: 0;
-        margin: 30px auto;
-    }
-    .main__block_r{ width: auto; }
-
-
-
-    /* ordered
-    ------------------------------------------------------------ */
-    .ordered_box { padding: 25px; }
-    .ordered_box .ordered_box__top { display: block; }
-    .ordered_box .ordered_box__side { width: auto; margin-right: 0; }
-    .ordered_box .ordered_box__reorder{ width: 90%; margin: 20px auto 0; }
-    .ordered_box .ordered_box__bottom ul { display: block; }
-    .ordered_box .ordered_box__bottom li { width: auto; margin: 0 auto 10px; }
-    .ordered_box .ordered_box__bottom li:first-child{ margin: 0 auto 10px; }
-    .ordered_box .ordered_box__bottom li:last-child{ margin: auto; margin-bottom: 0; }
-    .ordered_box .ordered_box__bottom a { padding: 12px; }
-
+    .password dl { width: 100%; }
+	
 }

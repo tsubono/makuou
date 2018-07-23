@@ -541,6 +541,32 @@ body {
     padding: 5px 0;
 }
 
+.fix__mypage {
+    position: fixed;
+    right: 0;
+    bottom: 20%;
+    background: #fb7f05;
+    font-size: 12px;
+    border-radius: 5px 0 0 5px;
+    transition: .3s;
+    max-width: 80px;
+}
+.fix__mypage:hover { background: #fbad05; }
+.fix__mypage a {
+    display: block;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 10px 10px;
+}
+.fix__mypage img { 
+    display: block;
+    width: 100%; 
+    max-width: 22px; 
+    margin: 0 auto 5px;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1119px) {
     .l-footer .wrap li.logo {
         width: 25%;
@@ -1299,54 +1325,3 @@ body {
 .bold{ font-weight: bold; }
 
 .blue{ color: #2a389d; }
-
-/* /contact /sampleページ
------------------------------------------------------------- */
-.error{
-    color: red;
-}
-
-.confirm_sendarea{
-    text-align: center;
-}
-
-.confirm_sendarea .confirm_wrapper button{
-    width: auto;
-    border: none;
-    border-bottom: solid 2px ;
-    border-radius: 3px;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fc6c35', endColorstr='#fb5b2a', GradientType=0); /* IE6-9 */
-    color: #fff;
-    padding: 15px;
-    font-size: 120%;
-}
-
-.confirm_sendarea .confirm_wrapper .back_btn{
-    background: grey;
-}
-
-#zip-btn{
-    color: #444;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    display: inline-block;
-    padding: 6px 12px;
-    margin-bottom: 0;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background: #f4f4f4 none;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    width: inherit;
-}

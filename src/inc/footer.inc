@@ -1,4 +1,5 @@
 <?php $host = '//' . $_SERVER["HTTP_HOST"] ?>
+<div class="fix__mypage"><a href="<?php echo $host; ?>/mypage"><img src="<?php echo $host; ?>/assets/img/common/ico_mypage.png" alt="">マイページ</a></div>
 <footer class="l-footer">
     <ul class="wrap cf">
         <li class="logo">

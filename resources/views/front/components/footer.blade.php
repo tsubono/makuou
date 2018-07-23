@@ -1,3 +1,8 @@
+<div class="fix__mypage">
+    <a href="{{ url('/mypage') }}">
+        <img src="{{asset("assets/img/common/ico_mypage.png")}}" alt="">マイページ
+    </a>
+</div>
 <footer class="l-footer">
     <ul class="wrap cf">
         <li class="logo">

@@ -37,6 +37,10 @@ Route::post('/canvas/deleteSavedDesign',     'CanvasController@deleteSavedDesign
 
 Route::post('saveDesign', 'Admin\OrderController@saveDesign');
 
+
+Route::get('/password/sent',      'Auth\ForgotPasswordController@sent');
+Route::get('/password/complete',      'Auth\ResetPasswordController@complete');
+
 /*
 |--------------------------------------------------------------------------
 | 2) User before login
@@ -98,7 +102,6 @@ Route::namespace('Front')->group(function() {
         Route::get('/logout',   'LoginController@logout');
         Route::post('/logout',   'LoginController@logout')->name('logout');
     });
-
 
 });
 /*

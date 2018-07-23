@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
+use Illuminate\Http\Request;
 
 class ForgotPasswordController extends Controller
 {
@@ -28,5 +29,21 @@ class ForgotPasswordController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+    public function sendResetLinkResponse($response)
+    {
+        return redirect('/password/sent');
+    }
+
+    public function sendResetLinkFailedResponse(Request $request, $response)
+    {
+        return back()->withErrors(
+            ['email' => 'メールアドレスが不正です。']
+        );
+    }
+
+    public function sent() {
+        return view('auth.passwords.sent');
     }
 }

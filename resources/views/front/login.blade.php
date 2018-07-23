@@ -40,7 +40,7 @@
                                     <p class="login_btn"><input type="submit" value="ログインする"></p>
                                 </form>
                                 <div class="cf forget_box">
-                                    <p class="forget"><a href="#">パスワードを忘れた方はこちら</a></p>
+                                    <p class="forget"><a href="{{ route('password.request') }}">パスワードを忘れた方はこちら</a></p>
                                 </div>
                             </div>
                         </div>

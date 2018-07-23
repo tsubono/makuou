@@ -60,6 +60,7 @@
                             </dd>
                         </dl>
                     </div>
+                    <div class="result__fav"><a href="#dummy"><img src="../../assets/img/common/ico_fav.png" alt="">お気に入りに登録する</a></div>
                 </div>
                 <!-- .result__box -->
                 <div class="result__box">
@@ -90,6 +91,7 @@
                             </dd>
                         </dl>
                     </div>
+                    <div class="result__fav"><a href="#dummy"><img src="../../assets/img/common/ico_fav.png" alt="">お気に入りに登録する</a></div>
                 </div>
                 <!-- .result__box -->
                 <div class="result__box">
@@ -122,6 +124,7 @@
                             </dd>
                         </dl>
                     </div>
+                    <div class="result__fav"><a href="#dummy"><img src="../../assets/img/common/ico_fav.png" alt="">お気に入りに登録する</a></div>
                 </div>
                 <!-- .result__box -->
                 <div class="result__box">
@@ -154,6 +157,7 @@
                             </dd>
                         </dl>
                     </div>
+                    <div class="result__fav"><a href="#dummy"><img src="../../assets/img/common/ico_fav.png" alt="">お気に入りに登録する</a></div>
                 </div>
                 <!-- .result__box -->
                 <div class="result__box">
@@ -184,6 +188,7 @@
                             </dd>
                         </dl>
                     </div>
+                    <div class="result__fav"><a href="#dummy"><img src="../../assets/img/common/ico_fav.png" alt="">お気に入りに登録する</a></div>
                 </div>
                 <!-- .result__box -->
                 <div class="result__box">
@@ -216,6 +221,7 @@
                             </dd>
                         </dl>
                     </div>
+                    <div class="result__fav"><a href="#dummy"><img src="../../assets/img/common/ico_fav.png" alt="">お気に入りに登録する</a></div>
                 </div>
                 <!-- .result__box -->
             </div>

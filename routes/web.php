@@ -98,6 +98,7 @@ Route::namespace('Front')->group(function() {
         Route::get('/cancel', 'CancelController@index')->name('cancel');
         Route::post('/cancel/complete', 'CancelController@complete')->name('cancelComplete');
         Route::get('/save', 'SaveController@index')->name('save');
+        Route::get('/favorite', 'FavoriteController@index')->name('favorite');
 
         Route::get('/logout',   'LoginController@logout');
         Route::post('/logout',   'LoginController@logout')->name('logout');

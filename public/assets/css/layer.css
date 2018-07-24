@@ -827,7 +827,7 @@ p.txt {
     box-sizing: border-box;
     border: solid 2px #231814;
 } 
-.confirm .share ul li.btn_org a {
+.confirm .share ul li.btn_org a, #preSaveBtn {
     
     background-image: url(../img/common/arrow_r_blk.gif) , url(../img/common/bg_btnorg.gif);
     background-repeat: no-repeat , repeat;
@@ -840,6 +840,11 @@ p.txt {
     text-align: center;
     text-decoration: none;
     font-weight: 600;
+}
+#preSaveBtn {
+	border-bottom: none;
+	width: 20%;
+	float: right;
 }
 .confirm .share ul li a { transition: .3s; }
 .confirm .share ul li a:hover { opacity: 0.7; }

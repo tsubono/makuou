@@ -61,11 +61,11 @@
                                 <dd><textarea name="order_detail[note]"></textarea></dd>
                             </dl>
                         </div>
-                        <div class="share cf">
+                        <div class="cf">
                             <ul class="cf">
-                                <li><a href="#"><img src="{{asset("assets/img/layout/share_fb.png")}}" alt="facebook"></a></li>
-                                <li><a href="#"><img src="{{asset("assets/img/layout/share_twt.png")}}" alt="Twitter"></a></li>
-                                <li><a href="#"><img src="{{asset("assets/img/layout/share_line.png")}}" alt="LINE"></a></li>
+                                {{--<li><a href="#"><img src="{{asset("assets/img/layout/share_fb.png")}}" alt="facebook"></a></li>--}}
+                                {{--<li><a href="#"><img src="{{asset("assets/img/layout/share_twt.png")}}" alt="Twitter"></a></li>--}}
+                                {{--<li><a href="#"><img src="{{asset("assets/img/layout/share_line.png")}}" alt="LINE"></a></li>--}}
                                 <li class="btn_org">
                                     <input type="submit" id="preSaveBtn" value="デザインを保存する" />
                                 </li>

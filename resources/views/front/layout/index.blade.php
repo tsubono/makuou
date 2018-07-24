@@ -95,7 +95,7 @@
                         <input type="hidden" name="order[user_id]" value="{{ \Illuminate\Support\Facades\Auth::user()->id }}">
                         <input type="hidden" name="order_detail[product_id]" value="{{ $product->id }}">
 
-                        <div class="btn">
+                        <div class="btn2">
                             <a href="#" id="save_design">デザイン確認</a>
                         </div>
                     </form>

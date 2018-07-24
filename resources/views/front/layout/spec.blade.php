@@ -8,8 +8,8 @@
 @push('script')
     <script>
 
-        $(function(){
-            $("#optcheck").change(function(){
+        $(function () {
+            $("#optcheck").change(function () {
                 optCheckVal = $("#optcheck:checked").val();
 
                 if (optCheckVal == "1") {
@@ -30,9 +30,10 @@
                 $('[name="order_detail[pole]"]').prop('checked', false);
             }
         }
+
         function radioButton() {
 
-            $('[name="order_detail[pole]"]').each (function() {
+            $('[name="order_detail[pole]"]').each(function () {
                 if ($(this).is(':checked')) {
                     $('#polecheck').prop('checked', true);
                 }
@@ -62,11 +63,15 @@
                     </ul>
                     <form method="post" action="{{ url('layout/confirm2') }}" class="form_template confirm" id="form1">
                         @csrf
-                        <input type="hidden" name="order_detail[designed_filename]" value="{{ $order_detail['designed_filename'] }}">
-                        <input type="hidden" name="order_detail[designed_image]" value="{{ $order_detail['designed_image'] }}">
-                        <input type="hidden" name="order_detail[uploaded_files]" value="{{ $order_detail['uploaded_files'] }}">
+                        <input type="hidden" name="order_detail[designed_filename]"
+                               value="{{ $order_detail['designed_filename'] }}">
+                        <input type="hidden" name="order_detail[designed_image]"
+                               value="{{ $order_detail['designed_image'] }}">
+                        <input type="hidden" name="order_detail[uploaded_files]"
+                               value="{{ $order_detail['uploaded_files'] }}">
                         <input type="hidden" name="order_detail[json]" value="{{ $order_detail['json'] }}">
-                        <input type="hidden" name="order_detail[design_name]" value="{{ $order_detail['design_name'] }}">
+                        <input type="hidden" name="order_detail[design_name]"
+                               value="{{ $order_detail['design_name'] }}">
                         <input type="hidden" name="order_detail[note]" value="{{ $order_detail['note'] }}">
                         <input type="hidden" name="order[user_id]" value="{{ $order['user_id'] }}">
                         <input type="hidden" name="order_detail[product_id]" value="{{ $order_detail['product_id'] }}">
@@ -95,7 +100,8 @@
                                 <dd>
                                     <ul>
                                         <li>
-                                            <label><input type="radio" name="order_detail[material]" value="通常生地" checked="checked">通常生地</label>
+                                            <label><input type="radio" name="order_detail[material]" value="通常生地"
+                                                          checked="checked">通常生地</label>
                                             <label><input type="radio" name="order_detail[material]" value="メッシュ生地">メッシュ生地</label>
                                             <label><input type="radio" name="order_detail[material]" value="サテン生地">サテン生地</label>
                                             <label><input type="radio" name="order_detail[material]" value="強化ビニール生地">強化ビニール生地</label>
@@ -125,19 +131,25 @@
                                 <dd>
                                     <ul class="option">
                                         <li class="rope">
-                                            <p><label><input type="checkbox" name="" id="optcheck" value="1">ロープ</label></p>
+                                            <p><label><input type="checkbox" name="" id="optcheck" value="1">ロープ</label>
+                                            </p>
                                             <ul class="cf">
                                                 <li><input type="text" name="order_detail[lope_1]" id="optinput1"></li>
                                                 <li><input type="text" name="order_detail[lope_2]" id="optinput2"></li>
                                             </ul>
                                         </li>
                                         <li class="pole">
-                                            <p><label><input type="checkbox" name="polecheck" id="polecheck" value="旗用ポール" onclick="checkBox()">旗用ポール</label></p>
+                                            <p><label><input type="checkbox" name="polecheck" id="polecheck"
+                                                             value="旗用ポール" onclick="checkBox()">旗用ポール</label></p>
                                             <div>
-                                                <label><input type="radio" name="order_detail[pole]" value="2m・3段伸縮" onclick="radioButton()">2m・3段伸縮</label>
-                                                <label><input type="radio" name="order_detail[pole]" value="3m・3段伸縮" onclick="radioButton()">3m・3段伸縮</label>
-                                                <label><input type="radio" name="order_detail[pole]" value="4m・4段伸縮" onclick="radioButton()">4m・4段伸縮</label>
-                                                <label><input type="radio" name="order_detail[pole]" value="5m・4段伸縮" onclick="radioButton()">5m・4段伸縮</label>
+                                                <label><input type="radio" name="order_detail[pole]" value="2m・3段伸縮"
+                                                              onclick="radioButton()">2m・3段伸縮</label>
+                                                <label><input type="radio" name="order_detail[pole]" value="3m・3段伸縮"
+                                                              onclick="radioButton()">3m・3段伸縮</label>
+                                                <label><input type="radio" name="order_detail[pole]" value="4m・4段伸縮"
+                                                              onclick="radioButton()">4m・4段伸縮</label>
+                                                <label><input type="radio" name="order_detail[pole]" value="5m・4段伸縮"
+                                                              onclick="radioButton()">5m・4段伸縮</label>
                                             </div>
                                         </li>
                                     </ul>
@@ -146,15 +158,37 @@
                             <dl>
                                 <dt>納期</dt>
                                 <dd class="delivery">
-                                    <label><input type="radio" name="order_detail[nouki]" value="通常発送（2営業日後）" checked="checked">通常発送（2営業日後）</label>
-                                    <label><input type="radio" name="order_detail[nouki]" value="特急発送※価格が20%アップします（翌営業日後）">特急発送※価格が20%アップします（翌営業日後）</label>
+                                    <label><input type="radio" name="order_detail[nouki]" value="通常発送（2営業日後）"
+                                                  checked="checked">通常発送（2営業日後）</label>
+                                    <label><input type="radio" name="order_detail[nouki]"
+                                                  value="特急発送※価格が20%アップします（翌営業日後）">特急発送※価格が20%アップします（翌営業日後）</label>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>その他オプション</dt>
+                                <dd class="delivery">
+                                    <label class="checkbox-inline">
+                                        @foreach (\App\Models\Option::all() as $option)
+
+                                            @if ($option->type=="1")
+                                                <input type="checkbox" name="option_ids[]" value="{{ $option->id }}"
+                                                       data-price="{{ $option->price }}"
+                                                       checked onclick='return false;'>
+                                            @else
+                                                <input type="checkbox" name="option_ids[]" value="{{ $option->id }}"
+                                                       data-price="{{ $option->price }}">
+                                            @endif
+                                            {{ $option->name }}
+                                        @endforeach
+
+                                    </label>
                                 </dd>
                             </dl>
                         </div>
                         <div class="btn_one">
                             <div class="btn_return"><a href="/option/" target="_blank"><p>オプションについて</p></a></div>
                         </div>
-                        <div class="btn"><input type="submit" name="submit" value="確認画面へ" /></div>
+                        <div class="btn"><input type="submit" name="submit" value="確認画面へ"/></div>
                     </form>
                 </div>
             </section>

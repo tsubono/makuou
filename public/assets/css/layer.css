@@ -753,7 +753,7 @@ p.txt {
 ------------------------------------------------------------ */
 .layout h1 img { width: 80%; max-width: 359px; }
 .layout div img { width: 100%;  }
-.layout .btn {
+.layout .btn, .layout .btn2 {
     width: 100%;
     max-width: 600px;
     margin: 50px auto 0;
@@ -761,7 +761,7 @@ p.txt {
     border: solid 2px #231814;
     box-shadow: 8px 8px 0 #231814;
 }
-.layout .btn a {
+.layout .btn a, .layout .btn2 a {
     color: #fff;
     text-align: center;
     text-decoration: none;
@@ -775,7 +775,7 @@ p.txt {
     background-position: right 20px center, left;
     transition: .3s;
 }
-.layout .btn a:hover {
+.layout .btn a:hover, .layout .btn2 a:hover {
     opacity: 0.8;
 }
 

@@ -29,13 +29,24 @@
                         <li>確認画面</li>
                     </ul>
 
-                    <form method="post" action="{{ url('layout/complete') }}" class="form_template confirm" id="form1">
+                    <form method="post" action="{{ url('/order') }}" class="form_template confirm" id="form1">
                         @csrf
                         <input type="hidden" name="order[user_id]" value="{{ $order['user_id'] }}">
                         <input type="hidden" name="order_detail[product_id]" value="{{ $order_detail['product_id'] }}">
                         <input type="hidden" name="order_detail[designed_filename]" value="{{ $order_detail['designed_filename'] }}">
                         <input type="hidden" name="order_detail[uploaded_files]" value="{{ $order_detail['uploaded_files'] }}">
                         <input type="hidden" name="order_detail[json]" value="{{ $order_detail['json'] }}">
+
+                        <input type="hidden" name="order[sub_total]" value="{{ $order['sub_total'] }}">
+                        <input type="hidden" name="order[total]" value="{{ $order['total'] }}">
+                        <input type="hidden" name="order[payment_total]" value="{{ $order['payment_total'] }}">
+
+                        <input type="hidden" name="order_detail[ratio_id]" value="{{ $order_detail['ratio_id'] }}">
+                        <input type="hidden" name="order_detail[price]" value="{{ $order_detail['price'] }}">
+                        <input type="hidden" name="order_detail[price_id]" value="{{ $order_detail['price_id'] }}">
+                        <input type="hidden" name="order_detail[option_price]" value="{{ $order_detail['option_price'] }}">
+                        <input type="hidden" name="order_detail[tax_rate]" value="{{ $order_detail['tax_rate'] }}">
+                        <input type="hidden" name="order_detail[sub_total]" value="{{ $order_detail['sub_total'] }}">
 
                         <div class="form__bd">
                             <dl>
@@ -70,15 +81,19 @@
                             <dl>
                                 <dt>サイズ</dt>
                                 <dd>
-                                    縦{{ $order_detail['size'] }}cm×横{{ $order_detail['size'] * $product->ratio->width }}cm
-                                    <input type="hidden" name="order_detail[size]" value="{{ $order_detail['size'] }}">
+                                    @if (!empty($order_detail['size_id']))
+                                        縦{{ \App\Models\Size::where('id', $order_detail['size_id'])->first()->name }}cm×横{{ \App\Models\Size::where('id', $order_detail['size_id'])->first()->name * $product->ratio->width }}cm
+                                        <input type="hidden" name="order_detail[size_id]" value="{{ $order_detail['size_id'] }}">
+                                    @endif
                                 </dd>
                             </dl>
                             <dl>
                                 <dt>素材</dt>
                                 <dd>
-                                    {{ $order_detail['material'] }}
-                                    <input type="hidden" name="order_detail[material]" value="{{ $order_detail['material'] }}">
+                                    @if (!empty($order_detail['clothe_id']))
+                                        {{ \App\Models\Clothe::where('id', $order_detail['clothe_id'])->first()->name }}
+                                        <input type="hidden" name="order_detail[clothe_id]" value="{{ $order_detail['clothe_id'] }}">
+                                    @endif
                                 </dd>
                             </dl>
                             <dl>
@@ -91,22 +106,31 @@
                             <dl>
                                 <dt>付属品（ロープ）</dt>
                                 <dd>
-                                    {{ !empty($order_detail['lope_1']) ? $order_detail['lope_1'] : '' }}
+                                    @if (!empty($order_detail['lope_flg'])))
+                                        {{ !empty($order_detail['lope_1']) ? $order_detail['lope_1']. 'm': ''}}
+                                        ×
+                                        {{ !empty($order_detail['lope_2']) ? $order_detail['lope_2']. '本': ''}}
+                                    @endif
+                                    <input type="hidden" name="order_detail[lope_flg]" value="{{ !empty($order_detail['lope_flg']) ? $order_detail['lope_flg'] : '' }}">
                                     <input type="hidden" name="order_detail[lope_1]" value="{{ !empty($order_detail['lope_1']) ? $order_detail['lope_1'] : '' }}">
+                                    <input type="hidden" name="order_detail[lope_2]" value="{{ !empty($order_detail['lope_2']) ? $order_detail['lope_2'] : '' }}">
                                 </dd>
                             </dl>
                             <dl>
                                 <dt>付属品（旗用ポール）</dt>
                                 <dd>
-                                    {{ !empty($order_detail['pole']) ? $order_detail['pole'] : '' }}
+                                    @if (!empty($order_detail['pole_flg'])))
+                                        {{ !empty($order_detail['pole']) ? $order_detail['pole'] : '' }}
+                                    @endif
+                                    <input type="hidden" name="order_detail[pole_flg]" value="{{ !empty($order_detail['pole_flg']) ? $order_detail['pole_flg'] : '' }}">
                                     <input type="hidden" name="order_detail[pole]" value="{{ !empty($order_detail['pole']) ? $order_detail['pole'] : '' }}">
                                 </dd>
                             </dl>
                             <dl>
                                 <dt>納期</dt>
                                 <dd>
-                                    {{ $order_detail['nouki'] }}
-                                    <input type="hidden" name="order_detail[nouki]" value="{{ $order_detail['nouki'] }}">
+                                    {{ config('const.nouki')[$order_detail['nouki_id']] }}
+                                    <input type="hidden" name="order_detail[nouki_id]" value="{{ $order_detail['nouki_id'] }}">
                                 </dd>
                             </dl>
                             <dl>
@@ -121,8 +145,7 @@
                             <dl>
                                 <dt>価格</dt>
                                 <dd>
-                                    ●●●●円
-                                    <input type="hidden" name="order_detail[designed_image]" value="{{ $order_detail['designed_image'] }}">
+                                    {{ $order['payment_total'] }}円
                                 </dd>
                             </dl>
                         </div>

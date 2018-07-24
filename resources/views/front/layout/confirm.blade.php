@@ -48,6 +48,7 @@
                         <input type="hidden" name="order_detail[json]" value="{{ $order_detail['json'] }}">
                         <input type="hidden" name="order[user_id]" value="{{ $order['user_id'] }}">
                         <input type="hidden" name="order_detail[product_id]" value="{{ $order_detail['product_id'] }}">
+                        <input type="hidden" name="order_detail[ratio_id]" value="{{ $order_detail['ratio_id'] }}">
 
                         <div class="form__bd">
                             <dl>

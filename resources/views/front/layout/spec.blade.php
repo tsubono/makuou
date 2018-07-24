@@ -41,6 +41,94 @@
 
 
         }
+
+
+        // オプション金額
+        function updateOptionPrice() {
+            var option_price = 0;
+            $('.option_ids').each(function () {
+                if (this.checked) {
+                    option_price += parseInt($(this).attr('data-price'));
+                }
+            });
+            $('[name="order_detail[option_price]"]').val(option_price);
+
+            updateTotal();
+        }
+        updateOptionPrice();
+        // オプション変更時
+        $('.option_ids').change(function () {
+            updateOptionPrice();
+        });
+
+        $('.prices').change (function() {
+            updatePrice();
+        });
+        updatePrice();
+
+        // 金額
+        function updatePrice() {
+
+            $('[name="order_detail[price]"]').val(0);
+            $('[name="order_detail[price_id]"]').val("");
+
+            var ratio_id = $('[name="order_detail[ratio_id]"]').val();
+            var size_id = $('[name="order_detail[size_id]"]:checked').val();
+            var clothe_id = $('[name="order_detail[clothe_id]"]:checked').val();
+
+            $.ajax({
+                type: 'post',
+                data: {
+                    'size_id': size_id,
+                    'ratio_id': ratio_id,
+                    'clothe_id': clothe_id,
+                    '_token': '{{csrf_token()}}'
+                },
+                url: '{{ url('/ajaxGetPrice') }}'
+            }).done(function (data) {
+                var price = $.parseJSON(data)['price'];
+
+                if (price != null && price != undefined) {
+                    $('[name="order_detail[price]"]').val(parseInt(price['price']));
+                    $('[name="order_detail[price_id]"]').val(price['id']);
+                } else {
+                    $('[name="order_detail[price]"]').val(0);
+                    $('[name="order_detail[price_id]"]').val(0);
+                }
+
+                updateTotal();
+
+            }).fail(function (data) {
+            });
+        }
+
+
+        // 合計金額
+        function updateTotal() {
+
+            var price = $('[name="order_detail[price]"]').val();
+            var option_price = $('[name="order_detail[option_price]"]').val();
+            var quantity = $('[name="order_detail[quantity]"]').val();
+            var tax_rate = $('[name="order_detail[tax_rate]"]').val();
+
+            if (price == "") {
+                price = 0;
+            }
+            if (option_price == "") {
+                option_price = 0;
+            }
+            if (quantity == "") {
+                quantity = 0;
+            }
+
+            // ( 金額 + オプション金額 ) * 数量 * ( 1 + 税率 / 100 )
+            var total = (parseInt(price) + parseInt(option_price)) * parseInt(quantity) * (1 + parseInt(tax_rate) / 100);
+
+            $('[name="order_detail[sub_total]"]').val(total);
+            $('[name="order[sub_total]"]').val(total);
+            $('[name="order[total]"]').val(total);
+            $('[name="order[payment_total]"]').val(total);
+        }
     </script>
 
 @endpush
@@ -76,16 +164,29 @@
                         <input type="hidden" name="order[user_id]" value="{{ $order['user_id'] }}">
                         <input type="hidden" name="order_detail[product_id]" value="{{ $order_detail['product_id'] }}">
 
+                        <input type="hidden" name="order[sub_total]" value="">
+                        <input type="hidden" name="order[total]" value="">
+                        <input type="hidden" name="order[payment_total]" value="">
+
+                        <input type="hidden" name="order_detail[ratio_id]" value="{{ $order_detail['ratio_id'] }}">
+                        <input type="hidden" name="order_detail[price]" value="">
+                        <input type="hidden" name="order_detail[price_id]" value="">
+                        <input type="hidden" name="order_detail[option_price]" value="">
+                        <input type="hidden" name="order_detail[tax_rate]" value="8">
+                        <input type="hidden" name="order_detail[sub_total]" value="">
+
+
                         <h2 class="ttl01">サイズを決める</h2>
                         <div class="form__bd">
                             <dl>
                                 <dt>サイズ</dt>
                                 <dd>
-                                    <label><input type="radio" name="order_detail[size]" value="60" checked="checked">縦60cm</label>
-                                    <label><input type="radio" name="order_detail[size]" value="90">縦90cm</label>
-                                    <label><input type="radio" name="order_detail[size]" value="120">縦120cmm</label>
-                                    <label><input type="radio" name="order_detail[size]" value="150">縦150cm</label>
-                                    <label><input type="radio" name="order_detail[size]" value="180">縦180cm</label>
+                                    @foreach (\App\Models\Size::all() as $size)
+                                        <label>
+                                            <input type="radio" name="order_detail[size_id]" value="{{ $size->id }}" class="prices">
+                                            {{ $size->name }}
+                                        </label>
+                                    @endforeach
                                 </dd>
                             </dl>
                         </div>
@@ -100,11 +201,12 @@
                                 <dd>
                                     <ul>
                                         <li>
-                                            <label><input type="radio" name="order_detail[material]" value="通常生地"
-                                                          checked="checked">通常生地</label>
-                                            <label><input type="radio" name="order_detail[material]" value="メッシュ生地">メッシュ生地</label>
-                                            <label><input type="radio" name="order_detail[material]" value="サテン生地">サテン生地</label>
-                                            <label><input type="radio" name="order_detail[material]" value="強化ビニール生地">強化ビニール生地</label>
+                                            @foreach (\App\Models\Clothe::all() as $clothe)
+                                                <label>
+                                                    <input type="radio" name="order_detail[clothe_id]" value="{{ $clothe->id }}" class="prices">
+                                                    {{ $clothe->name }}
+                                                </label>
+                                            @endforeach
                                         </li>
 
                                     </ul>
@@ -131,7 +233,7 @@
                                 <dd>
                                     <ul class="option">
                                         <li class="rope">
-                                            <p><label><input type="checkbox" name="" id="optcheck" value="1">ロープ</label>
+                                            <p><label><input type="checkbox" name="order_detail[lope_flg]" id="optcheck" value="1">ロープ</label>
                                             </p>
                                             <ul class="cf">
                                                 <li><input type="text" name="order_detail[lope_1]" id="optinput1"></li>
@@ -139,8 +241,8 @@
                                             </ul>
                                         </li>
                                         <li class="pole">
-                                            <p><label><input type="checkbox" name="polecheck" id="polecheck"
-                                                             value="旗用ポール" onclick="checkBox()">旗用ポール</label></p>
+                                            <p><label><input type="checkbox" name="order_detail[pole_flg]" id="polecheck"
+                                                             value="1" onclick="checkBox()">旗用ポール</label></p>
                                             <div>
                                                 <label><input type="radio" name="order_detail[pole]" value="2m・3段伸縮"
                                                               onclick="radioButton()">2m・3段伸縮</label>
@@ -158,11 +260,14 @@
                             <dl>
                                 <dt>納期</dt>
                                 <dd class="delivery">
-                                    <label><input type="radio" name="order_detail[nouki]" value="通常発送（2営業日後）"
-                                                  checked="checked">通常発送（2営業日後）</label>
-                                    <label><input type="radio" name="order_detail[nouki]"
-                                                  value="特急発送※価格が20%アップします（翌営業日後）">特急発送※価格が20%アップします（翌営業日後）</label>
-                                </dd>
+                                    @foreach(config('const.nouki') as $key => $name)
+                                        <label>
+                                            <input type="radio" name="order_detail[nouki_id]" value="{{ $key }}"
+                                                      @if ($key==1)checked="checked"@endif>
+                                            {{ $name }}
+                                        </label>
+                                    @endforeach
+                                  </dd>
                             </dl>
                             <dl>
                                 <dt>その他オプション</dt>
@@ -170,16 +275,29 @@
                                     <label class="checkbox-inline">
                                         @foreach (\App\Models\Option::all() as $option)
                                             @if ($option->type=="1")
-                                                <input type="checkbox" name="order_detail[option_ids][]" value="{{ $option->id }}"
+                                                <input type="checkbox" name="order_detail[option_ids][]"
+                                                       value="{{ $option->id }}" class="option_ids"
                                                        data-price="{{ $option->price }}"
                                                        checked onclick='return false;'>
                                             @else
-                                                <input type="checkbox" name="order_detail[option_ids][]" value="{{ $option->id }}"
+                                                <input type="checkbox" name="order_detail[option_ids][]"
+                                                       value="{{ $option->id }}" class="option_ids"
                                                        data-price="{{ $option->price }}">
                                             @endif
                                             {{ $option->name }}
                                         @endforeach
 
+                                    </label>
+                                </dd>
+                            </dl>
+                        </div>
+                        <h2 class="ttl01">個数を決める</h2>
+                        <div class="form__bd">
+                            <dl>
+                                <dt>個数</dt>
+                                <dd>
+                                    <label>
+                                        <input type="number" name="order_detail[quantity]" value="1" reaquired>
                                     </label>
                                 </dd>
                             </dl>

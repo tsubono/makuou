@@ -31,6 +31,8 @@
  * favorite
  * ordered
  * password
+ * settlement
+
  */
 /* common
 ------------------------------------------------------------ */
@@ -407,7 +409,8 @@ p.txt {
 .innerlist_kana li:first-child::before { content: "せい："; }
 .innerlist_kana li input { display: table-cell; }
 
-.form_template input[type="text"]{
+.form_template input[type="text"],
+.form_template input[type="number"]{
 	width: 100%;
 	height: 3em;
 	border: solid 1px #ccc;
@@ -418,14 +421,16 @@ p.txt {
 	width: 48%;
 }
 .innar_list li:nth-child(2n){ float: right; }
-.innar_list li input[type="text"]{ width: 80%; margin-left: 2%; }
+.innar_list li input[type="text"],
+.innar_list li input[type="number"]{ width: 80%; margin-left: 2%; }
 .innar_list2 li{
 	display: inline-block;
 	float: left;
 	width: 30%;
 }
 .innar_list2 li:nth-child(3n){ margin-right: 0; }
-.innar_list2 li input[type="text"]{ width: 80%; margin-right: 7%; }
+.innar_list2 li input[type="text"],
+.innar_list2 li input[type="number"]{ width: 80%; margin-right: 7%; }
 .form_template input[type="submit"]{
 	width: 100%;
 	border: none;
@@ -444,6 +449,7 @@ p.txt {
 .form_template .sendarea li{ max-width: 200px; margin: 30px auto; }
 .form_template .sendarea li:hover{ opacity: 0.8; }
 .form_template dd input[type="text"],
+.form_template dd input[type="number"],
 .form_template dd input[type="textarea"],
 .form_template dd select,
 .form_template dd textarea {
@@ -466,9 +472,10 @@ p.txt {
 	border-radius: 4px;
 	border: 1px solid #ccc;
 }
-.form_template dd .innerlist_tel li input[type="text"]{ width: 22%; }
+.form_template dd .innerlist_tel li input[type="text"],
+.form_template dd .innerlist_tel li input[type="number"]{ width: 22%; }
 .form_template dd input[type="radio"],
-.form_template dd input[type="checkbox"]:{
+.form_template dd input[type="checkbox"]{
 	box-shadow: none;
 	border: 5px solid #ccc;
 }
@@ -479,7 +486,8 @@ p.txt {
 	box-sizing: border-box;
 	resize: vertical;
 }
-.form_template .address_num dd input[type="text"]{ width: 22%; }
+.form_template .address_num dd input[type="text"],
+.form_template .address_num dd input[type="number"]{ width: 22%; }
 .form_template .address_num2 dd select{ width: 30%; }
 
 /* thanks
@@ -925,7 +933,8 @@ p.txt {
 }
 .tab_content li .scroll { margin-bottom: 30px; }
 .tab_content li .scroll:last-child { margin-bottom: 0; }
-.form_template dd ul.option input[type="text"] {
+.form_template dd ul.option input[type="text"],
+.form_template dd ul.option input[type="number"]{
     width: 97%;
 }
 
@@ -1444,6 +1453,32 @@ p.txt {
 .password input[type="password"] { width: 100%; max-width: 400px; }
 
 
+/* settlement
+------------------------------------------------------------ */
+.settlement input[type="button"] {
+    width: 100%;
+	border: none;
+	border-bottom: solid 2px #ca5a2d;
+	border-radius: 3px;
+	background: rgb(252,108,53); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(252,108,53,1) 0%, rgba(247,40,13,1) 46%, rgba(247,36,11,1) 47%, rgba(243,10,1,1) 50%, rgba(251,91,42,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc6c35', endColorstr='#fb5b2a',GradientType=0 ); /* IE6-9 */
+	color: #fff;
+	padding: 10px;
+	font-size: .875rem;
+    margin-left: 3%;
+    max-width: 200px;
+    cursor: pointer;
+    transition: .3s;
+}
+.settlement input[type="button"]:hover {
+    opacity: .7;
+}
+.settlement .main__title img { max-width: 148px; }
+
+
 @media screen and (min-width: 768px) and (max-width: 1119px) {
 
     /* common
@@ -1553,9 +1588,12 @@ p.txt {
 		width: auto;
 	}
 	.form_template dd input[type="text"],
+	.form_template dd input[type="number"],
 	.form_template dd select, dd textarea{ width: 96%; padding: 5px 2%; }
-	.form_template input[type="text"]{ height: 2em; }
-	.form_template dd .innerlist_tel li input[type="text"]{ width: 15%; }
+	.form_template input[type="text"],
+	.form_template input[type="number"]{ height: 2em; }
+	.form_template dd .innerlist_tel li input[type="text"],
+	.form_template dd .innerlist_tel li input[type="number"]{ width: 15%; }
 	.innerlist_name li {
 		display: block;
 		float: none;

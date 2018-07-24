@@ -36,6 +36,7 @@ Route::post('/canvas/deleteSavedDesign',     'CanvasController@deleteSavedDesign
 
 
 Route::post('saveDesign', 'Admin\OrderController@saveDesign');
+Route::post('ajaxGetPrice', 'Admin\PriceController@ajaxGetPrice');
 
 
 Route::get('/password/sent',      'Auth\ForgotPasswordController@sent');
@@ -70,7 +71,7 @@ Route::namespace('Front')->group(function() {
     });
     Route::get('/company',      'CompanyController@index')->name('company');
     Route::get('/contract',      'ContractController@index')->name('contract');
-    Route::get('/order',      'OrderController@index')->name('order');
+    Route::get('/transactions',      'TransactionsController@index')->name('transactions');
     Route::get('/privacy',      'PrivacyController@index')->name('privacy');
     Route::get('/contact',      'ContactController@index')->name('contact');
     Route::post('/contact',      'ContactController@store')->name('contactStore');
@@ -87,6 +88,9 @@ Route::namespace('Front')->group(function() {
         Route::post('/layout/confirm2',      'LayoutController@confirm2');
         Route::post('/layout/complete',      'LayoutController@postComplete');
         Route::post('/layout/getPreSaveDatas', 'LayoutController@getPreSaveDatas');
+
+        Route::post('/order', 'OrderController@index');
+        Route::post('/order/payment', 'OrderController@payment');
 
 
         Route::get('/member', 'MemberController@index')->name('member');

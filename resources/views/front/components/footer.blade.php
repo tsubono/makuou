@@ -50,7 +50,7 @@
                 <dd><a href="{{url('/contract')}}">ご利用規約</a></dd>
                 <dd><a href="{{url('/example')}}">お客様の事例紹介</a></dd>
                 <dd><a href="{{url('/privacy')}}">プライバシーポリシー</a></dd>
-                <dd><a href="{{url('/order')}}">特定取引法に基づく表示</a></dd>
+                <dd><a href="{{url('/transactions')}}">特定取引法に基づく表示</a></dd>
                 <dd><a href="{{url('/contact')}}">お問い合わせ</a></dd>
                 <dd><a href="{{url('')}}">サイトマップ</a></dd>
             </dl>

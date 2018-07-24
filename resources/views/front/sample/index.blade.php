@@ -127,7 +127,6 @@
                                                     @if(old('prefecture') == $index) selected @endif>{{$name}}
                                             </option>
                                         @endforeach
-                                        <option value="48" @if(old('prefecture') == 48) selected @endif>日本国外</option>
                                     </select>
                                     @if($errors->has('prefecture'))
                                         <div>

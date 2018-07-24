@@ -171,7 +171,6 @@ class PriceController extends Controller
         $size_id = $request->get('size_id');
         $ratio_id = $request->get('ratio_id');
         $clothe_id = $request->get('clothe_id');
-        $res = 0;
 
         $price = $this->price->where('size_id', $size_id)->where('ratio_id', $ratio_id)->where('clothe_id', $clothe_id)
             ->first();

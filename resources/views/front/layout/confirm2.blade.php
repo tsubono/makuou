@@ -110,6 +110,15 @@
                                 </dd>
                             </dl>
                             <dl>
+                                <dt>その他オプション</dt>
+                                <dd>
+                                    @foreach ($order_detail['option_ids'] as $option_id)
+                                        <input type="hidden" name="order_detail[option_ids][]" value="{{ $option_id }}">
+                                        {{ \App\Models\Option::where('id', $option_id)->first()->name }}
+                                    @endforeach
+                                </dd>
+                            </dl>
+                            <dl>
                                 <dt>価格</dt>
                                 <dd>
                                     ●●●●円

@@ -169,13 +169,12 @@
                                 <dd class="delivery">
                                     <label class="checkbox-inline">
                                         @foreach (\App\Models\Option::all() as $option)
-
                                             @if ($option->type=="1")
-                                                <input type="checkbox" name="option_ids[]" value="{{ $option->id }}"
+                                                <input type="checkbox" name="order_detail[option_ids][]" value="{{ $option->id }}"
                                                        data-price="{{ $option->price }}"
                                                        checked onclick='return false;'>
                                             @else
-                                                <input type="checkbox" name="option_ids[]" value="{{ $option->id }}"
+                                                <input type="checkbox" name="order_detail[option_ids][]" value="{{ $option->id }}"
                                                        data-price="{{ $option->price }}">
                                             @endif
                                             {{ $option->name }}

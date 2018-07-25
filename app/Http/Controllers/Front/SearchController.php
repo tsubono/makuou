@@ -7,6 +7,8 @@ use App\Models\ProductCategory;
 use App\Models\Ratio;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class SearchController extends Controller
 {
@@ -15,7 +17,7 @@ class SearchController extends Controller
     private $ratio;
 
 
-    public function __construct(Product $product,ProductCategory $productCategory, Ratio $ratio)
+    public function __construct(Product $product, ProductCategory $productCategory, Ratio $ratio)
     {
         $this->product = $product;
         $this->productCategory = $productCategory;
@@ -34,7 +36,8 @@ class SearchController extends Controller
         return view('front.search', $params);
     }
 
-    public function search(Request $request){
+    public function search(Request $request)
+    {
 
         // 検索フォームの値から検索処理
         // ( 比率とカテゴリー )
@@ -42,7 +45,7 @@ class SearchController extends Controller
 
         $sql = "";
         $array = [];
-        for ($i=1; $i<4; $i++) {
+        for ($i = 1; $i < 4; $i++) {
             foreach ($request->get("category_{$i}", []) as $index => $category) {
                 if (empty($sql)) {
                     $sql = "FIND_IN_SET(?, category_{$i})";
@@ -57,7 +60,6 @@ class SearchController extends Controller
         }
 
         $products = $query->get();
-
         $ratio = $request->get('ratio', '');
         if (!empty($ratio)) {
             foreach ($products as $index => $product) {
@@ -68,14 +70,28 @@ class SearchController extends Controller
             }
         }
 
+
+        //お気に入りされているかを確認してproductsと同じ並びで配列に流しこむ
+        $favorites = [];
+        foreach ($products as $product) {
+            $exists = DB::table('favorites')
+                //ゲストの時は-1を代入
+                ->where('user_id', Auth::id())
+                ->where('product_id', $product->id)
+                ->exists();
+            $favorites[] = $exists;
+        }
+
         $params = $this->getParams();
         $params['search'] = $request->all();
         $params['products'] = $products;
+        $params['favorites'] = $favorites;
 
         return view('front.result', $params);
     }
 
-    private function getParams() {
+    private function getParams()
+    {
         // スポーツカテゴリー
         $category_1 = $this->productCategory->where('path', 1)->orderBy('created_at', 'desc')->get();
         // テイストカテゴリー

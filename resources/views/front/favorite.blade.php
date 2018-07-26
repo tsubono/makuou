@@ -28,230 +28,64 @@
                             <h4 class="ttl01 mt25">お気に入りテンプレート</h4>
 
                             <div class="result">
-                                <div class="result__box">
-                                    <div>
-                                        <h2 class="result__title">タイトルが入ります</h2>
-                                        <img class="result__img" src="{{asset("assets/img/banner/banner01.png")}}" alt="">
-                                        <dl class="result__list">
-                                            <dt>スポーツ</dt>
-                                            <dd>
-                                                <ul class="result__tags">
-                                                    <li><a href="">2.野球・ソフトボール</a></li>
-                                                </ul>
-                                            </dd>
-                                        </dl>
-                                        <dl class="result__list">
-                                            <dt>テイスト</dt>
-                                            <dd>
-                                                <ul class="result__tags">
-                                                    <li><a href="">2.熱血</a></li>
-                                                    <li><a href="">3.スポーティー</a></li>
-                                                </ul>
-                                            </dd>
-                                        </dl>
-                                        <dl class="result__list">
-                                            <dt>シーン</dt>
-                                            <dd>
-                                                <ul class="result__tags">
-                                                    <li><a href="">1.スポーツ応援</a></li>
-                                                </ul>
-                                            </dd>
-                                        </dl>
+                                @foreach($products as $product)
+                                    <div class="result__box">
+                                        <div>
+                                            <h2 class="result__title">{{$product['title']}}</h2>
+                                            <a href="{{url('/layout/' . $product['id'])}}">
+                                                <img class="result__img" src="{{asset($product['image'])}}" alt="">
+                                            </a>
+                                            @if(isset($product['category_1']))
+                                                <dl class="result__list">
+                                                    <dt>スポーツ</dt>
+                                                    <dd>
+                                                        <ul class="result__tags">
+                                                            @foreach ($product->getCategories($product->category_1) as $category)
+                                                                <li>
+                                                                    <a href="{{ url('result') }}?category_1[]={{ $category->id }}">{{ $category->name }}</a>
+                                                                </li>
+                                                            @endforeach
+                                                        </ul>
+                                                    </dd>
+                                                </dl>
+                                            @endif
+                                            @if(isset($product['category_2']))
+                                                <dl class="result__list">
+                                                    <dt>テイスト</dt>
+                                                    <dd>
+                                                        <ul class="result__tags">
+                                                            @foreach ($product->getCategories($product->category_2) as $category)
+                                                                <li>
+                                                                    <a href="{{ url('result') }}?category_2[]={{ $category->id }}">{{ $category->name }}</a>
+                                                                </li>
+                                                            @endforeach
+                                                        </ul>
+                                                    </dd>
+                                                </dl>
+                                            @endif
+                                            @if(isset($product['category_3']))
+                                                <dl class="result__list">
+                                                    <dt>シーン</dt>
+                                                    <dd>
+                                                        <ul class="result__tags">
+                                                            @foreach ($product->getCategories($product->category_3) as $category)
+                                                                <li>
+                                                                    <a href="{{ url('result') }}?category_3[]={{ $category->id }}">{{ $category->name }}</a>
+                                                                </li>
+                                                            @endforeach
+                                                        </ul>
+                                                    </dd>
+                                                </dl>
+                                            @endif
+                                        </div>
+                                        <div class="result__fav del">
+                                            <a href="{{url('/deleteFavorite?productId=' . $product['id'])}}">
+                                                <img src="{{asset("assets/img/common/ico_fav.png")}}"
+                                                     alt="">お気に入りから削除する
+                                            </a>
+                                        </div>
                                     </div>
-                                    <div class="result__fav del">
-                                        <a href="#dummy">
-                                            <img src="{{asset("assets/img/common/ico_fav.png")}}"
-                                                    alt="">お気に入りから削除する
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- .result__box -->
-                                <div class="result__box">
-                                    <div>
-                                        <h2 class="result__title">タイトルが入ります</h2>
-                                        <img class="result__img" src="{{asset("assets/img/banner/banner02.png")}}" alt="">
-                                        <dl class="result__list">
-                                            <dt>テイスト</dt>
-                                            <dd>
-                                                <ul class="result__tags">
-                                                    <li>
-                                                        <a href="">2.熱血</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">5.インパクト</a>
-                                                    </li>
-                                                </ul>
-                                            </dd>
-                                        </dl>
-                                        <dl class="result__list">
-                                            <dt>シーン</dt>
-                                            <dd>
-                                                <ul class="result__tags">
-                                                    <li>
-                                                        <a href="">3.学校行事</a>
-                                                    </li>
-                                                </ul>
-                                            </dd>
-                                        </dl>
-                                    </div>
-                                    <div class="result__fav del">
-                                        <a href="#dummy">
-                                            <img src="{{asset("assets/img/common/ico_fav.png")}}"
-                                                 alt="">お気に入りから削除する
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- .result__box -->
-                                <div class="result__box">
-                                    <div>
-                                        <h2 class="result__title">タイトルが入ります</h2>
-                                        <img class="result__img" src="{{asset("assets/img/banner/banner03.png")}}" alt="">
-                                        <dl class="result__list">
-                                            <dt>スポーツ</dt>
-                                            <dd>
-                                                <ul class="result__tags">
-                                                    <li><a href="">1.サッカー・フットサル</a></li>
-                                                </ul>
-                                            </dd>
-                                        </dl>
-                                        <dl class="result__list">
-                                            <dt>テイスト</dt>
-                                            <dd>
-                                                <ul class="result__tags">
-                                                    <li><a href="">2.熱血</a></li>
-                                                    <li><a href="">3.スポーティー</a></li>
-                                                </ul>
-                                            </dd>
-                                        </dl>
-                                        <dl class="result__list">
-                                            <dt>シーン</dt>
-                                            <dd>
-                                                <ul class="result__tags">
-                                                    <li><a href="">1.スポーツ応援</a></li>
-                                                </ul>
-                                            </dd>
-                                        </dl>
-                                    </div>
-                                    <div class="result__fav del">
-                                        <a href="#dummy">
-                                            <img src="{{asset("assets/img/common/ico_fav.png")}}"
-                                                 alt="">お気に入りから削除する
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- .result__box -->
-                                <div class="result__box">
-                                    <div>
-                                        <h2 class="result__title">タイトルが入ります</h2>
-                                        <img class="result__img" src="{{asset("assets/img/banner/banner01.png")}}" alt="">
-                                        <dl class="result__list">
-                                            <dt>スポーツ</dt>
-                                            <dd>
-                                                <ul class="result__tags">
-                                                    <li><a href="">2.野球・ソフトボール</a></li>
-                                                </ul>
-                                            </dd>
-                                        </dl>
-                                        <dl class="result__list">
-                                            <dt>テイスト</dt>
-                                            <dd>
-                                                <ul class="result__tags">
-                                                    <li><a href="">2.熱血</a></li>
-                                                    <li><a href="">3.スポーティー</a></li>
-                                                </ul>
-                                            </dd>
-                                        </dl>
-                                        <dl class="result__list">
-                                            <dt>シーン</dt>
-                                            <dd>
-                                                <ul class="result__tags">
-                                                    <li><a href="">1.スポーツ応援</a></li>
-                                                </ul>
-                                            </dd>
-                                        </dl>
-                                    </div>
-                                    <div class="result__fav del">
-                                        <a href="#dummy">
-                                            <img src="{{asset("assets/img/common/ico_fav.png")}}"
-                                                 alt="">お気に入りから削除する
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- .result__box -->
-                                <div class="result__box">
-                                    <div>
-                                        <h2 class="result__title">タイトルが入ります</h2>
-                                        <img class="result__img" src="{{asset("assets/img/banner/banner02.png")}}" alt="">
-                                        <dl class="result__list">
-                                            <dt>テイスト</dt>
-                                            <dd>
-                                                <ul class="result__tags">
-                                                    <li>
-                                                        <a href="">2.熱血</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">5.インパクト</a>
-                                                    </li>
-                                                </ul>
-                                            </dd>
-                                        </dl>
-                                        <dl class="result__list">
-                                            <dt>シーン</dt>
-                                            <dd>
-                                                <ul class="result__tags">
-                                                    <li>
-                                                        <a href="">3.学校行事</a>
-                                                    </li>
-                                                </ul>
-                                            </dd>
-                                        </dl>
-                                    </div>
-                                    <div class="result__fav del">
-                                        <a href="#dummy">
-                                            <img src="{{asset("assets/img/common/ico_fav.png")}}"
-                                                 alt="">お気に入りから削除する
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- .result__box -->
-                                <div class="result__box">
-                                    <div>
-                                        <h2 class="result__title">タイトルが入ります</h2>
-                                        <img class="result__img" src="{{asset("assets/img/banner/banner03.png")}}" alt="">
-                                        <dl class="result__list">
-                                            <dt>スポーツ</dt>
-                                            <dd>
-                                                <ul class="result__tags">
-                                                    <li><a href="">1.サッカー・フットサル</a></li>
-                                                </ul>
-                                            </dd>
-                                        </dl>
-                                        <dl class="result__list">
-                                            <dt>テイスト</dt>
-                                            <dd>
-                                                <ul class="result__tags">
-                                                    <li><a href="">2.熱血</a></li>
-                                                    <li><a href="">3.スポーティー</a></li>
-                                                </ul>
-                                            </dd>
-                                        </dl>
-                                        <dl class="result__list">
-                                            <dt>シーン</dt>
-                                            <dd>
-                                                <ul class="result__tags">
-                                                    <li><a href="">1.スポーツ応援</a></li>
-                                                </ul>
-                                            </dd>
-                                        </dl>
-                                    </div>
-                                    <div class="result__fav del">
-                                        <a href="#dummy">
-                                            <img src="{{asset("assets/img/common/ico_fav.png")}}"
-                                                 alt="">お気に入りから削除する
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- .result__box -->
+                                @endforeach
                             </div>
                         </div>
                         <!--/.main_blockr -->

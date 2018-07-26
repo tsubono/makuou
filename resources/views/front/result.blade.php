@@ -69,10 +69,17 @@
                                 </dl>
                             </div>
                             <div class="result__fav">
-                                <a href="#dummy">
-                                    <img src="{{asset("assets/img/common/ico_fav.png")}}" alt="">
-                                    お気に入りに登録する
-                                </a>
+                                @if($favorites[$loop->index])
+                                    <a href="/cancelFavorite?productId={{$product->id}}&@foreach($search as $key => $param){{$key}}=@if(is_array($param))@foreach($param as $data){{$data . ','}}@endforeach&@else{{$param}}&@endif @endforeach">
+                                        <img src="{{asset("assets/img/common/ico_fav.png")}}" alt="">
+                                        お気に入りに登録済み
+                                    </a>
+                                @else($favorites[$loop->index])
+                                    <a href="/addFavorite?productId={{$product->id}}&@foreach($search as $key => $param){{$key}}=@if(is_array($param))@foreach($param as $data){{$data . ','}}@endforeach&@else{{$param}}&@endif @endforeach">
+                                        <img src="{{asset("assets/img/common/ico_fav.png")}}" alt="">
+                                        お気に入りに登録する
+                                    </a>
+                                @endif
                             </div>
                         </div>
                 @endforeach

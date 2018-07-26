@@ -103,6 +103,9 @@ Route::namespace('Front')->group(function() {
         Route::post('/cancel/complete', 'CancelController@complete')->name('cancelComplete');
         Route::get('/save', 'SaveController@index')->name('save');
         Route::get('/favorite', 'FavoriteController@index')->name('favorite');
+        Route::get('/addFavorite', 'FavoriteController@addFavorite')->name('addFavorite');
+        Route::get('/cancelFavorite', 'FavoriteController@cancelFavorite')->name('cancelFavorite');
+        Route::get('/deleteFavorite', 'FavoriteController@delete')->name('deleteFavorite');
 
         Route::get('/logout',   'LoginController@logout');
         Route::post('/logout',   'LoginController@logout')->name('logout');

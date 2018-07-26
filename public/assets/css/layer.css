@@ -1477,6 +1477,20 @@ p.txt {
     opacity: .7;
 }
 .settlement .main__title img { max-width: 148px; }
+.settlement .form_template .sendarea.row { 
+    margin-top: 30px;
+    display: flex; 
+    justify-content: space-between;
+}
+.settlement .form_template .sendarea.row li { 
+    width: 33%;
+    max-width: 360px;
+    margin: 0;
+}
+.settlement .form_template .row input[type="submit"] { font-size: 1rem; }
+.settlement .form_template .sendarea.complete li { 
+    max-width: 360px;
+}
 
 
 @media screen and (min-width: 768px) and (max-width: 1119px) {
@@ -1513,6 +1527,15 @@ p.txt {
 	.size_img150 { flex: 1; margin-left: 20px; }
 	.size_img180 { flex: 1; margin-right: 20px; }
 	.size_text { flex: 1; }
+    	
+	/* settlement
+	------------------------------------------------------------ */	
+    .settlement .form_template .sendarea { display: block; }
+    .settlement .form_template .sendarea li { 
+        width: 100%;
+        max-width: none;
+        margin: 10px auto 0;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -1792,4 +1815,13 @@ p.txt {
     }
     .password dl { width: 100%; }
 	
+	/* settlement
+	------------------------------------------------------------ */	
+    .settlement .form_template .sendarea.row { display: block; }
+    .settlement .form_template .sendarea.row li { 
+        width: 100%;
+        max-width: none;
+        margin: 10px auto 0;
+    }
+    .settlement .form_template .row input[type="submit"] { font-size: .875rem; }
 }

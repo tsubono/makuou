@@ -48,6 +48,8 @@ class OrderController extends Controller
      */
     public function payment(Request $request)
     {
+        // 受注テーブル更新
+
         $user = $request->input('user');
         $order = $request->input('order');
         $order_details = $request->input('order_details');
@@ -65,6 +67,10 @@ class OrderController extends Controller
         // 更新処理
         // $this->orderService->create($user, $order, $order_details, $order_shipping_address);
         return view('front.order.payment', compact('order', 'order_detail', 'user'));
+    }
+
+    public function complete() {
+        return view('front.order.complete');
     }
 
     /**

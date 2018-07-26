@@ -27,14 +27,12 @@
                     <li><a href="/">HOME</a></li>
                     <li>ご注文情報</li>
                 </ul>
-                <h2 class="ttl01">このまま決済情報のご入力へお進みください。</h2>
+                <h2 class="ttl01">決済完了</h2>
                 <div class="settlement__wrap">
                     <form class="form_template">
-                        <p class="txt_c">クレジットカード決済には、株式会社ユニヴァ・ペイキャストの決済代行サービスを使用しています。<br>決済情報はSSL で暗号化され、安全性を確保しております。</p>
-                        <ul class="sendarea row type_css">
-                            <li><input name="submit" value="クレジットカード決済をお選びの方" class="btn_css_check" type="submit"></li>
-                            <li><input name="submit" value="代金引換をお選びの方" class="btn_css_check" type="submit"></li>
-                            <li><input name="submit" value="コンビニ決済をお選びの方" class="btn_css_check" type="submit"></li>
+                        <p class="txt_c">この度は幕王よりご注文いただきありがとうございます。<br>ご注文内容を確認し、担当者よりご連絡させていただきます。<br>今しばらくお待ちくださいませ。</p>
+                        <ul class="sendarea complete type_css">
+                            <li><input name="submit" value="マイページトップへもどる" class="btn_css_check" type="submit"></li>
                         </ul>
                     </form>
                 </div>

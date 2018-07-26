@@ -91,6 +91,7 @@ Route::namespace('Front')->group(function() {
 
         Route::post('/order', 'OrderController@index');
         Route::post('/order/payment', 'OrderController@payment');
+        Route::get('/order/complete', 'OrderController@complete');
 
 
         Route::get('/member', 'MemberController@index')->name('member');

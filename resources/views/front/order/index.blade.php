@@ -67,8 +67,6 @@
                             <input type="hidden" name="order_detail[designed_image]" value="{{ $order_detail['designed_image'] }}">
                             <input type="hidden" name="order_detail[design_name]" value="{{ $order_detail['design_name'] }}">
                             <input type="hidden" name="order_detail[note]" value="{{ $order_detail['note'] }}">
-                            <input type="hidden" name="order_detail[size_id]" value="{{ $order_detail['size_id'] }}">
-                            <input type="hidden" name="order_detail[clothe_id]" value="{{ $order_detail['clothe_id'] }}">
                             <input type="hidden" name="order_detail[hatome]" value="{{ $order_detail['hatome'] }}">
                             <input type="hidden" name="order_detail[lope_flg]" value="{{ !empty($order_detail['lope_flg']) ? $order_detail['lope_flg'] : '' }}">
                             <input type="hidden" name="order_detail[lope_1]" value="{{ !empty($order_detail['lope_1']) ? $order_detail['lope_1'] : '' }}">

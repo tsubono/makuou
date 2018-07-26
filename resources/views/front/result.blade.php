@@ -31,42 +31,48 @@
                                          alt="{{ $product->title }}">
                                 </a>
 
-                                <dl class="result__list">
-                                    <dt>スポーツ</dt>
-                                    <dd>
-                                        <ul class="result__tags">
-                                            @foreach ($product->getCategories($product->category_1) as $category)
-                                                <li>
-                                                    <a href="{{ url('result') }}?category_1[]={{ $category->id }}">{{ $category->name }}</a>
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                    </dd>
-                                </dl>
-                                <dl class="result__list">
-                                    <dt>テイスト</dt>
-                                    <dd>
-                                        <ul class="result__tags">
-                                            @foreach ($product->getCategories($product->category_2) as $category)
-                                                <li>
-                                                    <a href="{{ url('result') }}?category_2[]={{ $category->id }}">{{ $category->name }}</a>
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                    </dd>
-                                </dl>
-                                <dl class="result__list">
-                                    <dt>シーン</dt>
-                                    <dd>
-                                        <ul class="result__tags">
-                                            @foreach ($product->getCategories($product->category_3) as $category)
-                                                <li>
-                                                    <a href="{{ url('result') }}?category_3[]={{ $category->id }}">{{ $category->name }}</a>
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                    </dd>
-                                </dl>
+                                @if(isset($product['category_1']))
+                                    <dl class="result__list">
+                                        <dt>スポーツ</dt>
+                                        <dd>
+                                            <ul class="result__tags">
+                                                @foreach ($product->getCategories($product->category_1) as $category)
+                                                    <li>
+                                                        <a href="{{ url('result') }}?category_1[]={{ $category->id }}">{{ $category->name }}</a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </dd>
+                                    </dl>
+                                @endif
+                                @if(isset($product['category_2']))
+                                    <dl class="result__list">
+                                        <dt>テイスト</dt>
+                                        <dd>
+                                            <ul class="result__tags">
+                                                @foreach ($product->getCategories($product->category_2) as $category)
+                                                    <li>
+                                                        <a href="{{ url('result') }}?category_2[]={{ $category->id }}">{{ $category->name }}</a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </dd>
+                                    </dl>
+                                @endif
+                                @if(isset($product['category_3']))
+                                    <dl class="result__list">
+                                        <dt>シーン</dt>
+                                        <dd>
+                                            <ul class="result__tags">
+                                                @foreach ($product->getCategories($product->category_3) as $category)
+                                                    <li>
+                                                        <a href="{{ url('result') }}?category_3[]={{ $category->id }}">{{ $category->name }}</a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </dd>
+                                    </dl>
+                                @endif
                             </div>
                             <div class="result__fav">
                                 @if($favorites[$loop->index])

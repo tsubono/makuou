@@ -74,9 +74,11 @@
                             <input type="hidden" name="order_detail[pole_flg]" value="{{ !empty($order_detail['pole_flg']) ? $order_detail['pole_flg'] : '' }}">
                             <input type="hidden" name="order_detail[pole]" value="{{ !empty($order_detail['pole']) ? $order_detail['pole'] : '' }}">
                             <input type="hidden" name="order_detail[nouki_id]" value="{{ $order_detail['nouki_id'] }}">
-                            @foreach ($order_detail['option_ids'] as $option_id)
-                                <input type="hidden" name="order_detail[option_ids][]" value="{{ $option_id }}">
-                            @endforeach
+                            @if (!empty($order_detail['option_ids']))
+                                @foreach ($order_detail['option_ids'] as $option_id)
+                                    <input type="hidden" name="order_detail[option_ids][]" value="{{ $option_id }}">
+                                @endforeach
+                            @endif
 
                             <input type="hidden" name="order[sub_total]" value="{{ $order['sub_total'] }}">
                             <input type="hidden" name="order[total]" value="{{ $order['total'] }}">

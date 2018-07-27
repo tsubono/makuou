@@ -102,6 +102,10 @@
             });
         }
 
+        // 個数変更時
+        $('[name="order_detail[quantity]"]').change (function() {
+            updateTotal();
+        });
 
         // 合計金額
         function updateTotal() {
@@ -166,7 +170,6 @@
 
                         <input type="hidden" name="order[sub_total]" value="">
                         <input type="hidden" name="order[total]" value="">
-                        <input type="hidden" name="order[payment_total]" value="">
 
                         <input type="hidden" name="order_detail[ratio_id]" value="{{ $order_detail['ratio_id'] }}">
                         <input type="hidden" name="order_detail[price]" value="">
@@ -298,6 +301,14 @@
                                 <dd>
                                     <label>
                                         <input type="number" name="order_detail[quantity]" value="1" reaquired>
+                                    </label>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>合計金額</dt>
+                                <dd>
+                                    <label>
+                                        <input type="text" name="order[payment_total]" value="" readonly>
                                     </label>
                                 </dd>
                             </dl>

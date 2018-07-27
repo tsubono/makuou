@@ -28,7 +28,6 @@ class OrderService
      * 受注作成
      */
     public function create($form_user, $form_order, $form_order_details, $form_order_shipping_address) {
-
         $form_user = $this->getFormatDataForDB($form_user);
         $form_order_shipping_address = $this->getFormatDataForDB($form_order_shipping_address);
         $form_order = $this->getOrderDataForDB($form_order);
@@ -44,7 +43,6 @@ class OrderService
 
         // 受注配送先情報更新
         $order_shipping_address = $this->orderShippingAddress->create($form_order_shipping_address);
-
         // 受注情報更新
         $form_order['user_id'] = $user->id;
         $form_order['order_shipping_address_id'] = $order_shipping_address->id;
@@ -266,9 +264,13 @@ class OrderService
     public function getFormatDataForDB($data)
     {
         // 郵便番号
-        $data["zip_code"] = $data["zip01"] . "-" . $data["zip02"];
+        if (!empty($data["zip01"]) && !empty($data["zip02"])) {
+            $data["zip_code"] = $data["zip01"] . "-" . $data["zip02"];
+        }
         // 電話番号
-        $data["tel"] = $data["tel01"] . "-" . $data["tel02"] . "-" . $data["tel03"];
+        if (!empty($data["tel01"]) && !empty($data["tel02"]) && !empty($data["tel03"])) {
+            $data["tel"] = $data["tel01"] . "-" . $data["tel02"] . "-" . $data["tel03"];
+        }
         // fax番号
         if (!empty($data["fax01"]) && !empty($data["fax02"]) && !empty($data["fax03"])) {
             $data["fax"] = $data["fax01"] . "-" . $data["fax02"] . "-" . $data["fax03"];

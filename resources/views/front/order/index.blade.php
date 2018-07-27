@@ -57,7 +57,7 @@
                     </ul>
                     <h4 class="ttl01">ご注文情報</h4>
                     <div class="settlement__wrap">
-                        <form method="post" action="{{ url('/order/payment') }}" class="form_template" id="form1">
+                        <form method="post" action="{{ url('/order/confirm') }}" class="form_template" id="form1">
                             @csrf
                             <input type="hidden" name="order[user_id]" value="{{ $order['user_id'] }}">
                             <input type="hidden" name="order_detail[product_id]" value="{{ $order_detail['product_id'] }}">
@@ -80,7 +80,6 @@
 
                             <input type="hidden" name="order[sub_total]" value="{{ $order['sub_total'] }}">
                             <input type="hidden" name="order[total]" value="{{ $order['total'] }}">
-                            <input type="hidden" name="order[payment_total]" value="{{ $order['payment_total'] }}">
 
                             <input type="hidden" name="order_detail[ratio_id]" value="{{ $order_detail['ratio_id'] }}">
                             <input type="hidden" name="order_detail[price]" value="{{ $order_detail['price'] }}">
@@ -88,6 +87,7 @@
                             <input type="hidden" name="order_detail[option_price]" value="{{ $order_detail['option_price'] }}">
                             <input type="hidden" name="order_detail[tax_rate]" value="{{ $order_detail['tax_rate'] }}">
                             <input type="hidden" name="order_detail[sub_total]" value="{{ $order_detail['sub_total'] }}">
+                            <input type="hidden" name="order_detail[quantity]" value="{{ $order_detail['quantity'] }}">
 
                             <h5 class="ttl02">会員情報（注文者）</h5>
                             <div class="form__bd">
@@ -96,6 +96,7 @@
                                     <dd>
                                         <input type="text" name="name" value="{{ old('name', $user['name']) }}" readonly>
 
+                                        <input type="hidden" name="user[id]" value="{{ $user['id'] }}">
                                         <input type="hidden" name="user[name]" value="{{ $user['name'] }}">
                                         <input type="hidden" name="user[name_kana]" value="{{ $user['name_kana'] }}">
                                         <input type="hidden" name="user[company_name]" value="{{ $user['company_name'] }}">
@@ -206,7 +207,7 @@
                                 <dl>
                                     <dt>お支払い方法</dt>
                                     <dd>
-                                        <select class="order_pay" name="order[payment_id]">
+                                        <select class="order_pay" name="order[payment_id]" required>
                                             <option value=""></option>
                                             @foreach(\App\Models\Payment::all() as $payment)
                                                 <option value="{{ $payment->id }}" {{ old('order.payment_id') ==  $payment->id ? "selected" : ""}}>{{ $payment->name }}</option>
@@ -221,7 +222,7 @@
                                 <dl>
                                     <dt>合計金額（税込）</dt>
                                     <dd>
-                                        <input type="text" class="order_total" name="order[payment_total]" value="" readonly>
+                                        <input type="text" class="order_total" name="order[payment_total]" value="{{ $order['payment_total'] }}" readonly>
                                     </dd>
                                 </dl>
                             </div>

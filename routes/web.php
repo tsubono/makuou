@@ -90,6 +90,7 @@ Route::namespace('Front')->group(function() {
         Route::post('/layout/getPreSaveDatas', 'LayoutController@getPreSaveDatas');
 
         Route::post('/order', 'OrderController@index');
+        Route::post('/order/confirm', 'OrderController@confirm');
         Route::post('/order/payment', 'OrderController@payment');
         Route::get('/order/complete', 'OrderController@complete');
 

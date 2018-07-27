@@ -68,7 +68,7 @@
                             <dl>
                                 <dt>備考欄</dt>
                                 <dd>
-                                    {{ $order_detail['note'] }}
+                                    {!! nl2br(e( $order_detail['note'] )) !!}
                                     <input type="hidden" name="order_detail[note]" value="{{ $order_detail['note'] }}">
                                 </dd>
                             </dl>
@@ -106,7 +106,7 @@
                             <dl>
                                 <dt>付属品（ロープ）</dt>
                                 <dd>
-                                    @if (!empty($order_detail['lope_flg'])))
+                                    @if (!empty($order_detail['lope_flg']))
                                         {{ !empty($order_detail['lope_1']) ? $order_detail['lope_1']. 'm': ''}}
                                         ×
                                         {{ !empty($order_detail['lope_2']) ? $order_detail['lope_2']. '本': ''}}
@@ -119,7 +119,7 @@
                             <dl>
                                 <dt>付属品（旗用ポール）</dt>
                                 <dd>
-                                    @if (!empty($order_detail['pole_flg'])))
+                                    @if (!empty($order_detail['pole_flg']))
                                         {{ !empty($order_detail['pole']) ? $order_detail['pole'] : '' }}
                                     @endif
                                     <input type="hidden" name="order_detail[pole_flg]" value="{{ !empty($order_detail['pole_flg']) ? $order_detail['pole_flg'] : '' }}">
@@ -143,9 +143,16 @@
                                 </dd>
                             </dl>
                             <dl>
+                                <dt>個数</dt>
+                                <dd>
+                                    {{ number_format($order_detail['quantity']) }}
+                                    <input type="hidden" name="order_detail[quantity]" value="{{ $order_detail['quantity'] }}">
+                                </dd>
+                            </dl>
+                            <dl>
                                 <dt>価格</dt>
                                 <dd>
-                                    {{ $order['payment_total'] }}円
+                                    {{ number_format($order['payment_total']) }}円
                                 </dd>
                             </dl>
                         </div>

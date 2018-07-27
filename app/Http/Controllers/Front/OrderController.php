@@ -41,20 +41,17 @@ class OrderController extends Controller
     }
 
     /**
-     * 決済
+     * 受注情報確認画面
      *
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function payment(Request $request)
-    {
-        // 受注テーブル更新
+    public function confirm(Request $request) {
 
         $user = $request->input('user');
         $order = $request->input('order');
-        $order_details = $request->input('order_details');
+        $order_detail = $request->input('order_detail');
         $order_shipping_address = $request->input('order_shipping_address');
-
 
         // 受注配送先情報バリデーション
         $validator = Validator::make($order_shipping_address, $this->getOrderShippingAddressRules(), $this->getOrderShippingAddressMessages());
@@ -64,8 +61,27 @@ class OrderController extends Controller
                 ->withInput();
         }
 
+        return view('front.order.confirm', compact('order', 'order_detail', 'order_shipping_address', 'user'));
+    }
+
+    /**
+     * 決済
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function payment(Request $request)
+    {
+        $user = $request->input('user');
+        $order = $request->input('order');
+        $order_detail = $request->input('order_detail');
+        $order_shipping_address = $request->input('order_shipping_address');
+        $order_details = [];
+        $order_details[] = $order_detail;
+
         // 更新処理
-        // $this->orderService->create($user, $order, $order_details, $order_shipping_address);
+        $this->orderService->create($user, $order, $order_details, $order_shipping_address);
+
         return view('front.order.payment', compact('order', 'order_detail', 'user'));
     }
 

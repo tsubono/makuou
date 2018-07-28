@@ -17,18 +17,17 @@ use PHPExcel_Writer_Excel2007;
 class PrintReceiptService
 {
 
-    //$reは設定せずに利用してください。
     public function printReceipt(
         string $file,
         Order $order,
         float $tax,
-        string $type = '領収書',
+        string $type = '納品書',
         int $re = 0)
     {
         $orderDetails = $order->order_details;
         $reader = new PHPExcel_Reader_Excel2007();
         try {
-            $layout = '領収書レイアウト_幕王.xlsx';
+            $layout = '納品書レイアウト_幕王.xlsx';
             if ($type === '納品書'){
                 $layout = '納品書レイアウト_幕王.xlsx';
             }else if ($type === '請求書'){

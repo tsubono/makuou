@@ -21,14 +21,14 @@ class PrintReceiptService
         string $file,
         Order $order,
         float $tax,
-        string $type = '納品書',
+        string $type = '領収書',
         int $re = 0)
     {
         $orderDetails = $order->order_details;
         $reader = new PHPExcel_Reader_Excel2007();
         try {
             $layout = '納品書レイアウト_幕王.xlsx';
-            if ($type === '納品書'){
+            if ($type === '領収書'){
                 $layout = '納品書レイアウト_幕王.xlsx';
             }else if ($type === '請求書'){
                 $layout = '請求書レイアウト_幕王.xlsx';

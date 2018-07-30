@@ -55,7 +55,7 @@ angular.module('productApp', [
          * スタンプ追加
          */
         $scope.addShape = function (path) {
-            $scope.fabric.addShape(path, false);
+            $scope.fabric.addShape(jQuery('[name=asset]').val()+path, false);
 
             $timeout(function () {
                 $scope.deactivateAll();

@@ -333,8 +333,8 @@ angular.module('common.fabric', [
 
                     object.originalScaleX = object.scaleX;
                     object.originalScaleY = object.scaleY;
-                    object.originalLeft = object.left;
-                    object.originalTop = object.top;
+                    object.originalLeft = 0;
+                    object.originalTop = 0;
 
                     canvas.add(object);
                     self.setObjectZoom(object);

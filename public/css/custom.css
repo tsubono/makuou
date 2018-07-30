@@ -63,7 +63,7 @@ li {
     margin-top: 16px;
 }
 .box .with-border {
-    border-top: 1px solid #D1D8D9;
+    /*border-top: 1px solid #D1D8D9;*/
 }
 #aside_column .submit_box .radio-inline {
     padding-left: 0px;

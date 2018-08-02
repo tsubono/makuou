@@ -37,7 +37,7 @@
 
             var id = "{{ $product->id }}";
 
-            $('#productApp').scope().initFabric("{{ $product->ratio->width * 600 }}", "{{ $product->ratio->height * 600 }}");
+            $('#productApp').scope().initFabric("{{ $product->ratio->width * 170.079 }}", 170.079);
             $('#productApp').scope().loadProduct("{{ $product->title }}", "{{ $product->image }}", id, 0);
 
             setTimeout(function () {

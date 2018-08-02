@@ -614,6 +614,7 @@ angular.module('productApp', [
          * デザイン初期化
          */
         $scope.initFabric = function (width, height) {
+
             $scope.fabric = new Fabric({
                 JSONExportProperties: FabricConstants.JSONExportProperties,
                 textDefaults: FabricConstants.textDefaults,
@@ -621,12 +622,12 @@ angular.module('productApp', [
                 curvedTextDefaults: FabricConstants.curvedTextDefaults,
                 imageDefaults: FabricConstants.imageDefaults,
                 imageFilters: FabricConstants.imageFilters,
-                // json: {"width": 680.315, "height": 170.079}
-                json: {"width": 687.118, "height": 176.882}
+                json: {"width": width, "height": height}
+                // json: {"width": 687.118, "height": 176.882}
             });
 
-            jQuery('.canvas-container-outer').css('width', "680.315px");
-            jQuery('.canvas-container-outer').css('height', "170.079px");
+            jQuery('.canvas-container-outer').css('width', width);
+            jQuery('.canvas-container-outer').css('height', height);
         };
 
         /*

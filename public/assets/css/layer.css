@@ -446,6 +446,38 @@ p.txt {
 	padding: 15px;
 	font-size: 120%;
 }
+
+.confirm_wrapper {
+	margin: 0 auto;
+	text-align: center;
+}
+.form_template .btn_css_check {
+	width: 30%;
+	border: none;
+	border-bottom: solid 2px #ca5a2d;
+	border-radius: 3px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fc6c35+0,f7280d+46,f7240b+47,f30a01+50,fb5b2a+100 */
+	background: rgb(252,108,53); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(252,108,53,1) 0%, rgba(247,40,13,1) 46%, rgba(247,36,11,1) 47%, rgba(243,10,1,1) 50%, rgba(251,91,42,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(252,108,53,1) 0%,rgba(247,40,13,1) 46%,rgba(247,36,11,1) 47%,rgba(243,10,1,1) 50%,rgba(251,91,42,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc6c35', endColorstr='#fb5b2a',GradientType=0 ); /* IE6-9 */
+	color: #fff;
+	padding: 15px;
+	font-size: 120%;
+
+}
+.form_template .back_btn {
+	width: 30%;
+	border: none;
+	padding: 15px;
+	font-size: 120%;
+	background: gainsboro;
+}
+.form_template .btn_css_check:hover,
+.form_template .back_btn:hover
+{ opacity: 0.8; }
+
 .form_template .sendarea li{ max-width: 200px; margin: 30px auto; }
 .form_template .sendarea li:hover{ opacity: 0.8; }
 .form_template dd input[type="text"],

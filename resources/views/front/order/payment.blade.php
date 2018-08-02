@@ -23,7 +23,7 @@
                             <p class="txt_c">クレジットカード決済には、株式会社ユニヴァ・ペイキャストの決済代行サービスを使用しています。<br>決済情報はSSL で暗号化され、安全性を確保しております。</p>
                             <ul class="sendarea row type_css">
                                 <li><input name="submit" value="クレジットカード決済をお選びの方" class="btn_css_check" type="submit"></li>
-                                <li><input name="submit" value="代金引換をお選びの方" class="btn_css_check" type="submit"></li>
+                                <li><input name="submit" value="銀行振込をお選びの方" class="btn_css_check" type="submit"></li>
                                 <li><input name="submit" value="コンビニ決済をお選びの方" class="btn_css_check" type="submit"></li>
                             </ul>
                         </form>

@@ -135,7 +135,7 @@
                         <div class="confirm_sendarea type_css">
                             <div class="confirm_wrapper">
                                 <button name="submit" value="0" class="back_btn">前に戻る</button>
-                                <button name="submit" value="1" class="btn_css_check">送信する</button>
+                                <button name="submit" value="1" class="btn_css_check">登録する</button>
                             </div>
                         </div>
                     </form>

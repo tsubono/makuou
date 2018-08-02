@@ -115,11 +115,14 @@ class PrintReceiptService
             $sheet->setCellValue('C34', $order->note);
 
             $writer = new PHPExcel_Writer_Excel2007($book);
-            $writer->save(
-                substr($file, 0, strlen($file) - 5) .
-                '_' . $re . substr($file, strlen($file) - 5, strlen($file)));
 
-            return true;
+            $path = substr($file, 0, strlen($file) - 5) .
+                '_' . $re . substr($file, strlen($file) - 5, strlen($file));
+
+            $writer->save($path);
+
+            return $path;
+
         } catch (PHPExcel_Exception $e) {
             return false;
         }

@@ -42,9 +42,6 @@
                                 @endforeach
                             @endif
 
-                            <input type="hidden" name="order[sub_total]" value="{{ $order['sub_total'] }}">
-                            <input type="hidden" name="order[total]" value="{{ $order['total'] }}">
-
                             <input type="hidden" name="order_detail[ratio_id]" value="{{ $order_detail['ratio_id'] }}">
                             <input type="hidden" name="order_detail[price]" value="{{ $order_detail['price'] }}">
                             <input type="hidden" name="order_detail[price_id]" value="{{ $order_detail['price_id'] }}">
@@ -99,7 +96,7 @@
                                 <dl class="innerlist_address add02">
                                     <dt><span>必須</span>都道府県</dt>
                                     <dd>
-                                        {{ config('const.pref')[$order_shipping_address['pref_id']] }}
+                                        {{ config('pref')[$order_shipping_address['pref_id']] }}
                                         <input type="hidden" name="order_shipping_address[pref_id]" value="{{ $order_shipping_address['pref_id'] }}">
                                     </dd>
                                 </dl>
@@ -150,10 +147,24 @@
                             <h5 class="ttl02">料金</h5>
                             <div class="form__bd">
                                 <dl>
+                                    <dt>小計金額（税込）</dt>
+                                    <dd>
+                                        {{ number_format($order['sub_total']) }}円
+                                        <input type="hidden" name="order[sub_total]" value="{{ $order['sub_total'] }}">
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>手数料</dt>
+                                    <dd>
+                                        {{ number_format($order['fee']) }}円
+                                        <input type="hidden" name="order[fee]" value="{{ $order['fee'] }}">
+                                    </dd>
+                                </dl>
+                                <dl>
                                     <dt>合計金額（税込）</dt>
                                     <dd>
-                                        {{ number_format($order['payment_total']) }}円
-                                        <input type="hidden" name="order[payment_total]" value="{{ $order['payment_total'] }}">
+                                        {{ number_format($order['total']) }}円
+                                        <input type="hidden" name="order[total]" value="{{ $order['total'] }}">
                                     </dd>
                                 </dl>
                             </div>

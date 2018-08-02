@@ -9,6 +9,7 @@ use App\Services\OrderService;
 use App\Services\PrintReceiptService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 
 class OrderedController extends Controller
 {
@@ -31,16 +32,19 @@ class OrderedController extends Controller
     }
 
     public function download(Request $request) {
-
         $order = $this->order->findOrFail($request->input('id'));
-        $type = $this->order->findOrFail($request->input('type'));
+        $type = $request->input('type');
 
-        $this->printReceiptService->printReceipt('./sample.xlsx', $order, 0.08, $type);
+        $path = $this->printReceiptService->printReceipt('./tmp/sample.xlsx', $order, 0.08, $type);
+
+        $headers = ['Content-Type' => 'application/vnd.ms-excel'];
+        return Response::download($path , basename($path), $headers);
     }
 
     public function reorder(Request $request) {
 
         $order = $this->order->findOrFail($request->input('id'));
+
 
     }
 }

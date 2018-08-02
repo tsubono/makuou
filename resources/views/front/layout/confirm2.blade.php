@@ -39,7 +39,6 @@
 
                         <input type="hidden" name="order[sub_total]" value="{{ $order['sub_total'] }}">
                         <input type="hidden" name="order[total]" value="{{ $order['total'] }}">
-                        <input type="hidden" name="order[payment_total]" value="{{ $order['payment_total'] }}">
 
                         <input type="hidden" name="order_detail[ratio_id]" value="{{ $order_detail['ratio_id'] }}">
                         <input type="hidden" name="order_detail[price]" value="{{ $order_detail['price'] }}">
@@ -154,7 +153,7 @@
                             <dl>
                                 <dt>価格</dt>
                                 <dd>
-                                    {{ number_format($order['payment_total']) }}円
+                                    {{ number_format($order['total']) }}円
                                 </dd>
                             </dl>
                         </div>

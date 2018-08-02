@@ -44,14 +44,14 @@
             $('[name="order[payment_id]"]').change (function() {
                 $commission = $('[name="order[payment_id]"] option:selected').data('commission');
                 $before_commission = $('[name="order[fee]"]').val();
-                $payment_total = $('[name="order[payment_total]"]').val();
+                $total = $('[name="order[total]"]').val();
 
                 $('[name="order[fee]"]').val($commission);
 
                 if ($commission != 0) {
-                   $('[name="order[payment_total]"]').val($payment_total - $before_commission + $commission);
+                   $('[name="order[total]"]').val($total - $before_commission + $commission);
                } else {
-                   $('[name="order[payment_total]"]').val($payment_total - $before_commission);
+                   $('[name="order[total]"]').val($total - $before_commission);
                }
             });
 
@@ -95,9 +95,6 @@
                                     <input type="hidden" name="order_detail[option_ids][]" value="{{ $option_id }}">
                                 @endforeach
                             @endif
-
-                            <input type="hidden" name="order[sub_total]" value="{{ $order['sub_total'] }}">
-                            <input type="hidden" name="order[total]" value="{{ $order['total'] }}">
 
                             <input type="hidden" name="order_detail[ratio_id]" value="{{ $order_detail['ratio_id'] }}">
                             <input type="hidden" name="order_detail[price]" value="{{ $order_detail['price'] }}">
@@ -235,20 +232,26 @@
                                         </select>
                                     </dd>
                                 </dl>
+                            </div>
+
+                            <h5 class="ttl02">料金</h5>
+                            <div class="form__bd">
+                                <dl>
+                                    <dt>小計金額（税込）</dt>
+                                    <dd>
+                                        <input type="text" class="order_total" name="order[sub_total]" value="{{ $order['sub_total'] }}" readonly>
+                                    </dd>
+                                </dl>
                                 <dl>
                                     <dt>手数料</dt>
                                     <dd>
                                         <input type="text" name="order[fee]" value="0" readonly>
                                     </dd>
                                 </dl>
-                            </div>
-
-                            <h5 class="ttl02">料金</h5>
-                            <div class="form__bd">
                                 <dl>
                                     <dt>合計金額（税込）</dt>
                                     <dd>
-                                        <input type="text" class="order_total" name="order[payment_total]" value="{{ $order['payment_total'] }}" readonly>
+                                        <input type="text" class="order_total" name="order[total]" value="{{ $order['total'] }}" readonly>
                                     </dd>
                                 </dl>
                             </div>

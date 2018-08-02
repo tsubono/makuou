@@ -607,7 +607,8 @@
                             <select id=order-payment" name="order[payment_id]" class="form-control" required>
                                 <option value=""></option>
                                 @foreach($payments as $payment)
-                                    <option value="{{ $payment->id }}" {{ old('order.payment_id', $order->payment->id)==  $payment->id ? "selected" : ""}}>{{ $payment->name }}</option>
+                                    <option value="{{ $payment->id }}" {{ old('order.payment_id', $order->payment->id)==  $payment->id ? "selected" : ""}}
+                                        data-commission="{{ $payment->commission }}">{{ $payment->name }}</option>
                                 @endforeach
                             </select>
                         </div>

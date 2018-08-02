@@ -131,7 +131,7 @@
             $('[name="order_detail[sub_total]"]').val(total);
             $('[name="order[sub_total]"]').val(total);
             $('[name="order[total]"]').val(total);
-            $('[name="order[payment_total]"]').val(total);
+            // $('[name="order[payment_total]"]').val(total);
         }
     </script>
 
@@ -169,7 +169,6 @@
                         <input type="hidden" name="order_detail[product_id]" value="{{ $order_detail['product_id'] }}">
 
                         <input type="hidden" name="order[sub_total]" value="">
-                        <input type="hidden" name="order[total]" value="">
 
                         <input type="hidden" name="order_detail[ratio_id]" value="{{ $order_detail['ratio_id'] }}">
                         <input type="hidden" name="order_detail[price]" value="">
@@ -308,7 +307,7 @@
                                 <dt>合計金額</dt>
                                 <dd>
                                     <label>
-                                        <input type="text" name="order[payment_total]" value="" readonly>
+                                        <input type="text" name="order[total]" value="" readonly>
                                     </label>
                                 </dd>
                             </dl>

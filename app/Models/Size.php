@@ -15,7 +15,7 @@ class Size extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'note'
+        'name', 'value', 'note'
     ];
 
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];

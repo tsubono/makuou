@@ -6,8 +6,8 @@
 @endpush
 
 @push('script')
-    <script src="../assets/js/search.js"></script>
-    <script type="text/javascript" src="../assets/js/jquery.jpostal.js"></script>
+    <script src="{{asset("assets/js/search.js")}}"></script>
+    <script type="text/javascript" src="{{asset("assets/js/jquery.jpostal.js")}}"></script>
     <script>
         $(function () {
             $('#zip').jpostal({
@@ -39,6 +39,22 @@
                 $('[name="order_shipping_address[fax02]"]').val($('[name="user[fax02]"]').val());
                 $('[name="order_shipping_address[fax03]"]').val($('[name="user[fax03]"]').val());
             });
+
+            // 支払い方法変更時
+            $('[name="order[payment_id]"]').change (function() {
+                $commission = $('[name="order[payment_id]"] option:selected').data('commission');
+                $before_commission = $('[name="order[fee]"]').val();
+                $payment_total = $('[name="order[payment_total]"]').val();
+
+                $('[name="order[fee]"]').val($commission);
+
+                if ($commission != 0) {
+                   $('[name="order[payment_total]"]').val($payment_total - $before_commission + $commission);
+               } else {
+                   $('[name="order[payment_total]"]').val($payment_total - $before_commission);
+               }
+            });
+
         });
     </script>
 @endpush
@@ -212,9 +228,17 @@
                                         <select class="order_pay" name="order[payment_id]" required>
                                             <option value=""></option>
                                             @foreach(\App\Models\Payment::all() as $payment)
-                                                <option value="{{ $payment->id }}" {{ old('order.payment_id') ==  $payment->id ? "selected" : ""}}>{{ $payment->name }}</option>
+                                                <option value="{{ $payment->id }}" {{ old('order.payment_id') ==  $payment->id ? "selected" : ""}} data-commission="{{ $payment->commission }}">
+                                                    {{ $payment->name }}
+                                                </option>
                                             @endforeach
                                         </select>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>手数料</dt>
+                                    <dd>
+                                        <input type="text" name="order[fee]" value="0" readonly>
                                     </dd>
                                 </dl>
                             </div>

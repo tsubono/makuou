@@ -82,7 +82,7 @@
                                 <dt>サイズ</dt>
                                 <dd>
                                     @if (!empty($order_detail['size_id']))
-                                        縦{{ \App\Models\Size::where('id', $order_detail['size_id'])->first()->name }}cm×横{{ \App\Models\Size::where('id', $order_detail['size_id'])->first()->name * $product->ratio->width }}cm
+                                        縦{{ \App\Models\Size::where('id', $order_detail['size_id'])->first()->value }}cm×横{{  \App\Models\Size::where('id', $order_detail['size_id'])->first()->value *  $product->ratio->width }}cm
                                         <input type="hidden" name="order_detail[size_id]" value="{{ $order_detail['size_id'] }}">
                                     @endif
                                 </dd>

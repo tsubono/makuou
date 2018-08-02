@@ -32,6 +32,7 @@
                 <thead>
                 <tr>
                     <th>名前</th>
+                    <th>値</th>
                     <th>備考</th>
                     <th>更新日</th>
                     <th></th>
@@ -41,6 +42,7 @@
                 @foreach($sizes as $size)
                     <tr>
                         <td>{{ $size->name }}</td>
+                        <td>{{ $size->value }}</td>
                         <td>{!! nl2br(e( $size->note )) !!}</td>
                         <td>{{ \Carbon\Carbon::parse($size->updated_at)->format('Y年m月d日 h:i') }}</td>
                         <td>
@@ -84,6 +86,15 @@
                             <label class="control-label col-md-3">名前</label>
                             <div class="col-md-6">
                                 <input type="text" name="size[name]" value="{{ old('size.name') }}"
+                                       class="form-control" required/>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <br>
+                        <div class="form-group input_row">
+                            <label class="control-label col-md-3">値</label>
+                            <div class="col-md-6">
+                                <input type="text" name="size[value]" value="{{ old('size.value') }}"
                                        class="form-control" required/>
                             </div>
                         </div>
@@ -137,6 +148,15 @@
                                 <label class="control-label col-md-3">名前</label>
                                 <div class="col-md-6">
                                     <input type="text" name="size[name]" value="{{ old('size.name', $size->name) }}"
+                                           class="form-control" required/>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <br>
+                            <div class="form-group input_row">
+                                <label class="control-label col-md-3">値</label>
+                                <div class="col-md-6">
+                                    <input type="text" name="size[value]" value="{{ old('size.value', $size->value) }}"
                                            class="form-control" required/>
                                 </div>
                             </div>

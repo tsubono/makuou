@@ -33,7 +33,7 @@
                 <tr>
                     <th>支払い方法</th>
                     <th>手数料</th>
-                    <th>利用条件</th>
+                    {{--<th>利用条件</th>--}}
                     <th>更新日</th>
                     <th></th>
                 </tr>
@@ -43,7 +43,7 @@
                     <tr>
                         <td>{{ $payment->name }}</td>
                         <td>{{ $payment->commission }}</td>
-                        <td>{{ $payment->minimum_amount }} 〜　{{ $payment->maximum_amount }}</td>
+                        {{--<td>{{ $payment->minimum_amount }} 〜　{{ $payment->maximum_amount }}</td>--}}
                         <td>{{ \Carbon\Carbon::parse($payment->updated_at)->format('Y年m月d日 h:i') }}</td>
                         <td>
                             <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
@@ -101,22 +101,22 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="clearfix"></div>
-                        <br>
-                        <div class="form-group input_row">
-                            <label class="control-label col-md-3">利用条件</label>
-                            <div class="col-md-9 form-inline">
-                                <div class="input-group col-md-5">
-                                    <span class="input-group-addon">¥ </span>
-                                    <input type="number" name="payment[minimum_amount]" class="form-control" value="0" required>
-                                </div>
-                                〜
-                                <div class="input-group col-md-5">
-                                    <span class="input-group-addon">¥ </span>
-                                    <input type="number" name="payment[maximum_amount]" class="form-control">
-                                </div>
-                            </div>
-                        </div>
+                        {{--<div class="clearfix"></div>--}}
+                        {{--<br>--}}
+                        {{--<div class="form-group input_row">--}}
+                            {{--<label class="control-label col-md-3">利用条件</label>--}}
+                            {{--<div class="col-md-9 form-inline">--}}
+                                {{--<div class="input-group col-md-5">--}}
+                                    {{--<span class="input-group-addon">¥ </span>--}}
+                                    {{--<input type="number" name="payment[minimum_amount]" class="form-control" value="0" required>--}}
+                                {{--</div>--}}
+                                {{--〜--}}
+                                {{--<div class="input-group col-md-5">--}}
+                                    {{--<span class="input-group-addon">¥ </span>--}}
+                                    {{--<input type="number" name="payment[maximum_amount]" class="form-control">--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                     </div>
                     <br><br>
                     <div class="clearfix"></div>
@@ -174,22 +174,22 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="clearfix"></div>
-                            <br>
-                            <div class="form-group input_row">
-                                <label class="control-label col-md-3">利用条件</label>
-                                <div class="col-md-9 form-inline">
-                                    <div class="input-group col-md-5">
-                                        <span class="input-group-addon">¥ </span>
-                                        <input type="number" name="payment[minimum_amount]" class="form-control" value="{{ old('payment.minimum_amount', $payment->minimum_amount) }}" required>
-                                    </div>
-                                    〜
-                                    <div class="input-group col-md-5">
-                                        <span class="input-group-addon">¥ </span>
-                                        <input type="number" name="payment[maximum_amount]" class="form-control" value="{{ old('payment.maximum_amount', $payment->maximum_amount) }}">
-                                    </div>
-                                </div>
-                            </div>
+                            {{--<div class="clearfix"></div>--}}
+                            {{--<br>--}}
+                            {{--<div class="form-group input_row">--}}
+                                {{--<label class="control-label col-md-3">利用条件</label>--}}
+                                {{--<div class="col-md-9 form-inline">--}}
+                                    {{--<div class="input-group col-md-5">--}}
+                                        {{--<span class="input-group-addon">¥ </span>--}}
+                                        {{--<input type="number" name="payment[minimum_amount]" class="form-control" value="{{ old('payment.minimum_amount', $payment->minimum_amount) }}" required>--}}
+                                    {{--</div>--}}
+                                    {{--〜--}}
+                                    {{--<div class="input-group col-md-5">--}}
+                                        {{--<span class="input-group-addon">¥ </span>--}}
+                                        {{--<input type="number" name="payment[maximum_amount]" class="form-control" value="{{ old('payment.maximum_amount', $payment->maximum_amount) }}">--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
                         </div>
                         <br><br>
                         <div class="clearfix"></div>

@@ -100,6 +100,9 @@ Route::namespace('Front')->group(function() {
         Route::post('/member/confirm', 'MemberController@confirm')->name('memberConfirm');
 
         Route::get('/ordered', 'OrderedController@index')->name('order');
+        Route::post('/ordered/download', 'OrderedController@download');
+        Route::post('/ordered/reorder', 'OrderedController@reorder');
+
         Route::get('/mypage', 'MyPageController@index')->name('mypage');
         Route::get('/cancel', 'CancelController@index')->name('cancel');
         Route::post('/cancel/complete', 'CancelController@complete')->name('cancelComplete');

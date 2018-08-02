@@ -35,7 +35,12 @@ class LayoutController extends Controller
     {
         $product = $this->product->findOrFail($id);
         $layoutFlg = true;
-        return view('front.layout.index', compact('product', 'layoutFlg'));
+
+        // 再購入の場合
+        $designed_json = session('designed_json', '');
+        session()->forget('designed_json');
+
+        return view('front.layout.index', compact('product', 'layoutFlg', 'designed_json'));
     }
 
     /**

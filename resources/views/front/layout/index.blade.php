@@ -36,12 +36,24 @@
         $(function () {
 
             var id = "{{ $product->id }}";
+
             $('#productApp').scope().initFabric("{{ $product->ratio->width * 600 }}", "{{ $product->ratio->height * 600 }}");
             $('#productApp').scope().loadProduct("{{ $product->title }}", "{{ $product->image }}", id, 0);
 
             setTimeout(function () {
                 $('#productApp').scope().deactivateAll();
-                var json = $('#productApp').scope().getDesignJson();
+
+                @if (!empty($designed_json))
+                    var json = "{{ $designed_json }}";
+                    json = json.replace(/&quot;/g,'"')
+                    .replace(/&#039;/g,"'")
+                    .replace(/&lt;/g,"<")
+                    .replace(/&gt;/g,">")
+                    .replace(/&amp;/g,"&");
+
+                @else
+                    var json = $('#productApp').scope().getDesignJson();
+                @endif
 
                 $('#productApp').scope().loadByJson(json);
 

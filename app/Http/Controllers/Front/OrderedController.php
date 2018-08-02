@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Order;
+use App\Models\OrderDetail;
 use App\Services\OrderService;
 use App\Services\PrintReceiptService;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 
@@ -15,12 +15,14 @@ class OrderedController extends Controller
 {
 
     private $order;
+    private $orderDetail;
     private $orderService;
     private $printReceiptService;
 
-    public function __construct(Order $order, OrderService $orderService, PrintReceiptService $printReceiptService)
+    public function __construct(Order $order, OrderDetail $orderDetail, OrderService $orderService, PrintReceiptService $printReceiptService)
     {
         $this->order = $order;
+        $this->orderDetail = $orderDetail;
         $this->orderService = $orderService;
         $this->printReceiptService = $printReceiptService;
     }
@@ -43,8 +45,13 @@ class OrderedController extends Controller
 
     public function reorder(Request $request) {
 
-        $order = $this->order->findOrFail($request->input('id'));
+        $product_id = $request->input('product_id');
+        $order_detail_id = $request->input('order_detail_id');
+        $designed_json = $this->orderDetail->getJsonText($order_detail_id);
 
+        session(['designed_json' => $designed_json]);
+
+        return redirect(url('/layout/'. $product_id));
 
     }
 }

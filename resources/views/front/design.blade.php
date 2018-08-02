@@ -421,7 +421,7 @@
                             <!--// テキスト操作諸々 -->
                             <!-- 色選択 -->
                             <div class="row form-group input-group colorPicker2 pt20"
-                                 ng-show="fabric.selectedObject.type != 'image' && fabric.selectedObject.type != 'path'">
+                                 ng-show="fabric.selectedObject.type != 'image'">
                                 <md-input-container flex>
                                     <label for="Color">色:</label>
                                     <input type="text" value="" class="" colorpicker

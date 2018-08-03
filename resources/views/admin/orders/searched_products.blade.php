@@ -15,7 +15,9 @@
                 <button type="button" class="btn btn-default btn-sm set-product"
                         data-id="{{ $product->id }}" data-name="{{ $product->title }}"
                         data-image="{{ $product->image }}"
-                        data-width="{{ $product->ratio->width * 600 }}" data-height="{{ $product->ratio->height * 600 }}">
+                        data-width="{{ $product->ratio->width * 600 }}" data-height="{{ $product->ratio->height * 600 }}"
+                        data-ratio_width="{{ $product->ratio->width }}"
+                >
                     決定
                 </button>
             </td>

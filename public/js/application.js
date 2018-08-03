@@ -615,9 +615,6 @@ angular.module('productApp', [
          */
         $scope.initFabric = function (width, height) {
 
-            if (isNaN(width)) {
-                width = 687.118;
-            }
             $scope.fabric = new Fabric({
                 JSONExportProperties: FabricConstants.JSONExportProperties,
                 textDefaults: FabricConstants.textDefaults,

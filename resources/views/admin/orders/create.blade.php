@@ -264,8 +264,8 @@
             <div class="box-body">
                 <!-- 商品情報リスト -->
                 <div class="order_list">
-                    @if (!empty(old('order_details', $order->order_details)))
-                        @foreach(old('order_details', $order->order_details) as $index => $order_detail)
+                    @if (!empty(old('order_details')))
+                        @foreach(old('order_details') as $index => $order_detail)
 
                             <div class="item_box" id="item_box_{{ $index }}" data-index="{{ $index }}">
 
@@ -305,6 +305,8 @@
                                        value="{{ empty($order_detail["width"]) ? $order_detail->product->ratio->width * 600 : $order_detail["width"] }}">
                                 <input type="hidden" name="order_details[{{ $index }}][height]" class="height-hidden"
                                        value="{{ empty($order_detail["height"]) ? $order_detail->product->ratio->height * 600 : $order_detail["height"] }}">
+                                <input type="hidden" name="order_details[{{ $index }}][ratio_width]"
+                                       value="{{ empty($order_detail["ratio_width"]) ? $order_detail->product->ratio->width : $order_detail["ratio_width"] }}">
 
                                 <div class="item_detail">
                                     <div class="item_name_area">
@@ -325,6 +327,7 @@
                                                data-json="{{ empty($order_detail["json"]) ? (!empty($order_detail->id)?\App\Models\OrderDetail::getJsonText($order_detail->id):"") : $order_detail["json"] }}"
                                                data-width="{{ empty($order_detail["width"]) ?  $order_detail->product->ratio->width * 600 : $order_detail["width"] }}"
                                                data-height="{{ empty($order_detail["height"]) ? $order_detail->product->ratio->height * 600 : $order_detail["height"] }}"
+                                               data-ratio_width="{{ empty($order_detail["ratio_width"]) ? $order_detail->product->ratio->width : $order_detail["ratio_width"] }}"
                                                data-index="{{ $index }}"
                                             >
                                                 編集する
@@ -545,20 +548,20 @@
                     <div class="col-lg-7 col-lg-offset-5">
                         <dl id="product_info_result_box__body_sub_price" class="dl-horizontal">
                             <dt id="product_info_result_box__sub_total">小計：</dt>
-                            <dd id="order_sub_total_disp">¥ {{ number_format(old('order.sub_total', $order->sub_total)) }}</dd>
-                            <input type="hidden" name="order[sub_total]" value="{{ old('order.sub_total', $order->sub_total) }}">
+                            <dd id="order_sub_total_disp">¥ {{ number_format(old('order.sub_total')) }}</dd>
+                            <input type="hidden" name="order[sub_total]" value="{{ old('order.sub_total') }}">
                             <dt id="product_info_result_box__discount">値引き：</dt>
                             <dd class="form-group form-inline">
                                 <div class="input-group">
                                     <span class="input-group-addon">¥ </span>
-                                    <input type="text" name="order[discount]" class="form-control" value="{{ old('order.discount', !empty($order->discount)?$order->discount:0) }}" required>
+                                    <input type="text" name="order[discount]" class="form-control" value="{{ old('order.discount', 0) }}" required>
                                 </div>
                             </dd>
                             <dt id="product_info_result_box__delivery_fee_total">送料：</dt>
                             <dd class="form-group form-inline">
                                 <div class="input-group">
                                     <span class="input-group-addon">¥ </span>
-                                    <input type="text" name="order[shipping_cost]" class="form-control" value="{{ old('order.shipping_cost', !empty($order->shipping_cost)?$order->shipping_cost:0) }}"
+                                    <input type="text" name="order[shipping_cost]" class="form-control" value="{{ old('order.shipping_cost', 0) }}"
                                            required>
                                 </div>
                             </dd>
@@ -567,7 +570,7 @@
                                 <div class="input-group">
                                     <span class="input-group-addon">¥ </span>
                                     <input type="text" id="order_charge" name="order[fee]" class="form-control"
-                                           value="{{ old('order.fee', !empty($order->fee)?$order->fee:0) }}" required>
+                                           value="{{ old('order.fee', 0) }}" required>
                                 </div>
                             </dd>
                         </dl>
@@ -577,8 +580,8 @@
                     <div class="col-lg-7 col-lg-offset-5">
                         <dl id="product_info_result_box__body_summary" class="dl-horizontal">
                             <dt id="product_info_result_box__total">合計：</dt>
-                            <dd id="order_total_disp">¥ {{ number_format(old('order.total', $order->total)) }}</dd>
-                            <input type="hidden" name="order[total]" value="{{ old('order.total', $order->total) }}">
+                            <dd id="order_total_disp">¥ {{ number_format(old('order.total')) }}</dd>
+                            <input type="hidden" name="order[total]" value="{{ old('order.total') }}">
                         </dl>
                     </div>
                 </div>

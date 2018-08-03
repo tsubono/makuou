@@ -21,6 +21,8 @@
            value="{{ $product->ratio->width * 600 }}">
     <input type="hidden" name="order_details[{{ $index }}][height]"
            value="{{ $product->ratio->height * 600 }}">
+    <input type="hidden" name="order_details[{{ $index }}][ratio_width]"
+           value="{{ $product->ratio->width }}">
 
     <div class="item_detail">
         <div class="item_name_area">
@@ -39,6 +41,7 @@
                    data-json="{{ $json }}"
                    data-width="{{ $product->ratio->width * 600 }}"
                    data-height="{{ $product->ratio->height * 600 }}"
+                   data-ratio_width="{{ $product->ratio->width }}"
                    data-index="{{ $index }}"
                 >
                     編集する
@@ -208,13 +211,15 @@
             <div class="col-md-6 col-lg-6 form-group form-inline text-right">
                 <span class="item_quantity">
                     オプション金額：
-                    <input type="number" name="order_details[{{ $index }}][option_price]" value="0" class="form-control">
+                    <input type="number" name="order_details[{{ $index }}][option_price]" value="0"
+                           class="form-control">
                 </span>
             </div>
             <div class="col-md-6 col-lg-6 form-group form-inline text-right">
                 <span class="item_quantity">
                     金額：
-                    <input type="number" name="order_details[{{ $index }}][price]" value="0" class="form-control" required>
+                    <input type="number" name="order_details[{{ $index }}][price]" value="0" class="form-control"
+                           required>
                     <input type="hidden" name="order_details[{{ $index }}][price_id]" value="">
                 </span>
             </div>
@@ -261,11 +266,12 @@
     $('.design_edit_btn').click(function () {
         $('#design-modal').find('.modal-title').text($(this).attr('data-name') + "デザイン編集");
 
-        $('#productApp').scope().initFabric($(this).attr('data-width'), $(this).attr('data-height'));
+        $('#productApp').scope().initFabric($(this).attr('data-ratio_width') * 170.079, 170.079);
         $('#productApp').scope().loadByJson($(this).attr('data-json'));
 
         $('#productApp').scope().defaultProductId = $(this).attr('data-id');
         $('#productApp').scope().index = $(this).attr('data-index');
+
         $('#design-modal').modal();
     });
 

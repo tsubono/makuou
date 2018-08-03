@@ -306,6 +306,8 @@
                                        value="{{ empty($order_detail["width"]) ? $order_detail->product->ratio->width * 600 : $order_detail["width"] }}">
                                 <input type="hidden" name="order_details[{{ $index }}][height]" class="height-hidden"
                                        value="{{ empty($order_detail["height"]) ? $order_detail->product->ratio->height * 600 : $order_detail["height"] }}">
+                                <input type="hidden" name="order_details[{{ $index }}][ratio_width]"
+                                       value="{{ empty($order_detail["ratio_width"]) ? $order_detail->product->ratio->width : $order_detail["ratio_width"] }}">
 
                                 <div class="item_detail">
                                     <div class="item_name_area">
@@ -326,6 +328,7 @@
                                                data-json="{{ empty($order_detail["json"]) ? (!empty($order_detail->id)?\App\Models\OrderDetail::getJsonText($order_detail->id):"") : $order_detail["json"] }}"
                                                data-width="{{ empty($order_detail["width"]) ?  $order_detail->product->ratio->width * 600 : $order_detail["width"] }}"
                                                data-height="{{ empty($order_detail["height"]) ? $order_detail->product->ratio->height * 600 : $order_detail["height"] }}"
+                                               data-ratio_width="{{ empty($order_detail["ratio_width"]) ? $order_detail->product->ratio->width : $order_detail["ratio_width"] }}"
                                                data-index="{{ $index }}"
                                             >
                                                 編集する

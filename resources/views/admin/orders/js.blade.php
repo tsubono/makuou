@@ -109,12 +109,14 @@
         $('.design_edit_btn').click(function () {
             $('#design-modal').find('.modal-title').text($(this).attr('data-name') + "デザイン編集");
 
-            $('#productApp').scope().initFabric($(this).attr('data-width'), $(this).attr('data-height'));
+            $('#productApp').scope().initFabric($(this).attr('data-ratio_width') * 170.079, 170.079);
             $('#productApp').scope().loadByJson($(this).attr('data-json'));
-
             $('#productApp').scope().defaultProductId = $(this).attr('data-id');
             $('#productApp').scope().index = $(this).attr('data-index');
-            $('#design-modal').modal();
+
+            setTimeout(function(){
+                $('#design-modal').modal();
+            },500);
         });
 
         // デザインモーダルの確定押下時

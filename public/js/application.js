@@ -55,7 +55,7 @@ angular.module('productApp', [
          * スタンプ追加
          */
         $scope.addShape = function (path) {
-            $scope.fabric.addShape(jQuery('[name=asset]').val()+path, false);
+            $scope.fabric.addShape(jQuery('[name=asset]').val() + path, false);
 
             $timeout(function () {
                 $scope.deactivateAll();
@@ -615,6 +615,9 @@ angular.module('productApp', [
          */
         $scope.initFabric = function (width, height) {
 
+            if (isNaN(width)) {
+                width = 687.118;
+            }
             $scope.fabric = new Fabric({
                 JSONExportProperties: FabricConstants.JSONExportProperties,
                 textDefaults: FabricConstants.textDefaults,
@@ -628,6 +631,7 @@ angular.module('productApp', [
 
             jQuery('.canvas-container-outer').css('width', width);
             jQuery('.canvas-container-outer').css('height', height);
+
         };
 
         /*

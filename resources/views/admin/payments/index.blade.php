@@ -32,7 +32,7 @@
                 <thead>
                 <tr>
                     <th>支払い方法</th>
-                    <th>手数料</th>
+                    {{--<th>手数料</th>--}}
                     {{--<th>利用条件</th>--}}
                     <th>更新日</th>
                     <th></th>
@@ -42,7 +42,7 @@
                 @foreach($payments as $payment)
                     <tr>
                         <td>{{ $payment->name }}</td>
-                        <td>{{ $payment->commission }}</td>
+                        {{--<td>{{ $payment->commission }}</td>--}}
                         {{--<td>{{ $payment->minimum_amount }} 〜　{{ $payment->maximum_amount }}</td>--}}
                         <td>{{ \Carbon\Carbon::parse($payment->updated_at)->format('Y年m月d日 h:i') }}</td>
                         <td>
@@ -89,18 +89,18 @@
                                        class="form-control" required/>
                             </div>
                         </div>
-                        <div class="clearfix"></div>
-                        <br>
-                        <div class="form-group input_row">
-                            <label class="control-label col-md-3">手数料</label>
-                            <div class="col-md-6 form-inline">
-                                <div class="input-group">
-                                    <span class="input-group-addon">¥ </span>
-                                    <input type="number" name="payment[commission]" value="0"
-                                           class="form-control" required/>
-                                </div>
-                            </div>
-                        </div>
+                        {{--<div class="clearfix"></div>--}}
+                        {{--<br>--}}
+                        {{--<div class="form-group input_row">--}}
+                            {{--<label class="control-label col-md-3">手数料</label>--}}
+                            {{--<div class="col-md-6 form-inline">--}}
+                                {{--<div class="input-group">--}}
+                                    {{--<span class="input-group-addon">¥ </span>--}}
+                                    {{--<input type="number" name="payment[commission]" value="0"--}}
+                                           {{--class="form-control" required/>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--<div class="clearfix"></div>--}}
                         {{--<br>--}}
                         {{--<div class="form-group input_row">--}}
@@ -162,18 +162,18 @@
                                            class="form-control" required/>
                                 </div>
                             </div>
-                            <div class="clearfix"></div>
-                            <br>
-                            <div class="form-group input_row">
-                                <label class="control-label col-md-3">手数料</label>
-                                <div class="col-md-6 form-inline">
-                                    <div class="input-group">
-                                        <span class="input-group-addon">¥ </span>
-                                        <input type="number" name="payment[commission]" value="{{ old('payment.commission', $payment->commission) }}"
-                                               class="form-control" required/>
-                                    </div>
-                                </div>
-                            </div>
+                            {{--<div class="clearfix"></div>--}}
+                            {{--<br>--}}
+                            {{--<div class="form-group input_row">--}}
+                                {{--<label class="control-label col-md-3">手数料</label>--}}
+                                {{--<div class="col-md-6 form-inline">--}}
+                                    {{--<div class="input-group">--}}
+                                        {{--<span class="input-group-addon">¥ </span>--}}
+                                        {{--<input type="number" name="payment[commission]" value="{{ old('payment.commission', $payment->commission) }}"--}}
+                                               {{--class="form-control" required/>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
                             {{--<div class="clearfix"></div>--}}
                             {{--<br>--}}
                             {{--<div class="form-group input_row">--}}

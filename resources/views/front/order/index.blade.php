@@ -41,19 +41,19 @@
             });
 
             // 支払い方法変更時
-            $('[name="order[payment_id]"]').change (function() {
-                $commission = $('[name="order[payment_id]"] option:selected').data('commission');
-                $before_commission = $('[name="order[fee]"]').val();
-                $total = $('[name="order[total]"]').val();
-
-                $('[name="order[fee]"]').val($commission);
-
-                if ($commission != 0) {
-                   $('[name="order[total]"]').val($total - $before_commission + $commission);
-               } else {
-                   $('[name="order[total]"]').val($total - $before_commission);
-               }
-            });
+            // $('[name="order[payment_id]"]').change (function() {
+            //     $commission = $('[name="order[payment_id]"] option:selected').data('commission');
+            //     $before_commission = $('[name="order[fee]"]').val();
+            //     $total = $('[name="order[total]"]').val();
+            //
+            //     $('[name="order[fee]"]').val($commission);
+            //
+            //     if ($commission != 0) {
+            //        $('[name="order[total]"]').val($total - $before_commission + $commission);
+            //    } else {
+            //        $('[name="order[total]"]').val($total - $before_commission);
+            //    }
+            // });
 
         });
     </script>
@@ -225,7 +225,7 @@
                                         <select class="order_pay" name="order[payment_id]" required>
                                             <option value=""></option>
                                             @foreach(\App\Models\Payment::all() as $payment)
-                                                <option value="{{ $payment->id }}" {{ old('order.payment_id') ==  $payment->id ? "selected" : ""}} data-commission="{{ $payment->commission }}">
+                                                <option value="{{ $payment->id }}" {{ old('order.payment_id') ==  $payment->id ? "selected" : ""}}>
                                                     {{ $payment->name }}
                                                 </option>
                                             @endforeach
@@ -237,21 +237,10 @@
                             <h5 class="ttl02">料金</h5>
                             <div class="form__bd">
                                 <dl>
-                                    <dt>小計金額（税込）</dt>
-                                    <dd>
-                                        <input type="text" class="order_total" name="order[sub_total]" value="{{ $order['sub_total'] }}" readonly>
-                                    </dd>
-                                </dl>
-                                <dl>
-                                    <dt>手数料</dt>
-                                    <dd>
-                                        <input type="text" name="order[fee]" value="0" readonly>
-                                    </dd>
-                                </dl>
-                                <dl>
                                     <dt>合計金額（税込）</dt>
                                     <dd>
                                         <input type="text" class="order_total" name="order[total]" value="{{ $order['total'] }}" readonly>
+                                        <input type="hidden" name="order[sub_total]" value="{{ $order['sub_total'] }}" readonly>
                                     </dd>
                                 </dl>
                             </div>

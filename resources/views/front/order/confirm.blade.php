@@ -147,24 +147,11 @@
                             <h5 class="ttl02">料金</h5>
                             <div class="form__bd">
                                 <dl>
-                                    <dt>小計金額（税込）</dt>
-                                    <dd>
-                                        {{ number_format($order['sub_total']) }}円
-                                        <input type="hidden" name="order[sub_total]" value="{{ $order['sub_total'] }}">
-                                    </dd>
-                                </dl>
-                                <dl>
-                                    <dt>手数料</dt>
-                                    <dd>
-                                        {{ number_format($order['fee']) }}円
-                                        <input type="hidden" name="order[fee]" value="{{ $order['fee'] }}">
-                                    </dd>
-                                </dl>
-                                <dl>
                                     <dt>合計金額（税込）</dt>
                                     <dd>
                                         {{ number_format($order['total']) }}円
                                         <input type="hidden" name="order[total]" value="{{ $order['total'] }}">
+                                        <input type="hidden" name="order[sub_total]" value="{{ $order['sub_total'] }}">
                                     </dd>
                                 </dl>
                             </div>

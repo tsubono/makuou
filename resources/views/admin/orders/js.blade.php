@@ -453,25 +453,25 @@
         });
 
         // 支払い方法変更時
-        $('[name="order[payment_id]"]').change (function() {
-            var commission = $('[name="order[payment_id]"] option:selected').data('commission');
-            var before_commission = $('[name="order[fee]"]').val();
-            var total = $('[name="order[total]"]').val();
-            var payment_total = 0;
-
-            $('[name="order[fee]"]').val(commission);
-
-            if (commission != 0) {
-                payment_total = total - before_commission + commission;
-                $('[name="order[total]"]').val(total - before_commission + commission);
-                $('#order_total_disp').text("¥ " + payment_total.toLocaleString());
-
-            } else {
-                payment_total = total - before_commission;
-                $('[name="order[total]"]').val(payment_total);
-                $('#order_total_disp').text("¥ " + payment_total.toLocaleString());
-            }
-        });
+        // $('[name="order[payment_id]"]').change (function() {
+        //     var commission = $('[name="order[payment_id]"] option:selected').data('commission');
+        //     var before_commission = $('[name="order[fee]"]').val();
+        //     var total = $('[name="order[total]"]').val();
+        //     var payment_total = 0;
+        //
+        //     $('[name="order[fee]"]').val(commission);
+        //
+        //     if (commission != 0) {
+        //         payment_total = total - before_commission + commission;
+        //         $('[name="order[total]"]').val(total - before_commission + commission);
+        //         $('#order_total_disp').text("¥ " + payment_total.toLocaleString());
+        //
+        //     } else {
+        //         payment_total = total - before_commission;
+        //         $('[name="order[total]"]').val(payment_total);
+        //         $('#order_total_disp').text("¥ " + payment_total.toLocaleString());
+        //     }
+        // });
 
 
 

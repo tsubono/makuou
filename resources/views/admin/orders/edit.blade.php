@@ -88,7 +88,8 @@
                             名前
                         </label>
                         <div class="col-md-6">
-                            <input type="text" id="user-name" name="user[name]" value="{{ old('user.name', $order->user->name) }}"
+                            <input type="text" id="user-name" name="user[name]"
+                                   value="{{ old('user.name', $order->user->name) }}"
                                    class="form-control" required placeholder=""/>
                         </div>
                     </div>
@@ -98,7 +99,8 @@
                         </label>
                         <div class="col-md-6">
                             <input type="text" id="user-name_kana" name="user[name_kana]"
-                                   value="{{ old('user.name_kana', $order->user->name_kana) }}" class="form-control" required placeholder=""/>
+                                   value="{{ old('user.name_kana', $order->user->name_kana) }}" class="form-control"
+                                   required placeholder=""/>
                             @if ($errors->has('name_kana') && $error_type=="user")
                                 @foreach ($errors->get('name_kana') as $error)
                                     <div class="text-danger">{{ $error }}</div>
@@ -112,7 +114,8 @@
                         </label>
                         <div class="col-md-6">
                             <input type="text" id="user-company_name" name="user[company_name]"
-                                   value="{{ old('user.company_name', $order->user->company_name) }}" class="form-control" placeholder=""/>
+                                   value="{{ old('user.company_name', $order->user->company_name) }}"
+                                   class="form-control" placeholder=""/>
                         </div>
                     </div>
                     <div class="form-group {{ ($errors->has('zip01')||$errors->has('zip02')) && $error_type=="user" ? 'has-error' : '' }}">
@@ -122,10 +125,12 @@
                         <div class="col-md-6 input_zip form-inline">
                             〒
                             <input type="number" id="user-zip01" name="user[zip01]" class="form-control"
-                                   value="{{ old('user.zip01', !empty($order->user->zip_code) ? explode("-", $order->user->zip_code)[0] : "") }}" required>
+                                   value="{{ old('user.zip01', !empty($order->user->zip_code) ? explode("-", $order->user->zip_code)[0] : "") }}"
+                                   required>
                             -
                             <input type="number" id="user-zip02" name="user[zip02]" class="form-control"
-                                   value="{{ old('user.zip02', !empty($order->user->zip_code) ? explode("-", $order->user->zip_code)[1] : "") }}" required>
+                                   value="{{ old('user.zip02', !empty($order->user->zip_code) ? explode("-", $order->user->zip_code)[1] : "") }}"
+                                   required>
                             <span>
                                 <button type="button" id="user-zip-btn"
                                         class="btn btn-default btn-sm">郵便番号から自動入力</button>
@@ -159,7 +164,8 @@
                         </label>
                         <div class="col-md-6">
                             <input type="text" id="user-address1" name="user[address1]"
-                                   value="{{ old('user.address1', $order->user->address1) }}" class="form-control" required placeholder="市区町村"/>
+                                   value="{{ old('user.address1', $order->user->address1) }}" class="form-control"
+                                   required placeholder="市区町村"/>
                         </div>
                     </div>
                     <div class="form-group">
@@ -167,7 +173,8 @@
                         </label>
                         <div class="col-md-6">
                             <input type="text" id="user-address2" name="user[address2]"
-                                   value="{{ old('user.address2', $order->user->address2) }}" class="form-control" required
+                                   value="{{ old('user.address2', $order->user->address2) }}" class="form-control"
+                                   required
                                    placeholder="番地・ビル名"/>
                         </div>
                     </div>
@@ -177,13 +184,16 @@
                         </label>
                         <div class="col-md-6 form-inline">
                             <input type="number" id="user-tel01" name="user[tel01]" class="form-control"
-                                   value="{{ old('user.tel01', !empty($order->user->tel) ? explode("-", $order->user->tel)[0] : "") }}" required>
+                                   value="{{ old('user.tel01', !empty($order->user->tel) ? explode("-", $order->user->tel)[0] : "") }}"
+                                   required>
                             -
                             <input type="number" id="user-tel02" name="user[tel02]" class="form-control"
-                                   value="{{ old('user.tel02', !empty($order->user->tel) ? explode("-", $order->user->tel)[1] : "") }}" required>
+                                   value="{{ old('user.tel02', !empty($order->user->tel) ? explode("-", $order->user->tel)[1] : "") }}"
+                                   required>
                             -
                             <input type="number" id="user-tel03" name="user[tel03]" class="form-control"
-                                   value="{{ old('user.tel03', !empty($order->user->tel) ? explode("-", $order->user->tel)[2] : "") }}" required>
+                                   value="{{ old('user.tel03', !empty($order->user->tel) ? explode("-", $order->user->tel)[2] : "") }}"
+                                   required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -206,7 +216,8 @@
                             メールアドレス
                         </label>
                         <div class="col-md-6">
-                            <input type="email" id="user-email" name="user[email]" value="{{ old('user.email', $order->user->email) }}"
+                            <input type="email" id="user-email" name="user[email]"
+                                   value="{{ old('user.email', $order->user->email) }}"
                                    class="form-control" required placeholder=""/>
                             @if ($errors->has('email'))
                                 @foreach ($errors->get('email') as $error)
@@ -221,7 +232,8 @@
                         </label>
                         <div class="col-md-6">
                             <input type="password" id="user-password" name="user[password]"
-                                   value="{{ old('user.password', $order->user->password) }}" class="form-control" required
+                                   value="{{ old('user.password', $order->user->password) }}" class="form-control"
+                                   required
                                    placeholder="※6文字以上で入力してください。"/>
                             @if ($errors->has('password'))
                                 @foreach ($errors->get('password') as $error)
@@ -270,7 +282,8 @@
 
                             <div class="item_box" id="item_box_{{ $index }}" data-index="{{ $index }}">
 
-                                <input type="hidden" name="order_details[{{ $index }}][id]" value="{{ $order_detail["id"] }}">
+                                <input type="hidden" name="order_details[{{ $index }}][id]"
+                                       value="{{ $order_detail["id"] }}">
 
                                 <input type="hidden" name="order_details[{{ $index }}][order_id]"
                                        value="{{ $order_detail["order_id"] }}">
@@ -288,7 +301,8 @@
                                        value="{{ empty($order_detail["image"]) ? $order_detail->product->image : $order_detail["image"] }}">
                                 <input type="hidden" name="order_details[{{ $index }}][json]"
                                        id="order_details_json_{{ $order_detail["product_id"] }}_{{ $index }}"
-                                       class="order_details_json" value="{{ empty($order_detail["json"]) ? (!empty($order_detail->id)?\App\Models\OrderDetail::getJsonText($order_detail->id):"") : $order_detail["json"] }}"
+                                       class="order_details_json"
+                                       value="{{ empty($order_detail["json"]) ? (!empty($order_detail->id)?\App\Models\OrderDetail::getJsonText($order_detail->id):"") : $order_detail["json"] }}"
                                        data-index="{{ $index }}" data-name="{{ $order_detail["product_title"] }}"
                                        data-image="{{ empty($order_detail["image"]) ? $order_detail->product->image : $order_detail["image"] }}"
                                        data-product_id="{{ $order_detail["product_id"] }}">
@@ -301,7 +315,7 @@
                                 <input type="hidden" name="order_details[{{ $index }}][designed_json]"
                                        value="{{ $order_detail["designed_json"] }}">
                                 {{--<input type="hidden" name="order_details[{{ $index }}][json_text]"--}}
-                                       {{--value="{{ empty($order_detail["json"]) ? (!empty($order_detail->id)?\App\Models\OrderDetail::getJsonText($order_detail->id):"") : $order_detail["json"] }}">--}}
+                                {{--value="{{ empty($order_detail["json"]) ? (!empty($order_detail->id)?\App\Models\OrderDetail::getJsonText($order_detail->id):"") : $order_detail["json"] }}">--}}
                                 <input type="hidden" name="order_details[{{ $index }}][width]" class="width-hidden"
                                        value="{{ empty($order_detail["width"]) ? $order_detail->product->ratio->width * 600 : $order_detail["width"] }}">
                                 <input type="hidden" name="order_details[{{ $index }}][height]" class="height-hidden"
@@ -347,27 +361,54 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <select name="order_details[{{ $index }}][size_id]" class="form-control size_id" data-index="{{ $index }}" required>
+                                                    <select name="order_details[{{ $index }}][size_id]"
+                                                            class="form-control size_id" data-index="{{ $index }}"
+                                                            required>
                                                         <option value=""></option>
+
                                                         @foreach($price_service->getSizes() as $key => $size)
-                                                            <option value="{{ $size->id }}"
-                                                                    {{ (!empty($order_detail["size_id"])?$order_detail["size_id"]:$price_service->getSizeId($order_detail["price_id"]))==$size->id?"selected":""}}>
-                                                                {{ $size->name }}
-                                                            </option>
+                                                            @if (!empty($order_detail['price_id']))
+                                                                <option value="{{ $size->id }}"
+                                                                        {{ (!empty($order_detail["size_id"])?$order_detail["size_id"]:$price_service->getSizeId($order_detail["price_id"]))==$size->id?"selected":""}}>
+                                                                    {{ $size->name }}
+                                                                </option>
+                                                            @else
+                                                                <option value="{{ $size->id }}">{{ $size->name }}</option>
+                                                            @endif
                                                         @endforeach
                                                     </select>
                                                 </td>
                                                 <td>
-                                                    <select name="order_details[{{ $index }}][ratio_id]" id="ratio_id_{{ $index }}" class="form-control ratio_id" data-index="{{ $index }}" required>
+                                                    <select name="order_details[{{ $index }}][ratio_id]"
+                                                            id="ratio_id_{{ $index }}" class="form-control ratio_id"
+                                                            data-index="{{ $index }}" required>
                                                         <option value="" class="empty"></option>
                                                     </select>
-                                                    <input type="hidden" name="order_details[{{ $index }}][old_ratio_id]" value="{{ (!empty($order_detail["ratio_id"])?$order_detail["ratio_id"]:$price_service->getRatioId($order_detail["price_id"])) }}">
+                                                    @if (!empty($order_detail['price_id']))
+                                                        <input type="hidden"
+                                                               name="order_details[{{ $index }}][old_ratio_id]"
+                                                               value="{{ (!empty($order_detail["ratio_id"])?$order_detail["ratio_id"]:$price_service->getRatioId($order_detail["price_id"])) }}">
+                                                    @else
+                                                        <input type="hidden"
+                                                               name="order_details[{{ $index }}][old_ratio_id]"
+                                                               value="{{ !empty($order_detail["ratio_id"])?$order_detail["ratio_id"]:'' }}">
+                                                    @endif
                                                 </td>
                                                 <td>
-                                                    <select name="order_details[{{ $index }}][clothe_id]" id="clothe_id_{{ $index }}" class="form-control clothe_id" data-index="{{ $index }}" required>
+                                                    <select name="order_details[{{ $index }}][clothe_id]"
+                                                            id="clothe_id_{{ $index }}" class="form-control clothe_id"
+                                                            data-index="{{ $index }}" required>
                                                         <option value="" class="empty"></option>
                                                     </select>
-                                                    <input type="hidden" name="order_details[{{ $index }}][old_clothe_id]" value="{{ (!empty($order_detail["clothe_id"])?$order_detail["clothe_id"]:$price_service->getClotheId($order_detail["price_id"])) }}">
+                                                    @if (!empty($order_detail['price_id']))
+                                                        <input type="hidden"
+                                                               name="order_details[{{ $index }}][old_clothe_id]"
+                                                               value="{{ (!empty($order_detail["clothe_id"])?$order_detail["clothe_id"]:$price_service->getClotheId($order_detail["price_id"])) }}">
+                                                    @else
+                                                        <input type="hidden"
+                                                               name="order_details[{{ $index }}][old_clothe_id]"
+                                                               value="{{ !empty($order_detail["clothe_id"])?$order_detail["clothe_id"]:'' }}">
+                                                    @endif
                                                 </td>
                                             </tr>
                                         </table>
@@ -384,19 +425,23 @@
                                                 <!-- ハトメの位置 -->
                                                 <td>
                                                     <label>
-                                                        <input type="radio" name="order_details[{{ $index }}][hatome]" value="通常" checked="checked" data-index="{{ $index }}"
+                                                        <input type="radio" name="order_details[{{ $index }}][hatome]"
+                                                               value="通常" checked="checked" data-index="{{ $index }}"
                                                                 {{ (!empty($order_detail["hatome"])?$order_detail["hatome"]:"")=="通常"?"checked":"" }}>通常
                                                     </label>
                                                     <label>
-                                                        <input type="radio" name="order_details[{{ $index }}][hatome]" value="上辺のみ" data-index="{{ $index }}"
+                                                        <input type="radio" name="order_details[{{ $index }}][hatome]"
+                                                               value="上辺のみ" data-index="{{ $index }}"
                                                                 {{ (!empty($order_detail["hatome"])?$order_detail["hatome"]:"")=="上辺のみ"?"checked":"" }}>上辺のみ
                                                     </label>
                                                     <label>
-                                                        <input type="radio" name="order_details[{{ $index }}][hatome]" value="左辺のみ" data-index="{{ $index }}"
+                                                        <input type="radio" name="order_details[{{ $index }}][hatome]"
+                                                               value="左辺のみ" data-index="{{ $index }}"
                                                                 {{ (!empty($order_detail["hatome"])?$order_detail["hatome"]:"")=="左辺のみ"?"checked":"" }}>左辺のみ
                                                     </label>
                                                     <label>
-                                                        <input type="radio" name="order_details[{{ $index }}][hatome]" value="ハトメなし" data-index="{{ $index }}"
+                                                        <input type="radio" name="order_details[{{ $index }}][hatome]"
+                                                               value="ハトメなし" data-index="{{ $index }}"
                                                                 {{ (!empty($order_detail["hatome"])?$order_detail["hatome"]:"")=="ハトメなし"?"checked":"" }}>ハトメなし
                                                     </label>
                                                 </td>
@@ -407,18 +452,29 @@
                                                         <li class="rope">
                                                             <p>
                                                                 <label>
-                                                                    <input type="hidden" name="order_details[{{ $index }}][lope_flg]" data-index="{{ $index }}" value="0">
-                                                                    <input type="checkbox" name="order_details[{{ $index }}][lope_flg]" data-index="{{ $index }}" id="optcheck" value="1"
+                                                                    <input type="hidden"
+                                                                           name="order_details[{{ $index }}][lope_flg]"
+                                                                           data-index="{{ $index }}" value="0">
+                                                                    <input type="checkbox"
+                                                                           name="order_details[{{ $index }}][lope_flg]"
+                                                                           data-index="{{ $index }}" id="optcheck"
+                                                                           value="1"
                                                                             {{ (!empty($order_detail["lope_flg"])?$order_detail["lope_flg"]:"")=="1"?"checked":"" }}>
                                                                     ロープ
                                                                 </label>
                                                             </p>
                                                             <ul class="cf">
                                                                 <li>
-                                                                    <input type="text" name="order_details[{{ $index }}][lope_1]" id="optinput1" data-index="{{ $index }}"  value="{{ $order_detail["lope_1"] }}">m
+                                                                    <input type="text"
+                                                                           name="order_details[{{ $index }}][lope_1]"
+                                                                           id="optinput1" data-index="{{ $index }}"
+                                                                           value="{{ $order_detail["lope_1"] }}">m
                                                                 </li>
                                                                 <li>
-                                                                    <input type="text" name="order_details[{{ $index }}][lope_2]" id="optinput2" data-index="{{ $index }}" value="{{ $order_detail["lope_2"] }}">本
+                                                                    <input type="text"
+                                                                           name="order_details[{{ $index }}][lope_2]"
+                                                                           id="optinput2" data-index="{{ $index }}"
+                                                                           value="{{ $order_detail["lope_2"] }}">本
                                                                 </li>
                                                             </ul>
                                                         </li>
@@ -426,30 +482,42 @@
                                                             <br>
                                                             <p>
                                                                 <label>
-                                                                    <input type="hidden" name="order_details[{{ $index }}][pole_flg]" data-index="{{ $index }}" value="0">
-                                                                    <input type="checkbox" name="order_details[{{ $index }}][pole_flg]" id="polecheck" data-index="{{ $index }}"
+                                                                    <input type="hidden"
+                                                                           name="order_details[{{ $index }}][pole_flg]"
+                                                                           data-index="{{ $index }}" value="0">
+                                                                    <input type="checkbox"
+                                                                           name="order_details[{{ $index }}][pole_flg]"
+                                                                           id="polecheck" data-index="{{ $index }}"
                                                                            value="1"
                                                                             {{ (!empty($order_detail["pole_flg"])?$order_detail["pole_flg"]:"")=="1"?"checked":"" }}>旗用ポール
                                                                 </label>
                                                             </p>
                                                             <div>
                                                                 <label>
-                                                                    <input type="radio" name="order_details[{{ $index }}][pole]" value="2m・3段伸縮"
+                                                                    <input type="radio"
+                                                                           name="order_details[{{ $index }}][pole]"
+                                                                           value="2m・3段伸縮"
                                                                            data-index="{{ $index }}"
                                                                             {{ (!empty($order_detail["pole"])?$order_detail["pole"]:"")=="2m・3段伸縮"?"checked":"" }}>2m・3段伸縮
                                                                 </label>
                                                                 <label>
-                                                                    <input type="radio" name="order_details[{{ $index }}][pole]" value="3m・3段伸縮"
+                                                                    <input type="radio"
+                                                                           name="order_details[{{ $index }}][pole]"
+                                                                           value="3m・3段伸縮"
                                                                            data-index="{{ $index }}"
                                                                             {{ (!empty($order_detail["pole"])?$order_detail["pole"]:"")=="3m・3段伸縮"?"checked":"" }}>3m・3段伸縮
                                                                 </label>
                                                                 <label>
-                                                                    <input type="radio" name="order_details[{{ $index }}][pole]" value="4m・4段伸縮"
+                                                                    <input type="radio"
+                                                                           name="order_details[{{ $index }}][pole]"
+                                                                           value="4m・4段伸縮"
                                                                            data-index="{{ $index }}"
                                                                             {{ (!empty($order_detail["pole"])?$order_detail["pole"]:"")=="4m・4段伸縮"?"checked":"" }}>4m・4段伸縮
                                                                 </label>
                                                                 <label>
-                                                                    <input type="radio" name="order_details[{{ $index }}][pole]" value="5m・4段伸縮"
+                                                                    <input type="radio"
+                                                                           name="order_details[{{ $index }}][pole]"
+                                                                           value="5m・4段伸縮"
                                                                            data-index="{{ $index }}"
                                                                             {{ (!empty($order_detail["pole"])?$order_detail["pole"]:"")=="5m・4段伸縮"?"checked":"" }}>5m・4段伸縮
                                                                 </label>
@@ -462,7 +530,9 @@
                                                 <td>
                                                     @foreach(config('const.nouki') as $key => $name)
                                                         <label>
-                                                            <input type="radio" name="order_details[{{ $index }}][nouki_id]" value="{{ $key }}" data-index="{{ $index }}"
+                                                            <input type="radio"
+                                                                   name="order_details[{{ $index }}][nouki_id]"
+                                                                   value="{{ $key }}" data-index="{{ $index }}"
                                                                     {{ (!empty($order_detail["nouki_id"])?$order_detail["nouki_id"]:"")==$key?"checked":"" }}>
                                                             {{ $name }}
                                                         </label>
@@ -474,12 +544,21 @@
                                                         @foreach (\App\Models\Option::all() as $option)
                                                             <label class="checkbox-inline">
                                                                 @if ($option->type=="1")
-                                                                    <input type="checkbox" name="order_details[{{ $index }}][option_ids][]" value="{{ $option->id }}"
-                                                                           class="option_ids option_ids_{{ $index }}" data-index="{{ $index }}" data-price="{{ $option->price }}"
-                                                                           @if ($option->type=="1") checked onclick='return false;'@endif>
+                                                                    <input type="checkbox"
+                                                                           name="order_details[{{ $index }}][option_ids][]"
+                                                                           value="{{ $option->id }}"
+                                                                           class="option_ids option_ids_{{ $index }}"
+                                                                           data-index="{{ $index }}"
+                                                                           data-price="{{ $option->price }}"
+                                                                           @if ($option->type=="1") checked
+                                                                           onclick='return false;'@endif>
                                                                 @else
-                                                                    <input type="checkbox" name="order_details[{{ $index }}][option_ids][]" value="{{ $option->id }}"
-                                                                           class="option_ids option_ids_{{ $index }}" data-index="{{ $index }}" data-price="{{ $option->price }}"
+                                                                    <input type="checkbox"
+                                                                           name="order_details[{{ $index }}][option_ids][]"
+                                                                           value="{{ $option->id }}"
+                                                                           class="option_ids option_ids_{{ $index }}"
+                                                                           data-index="{{ $index }}"
+                                                                           data-price="{{ $option->price }}"
                                                                             {{ (!empty($order_detail["option_ids"])?in_array($option->id, old('order.id')?$order_detail["option_ids"]:explode(',', $order_detail["option_ids"])) : false)?"checked":"" }}>
                                                                 @endif
                                                                 {{ $option->name }}
@@ -496,14 +575,23 @@
                                         <div class="col-md-6 col-lg-6 form-group form-inline text-right">
                                                 <span class="item_quantity">
                                                     オプション金額：
-                                                        <input type="number" name="order_details[{{ $index }}][option_price]"  value="{{ $order_detail["option_price"] }}" class="form-control option_price" data-index="{{ $index }}">
+                                                        <input type="number"
+                                                               name="order_details[{{ $index }}][option_price]"
+                                                               value="{{ $order_detail["option_price"] }}"
+                                                               class="form-control option_price"
+                                                               data-index="{{ $index }}">
                                                 </span>
                                         </div>
                                         <div class="col-md-6 col-lg-6 form-group form-inline text-right">
                                                 <span class="item_quantity">
                                                     金額：
-                                                        <input type="number" name="order_details[{{ $index }}][price]"  value="{{ $order_detail["price"] }}" class="form-control price" data-index="{{ $index }}" required>
-                                                        <input type="hidden" name="order_details[{{ $index }}][price_id]"  value="{{ $order_detail["price_id"] }}">
+                                                        <input type="number" name="order_details[{{ $index }}][price]"
+                                                               value="{{ $order_detail["price"] }}"
+                                                               class="form-control price" data-index="{{ $index }}"
+                                                               required>
+                                                        <input type="hidden"
+                                                               name="order_details[{{ $index }}][price_id]"
+                                                               value="{{ $order_detail["price_id"] }}">
                                                 </span>
                                         </div>
                                         <div class="col-md-6 col-lg-6 form-group form-inline text-right">
@@ -511,7 +599,8 @@
                                                     数量：
                                                     <input type="text" name="order_details[{{ $index }}][quantity]"
                                                            required="required" data-index="{{ $index }}"
-                                                           class="form-control quantity" value="{{ $order_detail["quantity"] }}">
+                                                           class="form-control quantity"
+                                                           value="{{ $order_detail["quantity"] }}">
                                                 </span>
                                         </div>
                                         <div class="col-md-6 col-lg-6 form-group form-inline text-right">
@@ -526,10 +615,13 @@
                                                     </span>
                                                 </span>
                                         </div>
-                                        <div class="col-md-12 col-lg-12 item_sub_total text-right" id="item_sub_total_{{ $index }}">
+                                        <div class="col-md-12 col-lg-12 item_sub_total text-right"
+                                             id="item_sub_total_{{ $index }}">
                                             <span>小計：</span>
-                                            ¥ <span class="sub_total_disp">{{ !empty($order_detail["sub_total"]) ? number_format($order_detail["sub_total"]) : 0 }}</span>
-                                            <input type="hidden" name="order_details[{{ $index }}][sub_total]" value="{{ $order_detail["sub_total"] }}">
+                                            ¥
+                                            <span class="sub_total_disp">{{ !empty($order_detail["sub_total"]) ? number_format($order_detail["sub_total"]) : 0 }}</span>
+                                            <input type="hidden" name="order_details[{{ $index }}][sub_total]"
+                                                   value="{{ $order_detail["sub_total"] }}">
                                         </div>
                                     </div>
                                 </div>
@@ -549,20 +641,25 @@
                     <div class="col-lg-7 col-lg-offset-5">
                         <dl id="product_info_result_box__body_sub_price" class="dl-horizontal">
                             <dt id="product_info_result_box__sub_total">小計：</dt>
-                            <dd id="order_sub_total_disp">¥ {{ number_format(old('order.sub_total', $order->sub_total)) }}</dd>
-                            <input type="hidden" name="order[sub_total]" value="{{ old('order.sub_total', $order->sub_total) }}">
+                            <dd id="order_sub_total_disp">
+                                ¥ {{ number_format(old('order.sub_total', $order->sub_total)) }}</dd>
+                            <input type="hidden" name="order[sub_total]"
+                                   value="{{ old('order.sub_total', $order->sub_total) }}">
                             <dt id="product_info_result_box__discount">値引き：</dt>
                             <dd class="form-group form-inline">
                                 <div class="input-group">
                                     <span class="input-group-addon">¥ </span>
-                                    <input type="text" name="order[discount]" class="form-control" value="{{ old('order.discount', !empty($order->discount)?$order->discount:0) }}" required>
+                                    <input type="text" name="order[discount]" class="form-control"
+                                           value="{{ old('order.discount', !empty($order->discount)?$order->discount:0) }}"
+                                           required>
                                 </div>
                             </dd>
                             <dt id="product_info_result_box__delivery_fee_total">送料：</dt>
                             <dd class="form-group form-inline">
                                 <div class="input-group">
                                     <span class="input-group-addon">¥ </span>
-                                    <input type="text" name="order[shipping_cost]" class="form-control" value="{{ old('order.shipping_cost', !empty($order->shipping_cost)?$order->shipping_cost:0) }}"
+                                    <input type="text" name="order[shipping_cost]" class="form-control"
+                                           value="{{ old('order.shipping_cost', !empty($order->shipping_cost)?$order->shipping_cost:0) }}"
                                            required>
                                 </div>
                             </dd>
@@ -610,8 +707,9 @@
                             <select id=order-payment" name="order[payment_id]" class="form-control" required>
                                 <option value=""></option>
                                 @foreach($payments as $payment)
-                                    <option value="{{ $payment->id }}" {{ old('order.payment_id', $order->payment->id)==  $payment->id ? "selected" : ""}}
-                                        data-commission="{{ $payment->commission }}">{{ $payment->name }}</option>
+                                    <option value="{{ $payment->id }}" {{ old('order.payment_id', $order->payment->id)==  $payment->id ? "selected" : ""}}>
+                                        {{ $payment->name }}
+                                    </option>
                                 @endforeach
                             </select>
                         </div>
@@ -652,7 +750,8 @@
                         <div class="col-md-6">
                             <input type="text" id="order_shipping_address-name_kana"
                                    name="order_shipping_address[name_kana]"
-                                   value="{{ old('order_shipping_address.name_kana', $order->order_shipping_address->name_kana) }}" class="form-control" required>
+                                   value="{{ old('order_shipping_address.name_kana', $order->order_shipping_address->name_kana) }}"
+                                   class="form-control" required>
                             @if ($errors->has('name_kana') && $error_type=="order_shipping_address")
                                 @foreach ($errors->get('name_kana') as $error)
                                     <div class="text-danger">{{ $error }}</div>
@@ -667,7 +766,8 @@
                         <div class="col-md-6">
                             <input type="text" id="order_shipping_address-company_name"
                                    name="order_shipping_address[company_name]"
-                                   value="{{ old('order_shipping_address.company_name', $order->order_shipping_address->company_name) }}" class="form-control">
+                                   value="{{ old('order_shipping_address.company_name', $order->order_shipping_address->company_name) }}"
+                                   class="form-control">
                         </div>
                     </div>
                     <div class="form-group
@@ -679,11 +779,13 @@
                             〒
                             <input type="number" id="order_shipping_address-zip01" name="order_shipping_address[zip01]"
                                    class="form-control"
-                                   value="{{ old('order_shipping_address.zip01', !empty($order->order_shipping_address->zip_code) ? explode("-", $order->order_shipping_address->zip_code)[0] : "") }}" required>
+                                   value="{{ old('order_shipping_address.zip01', !empty($order->order_shipping_address->zip_code) ? explode("-", $order->order_shipping_address->zip_code)[0] : "") }}"
+                                   required>
                             -
                             <input type="number" id="order_shipping_address-zip02" name="order_shipping_address[zip02]"
                                    class="form-control"
-                                   value="{{ old('order_shipping_address.zip02', !empty($order->order_shipping_address->zip_code) ? explode("-", $order->order_shipping_address->zip_code)[1] : "") }}" required>
+                                   value="{{ old('order_shipping_address.zip02', !empty($order->order_shipping_address->zip_code) ? explode("-", $order->order_shipping_address->zip_code)[1] : "") }}"
+                                   required>
                             <span>
                                 <button type="button" id="order_shipping_address-zip-btn"
                                         class="btn btn-default btn-sm">郵便番号から自動入力</button>
@@ -719,7 +821,8 @@
                         <div class="col-md-6">
                             <input type="text" id="order_shipping_address-address1"
                                    name="order_shipping_address[address1]"
-                                   value="{{ old('order_shipping_address.address1', $order->order_shipping_address->address1) }}" class="form-control" required
+                                   value="{{ old('order_shipping_address.address1', $order->order_shipping_address->address1) }}"
+                                   class="form-control" required
                                    placeholder="市区町村"/>
                         </div>
                     </div>
@@ -729,7 +832,8 @@
                         <div class="col-md-6">
                             <input type="text" id="order_shipping_address-address2"
                                    name="order_shipping_address[address2]"
-                                   value="{{ old('order_shipping_address.address2', $order->order_shipping_address->address2) }}" class="form-control" required
+                                   value="{{ old('order_shipping_address.address2', $order->order_shipping_address->address2) }}"
+                                   class="form-control" required
                                    placeholder="番地・ビル名"/>
                         </div>
                     </div>

@@ -473,13 +473,23 @@
                                                         @foreach (\App\Models\Option::all() as $option)
                                                             <label class="checkbox-inline">
                                                                 @if ($option->type=="1")
-                                                                    <input type="checkbox" name="order_details[{{ $index }}][option_ids][]" value="{{ $option->id }}"
-                                                                           class="option_ids option_ids_{{ $index }}" data-index="{{ $index }}" data-price="{{ $option->price }}"
-                                                                           @if ($option->type=="1") checked onclick='return false;'@endif>
+                                                                    <input type="checkbox"
+                                                                           name="order_details[{{ $index }}][option_ids][]"
+                                                                           value="{{ $option->id }}"
+                                                                           class="option_ids option_ids_{{ $index }}"
+                                                                           data-index="{{ $index }}"
+                                                                           data-price="{{ $option->price }}"
+                                                                           @if ($option->type=="1") checked
+                                                                           onclick='return false;'@endif>
                                                                 @else
-                                                                    <input type="checkbox" name="order_details[{{ $index }}][option_ids][]" value="{{ $option->id }}"
-                                                                           class="option_ids option_ids_{{ $index }}" data-index="{{ $index }}" data-price="{{ $option->price }}"
-                                                                            {{ (!empty($order_detail["option_ids"])?in_array($option->id, old('order.id')?$order_detail["option_ids"]:explode(',', $order_detail["option_ids"])) : false)?"checked":"" }}>
+                                                                    <input type="checkbox"
+                                                                           name="order_details[{{ $index }}][option_ids][]"
+                                                                           value="{{ $option->id }}"
+                                                                           class="option_ids option_ids_{{ $index }}"
+                                                                           data-index="{{ $index }}"
+                                                                           data-price="{{ $option->price }}"
+                                                                            {{ (!empty($order_detail["option_ids"])?in_array($option->id, old('order.id')?$order_detail["option_ids"]:$order_detail["option_ids"]) : false)?"checked":"" }}>
+
                                                                 @endif
                                                                 {{ $option->name }}
                                                             </label>
@@ -609,8 +619,7 @@
                             <select id=order-payment" name="order[payment_id]" class="form-control" required>
                                 <option value=""></option>
                                 @foreach($payments as $payment)
-                                    <option value="{{ $payment->id }}" {{ old('order.payment_id') ==  $payment->id ? "selected" : ""}}
-                                        data-commission="{{ $payment->commission }}">{{ $payment->name }}</option>
+                                    <option value="{{ $payment->id }}" {{ old('order.payment_id') ==  $payment->id ? "selected" : ""}}>{{ $payment->name }}</option>
                                 @endforeach
                             </select>
                         </div>

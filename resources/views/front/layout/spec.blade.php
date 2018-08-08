@@ -109,14 +109,20 @@
         function updateTotal() {
 
             var price = $('[name="order_detail[price]"]').val();
+
+            // 値段設定が不正の場合は強制的に0にする
+            if (price == 0) {
+                $('[name="order_detail[sub_total]"]').val(0);
+                $('[name="order[sub_total]"]').val(0);
+                $('[name="order[total]"]').val(0);
+                return;
+            }
+
             var option_price = $('[name="order_detail[option_price]"]').val();
             var quantity = $('[name="order_detail[quantity]"]').val();
             var tax_rate = $('[name="order_detail[tax_rate]"]').val();
             var shipping_cost = $('[name="order[shipping_cost]"]').val();
 
-            if (price == "") {
-                price = 0;
-            }
             if (option_price == "") {
                 option_price = 0;
             }
@@ -175,7 +181,7 @@
                         <input type="hidden" name="order[sub_total]" value="">
 
                         <input type="hidden" name="order_detail[ratio_id]" value="{{ $order_detail['ratio_id'] }}">
-                        <input type="hidden" name="order_detail[price]" value="">
+                        <input type="hidden" name="order_detail[price]" value="0">
                         <input type="hidden" name="order_detail[price_id]" value="">
                         <input type="hidden" name="order_detail[option_price]" value="">
                         <input type="hidden" name="order_detail[tax_rate]" value="8">
@@ -319,7 +325,7 @@
                                 <dt>合計金額</dt>
                                 <dd>
                                     <label>
-                                        <input type="text" name="order[total]" value="" readonly>
+                                        <input type="text" name="order[total]" value="0" readonly>
                                     </label>
                                 </dd>
                             </dl>

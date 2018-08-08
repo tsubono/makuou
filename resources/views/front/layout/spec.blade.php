@@ -38,8 +38,6 @@
                     $('#polecheck').prop('checked', true);
                 }
             });
-
-
         }
 
 
@@ -114,6 +112,7 @@
             var option_price = $('[name="order_detail[option_price]"]').val();
             var quantity = $('[name="order_detail[quantity]"]').val();
             var tax_rate = $('[name="order_detail[tax_rate]"]').val();
+            var shipping_cost = $('[name="order[shipping_cost]"]').val();
 
             if (price == "") {
                 price = 0;
@@ -124,9 +123,14 @@
             if (quantity == "") {
                 quantity = 0;
             }
+            if (shipping_cost == "") {
+                shipping_cost = 0;
+            }
 
             // ( 金額 + オプション金額 ) * 数量 * ( 1 + 税率 / 100 )
             var total = (parseInt(price) + parseInt(option_price)) * parseInt(quantity) * (1 + parseInt(tax_rate) / 100);
+            // 送料
+            total += parseInt(shipping_cost);
 
             $('[name="order_detail[sub_total]"]').val(total);
             $('[name="order[sub_total]"]').val(total);
@@ -289,6 +293,14 @@
                                             {{ $option->name }}
                                         @endforeach
 
+                                    </label>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>送料</dt>
+                                <dd>
+                                    <label>
+                                        <input type="text" name="order[shipping_cost]" value="{{ config('const.shipping_cost') }}" readonly>
                                     </label>
                                 </dd>
                             </dl>

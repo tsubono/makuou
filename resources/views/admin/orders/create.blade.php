@@ -571,7 +571,7 @@
                             <dd class="form-group form-inline">
                                 <div class="input-group">
                                     <span class="input-group-addon">¥ </span>
-                                    <input type="text" name="order[shipping_cost]" class="form-control" value="{{ old('order.shipping_cost', 0) }}"
+                                    <input type="text" name="order[shipping_cost]" class="form-control" value="{{ old('order.shipping_cost', config('const.shipping_cost')) }}"
                                            required>
                                 </div>
                             </dd>

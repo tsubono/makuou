@@ -144,6 +144,13 @@
                                 </dd>
                             </dl>
                             <dl>
+                                <dt>送料</dt>
+                                <dd>
+                                    {{ number_format($order['shipping_cost']) }}
+                                    <input type="hidden" name="order[shipping_cost]" value="{{ $order['shipping_cost'] }}">円
+                                </dd>
+                            </dl>
+                            <dl>
                                 <dt>個数</dt>
                                 <dd>
                                     {{ number_format($order_detail['quantity']) }}

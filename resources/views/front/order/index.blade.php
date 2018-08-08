@@ -104,6 +104,8 @@
                             <input type="hidden" name="order_detail[sub_total]" value="{{ $order_detail['sub_total'] }}">
                             <input type="hidden" name="order_detail[quantity]" value="{{ $order_detail['quantity'] }}">
 
+                            <input type="hidden" name="order[shipping_cost]" value="{{ $order['shipping_cost'] }}">
+
                             <h5 class="ttl02">会員情報（注文者）</h5>
                             <div class="form__bd">
                                 <dl>

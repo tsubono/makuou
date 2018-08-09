@@ -410,6 +410,11 @@
             updateTotal();
         });
 
+        // デートピッカー
+        $('.datepicker').datepicker({
+            format: 'yyyy-mm-dd'
+        });
+
     };
 
 </script>

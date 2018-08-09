@@ -33,13 +33,26 @@
                             注文番号
                         </label>
                         <div class="col-md-6" style="padding: 5px;">
+                            {{ $order->id }}
                         </div>
                     </div>
                     <div class="form-group col-md-6 col-xs-12">
-                        <p>受注日： {{ !empty($order->ordered_at) ? $order->ordered_at->format('Y年m月d日') : "" }}</p>
-                        <p>入金日： {{ !empty($order->payment_at) ? $order->payment_at->format('Y年m月d日') : "" }}</p>
-                        <p>発送日： {{ !empty($order->shipping_at) ? $order->shipping_at->format('Y年m月d日') : "" }}</p>
-                        <p>更新日： {{ !empty($order->updated_at) ? $order->updated_at->format('Y年m月d日') : "" }}</p>
+                        <p>
+                            <span class="pull-left">受注日： </span>
+                            {{ !empty($order->ordered_at) ? $order->ordered_at->format('Y-m-d') : "" }}
+                        </p>
+                        <p>
+                            <span class="pull-left">入金日： </span>
+                            <input type="text" class="datepicker form-control w300" name="order[payment_at]" value="{{ old('order.payment_at', !empty($order->payment_at) ? $order->payment_at->format('Y-m-d') : "") }}">
+                        </p>
+                        <p>
+                            <span class="pull-left">発送日： </span>
+                            <input type="text" class="datepicker form-control w300" name="order[shipping_at]" value="{{ old('order.shipping_at', !empty($order->shipping_at) ? $order->shipping_at->format('Y-m-d') : "") }}">
+                        </p>
+                        <p>
+                            <span class="pull-left">更新日： </span>
+                            {{ !empty($order->updated_at) ? $order->updated_at->format('Y-m-d') : "" }}
+                        </p>
                     </div>
                     <div class="form-group col-md-6 col-xs-12 order-status">
                         <label for="order-status" class="control-label col-md-3">
@@ -363,12 +376,21 @@
                                                 <td>
                                                     @if (!empty($order_detail["ratio_disp"]))
                                                         {{ $order_detail["ratio_disp"] }}
-                                                        <input type="hidden" name="order_details[{{ $index }}][ratio_id]" value="{{ $order_detail["ratio_id"] }}">
-                                                        <input type="hidden" name="order_details[{{ $index }}][ratio_disp]" value="{{ $order_detail["ratio_disp"] }}">
+                                                        <input type="hidden"
+                                                               name="order_details[{{ $index }}][ratio_id]"
+                                                               value="{{ $order_detail["ratio_id"] }}">
+                                                        <input type="hidden"
+                                                               name="order_details[{{ $index }}][ratio_disp]"
+                                                               value="{{ $order_detail["ratio_disp"] }}">
                                                     @else
-                                                        {{ $order_detail->product->ratio->height }} : {{ $order_detail->product->ratio->width }}
-                                                        <input type="hidden" name="order_details[{{ $index }}][ratio_id]" value="{{ $order_detail->product->ratio_id }}">
-                                                        <input type="hidden" name="order_details[{{ $index }}][ratio_disp]" value="{{ $order_detail->product->ratio->height }} : {{ $order_detail->product->ratio->width }}">
+                                                        {{ $order_detail->product->ratio->height }}
+                                                        : {{ $order_detail->product->ratio->width }}
+                                                        <input type="hidden"
+                                                               name="order_details[{{ $index }}][ratio_id]"
+                                                               value="{{ $order_detail->product->ratio_id }}">
+                                                        <input type="hidden"
+                                                               name="order_details[{{ $index }}][ratio_disp]"
+                                                               value="{{ $order_detail->product->ratio->height }} : {{ $order_detail->product->ratio->width }}">
                                                     @endif
                                                 </td>
                                                 <td>
@@ -621,9 +643,9 @@
                                     </div>
                                 </div>
                                 {{--<div class="icon_edit delete-btn">--}}
-                                    {{--<button type="button" class="btn btn-default btn-sm delete-item"--}}
-                                            {{--data-index="0" data-id="{{ $order_detail["id"] }}">削除--}}
-                                    {{--</button>--}}
+                                {{--<button type="button" class="btn btn-default btn-sm delete-item"--}}
+                                {{--data-index="0" data-id="{{ $order_detail["id"] }}">削除--}}
+                                {{--</button>--}}
                                 {{--</div>--}}
                             </div>
                         @endforeach

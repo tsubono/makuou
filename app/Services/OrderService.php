@@ -219,23 +219,23 @@ class OrderService
         switch(Config('const.order.status')[$data['status']]) {
             case "新規受付":
                 $data["ordered_at"] = $now;
-                $data["payment_at"] = NULL;
-                $data["shipping_at"] = NULL;
+//                $data["payment_at"] = NULL;
+//                $data["shipping_at"] = NULL;
                 break;
             case "決済処理中":
                 // $res["ordered_at"] = $now;
-                $data["payment_at"] = NULL;
-                $data["shipping_at"] = NULL;
+//                $data["payment_at"] = NULL;
+//                $data["shipping_at"] = NULL;
                 break;
             case "入金待ち":
                 // $res["ordered_at"] = $now;
-                $data["payment_at"] = NULL;
-                $data["shipping_at"] = NULL;
+//                $data["payment_at"] = NULL;
+//                $data["shipping_at"] = NULL;
                 break;
             case "入金済み":
                 // $res["ordered_at"] = $now;
-                $data["payment_at"] = $now;
-                $data["shipping_at"] = NULL;
+//                $data["payment_at"] = $now;
+//                $data["shipping_at"] = NULL;
                 break;
             case "キャンセル":
                 // $data["ordered_at"] = $now;
@@ -245,12 +245,12 @@ class OrderService
             case "取り寄せ中":
                 // $data["ordered_at"] = $now;
                 // $data["payment_at"] = $now;
-                $data["shipping_at"] = NULL;
+                // $data["shipping_at"] = NULL;
                 break;
             case "発送済み":
                 // $data["ordered_at"] = $now;
                 // $data["payment_at"] = $now;
-                $data["shipping_at"] = $now;
+                // $data["shipping_at"] = $now;
                 break;
 
         }

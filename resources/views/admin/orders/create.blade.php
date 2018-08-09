@@ -36,8 +36,14 @@
                     </div>
                     <div class="form-group col-md-6 col-xs-12">
                         <p>受注日：</p>
-                        <p>入金日：</p>
-                        <p>発送日：</p>
+                        <p>
+                            <span class="pull-left">入金日：</span>
+                            <input type="text" class="datepicker form-control form-control w300" name="order[payment_at]" value="{{ old('order.payment_at') }}">
+                        </p>
+                        <p>
+                            <span class="pull-left">発送日：</span>
+                            <input type="text" class="datepicker form-control form-control w300" name="order[shipping_at]" value="{{ old('order.shipping_at') }}">
+                        </p>
                         <p>更新日：</p>
                     </div>
                     <div class="form-group col-md-6 col-xs-12 order-status">

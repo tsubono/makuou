@@ -124,25 +124,6 @@ class PriceController extends Controller
     }
 
     /**
-     * 比率取得
-     */
-    public function ajaxGetRatios(Request $request) {
-
-        $size_id = $request->get('size_id');
-
-        $ratio_ids = $this->price->where('size_id', $size_id)->get()->sortBy('ratio_id')->pluck('ratio_id');
-        $ratio_ids = array_unique($ratio_ids->toArray());
-        $ratio_ids = array_values($ratio_ids);
-        $ratios = [];
-
-        foreach ($ratio_ids as $ratio_id) {
-            $ratios[] = $this->ratio->findOrFail($ratio_id);
-        }
-
-        echo json_encode(['ratios' => $ratios]);
-    }
-
-    /**
      * 生地取得
      */
     public function ajaxGetClothes(Request $request) {

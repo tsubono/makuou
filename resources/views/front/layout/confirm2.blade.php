@@ -24,8 +24,8 @@
                     <ul class="main__breadcrumb">
                         <li><a href="">HOME</a></li>
                         <li><a href="{{ url('/layout/'. $order_detail['product_id']) }}">レイアウトを作る</a></li>
-                        <li><a href="">デザイン確認</a></li>
-                        <li><a href="">仕様を決める</a></li>
+                        <li>デザイン確認</li>
+                        <li>仕様を決める</li>
                         <li>確認画面</li>
                     </ul>
 
@@ -144,10 +144,10 @@
                                 </dd>
                             </dl>
                             <dl>
-                                <dt>送料</dt>
+                                <dt>オプション料金</dt>
                                 <dd>
-                                    {{ number_format($order['shipping_cost']) }}
-                                    <input type="hidden" name="order[shipping_cost]" value="{{ $order['shipping_cost'] }}">円
+                                    {{ number_format($order_detail['option_price']) }}
+                                    <input type="hidden" name="order_detail[option_price]" value="{{ $order_detail['option_price'] }}">円
                                 </dd>
                             </dl>
                             <dl>
@@ -158,7 +158,21 @@
                                 </dd>
                             </dl>
                             <dl>
-                                <dt>価格</dt>
+                                <dt>小計</dt>
+                                <dd>
+                                    {{ number_format($order['sub_total']) }}
+                                    <input type="hidden" name="order[sub_total]" value="{{ $order['sub_total'] }}">円
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>送料</dt>
+                                <dd>
+                                    {{ number_format($order['shipping_cost']) }}
+                                    <input type="hidden" name="order[shipping_cost]" value="{{ $order['shipping_cost'] }}">円
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>合計金額</dt>
                                 <dd>
                                     {{ number_format($order['total']) }}円
                                 </dd>

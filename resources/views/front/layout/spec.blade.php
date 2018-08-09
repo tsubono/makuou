@@ -40,6 +40,11 @@
             });
         }
 
+        // 納期
+        $('[name="order_detail[nouki_id]"]').change(function () {
+            updatePrice();
+        });
+
 
         // オプション金額
         function updateOptionPrice() {
@@ -53,13 +58,14 @@
 
             updateTotal();
         }
+
         updateOptionPrice();
         // オプション変更時
         $('.option_ids').change(function () {
             updateOptionPrice();
         });
 
-        $('.prices').change (function() {
+        $('.prices').change(function () {
             updatePrice();
         });
         updatePrice();
@@ -85,6 +91,10 @@
                 url: '{{ url('/ajaxGetPrice') }}'
             }).done(function (data) {
                 var price = $.parseJSON(data)['price'];
+                var nouki = $('[name="order_detail[nouki_id]"]:checked').val();
+                if (nouki == '2') {
+                    price['price'] *= 1.2;
+                }
 
                 if (price != null && price != undefined) {
                     $('[name="order_detail[price]"]').val(parseInt(price['price']));
@@ -101,7 +111,7 @@
         }
 
         // 個数変更時
-        $('[name="order_detail[quantity]"]').change (function() {
+        $('[name="order_detail[quantity]"]').change(function () {
             updateTotal();
         });
 
@@ -132,14 +142,14 @@
             if (shipping_cost == "") {
                 shipping_cost = 0;
             }
-
             // ( 金額 + オプション金額 ) * 数量 * ( 1 + 税率 / 100 )
-            var total = (parseInt(price) + parseInt(option_price)) * parseInt(quantity) * (1 + parseInt(tax_rate) / 100);
-            // 送料
-            total += parseInt(shipping_cost);
+            var sub_total = (parseInt(price) + parseInt(option_price)) * parseInt(quantity) * (1 + parseInt(tax_rate) / 100);
+            $('[name="order_detail[sub_total]"]').val(sub_total);
+            $('[name="order[sub_total]"]').val(sub_total);
 
-            $('[name="order_detail[sub_total]"]').val(total);
-            $('[name="order[sub_total]"]').val(total);
+            // ( 金額 + オプション金額 ) * 数量 * ( 1 + 税率 / 100 ) + 送料
+            var total = sub_total + parseInt(shipping_cost);
+
             $('[name="order[total]"]').val(total);
             // $('[name="order[payment_total]"]').val(total);
         }
@@ -178,15 +188,11 @@
                         <input type="hidden" name="order[user_id]" value="{{ $order['user_id'] }}">
                         <input type="hidden" name="order_detail[product_id]" value="{{ $order_detail['product_id'] }}">
 
-                        <input type="hidden" name="order[sub_total]" value="">
-
                         <input type="hidden" name="order_detail[ratio_id]" value="{{ $order_detail['ratio_id'] }}">
-                        <input type="hidden" name="order_detail[price]" value="0">
                         <input type="hidden" name="order_detail[price_id]" value="">
-                        <input type="hidden" name="order_detail[option_price]" value="">
                         <input type="hidden" name="order_detail[tax_rate]" value="8">
                         <input type="hidden" name="order_detail[sub_total]" value="">
-
+                        <input type="hidden" name="order_detail[price]" value="0">
 
                         <h2 class="ttl01">サイズを決める</h2>
                         <div class="form__bd">
@@ -195,7 +201,8 @@
                                 <dd>
                                     @foreach (\App\Models\Size::all() as $size)
                                         <label>
-                                            <input type="radio" name="order_detail[size_id]" value="{{ $size->id }}" class="prices">
+                                            <input type="radio" name="order_detail[size_id]" value="{{ $size->id }}"
+                                                   class="prices" required>
                                             {{ $size->name }}
                                         </label>
                                     @endforeach
@@ -215,7 +222,8 @@
                                         <li>
                                             @foreach (\App\Models\Clothe::all() as $clothe)
                                                 <label>
-                                                    <input type="radio" name="order_detail[clothe_id]" value="{{ $clothe->id }}" class="prices">
+                                                    <input type="radio" name="order_detail[clothe_id]"
+                                                           value="{{ $clothe->id }}" class="prices" required>
                                                     {{ $clothe->name }}
                                                 </label>
                                             @endforeach
@@ -245,7 +253,8 @@
                                 <dd>
                                     <ul class="option">
                                         <li class="rope">
-                                            <p><label><input type="checkbox" name="order_detail[lope_flg]" id="optcheck" value="1">ロープ</label>
+                                            <p><label><input type="checkbox" name="order_detail[lope_flg]" id="optcheck"
+                                                             value="1">ロープ</label>
                                             </p>
                                             <ul class="cf">
                                                 <li><input type="text" name="order_detail[lope_1]" id="optinput1"></li>
@@ -253,7 +262,8 @@
                                             </ul>
                                         </li>
                                         <li class="pole">
-                                            <p><label><input type="checkbox" name="order_detail[pole_flg]" id="polecheck"
+                                            <p><label><input type="checkbox" name="order_detail[pole_flg]"
+                                                             id="polecheck"
                                                              value="1" onclick="checkBox()">旗用ポール</label></p>
                                             <div>
                                                 <label><input type="radio" name="order_detail[pole]" value="2m・3段伸縮"
@@ -275,11 +285,11 @@
                                     @foreach(config('const.nouki') as $key => $name)
                                         <label>
                                             <input type="radio" name="order_detail[nouki_id]" value="{{ $key }}"
-                                                      @if ($key==1)checked="checked"@endif>
+                                                   @if ($key==1)checked="checked"@endif>
                                             {{ $name }}
                                         </label>
                                     @endforeach
-                                  </dd>
+                                </dd>
                             </dl>
                             <dl>
                                 <dt>その他オプション</dt>
@@ -303,10 +313,10 @@
                                 </dd>
                             </dl>
                             <dl>
-                                <dt>送料</dt>
+                                <dt>オプション料金</dt>
                                 <dd>
                                     <label>
-                                        <input type="text" name="order[shipping_cost]" value="{{ config('const.shipping_cost') }}" readonly>
+                                        <input type="text" name="order_detail[option_price]" value="0" readonly>
                                     </label>
                                 </dd>
                             </dl>
@@ -318,6 +328,26 @@
                                 <dd>
                                     <label>
                                         <input type="number" name="order_detail[quantity]" value="1" reaquired>
+                                    </label>
+                                </dd>
+                            </dl>
+                        </div>
+                        <h2 class="ttl01">お支払い情報</h2>
+                        <div class="form__bd">
+                            <dl>
+                                <dt>小計（税込）</dt>
+                                <dd>
+                                    <label>
+                                        <input type="text" name="order[sub_total]" value="0" readonly>
+                                    </label>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>送料</dt>
+                                <dd>
+                                    <label>
+                                        <input type="text" name="order[shipping_cost]"
+                                               value="{{ config('const.shipping_cost') }}" readonly>
                                     </label>
                                 </dd>
                             </dl>

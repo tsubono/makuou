@@ -1,27 +1,27 @@
-<div class="item_box" id="item_box_0" data-index="0">
+<div class="item_box" id="item_box_{{ $index }}" data-index="{{ $index }}">
 
-    <input type="hidden" name="order_details[0][id]" value="">
+    <input type="hidden" name="order_details[{{ $index }}][id]" value="">
 
-    <input type="hidden" name="order_details[0][order_id]" value="{{ $order_id or 0 }}">
-    <input type="hidden" name="order_details[0][product_id]" value="{{ $product->id }}">
-    <input type="hidden" name="order_details[0][sub_total]" value="0">
-    <input type="hidden" name="order_details[0][product_title]" value="{{ $product->title }}">
-    <input type="hidden" name="order_details[0][image]" value="{{ $product->image }}">
-    <input type="hidden" name="order_details[0][json]"
-           id="order_details_json_{{ $product->id }}_0"
-           class="order_details_json" value="{{ $json }}" data-index="0" data-product_id="{{ $product->id }}"
+    <input type="hidden" name="order_details[{{ $index }}][order_id]" value="{{ $order_id or 0 }}">
+    <input type="hidden" name="order_details[{{ $index }}][product_id]" value="{{ $product->id }}">
+    <input type="hidden" name="order_details[{{ $index }}][sub_total]" value="0">
+    <input type="hidden" name="order_details[{{ $index }}][product_title]" value="{{ $product->title }}">
+    <input type="hidden" name="order_details[{{ $index }}][image]" value="{{ $product->image }}">
+    <input type="hidden" name="order_details[{{ $index }}][json]"
+           id="order_details_json_{{ $product->id }}_{{ $index }}"
+           class="order_details_json" value="{{ $json }}" data-index="{{ $index }}" data-product_id="{{ $product->id }}"
            data-name="{{ $product->title }}" data-image="{{ $product->image }}">
 
-    <input type="hidden" name="order_details[0][designed_filename]" value="">
-    <input type="hidden" name="order_details[0][designed_image]" value="">
-    <input type="hidden" name="order_details[0][uploaded_files]" value="">
-    <input type="hidden" name="order_details[0][designed_json]" value="">
-    <input type="hidden" name="order_details[0][json_text]" value="">
-    <input type="hidden" name="order_details[0][width]"
+    <input type="hidden" name="order_details[{{ $index }}][designed_filename]" value="">
+    <input type="hidden" name="order_details[{{ $index }}][designed_image]" value="">
+    <input type="hidden" name="order_details[{{ $index }}][uploaded_files]" value="">
+    <input type="hidden" name="order_details[{{ $index }}][designed_json]" value="">
+    <input type="hidden" name="order_details[{{ $index }}][json_text]" value="">
+    <input type="hidden" name="order_details[{{ $index }}][width]"
            value="{{ $product->ratio->width * 600 }}">
-    <input type="hidden" name="order_details[0][height]"
+    <input type="hidden" name="order_details[{{ $index }}][height]"
            value="{{ $product->ratio->height * 600 }}">
-    <input type="hidden" name="order_details[0][ratio_width]"
+    <input type="hidden" name="order_details[{{ $index }}][ratio_width]"
            value="{{ $product->ratio->width }}">
 
     <div class="item_detail">
@@ -34,7 +34,7 @@
                 <img src="{!! asset(env('PUBLIC', ''). $product->image) !!}"
                      class="max-w-150">
                 <a class="btn btn-default design_edit_btn"
-                   id="design_edit_btn_{{ $product->id }}_0"
+                   id="design_edit_btn_{{ $product->id }}_{{ $index }}"
                    data-name="{{ $product->name }}"
                    data-id="{{ $product->id }}"
                    data-image="{{ $product->image }}"
@@ -42,7 +42,7 @@
                    data-width="{{ $product->ratio->width * 600 }}"
                    data-height="{{ $product->ratio->height * 600 }}"
                    data-ratio_width="{{ $product->ratio->width }}"
-                   data-index="0"
+                   data-index="{{ $index }}"
                 >
                     編集する
                 </a>
@@ -54,28 +54,29 @@
         <div class="col-sm-12">
             <table class="table">
                 <tr>
-                    <th>比率</th>
                     <th>サイズ</th>
+                    <th>比率</th>
                     <th>生地</th>
                 </tr>
                 <tr>
                     <td>
-                        {{ $product->ratio->height }} : {{ $product->ratio->width }}
-                        <input type="hidden" name="order_details[{{ $index }}][ratio_id]" value="{{ $product->ratio_id }}">
-                        <input type="hidden" name="order_details[{{ $index }}][ratio_disp]" value="{{ $product->ratio->height }} : {{ $product->ratio->width }}">
-                    </td>
-                    <td>
-                        <select name="order_details[0][size_id]" class="form-control size_id"
-                                data-index="0" required>
-                            <option value="" class="empty"></option>
-                            @foreach($price_service->getSizes($product->ratio_id) as $key => $size)
+                        <select name="order_details[{{ $index }}][size_id]" class="form-control size_id"
+                                data-index="{{ $index }}" required>
+                            <option value=""></option>
+                            @foreach($price_service->getSizes() as $key => $size)
                                 <option value="{{ $size->id }}">{{ $size->name }}</option>
                             @endforeach
                         </select>
                     </td>
                     <td>
-                        <select name="order_details[0][clothe_id]" class="form-control clothe_id"
-                                data-index="0" required>
+                        <select name="order_details[{{ $index }}][ratio_id]" class="form-control ratio_id"
+                                data-index="{{ $index }}" required>
+                            <option value="" class="empty"></option>
+                        </select>
+                    </td>
+                    <td>
+                        <select name="order_details[{{ $index }}][clothe_id]" class="form-control clothe_id"
+                                data-index="{{ $index }}" required>
                             <option value="" class="empty"></option>
                         </select>
                     </td>
@@ -95,20 +96,20 @@
                     <!-- ハトメの位置 -->
                     <td>
                         <label>
-                            <input type="radio" name="order_details[0][hatome]" value="通常" checked="checked"
-                                   data-index="0">通常
+                            <input type="radio" name="order_details[{{ $index }}][hatome]" value="通常" checked="checked"
+                                   data-index="{{ $index }}">通常
                         </label>
                         <label>
-                            <input type="radio" name="order_details[0][hatome]" value="上辺のみ"
-                                   data-index="0">上辺のみ
+                            <input type="radio" name="order_details[{{ $index }}][hatome]" value="上辺のみ"
+                                   data-index="{{ $index }}">上辺のみ
                         </label>
                         <label>
-                            <input type="radio" name="order_details[0][hatome]" value="左辺のみ"
-                                   data-index="0">左辺のみ
+                            <input type="radio" name="order_details[{{ $index }}][hatome]" value="左辺のみ"
+                                   data-index="{{ $index }}">左辺のみ
                         </label>
                         <label>
-                            <input type="radio" name="order_details[0][hatome]" value="ハトメなし"
-                                   data-index="0">ハトメなし
+                            <input type="radio" name="order_details[{{ $index }}][hatome]" value="ハトメなし"
+                                   data-index="{{ $index }}">ハトメなし
                         </label>
                     </td>
                     <!-- ./ハトメの位置 -->
@@ -118,21 +119,21 @@
                             <li class="rope">
                                 <p>
                                     <label>
-                                        <input type="hidden" name="order_details[0][lope_flg]"
-                                               data-index="0" value="0">
-                                        <input type="checkbox" name="order_details[0][lope_flg]"
-                                               data-index="0" id="optcheck" value="1">
+                                        <input type="hidden" name="order_details[{{ $index }}][lope_flg]"
+                                               data-index="{{ $index }}" value="0">
+                                        <input type="checkbox" name="order_details[{{ $index }}][lope_flg]"
+                                               data-index="{{ $index }}" id="optcheck" value="1">
                                         ロープ
                                     </label>
                                 </p>
                                 <ul class="cf">
                                     <li>
-                                        <input type="text" name="order_details[0][lope_1]" id="optinput1"
-                                               data-index="0" value="">m
+                                        <input type="text" name="order_details[{{ $index }}][lope_1]" id="optinput1"
+                                               data-index="{{ $index }}" value="">m
                                     </li>
                                     <li>
-                                        <input type="text" name="order_details[0][lope_2]" id="optinput2"
-                                               data-index="0" value="">本
+                                        <input type="text" name="order_details[{{ $index }}][lope_2]" id="optinput2"
+                                               data-index="{{ $index }}" value="">本
                                     </li>
                                 </ul>
                             </li>
@@ -140,29 +141,29 @@
                                 <br>
                                 <p>
                                     <label>
-                                        <input type="hidden" name="order_details[0][pole_flg]"
-                                               data-index="0" value="0">
-                                        <input type="checkbox" name="order_details[0][pole_flg]"
-                                               id="polecheck" data-index="0"
+                                        <input type="hidden" name="order_details[{{ $index }}][pole_flg]"
+                                               data-index="{{ $index }}" value="0">
+                                        <input type="checkbox" name="order_details[{{ $index }}][pole_flg]"
+                                               id="polecheck" data-index="{{ $index }}"
                                                value="1">旗用ポール
                                     </label>
                                 </p>
                                 <div>
                                     <label>
-                                        <input type="radio" name="order_details[0][pole]" value="2m・3段伸縮"
-                                               data-index="0">2m・3段伸縮
+                                        <input type="radio" name="order_details[{{ $index }}][pole]" value="2m・3段伸縮"
+                                               data-index="{{ $index }}">2m・3段伸縮
                                     </label>
                                     <label>
-                                        <input type="radio" name="order_details[0][pole]" value="3m・3段伸縮"
-                                               data-index="0">3m・3段伸縮
+                                        <input type="radio" name="order_details[{{ $index }}][pole]" value="3m・3段伸縮"
+                                               data-index="{{ $index }}">3m・3段伸縮
                                     </label>
                                     <label>
-                                        <input type="radio" name="order_details[0][pole]" value="4m・4段伸縮"
-                                               data-index="0">4m・4段伸縮
+                                        <input type="radio" name="order_details[{{ $index }}][pole]" value="4m・4段伸縮"
+                                               data-index="{{ $index }}">4m・4段伸縮
                                     </label>
                                     <label>
-                                        <input type="radio" name="order_details[0][pole]" value="5m・4段伸縮"
-                                               data-index="0">5m・4段伸縮
+                                        <input type="radio" name="order_details[{{ $index }}][pole]" value="5m・4段伸縮"
+                                               data-index="{{ $index }}">5m・4段伸縮
                                     </label>
                                 </div>
                             </li>
@@ -173,27 +174,27 @@
                     <td>
                         @foreach(config('const.nouki') as $key => $name)
                             <label>
-                                <input type="radio" name="order_details[0][nouki_id]" value="{{ $key }}"
-                                       data-index="0" class="nouki">
+                                <input type="radio" name="order_details[{{ $index }}][nouki_id]" value="{{ $key }}"
+                                       data-index="{{ $index }}" class="nouki">
                                 {{ $name }}
                             </label>
                         @endforeach
                     </td>
                     <!-- ./納期 -->
                     <td>
-                        <div class="checkbox form-group" id="option_ids_area_0">
+                        <div class="checkbox form-group" id="option_ids_area_{{ $index }}">
                             @foreach (\App\Models\Option::all() as $option)
                                 <label class="checkbox-inline">
                                     @if ($option->type=="1")
-                                        <input type="checkbox" name="order_details[0][option_ids][]"
+                                        <input type="checkbox" name="order_details[{{ $index }}][option_ids][]"
                                                value="{{ $option->id }}"
-                                               class="option_ids option_ids_0" data-index="0"
+                                               class="option_ids option_ids_{{ $index }}" data-index="{{ $index }}"
                                                data-price="{{ $option->price }}"
                                                @if ($option->type=="1") checked onclick='return false;'@endif>
                                     @else
-                                        <input type="checkbox" name="order_details[0][option_ids][]"
+                                        <input type="checkbox" name="order_details[{{ $index }}][option_ids][]"
                                                value="{{ $option->id }}"
-                                               class="option_ids option_ids_0" data-index="0"
+                                               class="option_ids option_ids_{{ $index }}" data-index="{{ $index }}"
                                                data-price="{{ $option->price }}">
                                     @endif
                                     {{ $option->name }}
@@ -210,22 +211,22 @@
             <div class="col-md-6 col-lg-6 form-group form-inline text-right">
                 <span class="item_quantity">
                     オプション金額：
-                    <input type="number" name="order_details[0][option_price]" value="0"
+                    <input type="number" name="order_details[{{ $index }}][option_price]" value="0"
                            class="form-control">
                 </span>
             </div>
             <div class="col-md-6 col-lg-6 form-group form-inline text-right">
                 <span class="item_quantity">
                     金額：
-                    <input type="number" name="order_details[0][price]" value="0" class="form-control"
+                    <input type="number" name="order_details[{{ $index }}][price]" value="0" class="form-control"
                            required>
-                    <input type="hidden" name="order_details[0][price_id]" value="">
+                    <input type="hidden" name="order_details[{{ $index }}][price_id]" value="">
                 </span>
             </div>
             <div class="col-md-6 col-lg-6 form-group form-inline text-right">
                 <span class="item_quantity">
                     数量：
-                    <input type="text" name="order_details[0][quantity]"
+                    <input type="text" name="order_details[{{ $index }}][quantity]"
                            required="required" class="form-control" value="1">
                 </span>
             </div>
@@ -233,25 +234,25 @@
                 <span class="item_tax">
                     税率：
                     <span class="input-group">
-                        <input type="text" name="order_details[0][tax_rate]"
+                        <input type="text" name="order_details[{{ $index }}][tax_rate]"
                                required="required" class="form-control" value="8">
                         <span class="input-group-addon">%</span>
                     </span>
                 </span>
             </div>
-            <div class="col-md-12 col-lg-12 item_sub_total text-right" id="item_sub_total_0">
+            <div class="col-md-12 col-lg-12 item_sub_total text-right" id="item_sub_total_{{ $index }}">
                 <span>小計：</span>
                 ¥ <span class="sub_total_disp">0</span>
-                <input type="hidden" name="order_details[0][sub_total]" value="0">
+                <input type="hidden" name="order_details[{{ $index }}][sub_total]" value="0">
             </div>
         </div>
     </div>
-    {{--<div class="icon_edit delete-btn">--}}
-        {{--<button type="button" class="btn btn-default btn-sm delete-item"--}}
-                {{--data-index="0" data-id="">--}}
-            {{--削除--}}
-        {{--</button>--}}
-    {{--</div>--}}
+    <div class="icon_edit delete-btn">
+        <button type="button" class="btn btn-default btn-sm delete-item"
+                data-index="{{ $index }}" data-id="">
+            削除
+        </button>
+    </div>
 </div>
 
 <script>
@@ -290,8 +291,42 @@
     });
 
     // サイズ変更時
-    $('[name="order_details[0][size_id]"]').change(function () {
+    $('[name="order_details[{{ $index }}][size_id]"]').change(function () {
+        var index = $(this).attr('data-index');
 
+        // リセット
+        $('[name="order_details[' + index + '][ratio_id]"]').find('option:not(.empty)').remove();
+        $('[name="order_details[' + index + '][clothe_id]"]').find('option:not(.empty)').remove();
+        $('[name="order_details[' + index + '][price]"]').val(0);
+        $('[name="order_details[' + index + '][price_id]"]').val("");
+
+        if ($(this).val() != "") {
+            $.ajax({
+                type: 'post',
+                data: {
+                    'size_id': $(this).val(),
+                    '_token': '{{csrf_token()}}'
+                },
+                url: '{{ url('/admin/product-setting/prices/ajaxGetRatios') }}'
+            }).done(function (data) {
+                var ratios = $.parseJSON(data)['ratios'];
+                // 比率選択肢更新
+                for (var i = 0; i < ratios.length; i++) {
+                    var option = $('<option>')
+                        .val(ratios[i]['id'])
+                        .text(ratios[i]['height'] + ' : ' + ratios[i]['width']);
+                    $('[name="order_details[' + index + '][ratio_id]"]').append(option);
+                }
+
+                updateOrderDetailSubtotal(index);
+
+            }).fail(function (data) {
+            });
+        }
+    });
+
+    // 比率変更時
+    $('[name="order_details[{{ $index }}][ratio_id]"]').change(function () {
         var index = $(this).attr('data-index');
 
         // リセット
@@ -299,15 +334,12 @@
         $('[name="order_details[' + index + '][price]"]').val(0);
         $('[name="order_details[' + index + '][price_id]"]').val("");
 
-        var size_id = $('[name="order_details[' + index + '][size_id]"]').find('option:selected').val();
-        var ratio_id = $('[name="order_details[' + index + '][ratio_id]"]').val();
-
         if ($(this).val() != "") {
             $.ajax({
                 type: 'post',
                 data: {
-                    'size_id': size_id,
-                    'ratio_id': ratio_id,
+                    'size_id': $('[name="order_details[' + index + '][size_id]"]').find('option:selected').val(),
+                    'ratio_id': $(this).val(),
                     '_token': '{{csrf_token()}}'
                 },
                 url: '{{ url('/admin/product-setting/prices/ajaxGetClothes') }}'
@@ -330,35 +362,25 @@
     });
 
     // 生地変更時
-    $('[name="order_details[0][clothe_id]"]').change(function () {
-        var index = $(this).attr('data-index');
-        updatePrice(index);
-    });
+    $('[name="order_details[{{ $index }}][clothe_id]"]').change(function () {
 
-    function updatePrice(index) {
+        var index = $(this).attr('data-index');
         $('[name="order_details[' + index + '][price]"]').val(0);
         $('[name="order_details[' + index + '][price_id]"]').val("");
 
-        var ratio_id = $('[name="order_details[' + index + '][ratio_id]"]').val();
-        var size_id = $('[name="order_details[' + index + '][size_id]"]').find('option:selected').val();
-
-        var clothe_id = $('[name="order_details[' + index + '][clothe_id]"]').find('option:selected').val();
-        if (clothe_id != "") {
+        if ($(this).val() != "") {
             $.ajax({
                 type: 'post',
                 data: {
-                    'size_id': size_id,
-                    'ratio_id': ratio_id,
-                    'clothe_id': clothe_id,
+                    'size_id': $('[name="order_details[' + index + '][size_id]"]').find('option:selected').val(),
+                    'ratio_id': $('[name="order_details[' + index + '][ratio_id]"]').find('option:selected').val(),
+                    'clothe_id': $(this).val(),
                     '_token': '{{csrf_token()}}'
                 },
                 url: '{{ url('/admin/product-setting/prices/ajaxGetPrice') }}'
             }).done(function (data) {
                 var price = $.parseJSON(data)['price'];
                 // 金額更新
-                if ($('[name="order_details[' + index + '][nouki_id]"]:checked').val()=='2') {
-                    price['price'] *= 1.2;
-                }
                 $('[name="order_details[' + index + '][price]"]').val(parseInt(price['price']));
                 $('[name="order_details[' + index + '][price_id]"]').val(price['id']);
 
@@ -367,24 +389,18 @@
             }).fail(function (data) {
             });
         }
-    }
-
-    // 納期変更時
-    $('.nouki').change (function() {
-        var index = $(this).attr('data-index');
-        updatePrice(index);
     });
 
     // 初期表示時のオプション値段計算
-    var form_option_price = $('[name="order_details[0][option_price]"]');
+    var form_option_price = $('[name="order_details[{{ $index }}][option_price]"]');
     var option_price = 0;
-    $('.option_ids_0').each(function () {
+    $('.option_ids_{{ $index }}').each(function () {
         if (this.checked) {
             option_price += parseInt($(this).attr('data-price'));
         }
     });
     form_option_price.val(option_price);
-    updateOrderDetailSubtotal(0);
+    updateOrderDetailSubtotal({{ $index }});
     updateOrderSubtotal();
 
     // オプション変更時
@@ -406,23 +422,23 @@
     });
 
     // オプション金額手入力変更時
-    $('[name="order_details[0][option_price]"]').change(function () {
-        updateOrderDetailSubtotal(0);
+    $('[name="order_details[{{ $index }}][option_price]"]').change(function () {
+        updateOrderDetailSubtotal({{ $index }});
     });
 
     // 金額手入力変更時
-    $('[name="order_details[0][price]"]').change(function () {
-        updateOrderDetailSubtotal(0);
+    $('[name="order_details[{{ $index }}][price]"]').change(function () {
+        updateOrderDetailSubtotal({{ $index }});
     });
 
     // 数量変更時
-    $('[name="order_details[0][quantity]"]').change(function () {
-        updateOrderDetailSubtotal(0);
+    $('[name="order_details[{{ $index }}][quantity]"]').change(function () {
+        updateOrderDetailSubtotal({{ $index }});
     });
 
     // 税率変更時
-    $('[name="order_details[0][tax_rate]"]').change(function () {
-        updateOrderDetailSubtotal(0);
+    $('[name="order_details[{{ $index }}][tax_rate]"]').change(function () {
+        updateOrderDetailSubtotal({{ $index }});
     });
 
     // 商品詳細ごとの小計金額更新

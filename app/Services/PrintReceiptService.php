@@ -25,6 +25,8 @@ class PrintReceiptService
         int $re = 0)
     {
         $orderDetails = $order->order_details;
+        $orderShippingAddresse = $order->order_shipping_address;
+
         $reader = new PHPExcel_Reader_Excel2007();
         try {
             $layout = '納品書レイアウト_幕王.xlsx';
@@ -39,7 +41,7 @@ class PrintReceiptService
             $sheet = $book->getActiveSheet();
 
             //宛先
-            $sheet->setCellValue('A3', $order->user->name);
+            $sheet->setCellValue('A3', $orderShippingAddresse->name);
 
             //納品No
             $sheet->setCellValue('N3', $order->id);
@@ -48,7 +50,7 @@ class PrintReceiptService
             $sheet->setCellValue('N4', '日付のだみーです');
 
             //件名
-            $sheet->setCellValue('C6', '件名のだみーです');
+            $sheet->setCellValue('C6', !empty($orderDetails)?$orderDetails[0]->design_name:'');
             $sheet->getStyle('D15')
                 ->getNumberFormat()
                 ->setFormatCode('\¥#,##0');
@@ -68,21 +70,22 @@ class PrintReceiptService
                 $sheet->setCellValue('A' . $row, $cnt + 1);
 
                 //品名
-                $sheet->setCellValue('B' . $row, $orderDetails[$cnt]->product->title);
+                // $sheet->setCellValue('B' . $row, $orderDetails[$cnt]->product->title);
+                $sheet->setCellValue('B' . $row, $orderDetails[$cnt]->design_name);
 
                 //個数
                 $sheet->setCellValue('J' . $row, $orderDetails[$cnt]->quantity);
                 $sheet->setCellValue('K' . $row, '個');
 
                 //単価
-                $sheet->setCellValue('L' . $row, $orderDetails[$cnt]->price);
+                $sheet->setCellValue('L' . $row, $orderDetails[$cnt]->price + $orderDetails[$cnt]->option_price);
                 $sheet->getStyle('L' . $row)
                     ->getNumberFormat()
                     ->setFormatCode('#,##0');
 
                 //商品の金額
                 $sheet->setCellValue('O' . $row,
-                    $orderDetails[$cnt]->quantity * $orderDetails[$cnt]->price);
+                    $orderDetails[$cnt]->quantity * ($orderDetails[$cnt]->price + $orderDetails[$cnt]->option_price));
                 $sheet->getStyle('O' . $row)
                     ->getNumberFormat()
                     ->setFormatCode('#,##0');
@@ -106,7 +109,7 @@ class PrintReceiptService
             $sheet->setCellValue('L31', $taxPrice);
 
 
-            $sheet->setCellValue('L32', $subTotal + $taxPrice);
+            $sheet->setCellValue('L32', $subTotal + $taxPrice + (int)config('const.shipping_cost'));
             $sheet->getStyle('L32')
                 ->getNumberFormat()
                 ->setFormatCode('#,##0');

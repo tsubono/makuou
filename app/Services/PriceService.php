@@ -29,7 +29,12 @@ class PriceService
     /**
      * サイズ一覧を返す
      */
-    public function getSizes() {
+    public function getSizes($ratio_id) {
+        if (!empty($ratio_id)) {
+            $size_ids = $this->price->where('ratio_id', $ratio_id)->get()->sortBy('size_id')->pluck('size_id');
+        } else {
+            $size_ids = $this->price->get()->sortBy('size_id')->pluck('size_id');
+        }
         $size_ids = $this->price->get()->sortBy('size_id')->pluck('size_id');
         $size_ids = array_unique($size_ids->toArray());
         $size_ids = array_values($size_ids);
@@ -58,14 +63,5 @@ class PriceService
         $price = $this->price->findOrFail($id);
 
         return $price->clothe_id;
-    }
-
-    /**
-     * 比率IDを返す
-     */
-    public function getRatioId($id) {
-        $price = $this->price->findOrFail($id);
-
-        return $price->ratio_id;
     }
 }

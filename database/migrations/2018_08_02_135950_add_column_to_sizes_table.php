@@ -14,7 +14,7 @@ class AddColumnToSizesTable extends Migration
     public function up()
     {
         Schema::table('sizes', function (Blueprint $table) {
-            $table->text('value')->comment('サイズ値')->after('name')->nullable();
+            $table->string('value')->comment('サイズ値')->after('name')->nullable();
         });
     }
 

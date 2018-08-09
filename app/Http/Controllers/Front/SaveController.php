@@ -17,7 +17,7 @@ class SaveController extends Controller
 
     public function index(){
 
-        $orders = $this->order->where('user_id', auth()->user()->id)->whereNull('status')->paginate(15);
+        $orders = $this->order->where('user_id', auth()->user()->id)->whereNull('status')->orderBy('created_at', 'desc')->paginate(15);
         return view('front.save', compact('orders'));
     }
 }

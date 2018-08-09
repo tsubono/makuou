@@ -29,7 +29,7 @@ class OrderedController extends Controller
 
     public function index()
     {
-        $orders = $this->order->where('user_id', auth()->user()->id)->whereNotNull('status')->get();
+        $orders = $this->order->where('user_id', auth()->user()->id)->whereNotNull('status')->orderBy('created_at', 'desc')->get();
         return view('front.ordered', compact('orders'));
     }
 

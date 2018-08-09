@@ -40,12 +40,15 @@
                 type: 'post',
                 data: {
                     'id': id,
-                    'index': $('.item_box').length,
+                    // 'index': $('.item_box').length,
+                    'index': 0,
                     'json': json,
                     '_token': '{{csrf_token()}}'
                 },
                 url: '{{ url('/admin/products/ajaxSearch') }}'
             }).done(function (data) {
+
+                $('.order_list').empty();
                 $('.order_list').append(data);
 
                 $('.product_result_area').html('');

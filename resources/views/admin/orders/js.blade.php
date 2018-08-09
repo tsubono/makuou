@@ -199,62 +199,13 @@
         // サイズ変更時
         $('.size_id').change(function () {
             var index = $(this).attr('data-index');
-            updateRatio(index);
+            updateClothe(index);
         });
         $('.size_id option:selected').each(function () {
             if ($(this).val()!="") {
                 var index = $(this).parent('.size_id').attr('data-index');
-                updateRatio(index);
+                updateClothe(index);
             }
-        });
-
-        function updateRatio(index) {
-
-            $('[name="order_details[' + index + '][ratio_id]"]').find('option:not(.empty)').remove();
-            $('[name="order_details[' + index + '][clothe_id]"]').find('option:not(.empty)').remove();
-            $('[name="order_details[' + index + '][price]"]').val(0);
-            $('[name="order_details[' + index + '][price_id]"]').val("");
-
-            var size_id = $('[name="order_details[' + index + '][size_id]"]').find('option:selected').val();
-            if (size_id != "") {
-                $.ajax({
-                    type: 'post',
-                    data: {
-                        'size_id': size_id,
-                        '_token': '{{csrf_token()}}'
-                    },
-                    url: '{{ url('/admin/product-setting/prices/ajaxGetRatios') }}'
-                }).done(function (data) {
-                    var ratios = $.parseJSON(data)['ratios'];
-                    var old_ratio_id = $('[name="order_details[' + index + '][old_ratio_id]"]').val();
-
-                    for (var i = 0; i < ratios.length; i++) {
-                        var option = "";
-
-                        if (ratios[i]['id'] == old_ratio_id) {
-                            option = {value: ratios[i]['id'] , text:ratios[i]['height'] + ' : ' + ratios[i]['width'], selected:true};
-                        } else {
-                            option = {value: ratios[i]['id'] , text:ratios[i]['height'] + ' : ' + ratios[i]['width']};
-                        }
-                        var element = $('<option>', option);
-                        $('[name="order_details[' + index + '][ratio_id]"]').append(element);
-                    }
-
-                    updateOrderDetailSubtotal(index);
-
-                    if ($('#ratio_id_'+index).find('option:selected').val() != "") {
-                        updateClothe(index);
-                    }
-
-                }).fail(function (data) {
-                });
-            }
-        }
-
-        // 比率変更時
-        $('.ratio_id').change(function () {
-            var index = $(this).attr('data-index');
-            updateClothe(index);
         });
 
         function updateClothe(index) {
@@ -263,9 +214,10 @@
             $('[name="order_details[' + index + '][price]"]').val(0);
             $('[name="order_details[' + index + '][price_id]"]').val("");
 
-            var ratio_id = $('[name="order_details[' + index + '][ratio_id]"]').find('option:selected').val();
+            var ratio_id = $('[name="order_details[' + index + '][ratio_id]"]').val();
             var size_id = $('[name="order_details[' + index + '][size_id]"]').find('option:selected').val();
-            if (ratio_id != "") {
+
+            if (ratio_id != "" && size_id != "") {
                 $.ajax({
                     type: 'post',
                     data: {
@@ -311,19 +263,27 @@
             $('[name="order_details[' + index + '][price]"]').val(0);
             $('[name="order_details[' + index + '][price_id]"]').val("");
 
+            var ratio_id = $('[name="order_details[' + index + '][ratio_id]"]').val();
+            var size_id = $('[name="order_details[' + index + '][size_id]"]').find('option:selected').val();
+
+
             var clothe_id = $('[name="order_details[' + index + '][clothe_id]"]').find('option:selected').val();
             if (clothe_id != "") {
                 $.ajax({
                     type: 'post',
                     data: {
-                        'size_id': $('[name="order_details[' + index + '][size_id]"]').find('option:selected').val(),
-                        'ratio_id': $('[name="order_details[' + index + '][ratio_id]"]').find('option:selected').val(),
+                        'size_id': size_id,
+                        'ratio_id': ratio_id,
                         'clothe_id': clothe_id,
                         '_token': '{{csrf_token()}}'
                     },
                     url: '{{ url('/admin/product-setting/prices/ajaxGetPrice') }}'
                 }).done(function (data) {
                     var price = $.parseJSON(data)['price'];
+                    // 金額更新
+                    if ($('[name="order_details[' + index + '][nouki_id]"]:checked').val()=='2') {
+                        price['price'] *= 1.2;
+                    }
 
                     $('[name="order_details[' + index + '][price]"]').val(parseInt(price['price']));
                     $('[name="order_details[' + index + '][price_id]"]').val(price['id']);
@@ -334,6 +294,12 @@
                 });
             }
         }
+
+        // 納期変更時
+        $('.nouki').change (function() {
+            var index = $(this).attr('data-index');
+            updatePrice(index);
+        });
 
         // 初期表示時のオプション値段計算
         $('.item_box').each (function() {
@@ -397,6 +363,8 @@
         function updateOrderDetailSubtotal(index) {
 
             var price = $('[name="order_details['+index+'][price]"]').val();
+            var nouki = $('[name="order_details['+index+'][nouki_id]"]:checked').val();
+
             var option_price = $('[name="order_details['+index+'][option_price]"]').val();
             var quantity = $('[name="order_details['+index+'][quantity]"]').val();
             var tax_rate = $('[name="order_details['+index+'][tax_rate]"]').val();
@@ -429,51 +397,18 @@
         // 受注合計金額更新
         function updateTotal() {
 
-            // 小計 - 値引き + 送料 + 手数料
-            var total = parseInt($('[name="order[sub_total]"]').val()) - parseInt($('[name="order[discount]"]').val())
-                + parseInt($('[name="order[shipping_cost]"]').val()) + parseInt($('[name="order[fee]"]').val());
+            // 小計 + 送料
+            var total = parseInt($('[name="order[sub_total]"]').val()) + parseInt($('[name="order[shipping_cost]"]').val());
 
             $('#order_total_disp').text("¥ " + total.toLocaleString());
             $('[name="order[total]"]').val(total);
         }
 
-        // 値引き変更時
-        $('[name="order[discount]"]').change (function() {
-            updateTotal();
-        });
 
         // 送料変更時
         $('[name="order[shipping_cost]"]').change (function() {
             updateTotal();
         });
-
-        // 手数料変更時
-        $('[name="order[fee]"]').change (function() {
-            updateTotal();
-        });
-
-        // 支払い方法変更時
-        // $('[name="order[payment_id]"]').change (function() {
-        //     var commission = $('[name="order[payment_id]"] option:selected').data('commission');
-        //     var before_commission = $('[name="order[fee]"]').val();
-        //     var total = $('[name="order[total]"]').val();
-        //     var payment_total = 0;
-        //
-        //     $('[name="order[fee]"]').val(commission);
-        //
-        //     if (commission != 0) {
-        //         payment_total = total - before_commission + commission;
-        //         $('[name="order[total]"]').val(total - before_commission + commission);
-        //         $('#order_total_disp').text("¥ " + payment_total.toLocaleString());
-        //
-        //     } else {
-        //         payment_total = total - before_commission;
-        //         $('[name="order[total]"]').val(payment_total);
-        //         $('#order_total_disp').text("¥ " + payment_total.toLocaleString());
-        //     }
-        // });
-
-
 
     };
 

@@ -613,8 +613,35 @@ angular.module('productApp', [
         /*
          * デザイン初期化
          */
-        $scope.initFabric = function (width, height) {
+        $scope.initFabric = function (ratio_width) {
 
+            var width = 0;
+            var height = 0;
+
+            switch (ratio_width) {
+                case '1':
+                    width = 425;
+                    height = 425;
+                    break;
+                case '1.5':
+                    width = 510;
+                    height = 340;
+                    break;
+                case '2':
+                    width = 680;
+                    height = 340;
+                    break;
+                case '3':
+                    width = 1020;
+                    height = 340;
+                    break;
+                case '4':
+                    width = 1020;
+                    height = 255;
+                    break;
+                default:
+                        break;
+            }
             $scope.fabric = new Fabric({
                 JSONExportProperties: FabricConstants.JSONExportProperties,
                 textDefaults: FabricConstants.textDefaults,

@@ -30,7 +30,8 @@
     // 商品選択時
     $('.set-product').click(function () {
         var id = $(this).data('id');
-        $('#productApp').scope().initFabric($(this).attr('data-ratio_width') * 170.079, 170.079);
+        // $('#productApp').scope().initFabric($(this).attr('data-ratio_width') * 170.079, 170.079);
+        $('#productApp').scope().initFabric($(this).attr('data-ratio_width'));
         $('#productApp').scope().loadProduct( $(this).data('name'), $(this).data('image'), id);
         setTimeout(function(){
             $('#productApp').scope().deactivateAll();

@@ -80,14 +80,14 @@
         <section class="choose_scene box3">
             <h2>シーンから選ぶ</h2>
             <ul class="cf">
-                <li><a href="#"><img src="{{asset("assets/img/top/scene_01.png")}}" alt="スポーツ応援"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/scene_02.png")}}" alt="お祝い・式典"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/scene_03.png")}}" alt="学校行事"></a></li>
+                <li><a href="{{ url('result') }}?category_3[]=33"><img src="{{asset("assets/img/top/scene_01.png")}}" alt="スポーツ応援"></a></li>
+                <li><a href="{{ url('result') }}?category_3[]=34"><img src="{{asset("assets/img/top/scene_02.png")}}" alt="お祝い・式典"></a></li>
+                <li><a href="{{ url('result') }}?category_3[]=35"><img src="{{asset("assets/img/top/scene_03.png")}}" alt="学校行事"></a></li>
             </ul>
             <ul class="hidden cf">
-                <li><a href="#"><img src="{{asset("assets/img/top/scene_04.png")}}" alt="イベント・フェス"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/scene_05.png")}}" alt="ホームパーティー"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/scene_06.png")}}" alt="商売繁盛"></a></li>
+                <li><a href="{{ url('result') }}?category_3[]=36"><img src="{{asset("assets/img/top/scene_04.png")}}" alt="イベント・フェス"></a></li>
+                <li><a href="{{ url('result') }}?category_3[]=37"><img src="{{asset("assets/img/top/scene_05.png")}}" alt="ホームパーティー"></a></li>
+                <li><a href="{{ url('result') }}?category_3[]=38"><img src="{{asset("assets/img/top/scene_06.png")}}" alt="商売繁盛"></a></li>
             </ul>
             <div class="more__btn"><p>もっと見る</p></div>
         </section>
@@ -122,23 +122,19 @@
         <section class="choose_taste box3">
             <h2>テイストから選ぶ</h2>
             <ul class="cf">
-                <li><a href="{{ url('result') }}?category_1[]=24"><img src="{{asset("assets/img/top/taste_01.png")}}" alt="シンプル素材少なめの定番柄"></a></li>
-                <li><a href="{{ url('result') }}?category_1[]=25"><img src="{{asset("assets/img/top/taste_02.png")}}" alt="熱血応援幕らしい炎モチーフ"></a></li>
-                <li><a href="{{ url('result') }}?category_1[]=26"><img src="{{asset("assets/img/top/taste_03.png")}}" alt="スポーティースポーツ幕らしいデザイン"></a></li>
+                <li><a href="{{ url('result') }}?category_2[]=24"><img src="{{asset("assets/img/top/taste_01.png")}}" alt="シンプル素材少なめの定番柄"></a></li>
+                <li><a href="{{ url('result') }}?category_2[]=25"><img src="{{asset("assets/img/top/taste_02.png")}}" alt="熱血応援幕らしい炎モチーフ"></a></li>
+                <li><a href="{{ url('result') }}?category_2[]=26"><img src="{{asset("assets/img/top/taste_03.png")}}" alt="スポーティースポーツ幕らしいデザイン"></a></li>
             </ul>
             <ul class="hidden cf">
-                <li><a href="{{ url('result') }}?category_1[]=27"><img src="{{asset("assets/img/top/taste_04.png")}}" alt="ナチュラル自然モチーフ"></a></li>
-                <li><a href="{{ url('result') }}?category_1[]=28"><img src="{{asset("assets/img/top/taste_05.png")}}" alt="インパクトとにかく目立ちたい人向け"></a></li>
-                <li><a href="{{ url('result') }}?category_1[]=29"><img src="{{asset("assets/img/top/taste_06.png")}}" alt="かわいいイラスト多めでポップなイメージ"></a></li>
-                <li><a href="{{ url('result') }}?category_1[]=30"><img src="{{asset("assets/img/top/taste_07.png")}}" alt="ヴィンテージ古風柄で大人向け"></a></li>
-                <li><a href="{{ url('result') }}?category_1[]=31"><img src="{{asset("assets/img/top/taste_08.png")}}" alt="ゴージャスキラキラや幻想的なデザイン"></a></li>
-                <li><a href="{{ url('result') }}?category_1[]=32"><img src="{{asset("assets/img/top/taste_09.png")}}" alt="和風日本柄"></a></li>
+                <li><a href="{{ url('result') }}?category_2[]=27"><img src="{{asset("assets/img/top/taste_04.png")}}" alt="ナチュラル自然モチーフ"></a></li>
+                <li><a href="{{ url('result') }}?category_2[]=28"><img src="{{asset("assets/img/top/taste_05.png")}}" alt="インパクトとにかく目立ちたい人向け"></a></li>
+                <li><a href="{{ url('result') }}?category_2[]=29"><img src="{{asset("assets/img/top/taste_06.png")}}" alt="かわいいイラスト多めでポップなイメージ"></a></li>
+                <li><a href="{{ url('result') }}?category_2[]=30"><img src="{{asset("assets/img/top/taste_07.png")}}" alt="ヴィンテージ古風柄で大人向け"></a></li>
+                <li><a href="{{ url('result') }}?category_2[]=31"><img src="{{asset("assets/img/top/taste_08.png")}}" alt="ゴージャスキラキラや幻想的なデザイン"></a></li>
+                <li><a href="{{ url('result') }}?category_2[]=32"><img src="{{asset("assets/img/top/taste_09.png")}}" alt="和風日本柄"></a></li>
             </ul>
-            <a href="{{ url('search') }}">
-                <div class="more__btn">
-                    <p>もっと見る</p>
-                </div>
-            </a>
+            <div class="more__btn"><p>もっと見る</p></div>
         </section>
         <section class="feature">
             <h2>選ばれる6つの特徴</h2>

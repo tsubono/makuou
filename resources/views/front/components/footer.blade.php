@@ -16,7 +16,7 @@
                 <dt>初めての方へ</dt>
                 <dd><a href="{{url('/concept')}}">幕王について</a></dd>
                 <dd><a href="{{url('/register')}}">会員登録</a></dd>
-                <dd><a href="{{url('/')}}">ギャラリー（事例紹介）</a></dd>
+                <dd><a href="{{url('/example')}}">ギャラリー（事例紹介）</a></dd>
             </dl>
             <dl>
                 <dt>ご利用ガイド</dt>

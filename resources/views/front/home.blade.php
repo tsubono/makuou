@@ -6,11 +6,11 @@
 
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="{{asset("assets/img/top/mainimg1.png")}}" alt=""></div>
+            <div class="swiper-slide"><a href="{{url('/result')}}"><img src="{{asset("assets/img/top/mainimg1.png")}}" alt=""></a></div>
             <div class="swiper-slide"><img src="{{asset("assets/img/top/mainimg2.png")}}" alt=""></div>
-            <div class="swiper-slide"><img src="{{asset("assets/img/top/mainimg3.png")}}" alt=""></div>
-            <div class="swiper-slide"><img src="{{asset("assets/img/top/mainimg4.png")}}" alt=""></div>
-            <div class="swiper-slide"><img src="{{asset("assets/img/top/mainimg5.png")}}" alt=""></div>
+            <div class="swiper-slide"><a href="{{url('/price')}}"><img src="{{asset("assets/img/top/mainimg3.png")}}" alt=""></a></div>
+            <div class="swiper-slide"><a href="{{url('/faq')}}"><img src="{{asset("assets/img/top/mainimg4.png")}}" alt=""></a></div>
+            <div class="swiper-slide"><a href="{{url('/example')}}"><img src="{{asset("assets/img/top/mainimg5.png")}}" alt=""></a></div>
         </div>
         <div class="swiper-my-pagination"></div>
         <div class="swiper-button-prev"></div>

@@ -3,6 +3,8 @@
     <script src="{{asset("assets/js/common.js")}}"></script>
     @endif
 <script src="{{asset("assets/js/jquery.matchHeight.js")}}"></script>
+<script src="{{asset("assets/js/swiper.min.js")}}"></script>
+<script src="{{asset("assets/js/top.js")}}"></script>
 
 
 <script src="{{asset("bower_components/bootstrap/dist/js/bootstrap.min.js")}}" type="text/javascript"></script>

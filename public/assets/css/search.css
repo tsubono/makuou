@@ -342,9 +342,6 @@ img {
     border-radius: 5px;
     transition: .3s;
 }
-.result__fav.del {
-    background: gray;
-}
 .result__fav a { 
     display: flex; 
     justify-content: center;
@@ -354,8 +351,6 @@ img {
     padding: 10px;
 }
 .result__fav:hover { background: #fbad05; }
-.result__fav.del:hover { background: darkgray; }
-
 .result__fav img { 
     max-width: 28px;
     margin-right: 8px;

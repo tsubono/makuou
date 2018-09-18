@@ -1,0 +1,570 @@
+@charset "UTF-8";
+/* ------------------------------------------------------------
+   レイアウトを作るページ
+------------------------------------------------------------ */
+
+/* header
+------------------------------------------------------------ */
+header { background: #f29600; }
+header .logo { 
+    width: 90%;
+    max-width: 1220px;
+    margin: auto;
+}
+header .logo img {
+    width: 100%;
+    max-width: 83px;
+}
+
+/* contents
+------------------------------------------------------------ */
+.layout {
+    margin-top: 50px;
+}
+.l-inner { width: 90%; }
+.main__content { width: 100%; }
+.edit__area {
+    width: 100%;
+    max-width: 1220px;
+    height: 500px;
+    margin: auto;
+    background: rgba(0, 0, 0, 0) url("../img/layout/pattern-bg.jpg") repeat scroll 0 0;
+}
+.edit__layer {
+    margin: 50px auto 80px;
+}
+h2 {
+    position: relative;
+    font-size: 1.14rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    border-bottom: solid 4px #f7931e;
+    padding-bottom: 6px;
+}
+
+/* 操作ツール
+------------------------------------------------------------ */
+.edit__tools {
+     margin-top: 50px;
+}
+.edit__tools ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.edit__tools ul li {
+    border: solid 2px #cfcfcf;
+    border-radius: 5px;
+    text-align: center;
+    padding: 17px 5px 10px;
+    width: 8.1%;
+    max-width: 100px;
+    transition: .5s;
+}
+.edit__tools ul li a { 
+    color: #364450; 
+    font-size: .75rem;
+    text-decoration: none;
+}
+.edit__tools ul li:hover {
+    background: #efefef;
+}
+
+.edit__tools ul li img {
+    display: block;
+    width: 100%;
+    max-width: 36px;
+    margin: 0 auto 5px;
+}
+
+/* レイヤー一覧
+------------------------------------------------------------ */
+.edit__layer .swiper-slide {
+    width: 12%;
+    background-color: #ccc;
+    /*height: 100px;*/
+    text-align: center;
+}
+
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+    background-image: url(../img/top/prev.png);
+    background-size: 17px 44px;
+}
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+    background-image: url(../img/top/next.png);
+    background-size: 17px 44px;
+}
+
+/* 固定ナビ
+------------------------------------------------------------ */
+.edit__tools__foot {
+     width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10000;
+}
+.edit__tools__foot .tools__inner {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.edit__tools__foot .tools__inner ul {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+.edit__tools__foot li {
+    background: #f29600;
+    width: 33%;
+    text-align: center;
+    padding: 5px;
+    transition: .5s;
+    cursor: pointer;
+}
+.edit__tools__foot li:hover {
+    background: #f7bc5c;
+}
+.edit__tools__foot li.select {
+    background-color: #f7bc5c;
+    position: relative;
+}
+.edit__tools__foot li.select::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -23px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-style: solid;
+    border-width: 20px 12px 0 12px;
+    border-color: #ffffff transparent transparent transparent;
+}
+.edit__tools__foot li.select::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -23px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-style: solid;
+    border-width: 24px 14px 0 14px;
+    border-color: #ccc transparent transparent transparent;
+}
+.edit__tools__foot li:first-child {
+    border-radius: 5px 0 0 5px;
+}
+.edit__tools__foot li:last-child {
+    border-radius: 0 5px 5px 0;
+}
+.edit__tools__foot li a {
+    display: block;
+    color: #303b45;
+    text-decoration: none;
+    padding: 5px;
+}
+.edit__tools__foot img { 
+    width: 100%;
+    max-width: 30px;
+    position: relative;
+    top: 5px;
+    left: -8px;
+}
+.edit__tools__foot .btn { width: 18%; }
+.edit__tools__foot .btn a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+    background: url(../img/common/arrow-r-wh.gif) #231815 no-repeat right 13px center / 7px;
+    border-radius: 5px;
+}
+
+/* タブ
+------------------------------------------------------------ */
+
+
+.edit__hidden > div {
+    transition: .5s;
+    display: none;
+}
+.edit__wrap {
+    position: fixed;
+    bottom: 65px;
+    width: 100%;
+}
+.edit__text,.edit__image,.edit__stamp {
+    width: 90%;
+    max-width: 1220px;
+    margin: auto;
+    border: solid 2px #cfcfcf;
+    padding: 65px 25px 25px;
+    position: relative;
+    background: #fff;
+}
+.edit__wrap .edit__close {
+    position: relative;
+}
+.edit__wrap .close__btn {
+    position: absolute;
+    top: -40px;
+    right: -10px;
+}
+.edit__wrap .close__ico {
+  display: inline-block;
+  position: relative;
+  margin: 0 20px 0 7px;
+  padding: 0;
+  width: 2px;
+  height: 22px;
+  background: #ccc;
+  transform: rotate(45deg);
+}
+.edit__wrap .close__ico:before{
+  display: block;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  width: 22px;
+  height: 2px;
+  margin-top: -1px;
+  background: #ccc;
+}
+
+/* テキスト編集
+------------------------------------------------------------ */
+.text__content > div{ 
+    transition: .5s;
+    display: none;
+}
+.text__content > div:first-child { opacity: 1; display: block; }
+.text__content > div.select{ opacity: 1; display: block; }
+.edit__hidden {
+    position: fixed;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    z-index: 9999;
+}
+.edit__text input[type="text"] {
+    border: none;
+    border-bottom: solid 1px #ccc;
+    width: 100%;
+    margin: 0 0 20px;
+    padding-bottom: 10px;
+    font-size: .875rem;
+}
+.edit__text input[type="text"]::placeholder { 
+    color: #666;
+    font-size: .875rem;
+}
+input[type="button"] {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.edit__text input[type="button"] {
+    border: none;
+    border-radius: 5px;
+    box-shadow: none;
+    background-color: #ececec;
+    color: #666;
+    display: block;
+    font-size: .875rem;
+    width: 100%;
+    padding: 10px;
+    transition: .5s;
+}
+.edit__text input[type="button"]:hover {
+    background: #ccc;
+}
+
+.text__tab {
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
+    position: absolute;
+    top: -45px;
+    left: 0;
+}
+.text__tab li.select { 
+    background-color: #f29600;
+    color: #fff;
+}
+.text__tab li {
+    width: 48%;
+    transition: .5s;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+}
+.text__btnwrap {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.btn__custom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 52%;
+}
+.btn__custom div {
+    width: 31%;
+}
+.btn__add {
+    width: 16%;
+}
+.font__select { 
+    border: solid 1px #cfcfcf;
+    height: 160px;
+}
+
+
+/* 写真アップ
+------------------------------------------------------------ */
+.drop__area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.drop__area .btn {
+    width: 16%;
+}
+.drop__area input[type="button"] {
+    border: none;
+    border-radius: 5px;
+    box-shadow: none;
+    background-color: #ececec;
+    color: #666;
+    display: block;
+    font-size: .875rem;
+    width: 100%;
+    padding: 10px;
+}
+
+
+/* スタンプ
+------------------------------------------------------------ */
+.edit__stamp ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.edit__stamp li {
+    width: 12%;
+    text-align: center;
+    color: #fff;
+    background: #ccc;
+    margin-bottom: 10px;
+}
+.edit__stamp .btn {
+    width: 16%;
+}
+.edit__stamp .btn a  {
+    border: none;
+    border-radius: 5px;
+    box-shadow: none;
+    text-align: center;
+    text-decoration: none;
+    background-color: #ececec;
+    color: #666;
+    display: block;
+    font-size: 1rem;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1119px) {
+    
+    /* 固定ナビ
+    ------------------------------------------------------------ */
+    .edit__tools__foot .tools__inner { width: 100%; }
+    .edit__tools ul { justify-content: flex-start; }
+    .edit__tools ul li { 
+        width: 16%;
+        margin-bottom: 10px;
+        max-width: none;
+        margin-right: .66%;
+    }    .edit__tools__foot .btn {
+        position: absolute;
+        bottom: 42px;
+        width: 40%;
+    }
+    .edit__tools__foot .btn:last-child { right: 0; }
+    .edit__tools__foot .btn a {
+        font-size: 12px;
+        background-size: 6px;
+    }
+    .edit__tools__foot .tools__inner ul {
+        width: 100%;
+    }
+    .edit__tools__foot li { font-size: 12px; }
+    
+    .edit__tab li {
+        padding-bottom: 10px;
+    }
+    .edit__tools__foot img {
+        width: 100%;
+        max-width: 23px;
+    }
+    .edit__tools__foot li.select::before { display: none; }
+    .edit__tools__foot li.select::after {
+        display: inline;
+        position: inherit;
+        width: auto;
+        height: auto;
+        top: auto;
+        margin: auto;
+        border: none;
+    }
+    .edit__wrap { bottom: 85px; }
+    .edit__layer { margin-bottom: 120px; }
+    .btn__custom { width: 72% }
+    .btn__add { width: 23%; }
+    .drop__area .btn { width: 26%; }
+    .edit__stamp .btn { width: 28%; }
+}
+
+@media screen and (max-width: 767px) {
+    
+    /* 固定ナビ
+    ------------------------------------------------------------ */
+    .layout { margin-top: 30px; }
+    .edit__area { height: 330px; }
+    .edit__tools__foot .tools__inner { width: 100%; }
+    .edit__tools { margin: 25px auto 100px; }
+    .edit__tools ul { justify-content: flex-start; }
+    .edit__tools ul li { 
+        width: 31%;
+        margin-bottom: 7px;
+        max-width: none;
+        margin-right: 2.3%;
+    }
+    h2 { margin-bottom: 15px; }
+    .edit__tools ul li img { max-width: 30px; margin-bottom: 6px; }
+    .edit__layer { display: none; }
+    
+    .edit__tools__foot .btn {
+        position: absolute;
+        bottom: 42px;
+        width: 40%;
+    }
+    .edit__tools__foot .btn:last-child { right: 0; }
+    .edit__tools__foot .btn a {
+        font-size: 12px;
+        background-size: 6px;
+    }
+    .edit__tools__foot .tools__inner ul {
+        width: 100%;
+    }
+    .edit__tools__foot li { font-size: 12px; }
+    .edit__tab li {
+        font-size: 0;
+        padding-bottom: 10px;
+    }
+    .edit__tab li:nth-child(1)::after {
+        content: "テキスト";
+        font-size: 12px;
+    }
+    .edit__tab li:nth-child(2)::after {
+        content: "写真";
+        font-size: .75rem;
+    }
+    .edit__tab li:nth-child(3)::after {
+        content: "スタンプ";
+        font-size: .75rem;
+    }
+    .edit__tools__foot img {
+        width: 100%;
+        max-width: 23px;
+    }
+    .edit__tools__foot li.select::before { display: none; }
+    .edit__tools__foot li.select::after {
+        display: inline;
+        position: inherit;
+        width: auto;
+        height: auto;
+        top: auto;
+        margin: auto;
+        border: none;
+    }
+    .text__tab { 
+        width: 100%;
+        top: -39px;
+    }
+    .text__tab li { font-size: .75rem; }
+    .text__btnwrap { 
+        display: block;
+        position: relative;
+    }
+    .text__btnwrap::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .btn__custom {
+        display: flex;
+        width: 100%;
+    }
+    .btn__custom div { 
+        width: 48%;
+        margin-bottom: 10px;
+    }
+    .btn__custom div:last-child { margin-bottom: 0; }
+    .font__select { height: 80px; }
+    .btn__add { 
+        width: 48%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+    .edit__text, .edit__image, .edit__stamp {
+        padding-top: 35px;
+    }
+    .edit__wrap { bottom: 85px; }
+    .edit__wrap .close__btn {
+        top: -25px;
+        right: -30px;
+    }
+    .edit__wrap .close__ico { height: 15px; }
+    .edit__wrap .close__ico:before { 
+        width: 15px;
+        left: -7px;
+    }
+    .drop__area p { display: none; }
+    .drop__area .btn { width: 100%; }
+    .edit__stamp .btn { 
+        width: 50%;
+    }
+    .edit__text input[type="button"] { font-size: .8125rem; }
+    .edit__stamp .btn a { font-size: .8125rem; }
+    .edit__stamp li { width: 23%; }
+    
+    
+}

@@ -72,27 +72,27 @@ img {
 
 
 .example__submit input{
-    height: 30px;
-    padding: 0 20px;
-    cursor: pointer;
-    border: none;
-    border-radius: 6px;
-    font-size: 15px;
-    font-weight: bold;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,b5b5b5+100 */
-    background: rgb(255,255,255); /* Old browsers */
-    background: -moz-linear-gradient(top, rgb(255,255,255) 0%, rgb(181,181,181) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgb(255,255,255) 0%,rgb(181,181,181) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgb(255,255,255) 0%,rgb(181,181,181) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#b5b5b5',GradientType=0 ); /* IE6-9 */
+	height: 30px;
+	padding: 0 20px;
+	cursor: pointer;
+	border: none;
+	border-radius: 6px;
+	font-size: 15px;
+	font-weight: bold;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,b5b5b5+100 */
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(top, rgb(255,255,255) 0%, rgb(181,181,181) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgb(255,255,255) 0%,rgb(181,181,181) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgb(255,255,255) 0%,rgb(181,181,181) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#b5b5b5',GradientType=0 ); /* IE6-9 */
 }
 .example__submit input:hover{
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f4f4f4+0,a5a5a5+100 */
-    background: rgb(244,244,244); /* Old browsers */
-    background: -moz-linear-gradient(top, rgb(244,244,244) 0%, rgb(165,165,165) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgb(244,244,244) 0%,rgb(165,165,165) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgb(244,244,244) 0%,rgb(165,165,165) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#a5a5a5',GradientType=0 ); /* IE6-9 */
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f4f4f4+0,a5a5a5+100 */
+	background: rgb(244,244,244); /* Old browsers */
+	background: -moz-linear-gradient(top, rgb(244,244,244) 0%, rgb(165,165,165) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgb(244,244,244) 0%,rgb(165,165,165) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgb(244,244,244) 0%,rgb(165,165,165) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#a5a5a5',GradientType=0 ); /* IE6-9 */
 }
 
 @media screen and (min-width: 768px) and (max-width: 1119px) {
@@ -105,8 +105,8 @@ img {
     .select-box__group p {
         width: 100%;
         margin: 15px 0 0 0;
-    }
-    .example__submit input{ width: 92%; height: 43px; }
+	}
+	.example__submit input{ width: 92%; height: 43px; }
 }
 
 .example__content {
@@ -228,3 +228,4 @@ img {
     margin-top: 15px;
     color: #fff;
 }
+

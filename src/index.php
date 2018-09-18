@@ -9,6 +9,7 @@
     <meta name="format-detection" content="telephone=no">
     <link rel="shortcut icon" href="assets/img/favicon.ico">
     <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+    <link rel="stylesheet" type="text/css" href="assets/css/swiper.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/common.css">
     <link rel="stylesheet" type="text/css" href="assets/css/top.css">
 </head>
@@ -17,46 +18,94 @@
 <?php include_once "inc/header.inc"; ?>
 
 <div class="bg">
-    <div class="mainimg sp_none">
-        <div class="img"><img src="assets/img/top/mainimg.png" alt="誰でも簡単にオリジナル横断幕デザインが作れます！幕デザインの幕王～幕王は試合を盛り上げるお手伝いをします～"></div>
-        <div class="btn"><a href="/search/"><img src="assets/img/top/main_btn.png" alt="オリジナル横断幕を作る"></a></div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="assets/img/top/mainimg1.png" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/top/mainimg2.png" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/top/mainimg3.png" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/top/mainimg4.png" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/top/mainimg5.png" alt=""></div>
+        </div>
+        <div class="swiper-my-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
     </div>
-    <div class="mainimg pc_none tab_none">
-        <div class="img"><a href="/search/"><img src="assets/img/top/mainimg-sp.png" alt="誰でも簡単にオリジナル横断幕デザインが作れます！幕デザインの幕王～幕王は試合を盛り上げるお手伝いをします～オリジナル横断幕を作る"></a></div>
-    </div>
+    
     <div class="pickup">
-        <ul class="cf">
-            <li>
-                <div><img src="assets/img/top/p_ico01.png" alt=""></div>
-                <p>最短2営業日で発送</p>
-            </li>
-            <li>
-                <div><img src="assets/img/top/p_ico02.png" alt=""></div>
-                <p>安心の高品質</p>
-            </li>
-            <li>
-                <div><img src="assets/img/top/p_ico03.png" alt=""></div>
-                <p>送料全国一律</p>
-            </li>
-            <li>
-                <div><img src="assets/img/top/p_ico04.png" alt=""></div>
-                <p>選べる支払方法</p>
-            </li>
-        </ul>
+        <div class="guide_flow">
+            <div class="fl_box">
+                <div class="fl_title">
+                    <span class="fl_sh">STEP</span><span class="fl_bg">1</span>
+                </div>
+                <div class="fl_contents">
+                    <div class="fl_img">
+                        <div class="fl_icon1"></div>
+                    </div>
+                    <div class="fl_text">
+                        <p class="fl_p">新規会員登録（無料）<br>して、ログイン</p>
+                    </div>	
+                </div>
+            </div>
+
+            <div class="fl_box">
+                <div class="fl_title">
+                    <span class="fl_sh">STEP</span><span class="fl_bg">2</span>
+                </div>
+                <div class="fl_contents">
+                    <div class="fl_img">
+                        <div class="fl_icon2"></div>
+                    </div>
+                    <div class="fl_text">
+                        <p class="fl_p">デザイン<br>テンプレートを選ぶ</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fl_box">
+                <div class="fl_title">
+                    <span class="fl_sh">STEP</span><span class="fl_bg">3</span>
+                </div>
+                <div class="fl_contents">
+                    <div class="fl_img">
+                        <div class="fl_icon3"></div>
+                    </div>
+                    <div class="fl_text">
+                        <p class="fl_p">デザインを作る</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fl_box">
+                <div class="fl_title">
+                    <span class="fl_sh">STEP</span><span class="fl_bg">4</span>
+                </div>
+                <div class="fl_contents">
+                    <div class="fl_img">
+                        <div class="fl_icon4"></div>
+                    </div>
+                    <div class="fl_text">
+                        <p class="fl_p">ご注文手続き</p>
+                    </div>	
+                </div>				
+            </div>
+        </div>
     </div>
     <div class="contents">
-        <section class="box3">
+        <section class="choose_scene box3">
             <h2>シーンから選ぶ</h2>
             <ul class="cf">
                 <li><a href="#"><img src="assets/img/top/scene_01.png" alt="スポーツ応援"></a></li>
                 <li><a href="#"><img src="assets/img/top/scene_02.png" alt="お祝い・式典"></a></li>
                 <li><a href="#"><img src="assets/img/top/scene_03.png" alt="学校行事"></a></li>
+            </ul>
+            <ul class="hidden cf">
                 <li><a href="#"><img src="assets/img/top/scene_04.png" alt="イベント・フェス"></a></li>
                 <li><a href="#"><img src="assets/img/top/scene_05.png" alt="ホームパーティー"></a></li>
                 <li><a href="#"><img src="assets/img/top/scene_06.png" alt="商売繁盛"></a></li>
             </ul>
+            <div class="more__btn"><p>もっと見る</p></div>
         </section>
-        <section class="box5">
+        <section class="choose_sports box5">
             <h2>スポーツから選ぶ</h2>
             <ul class="cf">
                 <li><a href="#"><img src="assets/img/top/sport_01.png" alt="サッカー・フットサル"></a></li>
@@ -64,6 +113,8 @@
                 <li><a href="#"><img src="assets/img/top/sport_03.png" alt="バスケットボール"></a></li>
                 <li><a href="#"><img src="assets/img/top/sport_04.png" alt="バレーボール"></a></li>
                 <li><a href="#"><img src="assets/img/top/sport_05.png" alt="テニス"></a></li>
+            </ul>
+            <ul class="hidden cf">    
                 <li><a href="#"><img src="assets/img/top/sport_06.png" alt="バドミントン"></a></li>
                 <li><a href="#"><img src="assets/img/top/sport_07.png" alt="ラグビー"></a></li>
                 <li><a href="#"><img src="assets/img/top/sport_08.png" alt="ハンドボール"></a></li>
@@ -80,13 +131,16 @@
                 <li><a href="#"><img src="assets/img/top/sport_19.png" alt="レスリング"></a></li>
                 <li><a href="#"><img src="assets/img/top/sport_20.png" alt="ダンス"></a></li>
             </ul>
+            <div class="more__btn"><p>もっと見る</p></div>
         </section>
-        <section class="box3">
+        <section class="choose_taste box3">
             <h2>テイストから選ぶ</h2>
             <ul class="cf">
                 <li><a href="#"><img src="assets/img/top/taste_01.png" alt="シンプル素材少なめの定番柄"></a></li>
                 <li><a href="#"><img src="assets/img/top/taste_02.png" alt="熱血応援幕らしい炎モチーフ"></a></li>
                 <li><a href="#"><img src="assets/img/top/taste_03.png" alt="スポーティースポーツ幕らしいデザイン"></a></li>
+            </ul>
+            <ul class="hidden cf">    
                 <li><a href="#"><img src="assets/img/top/taste_04.png" alt="ナチュラル自然モチーフ"></a></li>
                 <li><a href="#"><img src="assets/img/top/taste_05.png" alt="インパクトとにかく目立ちたい人向け"></a></li>
                 <li><a href="#"><img src="assets/img/top/taste_06.png" alt="かわいいイラスト多めでポップなイメージ"></a></li>
@@ -94,6 +148,7 @@
                 <li><a href="#"><img src="assets/img/top/taste_08.png" alt="ゴージャスキラキラや幻想的なデザイン"></a></li>
                 <li><a href="#"><img src="assets/img/top/taste_09.png" alt="和風日本柄"></a></li>
             </ul>
+            <div class="more__btn"><p>もっと見る</p></div>
         </section>
         <section class="feature">
             <h2>選ばれる6つの特徴</h2>
@@ -142,15 +197,12 @@
 
 <?php include_once "inc/footer.inc"; ?>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="assets/js/jquery.min.js"></script>    
 <script src="assets/js/common.js"></script>
 <script src="assets/js/jquery.matchHeight.js"></script>
-<script>
-    $(function(){
-        $(".pickup li").matchHeight();
-        $(".feature li").matchHeight();
-    });
-</script>
+<script src="assets/js/swiper.min.js"></script>
+<script src="assets/js/top.js"></script>
 
 </body>
 </html>

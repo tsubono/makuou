@@ -28,7 +28,7 @@
                 <li><a href="/">HOME</a></li>
                 <li>ギャラリー</li>
             </ul>
-            <div class="select-box">
+            <!--<div class="select-box">
                 <p class="select-box__title">事例を探す</p>
                 <div class="select-box__group">
                     <p>
@@ -86,7 +86,7 @@
                     </p>
                     <p class="example__submit"><input type="submit" value="検索する"></p>
                 </div>
-            </div>
+            </div>-->
             <!-- /.select-box -->
                 <div class="example__content">
                     <a class="js-showing-modal" href="#c001">

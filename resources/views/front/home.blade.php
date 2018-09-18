@@ -3,83 +3,142 @@
 @section('title', 'ホーム | 幕王')
 
 @section('content')
-    <div class="mainimg sp_none">
-        <div class="img"><img src="{{asset("assets/img/top/mainimg.png")}}" alt="誰でも簡単にオリジナル横断幕デザインが作れます！幕デザインの幕王～幕王は試合を盛り上げるお手伝いをします～"></div>
-        <div class="btn"><a href="{{url('/search')}}"><img src="{{asset("assets/img/top/main_btn.png")}}" alt="オリジナル横断幕を作る"></a></div>
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="{{asset("assets/img/top/mainimg1.png")}}" alt=""></div>
+            <div class="swiper-slide"><img src="{{asset("assets/img/top/mainimg2.png")}}" alt=""></div>
+            <div class="swiper-slide"><img src="{{asset("assets/img/top/mainimg3.png")}}" alt=""></div>
+            <div class="swiper-slide"><img src="{{asset("assets/img/top/mainimg4.png")}}" alt=""></div>
+            <div class="swiper-slide"><img src="{{asset("assets/img/top/mainimg5.png")}}" alt=""></div>
+        </div>
+        <div class="swiper-my-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
     </div>
-    <div class="mainimg pc_none tab_none">
-        <div class="img"><a href="{{url('/search')}}"><img src="{{asset("assets/img/top/mainimg-sp.png")}}" alt="誰でも簡単にオリジナル横断幕デザインが作れます！幕デザインの幕王～幕王は試合を盛り上げるお手伝いをします～オリジナル横断幕を作る"></a></div>
-    </div>
+
     <div class="pickup">
-        <ul class="cf">
-            <li>
-                <div><img src="{{asset("assets/img/top/p_ico01.png")}}" alt=""></div>
-                <p>最短2営業日で発送</p>
-            </li>
-            <li>
-                <div><img src="{{asset("assets/img/top/p_ico02.png")}}" alt=""></div>
-                <p>安心の高品質</p>
-            </li>
-            <li>
-                <div><img src="{{asset("assets/img/top/p_ico03.png")}}" alt=""></div>
-                <p>送料全国一律</p>
-            </li>
-            <li>
-                <div><img src="{{asset("assets/img/top/p_ico04.png")}}" alt=""></div>
-                <p>選べる支払方法</p>
-            </li>
-        </ul>
+        <div class="guide_flow">
+            <div class="fl_box">
+                <div class="fl_title">
+                    <span class="fl_sh">STEP</span><span class="fl_bg">1</span>
+                </div>
+                <div class="fl_contents">
+                    <div class="fl_img">
+                        <div class="fl_icon1"></div>
+                    </div>
+                    <div class="fl_text">
+                        <p class="fl_p">新規会員登録（無料）<br>して、ログイン</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fl_box">
+                <div class="fl_title">
+                    <span class="fl_sh">STEP</span><span class="fl_bg">2</span>
+                </div>
+                <div class="fl_contents">
+                    <div class="fl_img">
+                        <div class="fl_icon2"></div>
+                    </div>
+                    <div class="fl_text">
+                        <p class="fl_p">デザイン<br>テンプレートを選ぶ</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fl_box">
+                <div class="fl_title">
+                    <span class="fl_sh">STEP</span><span class="fl_bg">3</span>
+                </div>
+                <div class="fl_contents">
+                    <div class="fl_img">
+                        <div class="fl_icon3"></div>
+                    </div>
+                    <div class="fl_text">
+                        <p class="fl_p">デザインを作る</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fl_box">
+                <div class="fl_title">
+                    <span class="fl_sh">STEP</span><span class="fl_bg">4</span>
+                </div>
+                <div class="fl_contents">
+                    <div class="fl_img">
+                        <div class="fl_icon4"></div>
+                    </div>
+                    <div class="fl_text">
+                        <p class="fl_p">ご注文手続き</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="contents">
-        <section class="box3">
+        <section class="choose_scene box3">
             <h2>シーンから選ぶ</h2>
             <ul class="cf">
                 <li><a href="#"><img src="{{asset("assets/img/top/scene_01.png")}}" alt="スポーツ応援"></a></li>
                 <li><a href="#"><img src="{{asset("assets/img/top/scene_02.png")}}" alt="お祝い・式典"></a></li>
                 <li><a href="#"><img src="{{asset("assets/img/top/scene_03.png")}}" alt="学校行事"></a></li>
+            </ul>
+            <ul class="hidden cf">
                 <li><a href="#"><img src="{{asset("assets/img/top/scene_04.png")}}" alt="イベント・フェス"></a></li>
                 <li><a href="#"><img src="{{asset("assets/img/top/scene_05.png")}}" alt="ホームパーティー"></a></li>
                 <li><a href="#"><img src="{{asset("assets/img/top/scene_06.png")}}" alt="商売繁盛"></a></li>
             </ul>
+            <div class="more__btn"><p>もっと見る</p></div>
         </section>
-        <section class="box5">
+        <section class="choose_sports box5">
             <h2>スポーツから選ぶ</h2>
             <ul class="cf">
-                <li><a href="#"><img src="{{asset("assets/img/top/sport_01.png")}}" alt="サッカー・フットサル"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/sport_02.png")}}" alt="野球・ソフトボール"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/sport_03.png")}}" alt="バスケットボール"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/sport_04.png")}}" alt="バレーボール"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/sport_05.png")}}" alt="テニス"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/sport_06.png")}}" alt="バドミントン"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/sport_07.png")}}" alt="ラグビー"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/sport_08.png")}}" alt="ハンドボール"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/sport_09.png")}}" alt="ドッジボール"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/sport_10.png")}}" alt="卓球"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/sport_11.png")}}" alt="剣道"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/sport_12.png")}}" alt="弓道"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/sport_13.png")}}" alt="空手道・柔道"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/sport_14.png")}}" alt="陸上競技"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/sport_15.png")}}" alt="水泳"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/sport_16.png")}}" alt="体操"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/sport_17.png")}}" alt="スキー・スノーボード"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/sport_18.png")}}" alt="スケート"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/sport_19.png")}}" alt="レスリング"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/sport_20.png")}}" alt="ダンス"></a></li>
+                <li><a href="{{ url('result') }}?category_1[]=4"><img src="{{asset("assets/img/top/sport_01.png")}}" alt="サッカー・フットサル"></a></li>
+                <li><a href="{{ url('result') }}?category_1[]=5"><img src="{{asset("assets/img/top/sport_02.png")}}" alt="野球・ソフトボール"></a></li>
+                <li><a href="{{ url('result') }}?category_1[]=6"><img src="{{asset("assets/img/top/sport_03.png")}}" alt="バスケットボール"></a></li>
+                <li><a href="{{ url('result') }}?category_1[]=7"><img src="{{asset("assets/img/top/sport_04.png")}}" alt="バレーボール"></a></li>
+                <li><a href="{{ url('result') }}?category_1[]=8"><img src="{{asset("assets/img/top/sport_05.png")}}" alt="テニス"></a></li>
             </ul>
+            <ul class="hidden cf">
+                <li><a href="{{ url('result') }}?category_1[]=9"><img src="{{asset("assets/img/top/sport_06.png")}}" alt="バドミントン"></a></li>
+                <li><a href="{{ url('result') }}?category_1[]=10"><img src="{{asset("assets/img/top/sport_07.png")}}" alt="ラグビー"></a></li>
+                <li><a href="{{ url('result') }}?category_1[]=11"><img src="{{asset("assets/img/top/sport_08.png")}}" alt="ハンドボール"></a></li>
+                <li><a href="{{ url('result') }}?category_1[]=12"><img src="{{asset("assets/img/top/sport_09.png")}}" alt="ドッジボール"></a></li>
+                <li><a href="{{ url('result') }}?category_1[]=13"><img src="{{asset("assets/img/top/sport_10.png")}}" alt="卓球"></a></li>
+                <li><a href="{{ url('result') }}?category_1[]=14"><img src="{{asset("assets/img/top/sport_11.png")}}" alt="剣道"></a></li>
+                <li><a href="{{ url('result') }}?category_1[]=15"><img src="{{asset("assets/img/top/sport_12.png")}}" alt="弓道"></a></li>
+                <li><a href="{{ url('result') }}?category_1[]=16"><img src="{{asset("assets/img/top/sport_13.png")}}" alt="空手道・柔道"></a></li>
+                <li><a href="{{ url('result') }}?category_1[]=17"><img src="{{asset("assets/img/top/sport_14.png")}}" alt="陸上競技"></a></li>
+                <li><a href="{{ url('result') }}?category_1[]=18"><img src="{{asset("assets/img/top/sport_15.png")}}" alt="水泳"></a></li>
+                <li><a href="{{ url('result') }}?category_1[]=19"><img src="{{asset("assets/img/top/sport_16.png")}}" alt="体操"></a></li>
+                <li><a href="{{ url('result') }}?category_1[]=20"><img src="{{asset("assets/img/top/sport_17.png")}}" alt="スキー・スノーボード"></a></li>
+                <li><a href="{{ url('result') }}?category_1[]=21"><img src="{{asset("assets/img/top/sport_18.png")}}" alt="スケート"></a></li>
+                <li><a href="{{ url('result') }}?category_1[]=22"><img src="{{asset("assets/img/top/sport_19.png")}}" alt="レスリング"></a></li>
+                <li><a href="{{ url('result') }}?category_1[]=23"><img src="{{asset("assets/img/top/sport_20.png")}}" alt="ダンス"></a></li>
+            </ul>
+            <div class="more__btn"><p>もっと見る</p></div>
         </section>
-        <section class="box3">
+        <section class="choose_taste box3">
             <h2>テイストから選ぶ</h2>
             <ul class="cf">
-                <li><a href="#"><img src="{{asset("assets/img/top/taste_01.png")}}" alt="シンプル素材少なめの定番柄"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/taste_02.png")}}" alt="熱血応援幕らしい炎モチーフ"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/taste_03.png")}}" alt="スポーティースポーツ幕らしいデザイン"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/taste_04.png")}}" alt="ナチュラル自然モチーフ"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/taste_05.png")}}" alt="インパクトとにかく目立ちたい人向け"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/taste_06.png")}}" alt="かわいいイラスト多めでポップなイメージ"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/taste_07.png")}}" alt="ヴィンテージ古風柄で大人向け"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/taste_08.png")}}" alt="ゴージャスキラキラや幻想的なデザイン"></a></li>
-                <li><a href="#"><img src="{{asset("assets/img/top/taste_09.png")}}" alt="和風日本柄"></a></li>
+                <li><a href="{{ url('result') }}?category_1[]=24"><img src="{{asset("assets/img/top/taste_01.png")}}" alt="シンプル素材少なめの定番柄"></a></li>
+                <li><a href="{{ url('result') }}?category_1[]=25"><img src="{{asset("assets/img/top/taste_02.png")}}" alt="熱血応援幕らしい炎モチーフ"></a></li>
+                <li><a href="{{ url('result') }}?category_1[]=26"><img src="{{asset("assets/img/top/taste_03.png")}}" alt="スポーティースポーツ幕らしいデザイン"></a></li>
             </ul>
+            <ul class="hidden cf">
+                <li><a href="{{ url('result') }}?category_1[]=27"><img src="{{asset("assets/img/top/taste_04.png")}}" alt="ナチュラル自然モチーフ"></a></li>
+                <li><a href="{{ url('result') }}?category_1[]=28"><img src="{{asset("assets/img/top/taste_05.png")}}" alt="インパクトとにかく目立ちたい人向け"></a></li>
+                <li><a href="{{ url('result') }}?category_1[]=29"><img src="{{asset("assets/img/top/taste_06.png")}}" alt="かわいいイラスト多めでポップなイメージ"></a></li>
+                <li><a href="{{ url('result') }}?category_1[]=30"><img src="{{asset("assets/img/top/taste_07.png")}}" alt="ヴィンテージ古風柄で大人向け"></a></li>
+                <li><a href="{{ url('result') }}?category_1[]=31"><img src="{{asset("assets/img/top/taste_08.png")}}" alt="ゴージャスキラキラや幻想的なデザイン"></a></li>
+                <li><a href="{{ url('result') }}?category_1[]=32"><img src="{{asset("assets/img/top/taste_09.png")}}" alt="和風日本柄"></a></li>
+            </ul>
+            <a href="{{ url('search') }}">
+                <div class="more__btn">
+                    <p>もっと見る</p>
+                </div>
+            </a>
         </section>
         <section class="feature">
             <h2>選ばれる6つの特徴</h2>
@@ -122,6 +181,9 @@
                 </li>
             </ul>
         </section>
-        <div class="btn"><a href="#"><img src="{{asset("assets/img/top/make_btn.png")}}" alt="ネットでレイアウトを調整しながら自分でデザイン！オリジナル横断幕を作る"></a></div>
+        <div class="btn">
+            <a href="{{ url('/search') }}">
+                <img src="{{asset("assets/img/top/make_btn.png")}}" alt="ネットでレイアウトを調整しながら自分でデザイン！オリジナル横断幕を作る"></a>
+        </div>
     </div>
 @endsection

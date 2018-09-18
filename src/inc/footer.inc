@@ -1,5 +1,4 @@
 <?php $host = '//' . $_SERVER["HTTP_HOST"] ?>
-<div class="fix__mypage"><a href="<?php echo $host; ?>/mypage"><img src="<?php echo $host; ?>/assets/img/common/ico_mypage.png" alt="">マイページ</a></div>
 <footer class="l-footer">
     <ul class="wrap cf">
         <li class="logo">
@@ -27,11 +26,11 @@
             <dl>
                 <dt>よくあるご質問</dt>
 				<dd><a href="<?php echo $host; ?>/faq/">注文方法について</a></dd>
-				<dd><a href="<?php echo $host; ?>/faq/?id=02">幕の仕様について</a></dd>
-				<dd><a href="<?php echo $host; ?>/faq/?id=03">オリジナルのロゴや写真について</a></dd>
-				<dd><a href="<?php echo $host; ?>/faq/?id=04">デザイン制作について</a></dd>
-				<dd><a href="<?php echo $host; ?>/faq/?id=05">発送について</a></dd>
-				<dd><a href="<?php echo $host; ?>/faq/?id=06">耐久性・アフターサポートについて</a></dd>
+				<dd><a href="<?php echo $host; ?>/faq/">幕の仕様について</a></dd>
+				<dd><a href="<?php echo $host; ?>/faq/">オリジナルのロゴや写真について</a></dd>
+				<dd><a href="<?php echo $host; ?>/faq/">デザイン制作について</a></dd>
+				<dd><a href="<?php echo $host; ?>/faq/">発送について</a></dd>
+				<dd><a href="<?php echo $host; ?>/faq/">耐久性・アフターサポートについて</a></dd>
             </dl>
             <dl>
 			<dt>ご案内</dt>

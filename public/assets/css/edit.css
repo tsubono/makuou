@@ -404,6 +404,52 @@ input[type="button"] {
 .edit_space div.opacity {
     width: 20%;
 }
+/* Special styling for WebKit/Blink */
+input[type=range]{
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    background: #999999;
+    height: 2px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background: #26C4E2;
+    margin-top: -8px;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #ccc;
+}
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+    background: #26C4E2;
+    cursor: pointer;
+    border: 1px solid #26C4E2;
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+    background: #26C4E2;
+    cursor: pointer;
+    border: 1px solid #26C4E2;
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+}
 
 /* 写真アップ
 ------------------------------------------------------------ */
@@ -480,8 +526,8 @@ input[type="button"] {
     }
     .edit__tools__foot .btn:last-child { right: 0; }
     .edit__tools__foot .btn a {
-        font-size: 12px;
-        background-size: 6px;
+        font-size: 10px;
+        background-size: 4px;
     }
     .edit__tools__foot .tools__inner ul {
         width: 100%;
@@ -520,9 +566,9 @@ input[type="button"] {
     .layout { margin-top: 30px; }
     .edit__area { height: 330px; }
     .edit__tools__foot .tools__inner { width: 100%; }
-    .edit__tools { margin: 25px auto 100px; }
+    .edit__tools { margin: 60px auto 100px; }
     .edit__tools ul { justify-content: flex-start; }
-    .edit__tools ul li { 
+    .edit__tools ul li {
         width: 31%;
         margin-bottom: 7px;
         max-width: none;
@@ -576,12 +622,12 @@ input[type="button"] {
         margin: auto;
         border: none;
     }
-    .text__tab { 
+    .text__tab {
         width: 100%;
         top: -39px;
     }
     .text__tab li { font-size: .75rem; }
-    .text__btnwrap { 
+    .text__btnwrap {
         display: block;
         position: relative;
     }
@@ -594,13 +640,13 @@ input[type="button"] {
         display: flex;
         width: 100%;
     }
-    .btn__custom div { 
+    .btn__custom div {
         width: 48%;
         margin-bottom: 10px;
     }
     .btn__custom div:last-child { margin-bottom: 0; }
     .font__select { height: 80px; }
-    .btn__add { 
+    .btn__add {
         width: 48%;
         position: absolute;
         bottom: 0;
@@ -615,13 +661,13 @@ input[type="button"] {
         right: -30px;
     }
     .edit__wrap .close__ico { height: 15px; }
-    .edit__wrap .close__ico:before { 
+    .edit__wrap .close__ico:before {
         width: 15px;
         left: -7px;
     }
     .drop__area p { display: none; }
     .drop__area .btn { width: 100%; }
-    .edit__stamp .btn { 
+    .edit__stamp .btn {
         width: 50%;
     }
     .edit__text input[type="button"] { font-size: .8125rem; }
@@ -634,15 +680,26 @@ input[type="button"] {
     .edit__wrap.other .edit__text > div {
         line-height: 10px;
     }
-    .dropdown-menu {
+    .dropdown-menu.font {
         top: 0px;
         font-size: 10px;
     }
-    .dropdown-menu li {
+    .dropdown-menu.font li {
         width: 50%;
         float: left;
     }
-    
+
+    .edit_space div {
+        float: none;
+    }
+    .edit_space div.btn__custom,
+    .edit_space div.opacity{
+        width: 100%;
+
+    }
+    .edit_space {
+        height: auto;
+    }
     
 }
 
@@ -865,6 +922,8 @@ canvas {
 .canvas_details .clearfix > span{margin-top: 10px; margin-right: 10px;}
 .fabric-container {
     position: relative;
+    overflow: auto;
+    overflow: auto;
 }
 
 .thumb_listing ul li.ng-scope.selected {

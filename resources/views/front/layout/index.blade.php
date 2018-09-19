@@ -28,11 +28,6 @@
     {{--<link rel="stylesheet" href="{{asset("assets/css/layer.css")}}">--}}
 
     <link rel="stylesheet" type="text/css" href="{{asset("assets/css/edit.css")}}">
-    <style>
-        .layer__list img {
-            max-height: 30px;
-        }
-    </style>
 @endpush
 
 @push('script')

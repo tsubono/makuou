@@ -87,10 +87,14 @@ h2 {
 }
 .edit__layer .layer__list div {
     display: inline-block;
-    width: 12%;
+    width: 16%;
     background-color: #ccc;
     /*height: 100px;*/
     text-align: center;
+    margin-right: 10px;
+}
+.layer__list img {
+    height: 30px;
 }
 
 

@@ -77,12 +77,16 @@
     {{--<script src="{{asset("assets/js/search.js")}}"></script>--}}
     <script>
         $(function () {
+            setTimeout(function(){
+                $('#productApp').scope().deactivateAll();
+            },2000);
 
             var id = "{{ $product->id }}";
 
             // $('#productApp').scope().initFabric("{{ $product->ratio->width * 170.079 }}", 170.079);
             $('#productApp').scope().initFabric("{{ $product->ratio->width }}");
             $('#productApp').scope().loadProduct("{{ $product->title }}", "{{ $product->image }}", id, 0);
+
 
             setTimeout(function () {
                 $('#productApp').scope().deactivateAll();
@@ -105,7 +109,8 @@
                 $('#productApp').scope().defaultProductId = id;
                 $('#productApp').scope().index = 0;
 
-            }, 300);
+
+            }, 600);
 
             $('#save_design').click(function () {
                 $('#productApp').scope().getPreSaveDatas();

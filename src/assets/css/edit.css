@@ -79,21 +79,19 @@ h2 {
 
 /* レイヤー一覧
 ------------------------------------------------------------ */
-.edit__layer .swiper-slide {
+.edit__layer .layer__list {
+    white-space: nowrap;
+    justify-content: space-between;
+    overflow-x: scroll;
+}
+.edit__layer .layer__list div {
+    display: inline-block;
     width: 12%;
     background-color: #ccc;
     /*height: 100px;*/
     text-align: center;
 }
 
-.swiper-button-prev, .swiper-container-rtl .swiper-button-next {
-    background-image: url(../img/top/prev.png);
-    background-size: 17px 44px;
-}
-.swiper-button-next, .swiper-container-rtl .swiper-button-prev {
-    background-image: url(../img/top/next.png);
-    background-size: 17px 44px;
-}
 
 /* 固定ナビ
 ------------------------------------------------------------ */

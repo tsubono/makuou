@@ -58,7 +58,7 @@ angular.module('productApp', [
             $scope.fabric.addShape(jQuery('[name=asset]').val() + path, false);
 
             $timeout(function () {
-                $scope.deactivateAll();
+                // $scope.deactivateAll();
             }, 100);
         };
 
@@ -91,7 +91,7 @@ angular.module('productApp', [
                     $scope.fabric.addImage(path);
 
                     $timeout(function () {
-                        $scope.deactivateAll();
+                        // $scope.deactivateAll();
                     }, 100);
 
                 }, function (data) {

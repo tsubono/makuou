@@ -45,18 +45,21 @@
                 </div>
                 <div class="edit__layer">
                     <h2>レイヤー一覧</h2>
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">layer</div>
-                            <div class="swiper-slide">layer</div>
-                            <div class="swiper-slide">layer</div>
-                            <div class="swiper-slide">layer</div>
-                            <div class="swiper-slide">layer</div>
-                            <div class="swiper-slide">layer</div>
-                            <div class="swiper-slide">layer</div>
-                        </div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
+                    <div class="layer__list">
+                        <div>layer</div>
+                        <div>layer</div>
+                        <div>layer</div>
+                        <div>layer</div>
+                        <div>layer</div>
+                        <div>layer</div>
+                        <div>layer</div>
+                        <div>layer</div>
+                        <div>layer</div>
+                        <div>layer</div>
+                        <div>layer</div>
+                        <div>layer</div>
+                        <div>layer</div>
+                        <div>layer</div>
                     </div>
                 </div>
                 <nav class="edit__tools__foot">
@@ -187,26 +190,7 @@ $(function() {
 	});
 });
     
-    
 
-    var mySwiper = new Swiper ('.swiper-container', {
-          /*speed: 600,
-          autoplay:true,*/
-          loop: true,
-          slidesPerView: 8,
-        　spaceBetween: 10,
-          centeredSlides : true,
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev'
-          },
-          breakpoints: {
-            767: {
-              slidesPerView: 3,
-              spaceBetween: 0
-            }
-          }
-    });
 </script>
 </body>
 </html>
